@@ -17,8 +17,8 @@ const Navbar = () => {
           position="static"
           style={{
             background: "black",
-            paddingRight: "10%",
-            paddingLeft: "10%",
+            paddingRight: "8%",
+            paddingLeft: "8%",
           }}
         >
           <Toolbar>
