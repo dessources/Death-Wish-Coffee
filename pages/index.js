@@ -1,7 +1,7 @@
 import React from 'react'
 import {Navbar} from '../components';
 
-const Home = () => {
+const index = () => {
   return (
     <>
       <Navbar/>
@@ -9,4 +9,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default index
