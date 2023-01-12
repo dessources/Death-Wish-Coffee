@@ -11,10 +11,14 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import { useFormik } from "formik";
 import { registerValidate } from "../lib/validate.js";
+import {useRouter} from 'next/router';
 
 const theme = createTheme();
 
 export default function CreateAccount() {
+
+  const router = useRouter()
+
   const formik = useFormik({
     initialValues: {
       firstName: "",
@@ -27,7 +31,16 @@ export default function CreateAccount() {
   });
 
   async function onSubmit(values) {
-    console.log(values);
+    const options = {
+      method: "POST",
+      headers: {'Content-Type':'application/json'},
+      body:JSON.stringify(values)
+    }
+    await fetch('http://localhost:3000/api/auth/signup',options)
+      .then(res=>res.json())
+      .then((data)=> {
+        if(data)router.push('http://localhost:3000/Login')
+      })
   }
 
   return (
