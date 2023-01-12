@@ -15,7 +15,7 @@ const SubNavbar = () => {
         <Box
           sx={{
             width: 450,
-            marginTop: 25,
+            marginTop: 40,
             marginLeft: 20,
           }}
         >
