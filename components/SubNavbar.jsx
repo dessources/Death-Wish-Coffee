@@ -48,15 +48,16 @@ const SubNavbar = () => {
         </Box>
       </div>
       <Typography
-        variant="h1"
+        variant="h2"
         style={{
           fontWeight: "bold",
           color: "red",
           textAlign: "center",
           marginTop: "80px",
+          fontSize: '68px'
         }}
       >
-        COLOMBIAN, KICKED UP !
+       REBELLIOUS BY NATURE
       </Typography>
       <Typography
         variant="h5"
@@ -65,7 +66,7 @@ const SubNavbar = () => {
           display: 'block',
           marginLeft: 'auto',
           marginRight: 'auto',
-          width: '1600px',
+          width: '1250px',
           padding: 10 
         }}
       >
@@ -80,7 +81,7 @@ const SubNavbar = () => {
           marginTop: 10
         }}
       >
-        COLOMBIAN, KICKED UP !
+        Mugs up, mother functioners.
       </Typography>
     </>
   );
