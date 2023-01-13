@@ -7,13 +7,11 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 
-
-
 const Footer = () => {
     return (
 
         <Box >
-            <AppBar position='fixed' sx={{ top: 'auto', bottom: 0 }} >
+            <AppBar position='static' sx={{ top: 'auto', bottom: 0 }} >
                 <Container style={{ backgroundColor: '#e12727', maxHeight: 206, maxWidth: '100%' }} fluid>
                     <Typography
                         variant='h5'
