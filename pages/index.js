@@ -1,17 +1,18 @@
 import React from 'react'
 import {Navbar} from '../components';
-import Footer from '../components/Footer';
+import {SubNavbar} from '../components';
+import Footer from '../components/Footer'
 
 const index = () => {
+
   return (
     <>
       <Navbar/>
-      <div>
-        <h1>Hero</h1>
-      </div>
+      <SubNavbar/>
       <Footer/>
     </>
   )
 }
+
 
 export default index
