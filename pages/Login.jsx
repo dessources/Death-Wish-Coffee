@@ -12,10 +12,15 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { signIn } from "next-auth/react";
 import { useFormik } from "formik";
 import login_validate from "../lib/validate.js";
+import { useRouter } from 'next/router';
 
 const theme = createTheme();
 
+
 export default function Login() {
+
+  const router = useRouter()
+
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -26,7 +31,14 @@ export default function Login() {
   });
 
   async function onSubmit(values) {
-    console.log(values);
+    const status = await signIn('credentials',{
+      redirect:false,
+      email:values.email,
+      password:values.password,
+      callbackUrl:"/Account"
+    })
+    console.log(status)
+    if(status.ok)router.push(status.url)
   }
 
   async function handleGoogleSignin() {
