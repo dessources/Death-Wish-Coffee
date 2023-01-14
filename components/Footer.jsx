@@ -13,7 +13,7 @@ const Footer = () => {
     return (
 
         <Box >
-            <AppBar position='fixed' sx={{ top: 'auto', bottom: 0 }} >
+            <AppBar position='static' sx={{ top: 'auto', bottom: 0 }} >
                 <Container style={{ backgroundColor: '#e12727', maxHeight: 206, maxWidth: '100%' }} fluid>
                     <Typography
                         variant='h5'
