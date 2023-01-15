@@ -20,10 +20,14 @@
   font-style: normal;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html,
 body {
-  padding: 0;
-  margin: 0;
   font-family: FenomenSans-Book;
 }
 header a {
@@ -33,10 +37,6 @@ header a {
 a {
   color: inherit;
   text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 .link:hover {
