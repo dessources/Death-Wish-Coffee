@@ -1,5 +1,7 @@
 html,
 body {
+  overflow-x: hidden;
+  width: 100%;
   position: relative;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -23,6 +25,8 @@ a {
 }
 
 .home {
+  width: 100%;
+  height: 100vh;
   display: flex;
   background-position: center;
   background-repeat: no-repeat;
