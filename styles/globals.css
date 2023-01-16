@@ -1,7 +1,8 @@
 html,
 body {
-  padding: 0;
-  margin: 0;
+  position: relative;
+  overflow-x: hidden;
+  width: 100%;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
@@ -21,12 +22,32 @@ a {
 }
 
 .home{
-  width:100%;
+    width:100%;
     height: 100vh;
     display: flex;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.text-smallscreen{
+  display: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .text-Subnavbar{
+    display: none;
+    
+  }
+  .text-smallscreen{
+    display: block;
+    justify-content: center;
+    text-align: center;
+  }
+  .small-text{
+    font-size: 45px;
+    
+  }
 }
 
 @media (prefers-color-scheme: dark) {
