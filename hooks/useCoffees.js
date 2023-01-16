@@ -23,9 +23,11 @@ export default function useCoffees() {
         return [
           ...state.sort((a, b) => (a.attributes.name.toLowerCase() < b.attributes.name.toLowerCase() ? 1 : -1)),
         ];
+      case "byId":
+        return [...action.payload?.sort((a, b) => a.id - b.id)];
 
       default:
-        return action.payload || state;
+        return state;
     }
   };
   const [coffees, sortCoffees] = React.useReducer(coffeesReducer);
@@ -39,7 +41,7 @@ export default function useCoffees() {
     console.log("loading...");
     axios.get(coffeesQueryURL).then((data) => {
       console.log("request finished");
-      sortCoffees({ sortOrder: sortOrder, payload: data.data.data });
+      sortCoffees({ sortOrder: "byId", payload: data.data.data });
     });
   }, []);
 
