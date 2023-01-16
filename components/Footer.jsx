@@ -9,12 +9,14 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 
 
 
+
+
 const Footer = () => {
     return (
 
         <Box >
             <AppBar position='static' sx={{ top: 'auto', bottom: 0 }} >
-                <Container style={{ backgroundColor: '#e12727', maxHeight: 206, maxWidth: '100%' }} fluid>
+                <Container style={{ backgroundColor: '#e12727', maxHeight: 206, maxWidth: '100%' }} className="footerRed">
                     <Typography
                         variant='h5'
                         color='black'
@@ -26,24 +28,26 @@ const Footer = () => {
                     </Typography>
                     <form style={{ padding: 20, display: 'flex' }}>
                         <TextField
-                            style={{ 
-                                backgroundColor: 'white', 
-                                width: 343, 
-                                height: 48, 
-                                margin: 'auto', 
-                                marginRight: 0 }}
+                            style={{
+                                backgroundColor: 'white',
+                                width: 343,
+                                height: 48,
+                                margin: 'auto',
+                                marginRight: 0
+                            }}
                             placeholder="Enter your Email Address"
                         />
                         <Button
                             type='submit'
                             style={{
-                                 width: 216, 
-                                 height: 48, 
-                                 backgroundColor: 'black', 
-                                 color: "white", 
-                                 marginLeft: 0, 
-                                 marginRight: 'auto', 
-                                 cursor: 'pointer' }}
+                                width: 216,
+                                height: 48,
+                                backgroundColor: 'black',
+                                color: "white",
+                                marginLeft: 0,
+                                marginRight: 'auto',
+                                cursor: 'pointer'
+                            }}
 
                         >
                             SIGN ME UP
@@ -51,12 +55,16 @@ const Footer = () => {
                     </form>
 
                 </Container>
-                <Container style={{ backgroundColor: 'black', maxHeight: 423, maxWidth: '100%' }} fluid >
-                    <div style={{ display: 'flex', flexDirection: 'row' }}>
-                        <Link href={"/"} style={{ 
-                            marginRight: 50, 
-                            marginLeft: 'auto', 
-                            marginTop: 100 }}>
+                <Container style={{ backgroundColor: 'black', maxHeight: 423, maxWidth: '100%' }} className="footerBlack">
+                    <div style={{ display: 'flex', flexDirection: 'row' }} >
+                        <Link href={"/"}
+                            style={{
+                                marginRight: 50,
+                                marginLeft: 'auto',
+                                marginTop: 100
+                            }}
+
+                        >
                             <img
                                 src={
                                     "https://cdn.shopify.com/s/files/1/0271/7209/files/dwc-logo.png?v=1624458280"
@@ -68,28 +76,31 @@ const Footer = () => {
 
                                 }}
                             />
+
                         </Link>
-                        <Box style={{ 
-                                marginRight: 50, 
-                                marginLeft: 50, 
-                                maxWidth: 104,
-                                
-                                 }}
+                        <Box style={{
+                            marginRight: 50,
+                            marginLeft: 50,
+                            maxWidth: 104,
+
+                        }}
                         >
-                          
+
                             <Typography
                                 style={{
                                     fontSize: 20,
                                     fontWeight: 'bold',
                                     marginTop: 130
                                 }}
+
                             >
                                 Company
                             </Typography>
                             <Typography
-                                style={{ 
-                                    fontSize: 16, 
-                                    fontWeight: 'lighter' 
+                                className="link"
+                                style={{
+                                    fontSize: 16,
+                                    fontWeight: 'lighter'
                                 }}
                                 gutterBottom
 
@@ -97,9 +108,10 @@ const Footer = () => {
                                 Reviews
                             </Typography>
                             <Typography
-                                style={{ 
-                                    fontSize: 16, 
-                                     fontWeight: 'lighter' 
+                                className="link"
+                                style={{
+                                    fontSize: 16,
+                                    fontWeight: 'lighter'
                                 }}
                                 gutterBottom
 
@@ -107,95 +119,100 @@ const Footer = () => {
                                 FAQ + Help
                             </Typography>
                             <Typography
-                                style={{ 
-                                    fontSize: 16, 
-                                     fontWeight: 'lighter', 
+                                className="link"
+                                style={{
+                                    fontSize: 16,
+                                    fontWeight: 'lighter',
                                 }}
                                 gutterBottom
 
                             >
                                 Refund Policy
                             </Typography>
-                            <div style={{ width: 650, display: 'flex',  }}>
+                            <div style={{ width: 650, display: 'flex', }}>
                                 <Typography
-                                    style={{ 
-                                        fontSize: 16, 
-                                        fontWeight: 'lighter', 
-                                        marginTop: 60 }}
+                                    style={{
+                                        fontSize: 16,
+                                        fontWeight: 'lighter',
+                                        marginTop: 60
+                                    }}
                                     gutterBottom
                                 >
                                     @ Death Wish Coffee Co 2023 All Rights Reserved.
                                 </Typography>
-                                <Link href="#"><TwitterIcon style={{ 
-                                    color: 'black',
-                                    maxHeight: 35, 
-                                    width: 30, 
-                                    marginLeft: 90, 
-                                    marginTop: 60, 
-                                    borderRadius: '50%',
-                                    backgroundColor: 'white',
-                                    padding: 3,
-                                    
-                                     }} />
-                                </Link>
-                                <Link href="#"><FacebookIcon style={{ 
-                                    color: 'black', 
-                                    maxHeight: 35, 
-                                    width: 30,
-                                    marginLeft: 12, 
-                                    marginTop:60,
-                                    borderRadius: '50%',
-                                    backgroundColor: 'white',
-                                    padding: 3,
-                                    
 
-                                     }} />
+                                <Link href="#" ><TwitterIcon style={{
+                                    color: 'black',
+                                    maxHeight: 35,
+                                    width: 30,
+                                    marginLeft: 90,
+                                    marginTop: 60,
+                                    borderRadius: '50%',
+                                    backgroundColor: 'white',
+                                    padding: 3,
+
+                                }} />
                                 </Link>
-                                <Link href="#"><InstagramIcon style={{ 
-                                     color: 'black', 
-                                     maxHeight: 35, 
-                                     width: 30,
-                                     marginLeft: 12, 
-                                     marginTop:60,
-                                     borderRadius: '50%',
-                                     backgroundColor: 'white',
-                                     padding: 3,
-                                     
-                                     }} />
+                                <Link href="#"><FacebookIcon style={{
+                                    color: 'black',
+                                    maxHeight: 35,
+                                    width: 30,
+                                    marginLeft: 12,
+                                    marginTop: 60,
+                                    borderRadius: '50%',
+                                    backgroundColor: 'white',
+                                    padding: 3,
+
+
+                                }} />
+                                </Link>
+                                <Link href="#"><InstagramIcon style={{
+                                    color: 'black',
+                                    maxHeight: 35,
+                                    width: 30,
+                                    marginLeft: 12,
+                                    marginTop: 60,
+                                    borderRadius: '50%',
+                                    backgroundColor: 'white',
+                                    padding: 3,
+
+                                }} />
                                 </Link>
                                 <Link href="#"><YouTubeIcon style={{
-                                     color: 'black', 
-                                     maxHeight: 35, 
-                                     width: 30,
-                                     marginLeft: 12, 
-                                     marginTop:60,
-                                     borderRadius: '50%',
-                                     backgroundColor: 'white',
-                                     padding: 3,
-                                     
-                                    }} />
-                                 </Link>
+                                    color: 'black',
+                                    maxHeight: 35,
+                                    width: 30,
+                                    marginLeft: 12,
+                                    marginTop: 60,
+                                    borderRadius: '50%',
+                                    backgroundColor: 'white',
+                                    padding: 3,
+
+                                }} />
+                                </Link>
 
                             </div>
 
 
                         </Box>
-                        <Box style={{ marginRight: 50, marginLeft: 50 }}>
+
+                        <Box style={{ marginRight: 50, marginLeft: 50 }} >
                             <Typography
-                                style={{ 
-                                    fontSize: 20, 
-                                    fontWeight: 'bold', 
+                                style={{
+                                    fontSize: 20,
+                                    fontWeight: 'bold',
                                     marginTop: 130
-                                     
+
                                 }}
                             >
                                 Accounts + Orders
-                            </Typography> 
+                            </Typography>
                             <Typography
-                                style={{ 
-                                    fontSize: 16, 
-                                    fontWeight: 'lighter', 
-                                    
+                                className="link"
+                                style={{
+                                    fontSize: 16,
+                                    fontWeight: 'lighter',
+
                                 }}
                                 gutterBottom
 
@@ -203,10 +220,11 @@ const Footer = () => {
                                 Your Account
                             </Typography>
                             <Typography
-                                style={{ 
-                                    fontSize: 16, 
-                                    fontWeight: 'lighter', 
-                                    
+                                className="link"
+                                style={{
+                                    fontSize: 16,
+                                    fontWeight: 'lighter',
+
                                 }}
                                 gutterBottom
 
@@ -214,10 +232,11 @@ const Footer = () => {
                                 Shopping Details
                             </Typography>
                             <Typography
-                                style={{ 
-                                    fontSize: 16, 
-                                    fontWeight: 'lighter', 
-                                   
+                                className="link"
+                                style={{
+                                    fontSize: 16,
+                                    fontWeight: 'lighter',
+
                                 }}
                                 gutterBottom
 
@@ -225,10 +244,11 @@ const Footer = () => {
                                 Subscription
                             </Typography>
                             <Typography
-                                style={{ 
-                                    fontSize: 16, 
-                                    fontWeight: 'lighter', 
-                                    
+                                className="link"
+                                style={{
+                                    fontSize: 16,
+                                    fontWeight: 'lighter',
+
                                 }}
                                 gutterBottom
 
@@ -236,26 +256,29 @@ const Footer = () => {
                                 Wholesale
                             </Typography>
                         </Box>
-                        <Box 
-                        
-                            style={{ 
-                                marginRight: 'auto', 
-                                marginLeft: 50 }}>
+                        <Box
+
+                            style={{
+                                marginRight: 'auto',
+                                marginLeft: 50
+                            }}>
                             <Typography
-                                style={{ 
-                                    fontSize: 20, 
-                                    fontWeight: 'bold', 
+                                style={{
+                                    fontSize: 20,
+                                    fontWeight: 'bold',
                                     marginTop: 130
-                                   
+
                                 }}
+
                             >
                                 Legal
-                            </Typography> 
+                            </Typography>
                             <Typography
-                                style={{ 
-                                    fontSize: 16, 
-                                    fontWeight: 'lighter', 
-                                    
+                                className="link"
+                                style={{
+                                    fontSize: 16,
+                                    fontWeight: 'lighter',
+
                                 }}
                                 gutterBottom
 
@@ -263,10 +286,11 @@ const Footer = () => {
                                 Terms + Conditions
                             </Typography>
                             <Typography
-                                style={{ 
-                                    fontSize: 16, 
-                                    fontWeight: 'lighter', 
-                                    
+                                className="link"
+                                style={{
+                                    fontSize: 16,
+                                    fontWeight: 'lighter',
+
                                 }}
                                 gutterBottom
 
@@ -274,20 +298,21 @@ const Footer = () => {
                                 Privacy Policy
                             </Typography>
                             <Typography
-                                style={{ 
-                                    fontSize: 16, 
-                                    fontWeight: 'lighter', 
-                                    
+                                className="link"
+                                style={{
+                                    fontSize: 16,
+                                    fontWeight: 'lighter',
+
                                 }}
 
                             >
                                 PROP 65
                             </Typography>
                             <Typography
-                                style={{ 
-                                    fontSize: 16, 
-                                    fontWeight: 'lighter', 
-                                    marginTop: 25 
+                                style={{
+                                    fontSize: 16,
+                                    fontWeight: 'lighter',
+                                    marginTop: 25
                                 }}
                             >
                                 Get Wired with us
@@ -297,8 +322,97 @@ const Footer = () => {
 
                     </div>
 
+                </Container>
+                <Container className="footerResp">
+                    <div className="footerMenu">
+                        <h2>END OF THE ROAD, JACK.</h2>
+                        <Typography
+                            style={{
+                                width: 140,
+                                fontSize: '16px',
+                                fontWeight: 'lighter',
+                                marginTop: 20,
+                                marginLeft: 'auto',
+                                marginRight: 'auto',
+                                color: 'white'
+                            }}
+
+                        >
+                            Get Wired with us
+                        </Typography>
+                        <div style={{
+                            width: 149,
+                            marginLeft: 'auto',
+                            marginRight: 'auto'
+                        }}
+                        >
+                            <Link href="#"><TwitterIcon style={{
+                                color: 'black',
+                                maxHeight: 33,
+                                width: 28,
+                                marginTop: 0,
+                                borderRadius: '50%',
+                                backgroundColor: 'white',
+                                padding: 3,
+
+                            }} />
+                            </Link>
+                            <Link href="#"><FacebookIcon style={{
+                                color: 'black',
+                                maxHeight: 33,
+                                width: 28,
+                                marginLeft: 12,
+                                marginTop: 0,
+                                borderRadius: '50%',
+                                backgroundColor: 'white',
+                                padding: 3,
+
+
+                            }} />
+                            </Link>
+                            <Link href="#"><InstagramIcon style={{
+                                color: 'black',
+                                maxHeight: 33,
+                                width: 28,
+                                marginLeft: 12,
+                                marginTop: 0,
+                                borderRadius: '50%',
+                                backgroundColor: 'white',
+                                padding: 3,
+
+                            }} />
+                            </Link>
+                            <Link href="#"><YouTubeIcon style={{
+                                color: 'black',
+                                maxHeight: 33,
+                                width: 28,
+                                marginLeft: 12,
+                                marginTop: 0,
+                                borderRadius: '50%',
+                                backgroundColor: 'white',
+                                padding: 3,
+
+                            }} />
+                            </Link>
+                        </div>
+                        <Typography
+                            style={{
+                                fontSize: 9,
+                                fontWeight: 'lighter',
+                                marginTop: 5,
+                                width: '765px',
+                                marginLeft: 'auto',
+
+                            }}
+                            gutterBottom
+                        >
+                            @ Death Wish Coffee Co 2023 All Rights Reserved.
+                        </Typography>
+                    </div>
+
 
                 </Container>
+
             </AppBar>
         </Box>
     )
