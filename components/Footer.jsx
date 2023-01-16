@@ -16,7 +16,7 @@ const Footer = () => {
 
         <Box >
             <AppBar position='static' sx={{ top: 'auto', bottom: 0 }} >
-                <Container style={{ backgroundColor: '#e12727', maxHeight: 206, maxWidth: '100%' }} fluid className="footerRed">
+                <Container style={{ backgroundColor: '#e12727', maxHeight: 206, maxWidth: '100%' }} className="footerRed">
                     <Typography
                         variant='h5'
                         color='black'
@@ -140,8 +140,8 @@ const Footer = () => {
                                 >
                                     @ Death Wish Coffee Co 2023 All Rights Reserved.
                                 </Typography>
-                                
-                                 <Link href="#" ><TwitterIcon style={{
+
+                                <Link href="#" ><TwitterIcon style={{
                                     color: 'black',
                                     maxHeight: 35,
                                     width: 30,
@@ -190,7 +190,7 @@ const Footer = () => {
 
                                 }} />
                                 </Link>
- 
+
                             </div>
 
 
@@ -328,86 +328,86 @@ const Footer = () => {
                         <h2>END OF THE ROAD, JACK.</h2>
                         <Typography
                             style={{
-                                width:140,
-                                fontSize: 16,
+                                width: 140,
+                                fontSize: '16px',
                                 fontWeight: 'lighter',
                                 marginTop: 20,
-                                marginLeft:'auto',
-                                marginRight:'auto',
+                                marginLeft: 'auto',
+                                marginRight: 'auto',
                                 color: 'white'
                             }}
-                            
+
                         >
                             Get Wired with us
                         </Typography>
                         <div style={{
-                            width:149, 
-                            marginLeft:'auto',
-                            marginRight:'auto'
-                            }}
+                            width: 149,
+                            marginLeft: 'auto',
+                            marginRight: 'auto'
+                        }}
                         >
-                        <Link href="#"><TwitterIcon style={{
-                                    color: 'black',
-                                    maxHeight: 33,
-                                    width: 28,
-                                    marginTop: 0,
-                                    borderRadius: '50%',
-                                    backgroundColor: 'white',
-                                    padding: 3,
+                            <Link href="#"><TwitterIcon style={{
+                                color: 'black',
+                                maxHeight: 33,
+                                width: 28,
+                                marginTop: 0,
+                                borderRadius: '50%',
+                                backgroundColor: 'white',
+                                padding: 3,
 
-                                }} />
-                                </Link>
-                                <Link href="#"><FacebookIcon style={{
-                                    color: 'black',
-                                    maxHeight: 33,
-                                    width: 28,
-                                    marginLeft: 12,
-                                    marginTop: 0,
-                                    borderRadius: '50%',
-                                    backgroundColor: 'white',
-                                    padding: 3,
+                            }} />
+                            </Link>
+                            <Link href="#"><FacebookIcon style={{
+                                color: 'black',
+                                maxHeight: 33,
+                                width: 28,
+                                marginLeft: 12,
+                                marginTop: 0,
+                                borderRadius: '50%',
+                                backgroundColor: 'white',
+                                padding: 3,
 
 
-                                }} />
-                                </Link>
-                                <Link href="#"><InstagramIcon style={{
-                                    color: 'black',
-                                    maxHeight: 33,
-                                    width: 28,
-                                    marginLeft: 12,
-                                    marginTop: 0,
-                                    borderRadius: '50%',
-                                    backgroundColor: 'white',
-                                    padding: 3,
+                            }} />
+                            </Link>
+                            <Link href="#"><InstagramIcon style={{
+                                color: 'black',
+                                maxHeight: 33,
+                                width: 28,
+                                marginLeft: 12,
+                                marginTop: 0,
+                                borderRadius: '50%',
+                                backgroundColor: 'white',
+                                padding: 3,
 
-                                }} />
-                                </Link>
-                                <Link href="#"><YouTubeIcon style={{
-                                    color: 'black',
-                                    maxHeight: 33,
-                                    width: 28,
-                                    marginLeft: 12,
-                                    marginTop: 0,
-                                    borderRadius: '50%',
-                                    backgroundColor: 'white',
-                                    padding: 3,
+                            }} />
+                            </Link>
+                            <Link href="#"><YouTubeIcon style={{
+                                color: 'black',
+                                maxHeight: 33,
+                                width: 28,
+                                marginLeft: 12,
+                                marginTop: 0,
+                                borderRadius: '50%',
+                                backgroundColor: 'white',
+                                padding: 3,
 
-                                }} />
-                                </Link>
+                            }} />
+                            </Link>
                         </div>
                         <Typography
-                                    style={{
-                                        fontSize: 16,
-                                        fontWeight: 'lighter',
-                                        marginTop: 5,
-                                        width:390,
-                                        marginLeft:'auto',
-                                        marginRight:'auto'
-                                    }}
-                                    gutterBottom
-                                >
-                                    @ Death Wish Coffee Co 2023 All Rights Reserved.
-                                </Typography>
+                            style={{
+                                fontSize: 9,
+                                fontWeight: 'lighter',
+                                marginTop: 5,
+                                width: '765px',
+                                marginLeft: 'auto',
+
+                            }}
+                            gutterBottom
+                        >
+                            @ Death Wish Coffee Co 2023 All Rights Reserved.
+                        </Typography>
                     </div>
 
 
