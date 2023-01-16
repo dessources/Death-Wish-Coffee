@@ -15,19 +15,72 @@ a {
   box-sizing: border-box;
 }
 
-.link:hover{
+.link:hover {
   text-decoration: underline;
   color: red;
 }
 
+<<<<<<< HEAD
 
 .home{
   width:100%;
     height: 100vh;
+=======
+.home {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.smallscreen {
+  display: none;
+}
+
+.smallscreen-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  transition: 0.5s ease;
+  flex-direction: column;
+  z-index: 5;
+  background-color: black;
+}
+
+.close {
+  font-size: 27px;
+  cursor: pointer;
+  position: absolute;
+  top: 30px;
+  right: 50px;
+}
+
+@media screen and (max-width: 1400px) {
+  .navbar {
+    display: none;
+  }
+  .smallscreen {
+>>>>>>> c4c7358d36f0e3d433d72229f7b3310b1c917719
     display: flex;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    justify-content:space-around;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header > :nth-child(2) {
+    position: fixed;
+    right: 2rem;
+    z-index: 99;
+  }
+  .header-menu {
+    flex-direction: column;
+    background-color: var(--appColor);
+    padding: 2rem;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
