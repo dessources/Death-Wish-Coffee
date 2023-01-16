@@ -23,13 +23,16 @@ const SubNavbar = () => {
             variant="h2"
             style={{
               fontWeight: "bold",
+              color: "white"
             }}
           >
             <span style={{
               color: 'red'
             }}>C</span>OLOMBIAN, KICKED UP !
           </Typography>
-          <Typography variant="h6">
+          <Typography variant="h6"
+              style={{color: 'white'}}
+          >
             Roundhouse your bad habits and start the new year fresh with an
             all-new blend ready to fuel you forward. Available in Ground, Whole
             Bean and Death Cups for a limited time only.
