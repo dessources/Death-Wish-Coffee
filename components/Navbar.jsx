@@ -138,10 +138,15 @@ const Navbar = () => {
           </AppBar>
         </Box>
       </div>
-      <div className="smallscreen">
+      <div 
+        className="smallscreen"
+        style={{backgroundColor: "black"}}
+        
+        >
         <Box
           style={{
             marginTop: "30px",
+            
           }}
         >
           <IconButton
@@ -202,12 +207,14 @@ const Navbar = () => {
               className="close"
               style={{
                 fontSize: "50",
+                
               }}
             />
             <Box
               style={{
                 textAlign: "center",
                 marginTop: "150px",
+                
               }}
             >
               <hr />
