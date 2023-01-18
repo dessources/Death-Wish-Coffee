@@ -1,9 +1,9 @@
 import React from 'react'
 import {Navbar} from '../components';
 import {SubNavbar} from '../components';
-import {FeaturedProducts} from '../components'
+import {FeaturedProducts} from '../components';
 import Footer from '../components/Footer'
-import Carousel from 'react-elastic-carousel';
+
 
 const index = () => {
 
