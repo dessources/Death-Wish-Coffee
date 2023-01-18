@@ -102,6 +102,44 @@ a {
   }
 }
 
+.FeaturedProducts{
+  padding: 60px;
+}
+
+.card{
+margin-top: 50px;
+display: flex;
+background-color: black;
+justify-content: center;
+text-align: center;
+overflow: hidden;
+}
+
+.slick-slide > div {
+  margin: 0 20px;
+}
+
+.slick-list {
+  margin: 0 -20px;
+}
+
+.slick-prev:before, .slick-next:before {
+  font-size: 25px !important;
+  color: white !important;
+}
+
+.slick-dots li button:before {
+  color: white !important;
+  font-size: 20px !important;
+  margin-top: 25px;
+}
+
+.image-coffee img{
+    object-fit: cover;
+    width: 100%;
+}
+
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
