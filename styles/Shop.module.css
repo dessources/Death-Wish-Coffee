@@ -9,7 +9,10 @@
 .filters {
   grid-area: 2/1;
 }
-
+.filters button[data-selected="true"] {
+  background-color: red;
+  color: white;
+}
 .products {
   grid-area: 2/2;
   display: grid;
