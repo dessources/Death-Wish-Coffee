@@ -57,126 +57,42 @@ a {
   right: 50px;
 }
 
-.CoffeeCulture{
-  display: flex;
-  flex-direction: row;
+.title-Coffee-Culture{
   justify-content: center;
-  align-items: center;
+  margin-top: 50px;
+  display: flex;
+  font-weight: bold;
   margin-bottom: 50px;
+  font-size: 70px;
 }
 
-.title-gallery{
-  justify-content: center;
-  text-align: center;
-  font-size: 65px;
-  text-transform: uppercase;
-  margin-bottom: 40px;
-}
-
-.gallery{
-  flex: 1;
-  display: flex;
-  flex-direction: row;
-  max-width: 75%;
-  position: relative;
-}
-
-.gallery-container{
-  display: flex;
-  flex-direction: row;
-  width: max-content;
-  overflow-x: scroll;
-  -ms-overflow-style: none;
-  scrollbar-width: none; 
-}
-
-.gallery-container::-webkit-scrollbar{
-  display: none;
-}
-
-.gallery-images-card{
-  position: relative;
-  cursor: pointer;
-  min-width: 1400px;
-  height: 750px;
-  margin-right: 2rem;
-}
-
-.gallery-images-card img{
-  height: 100%;
-  width: 100%;
+.image img{
   object-fit: cover;
-  opacity: 1;
-  transition: .5s ease;
-  
-}
-
-.gallery-images-card:hover img{
-  opacity: 35;
-  border: 5px solid red;
-}
-
-.gallery-icons{
   width: 100%;
-  display: flex;
-  justify-content:space-between;
-  align-items: center;
-  padding: 0 3rem;
-  position: absolute;
-  bottom: 5%;
+  max-height: 750px;
+  top: 0;
+  left: 0;
 }
 
-.arrow-icon{
-color: white;
-font-size: 4rem;
-cursor: pointer;
-border-radius: 5px;
+.image:hover{
+  border: solid 5px red;
 }
 
-.arrow-icon:hover{
-  color: red;
-}
-
-@media screen and (max-width: 1400px){
-  .gallery-icons{
-    display: none;
-  }
-  .gallery-images-card{
-    min-width: 1100px;
-    height: 650px;
+@media screen and (max-width: 1700px) {
+  .image img{
+    height: 700px;
   }
 }
 
-@media screen and (max-width: 1150px){
-  .gallery-icons{
-    display: none;
-  }
-  .gallery-images-card{
-    min-width: 900px;
-    height: 550px;
+@media screen and (max-width: 1400px) {
+  .image img{
+    height: 530px;
   }
 }
 
-@media screen and (max-width: 850px){
-  .gallery-icons{
-    display: none;
-  }
-  .gallery-images-card{
-    min-width: 650px;
-    height: 450px;
-  }
-  .title-gallery{
-    font-size: 30px;
-  }
-
-}
-
-@media screen and (max-width: 550px){
-  .gallery-icons{
-    display: none;
-  }
-  .gallery-images-card{
-    min-width: 400px;
+@media screen and (max-width: 768px) {
+  .image img{
+    height: 600px;
   }
 }
 
