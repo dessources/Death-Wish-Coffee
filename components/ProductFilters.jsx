@@ -4,7 +4,13 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Add from "@mui/icons-material/Add";
 import Typography from "@mui/material/Typography";
-import { filter, filtersSection, filterSummary, filterSummaryRoot } from "../styles/Shop.module.css";
+import {
+  filter,
+  filtersSection,
+  filterSummary,
+  filterSummaryRoot,
+  filterDetails,
+} from "../styles/Shop.module.css";
 
 export default function ProductFilters({ onfilterChange }) {
   const handleClick = (filter, value) => (e) => {
@@ -27,7 +33,7 @@ export default function ProductFilters({ onfilterChange }) {
         >
           <Typography className={filterSummary}>Roast</Typography>
         </AccordionSummary>
-        <AccordionDetails>
+        <AccordionDetails className={filterDetails}>
           <div>
             <button data-selected={false} onClick={handleClick("roast", "dark")}>
               Dark
@@ -47,7 +53,7 @@ export default function ProductFilters({ onfilterChange }) {
         >
           <Typography className={filterSummary}>Style</Typography>
         </AccordionSummary>
-        <AccordionDetails>
+        <AccordionDetails className={filterDetails}>
           <div>
             <button data-selected={false} onClick={handleClick("styles", "ground")}>
               Ground
@@ -67,7 +73,7 @@ export default function ProductFilters({ onfilterChange }) {
         >
           <Typography className={filterSummary}>Format</Typography>
         </AccordionSummary>
-        <AccordionDetails>
+        <AccordionDetails className={filterDetails}>
           <div>
             <button data-selected={false} onClick={handleClick("format", "single serve")}>
               Single Serve

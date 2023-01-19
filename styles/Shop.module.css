@@ -105,17 +105,43 @@
 
 .filter {
   background-color: transparent;
-  padding: 12px 0;
-  border-bottom: 1px solid #dedbd9;
+  margin: 0 !important;
+  padding-top: 12px;
 }
 .filterSummaryRoot {
   padding-left: 0;
+  border-bottom: 1px solid #dedbd9;
 }
 
 .filterSummaryRoot div {
   margin: 0;
 }
-.filtersSection button[dataSelected="true"] {
-  background-color: red;
-  color: white;
+
+.filterDetails {
+  padding: 0;
+  padding-top: 1rem;
+}
+
+.filterDetails div {
+  display: flex;
+  justify-content: flex-start;
+}
+.filterDetails button {
+  font-family: "FenomenSans-Book";
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 1rem;
+  color: black;
+  margin-right: 0.5rem;
+  border-radius: 0;
+  width: 30%;
+  background: #898e8e;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.filterDetails button:hover,
+.filterDetails button[data-selected="true"] {
+  border-color: #e12727;
+  background: #555858;
 }
