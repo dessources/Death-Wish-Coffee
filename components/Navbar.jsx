@@ -85,6 +85,7 @@ const Navbar = () => {
                 sx={{ flexGrow: 1 }}
                 style={{
                   fontWeight: "bold",
+                  
                 }}
               >
                 <Link href={"/Blog"}>BLOG & RECIPES</Link>
@@ -97,6 +98,7 @@ const Navbar = () => {
                 sx={{ flexGrow: 1 }}
                 style={{
                   fontWeight: "bold",
+                  
                 }}
               >
                 <Link href={"/About"}>ABOUT</Link>
@@ -218,6 +220,7 @@ const Navbar = () => {
                 style={{
                   fontWeight: "bold",
                   padding: 40,
+                  color: "white"
                 }}
               >
                 <Link href={"/Subscription"}>SUBSCRIPTION</Link>
@@ -230,6 +233,7 @@ const Navbar = () => {
                 style={{
                   fontWeight: "bold",
                   padding: 40,
+                  color: "white"
                 }}
               >
                 <Link href={"/Shop"}>SHOP</Link>
@@ -242,6 +246,7 @@ const Navbar = () => {
                 style={{
                   fontWeight: "bold",
                   padding: 40,
+                  color: "white"
                 }}
               >
                 <Link href={"/StoreLocator"}>STORE LOCATOR</Link>
@@ -254,6 +259,7 @@ const Navbar = () => {
                 style={{
                   fontWeight: "bold",
                   padding: 40,
+                  color: "white"
                 }}
               >
                 <Link href={"/Blog"}>BLOG & RECIPES</Link>
@@ -266,6 +272,7 @@ const Navbar = () => {
                 style={{
                   fontWeight: "bold",
                   padding: 40,
+                  color: "white"
                 }}
               >
                 <Link href={"/About"}>ABOUT</Link>
