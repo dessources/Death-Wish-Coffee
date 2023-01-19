@@ -72,6 +72,7 @@ const FeaturedProducts = () => {
             style={{
               backgroundColor: "black",
               color: "white",
+              padding: '0 20px',
             }}
           >
             <Link href={`/Products/${coffee?.id}`}>

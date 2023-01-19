@@ -104,16 +104,35 @@ a {
 }
 
 .FeaturedProducts{
-  display: flex;
   background-color: black;
-  margin: 0 20px;
+  margin: 0 auto;
+  margin-top: 60px;
+  width: 90%;
   color: white;
-  width: 100%;
   height: 800px;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
+
+
+.card{
+  
+  background-color: black;
+}
+
+/*.slick-next{
+  font-size: 40px !important;
+  background-color: 'white' !important;
+  margin: 50px !important;
+}
+*/
+/*.slick-prev{
+  font-size: 40px !important;
+  background-color: 'white' !important;
+  margin-right: -100px !important;
+}
+*/
 
 
 @media (prefers-color-scheme: dark) {

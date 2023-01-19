@@ -32,7 +32,6 @@ export const getStaticProps = async (context) => {
 };
 
 const Detail = ({ coffee }) => {
-  console.log(coffee);
 
   return <div>{coffee?.data?.attributes?.name}</div>;
 };
