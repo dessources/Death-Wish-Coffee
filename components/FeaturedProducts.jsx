@@ -4,8 +4,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
-import Box from "@mui/material/Box";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import Box from "@mui/material/Box"; // requires a loader
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
