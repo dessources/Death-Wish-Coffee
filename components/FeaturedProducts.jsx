@@ -8,6 +8,7 @@ import Box from "@mui/material/Box"; // requires a loader
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import Link from 'next/link'
 
 const FeaturedProducts = () => {
 
@@ -52,7 +53,7 @@ const FeaturedProducts = () => {
   React.useEffect(() => {
     setStatus("fetching");
     fetch(
-      `https://strapi-death-wish-coffee-backend.onrender.com/api/coffees?filters[id][$in][0]=78&filters[id][$in][1]=86&filters[id][$in][2]=75&filters[id][$in][3]=80&filters[id][$in][4]=84&populate=main_image`
+      `http://localhost:1337/api/coffees?filters[id][$in][0]=78&filters[id][$in][1]=86&filters[id][$in][2]=75&filters[id][$in][3]=80&filters[id][$in][4]=84&populate=main_image`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -73,6 +74,7 @@ const FeaturedProducts = () => {
               color: "white",
             }}
           >
+            <Link href={`/Products/${coffee?.id}`}>
             <CardMedia
               className="image-coffee"
               component="img"
@@ -82,6 +84,7 @@ const FeaturedProducts = () => {
               }
               alt="coffee"
             />
+            </Link>
 
             <CardContent style={{
               
