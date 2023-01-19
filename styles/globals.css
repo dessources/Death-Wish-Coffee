@@ -8,14 +8,7 @@
 }
 
 
-/* @font-face {
-  font-family: 'revansmedium';
-  src: url('revans-medium-webfont.woff2') format('woff2'),
-       url('revans-medium-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
 
-} */
 
 
 html,
@@ -78,6 +71,22 @@ a {
   position: absolute;
   top: 30px;
   right: 50px;
+}
+
+.subscribeButton{
+  background-color: red;
+}
+
+.goToLogin{
+  background-color: red;
+}
+
+.subscribeButton:hover{
+  background-color: #424242;
+}
+
+.goToLogin:hover{
+  background-color: #424242;
 }
 
 @media screen and (max-width: 1400px) {

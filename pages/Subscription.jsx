@@ -9,21 +9,99 @@ import Link from "next/link";
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
-import { fontWeight, textAlign } from '@mui/system';
+
 
 const Subscription = () => {
     return (
         <>
             <Navbar />
-            <div style={{
+            <Box style={{
                 width: '100%',
                 height: '880px',
-                backgroundImage: `url(${"subscribe.png"})`,
+                backgroundImage: `url(${"subscribe2.png.webp"})`,
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover'
             }}>
-            </div>
+                <Box style={{
+                    backgroundColor: 'rgba(0, 0, 0, .5)',
+                    width: '550px',
+                    height: '450px',
+                    marginLeft: '70%',
+
+                }}>
+                    <Typography
+                        variant='h1'
+                        align='center'
+                        style={{
+                            color: 'white',
+                            fontSize: 69,
+                            marginTop: 150,
+                            fontWeight: '1000',
+                            fontFamily: 'revansmedium'
+                        }}
+                    >
+                        SUBSCRIBE & SAVE
+                    </Typography>
+                    <Typography
+                        variant="body1"
+                        style={{
+                            color: 'white',
+                            fontSize: 24,
+                            fontWeight: 'lighter',
+                            textAlign: 'center',
+                            marginTop: 20,
+
+                        }}
+                    >
+                        Never run out of coffee and save 10% on all coffee subscription orders. Start a subscription today to take advantage of subscriber-only savings, early access to exclusive products and more.
+                    </Typography>
+                    
+                        <Button
+                            variant="contained"
+                            style={{
+                                color: "black",
+                                width: "210px",
+                                height: "60px",
+                                fontWeight: "500",
+                                marginTop: "50px",
+                                marginLeft: '15%',
+                                marginRight: 15,
+                                cursor: 'pointer',
+                                display: 'inline-block'
+
+                            }}
+                            className="subscribeButton"
+                        >
+                            <Link href="/Quizz">
+                            CHOOSE SUBSCRIPTION
+                            </Link>
+                            
+                        </Button>
+                        <Button
+                            variant="contained"
+                            style={{
+                                color: "black",
+                                width: "160px",
+                                height: "60px",
+                                fontWeight: "500",
+                                marginTop: "50px",
+                                marginLeft: 5,
+                                marginRight: 'auto',
+                                cursor: 'pointer',
+                                display: 'inline-block'
+
+                            }}
+                           className="goToLogin" 
+                        >
+                            <Link href={"/Login"}>
+                                MEMBER LOGIN
+                            </Link>
+                        </Button>
+                    
+                </Box>
+
+            </Box>
             <Container
                 style={{
                     backgroundColor: "black",
@@ -252,7 +330,7 @@ const Subscription = () => {
                 </Button>
 
             </Container>
-            <Container 
+            <Container
                 style={{
                     backgroundColor: 'black',
                     maxHeight: '689px',
@@ -280,7 +358,7 @@ const Subscription = () => {
                     backgroundColor: 'black',
                     display: 'flex',
                     justifyContent: 'center'
-                    }}
+                }}
                 >
                     <Card sx={{ maxWidth: 520 }} style={{ backgroundColor: 'black' }}>
                         <CardMedia
@@ -313,7 +391,7 @@ const Subscription = () => {
                                     marginTop: 20
                                 }}
                             >
-                               Very smooth and rich flavor. I loved it so much I got a subscription of the Medium Roast Death Cups
+                                Very smooth and rich flavor. I loved it so much I got a subscription of the Medium Roast Death Cups
                             </Typography>
                             <Typography
                                 variant="h5"
@@ -328,7 +406,7 @@ const Subscription = () => {
                                 - Sue P.
                             </Typography>
                         </CardContent>
- 
+
                     </Card>
                     <Card sx={{ maxWidth: 520 }} style={{ backgroundColor: 'black' }}>
                         <CardMedia
@@ -361,7 +439,7 @@ const Subscription = () => {
                                     marginTop: 20
                                 }}
                             >
-                               I'm on a subscription, and probably will be untill the day I drop dead!
+                                I'm on a subscription, and probably will be untill the day I drop dead!
                             </Typography>
                             <Typography
                                 variant="h5"
@@ -376,7 +454,7 @@ const Subscription = () => {
                                 - Jephta C.
                             </Typography>
                         </CardContent>
- 
+
                     </Card>
                     <Card sx={{ maxWidth: 520 }} style={{ backgroundColor: 'black' }}>
                         <CardMedia
@@ -409,7 +487,7 @@ const Subscription = () => {
                                     marginTop: 20
                                 }}
                             >
-                               We love the coffee so much that we have a monthly subscription to the dark and medium roast!
+                                We love the coffee so much that we have a monthly subscription to the dark and medium roast!
                             </Typography>
                             <Typography
                                 variant="h5"
@@ -424,7 +502,7 @@ const Subscription = () => {
                                 - Erica O.
                             </Typography>
                         </CardContent>
- 
+
                     </Card>
 
                 </Box>
