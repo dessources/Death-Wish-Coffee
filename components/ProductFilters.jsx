@@ -3,10 +3,10 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Add from "@mui/icons-material/Add";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Typography from "@mui/material/Typography";
+import { filter, filtersSection, filterSummary, filterSummaryRoot } from "../styles/Shop.module.css";
 
-export default function ProductFilters({ className, onfilterChange }) {
+export default function ProductFilters({ onfilterChange }) {
   const handleClick = (filter, value) => (e) => {
     // si le bouton est selectioné (attribut data-selected='true')
     // on le deselectionne (attribut data-selected='false') et vice-versa
@@ -17,10 +17,15 @@ export default function ProductFilters({ className, onfilterChange }) {
   };
 
   return (
-    <div className={className}>
-      <Accordion>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
-          <Typography>Roast</Typography>
+    <div className={filtersSection}>
+      <Accordion className={filter}>
+        <AccordionSummary
+          className={filterSummaryRoot}
+          expandIcon={"+"}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography className={filterSummary}>Roast</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <div>
@@ -33,9 +38,14 @@ export default function ProductFilters({ className, onfilterChange }) {
           </div>
         </AccordionDetails>
       </Accordion>
-      <Accordion>
-        <AccordionSummary expandIcon={<Add />} aria-controls="panel2a-content" id="panel2a-header">
-          <Typography>Style</Typography>
+      <Accordion className={filter}>
+        <AccordionSummary
+          className={filterSummaryRoot}
+          expandIcon={"+"}
+          aria-controls="panel2a-content"
+          id="panel2a-header"
+        >
+          <Typography className={filterSummary}>Style</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <div>
@@ -48,9 +58,14 @@ export default function ProductFilters({ className, onfilterChange }) {
           </div>
         </AccordionDetails>
       </Accordion>
-      <Accordion>
-        <AccordionSummary expandIcon={<Add />} aria-controls="panel3a-content" id="panel3a-header">
-          <Typography>Format</Typography>
+      <Accordion className={filter}>
+        <AccordionSummary
+          className={filterSummaryRoot}
+          expandIcon={"+"}
+          aria-controls="panel3a-content"
+          id="panel3a-header"
+        >
+          <Typography className={filterSummary}>Format</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <div>

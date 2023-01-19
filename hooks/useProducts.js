@@ -7,12 +7,17 @@ import sortProducts from "../utils/sortProducts";
 export default function useProducts() {
   const productsReducer = (state, action) => {
     if (action.type === "sort") {
+      console.log(action.sortOrder);
       return sortProducts(state?.products, action);
     } else if (action.type === "filter") {
       // pour le fitltre, on retourne un tableau de touts les produits
       // avec certains produits ayant une propriété hidden indiquant
       // qu'ils ne doivent pas etre affiché
       return applyFilters(state?.products, action);
+    } else if (action.type === "initialize") {
+      console.log(`initialize dispatched...`);
+      // return action.payload;
+      return { products: action.payload.sort((a, b) => a.id - b.id), quantityDisplayed: action.payload.length };
     } else throw new Error("Action inconnue");
   };
 
@@ -44,11 +49,12 @@ export default function useProducts() {
   });
   const [sortOrder, setSortOrder] = React.useState("");
 
+  //requete api
   React.useEffect(() => {
     console.log("loading...");
     axios.get(coffeesQueryURL).then((data) => {
       console.log("request finished");
-      dispatch({ type: "sort", sortOrder: "byId", payload: data.data.data });
+      dispatch({ type: "initialize", payload: data.data.data });
     });
   }, []);
   // rerender quan les filters changent
@@ -56,11 +62,11 @@ export default function useProducts() {
     console.log("the filters are", filters);
     dispatch({ type: "filter", filters });
   }, [filters]);
-  // rerender quan l'ordre de triage change
 
+  // rerender quan l'ordre de triage change
   React.useEffect(() => {
     dispatch({ type: "sort", sortOrder });
   }, [sortOrder]);
 
-  return { data, setSortOrder, setFilters };
+  return { data, setSortOrder, setFilters, sortOrder };
 }

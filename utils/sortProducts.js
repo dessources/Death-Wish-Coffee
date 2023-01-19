@@ -1,4 +1,5 @@
 export default function sortProducts(state, action) {
+  if (!state) return;
   let quantityDisplayed = state?.length;
   let sortedProducts;
   switch (action.sortOrder) {
@@ -21,11 +22,10 @@ export default function sortProducts(state, action) {
         ...state.sort((a, b) => (a.attributes.name.toLowerCase() < b.attributes.name.toLowerCase() ? 1 : -1)),
       ];
       break;
-    case "byId":
-      sortedProducts = [...action.payload?.sort((a, b) => a.id - b.id)];
-      break;
+
     default:
-      sortedProducts = state;
+      sortedProducts = [...state.sort((a, b) => a.id - b.id)];
+      break;
   }
   return { products: sortedProducts, quantityDisplayed };
 }

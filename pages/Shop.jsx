@@ -8,38 +8,39 @@ import ProductSort from "../components/ProductSort";
 import useProducts from "../hooks/useProducts";
 
 //styles
-import * as classes from "../styles/Shop.module.css";
+import { productSection, sortSection, products, product, name, reviews, price } from "../styles/Shop.module.css";
 
 const Shop = () => {
-  const { data, setFilters, setSortOrder } = useProducts();
-  console.log(data?.products);
+  const { data, setFilters, setSortOrder, sortOrder } = useProducts();
+  // console.log(data?.products);
 
   return (
     <>
       <Navbar />
 
       <main>
-        <div className={classes["product-section"]}>
+        <div className={productSection}>
           <ProductSort
-            className={classes["sort"]}
+            className={sortSection}
             handleChange={setSortOrder}
+            sortOrder={sortOrder}
             quantity={data?.quantityDisplayed}
           />
-          <ProductFilters className={classes["filters"]} onfilterChange={setFilters} />
-          <div className={classes["products"]}>
+          <ProductFilters onfilterChange={setFilters} />
+          <div className={products}>
             {data?.products?.map(({ id, attributes, hidden }) => {
               if (!hidden) {
                 return (
-                  <div key={id} className={classes["product"]}>
+                  <div key={id} className={product}>
                     <a href="#">
                       <img src={attributes.main_image?.data?.attributes?.formats?.small?.url} alt="" />
                     </a>
                     <a href="#">
-                      <div className={classes["name"]}>{attributes.name.toLowerCase()}</div>
+                      <div className={name}>{attributes.name.toLowerCase()}</div>
                     </a>
                     {attributes.reviews ? (
                       <a href="#">
-                        <div className={classes["reviews"]}>
+                        <div className={reviews}>
                           <RatingStars rating={attributes.rating} />
                           {attributes.reviews} reviews
                         </div>
@@ -47,7 +48,7 @@ const Shop = () => {
                     ) : (
                       ""
                     )}
-                    <div className={classes["price"]}>${attributes.price}</div>
+                    <div className={price}>${attributes.price}</div>
                   </div>
                 );
               } else return "";

@@ -3,8 +3,6 @@ export default function applyFilters(products, action) {
   let quantityDisplayed = 0;
   if (action.filters.active) {
     const filteredProducts = products.map((product) => {
-      console.log(action.filters);
-
       for (let key in action.filters) {
         if (action.filters[key].active) {
           // si la valeur de l'attribut en question de notre produit
