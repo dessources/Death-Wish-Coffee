@@ -88,11 +88,17 @@ a {
   .image img{
     height: 530px;
   }
+  .title-Coffee-Culture{
+    font-size: 40px;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .image img{
     height: 600px;
+  }
+  .title-Coffee-Culture{
+    font-size: 20px;
   }
 }
 

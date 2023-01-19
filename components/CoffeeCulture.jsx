@@ -54,10 +54,12 @@ const CoffeeCulture = () => {
 
   return (
     <div className="CoffeeCulture">
+      
       <h1 className="title-Coffee-Culture">COFFEE CULTURE</h1>
       <Slider {...settings}>
       
             {galleryImages.map((image, index) => (
+              
               <div className="image">
                 <Image src={image} alt="" />
               </div>          
