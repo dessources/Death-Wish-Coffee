@@ -4,6 +4,7 @@ import {SubNavbar} from '../components';
 import {FeaturedProducts} from '../components';
 import Footer from '../components/Footer'
 
+
 const index = () => {
 
   return (
