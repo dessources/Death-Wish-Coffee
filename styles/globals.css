@@ -78,6 +78,17 @@ a {
   border: solid 5px red;
 }
 
+.slick-prev:before, .slick-next:before {
+  font-size: 25px !important;
+  color: white !important;
+}
+
+.slick-dots li button:before {
+  color: white !important;
+  font-size: 20px !important;
+  margin-top: 25px;
+}
+
 @media screen and (max-width: 1700px) {
   .image img{
     height: 700px;
