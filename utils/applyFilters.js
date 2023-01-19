@@ -1,6 +1,7 @@
 export default function applyFilters(products, action) {
   if (!products) return;
   let quantityDisplayed = 0;
+
   if (action.filters.active) {
     const filteredProducts = products.map((product) => {
       for (let key in action.filters) {

@@ -7,8 +7,7 @@ import sortProducts from "../utils/sortProducts";
 export default function useProducts() {
   const productsReducer = (state, action) => {
     if (action.type === "sort") {
-      console.log(action.sortOrder);
-      return sortProducts(state?.products, action);
+      return sortProducts(state, action);
     } else if (action.type === "filter") {
       // pour le fitltre, on retourne un tableau de touts les produits
       // avec certains produits ayant une propriété hidden indiquant
@@ -41,12 +40,14 @@ export default function useProducts() {
   };
 
   const [data, dispatch] = React.useReducer(productsReducer);
+
   const [filters, setFilters] = React.useReducer(filtersReducer, {
     roast: { dark: false, medium: false, active: false },
     styles: { ground: false, "whole bean": false, active: false },
     format: { canned: false, bagged: false, "single serve": false, active: false },
     active: false,
   });
+
   const [sortOrder, setSortOrder] = React.useState("");
 
   //requete api
@@ -57,6 +58,7 @@ export default function useProducts() {
       dispatch({ type: "initialize", payload: data.data.data });
     });
   }, []);
+
   // rerender quan les filters changent
   React.useEffect(() => {
     console.log("the filters are", filters);
