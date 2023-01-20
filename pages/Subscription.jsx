@@ -26,14 +26,7 @@ const Subscription = () => {
                 }}
                 className="subscribeHero"
             >
-                <Box /* style={{
-                    backgroundColor: 'rgba(0, 0, 0, .5)',
-                    width: '550px',
-                    height: '450px',
-                    marginLeft: '56%',
-
-                    }} */
-                    className="save"
+                <Box className="save"
                 >
                     <Typography
                         variant='h1'
