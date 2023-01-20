@@ -12,7 +12,7 @@ export default function useProducts() {
       // pour le fitltre, on retourne un tableau de touts les produits
       // avec certains produits ayant une propriété hidden indiquant
       // qu'ils ne doivent pas etre affiché
-      return applyFilters(state?.products, action);
+      return applyFilters(state, action);
     } else if (action.type === "initialize") {
       console.log(`initialize dispatched...`);
       // return action.payload;

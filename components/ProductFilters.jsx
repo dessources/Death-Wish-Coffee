@@ -2,7 +2,6 @@ import React from "react";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
-import Add from "@mui/icons-material/Add";
 import Typography from "@mui/material/Typography";
 import {
   filter,
@@ -10,6 +9,7 @@ import {
   filterSummary,
   filterSummaryRoot,
   filterDetails,
+  filterExpanded,
 } from "../styles/Shop.module.css";
 
 export default function ProductFilters({ onfilterChange }) {
@@ -22,9 +22,20 @@ export default function ProductFilters({ onfilterChange }) {
     onfilterChange({ filter, value, selected });
   };
 
+  const [expanded, setExpanded] = React.useState({});
+
+  const handleChange = (panel) => (event, isExpanded) => {
+    console.log(expanded);
+    if (expanded[panel]) {
+      setExpanded({ ...expanded, [panel]: "" });
+    } else {
+      setExpanded({ ...expanded, [panel]: filterExpanded });
+    }
+  };
+
   return (
     <div className={filtersSection}>
-      <Accordion className={filter}>
+      <Accordion className={`${filter} ${expanded["panel1"]}`} onChange={handleChange("panel1")}>
         <AccordionSummary
           className={filterSummaryRoot}
           expandIcon={"+"}
@@ -44,7 +55,7 @@ export default function ProductFilters({ onfilterChange }) {
           </div>
         </AccordionDetails>
       </Accordion>
-      <Accordion className={filter}>
+      <Accordion className={`${filter} ${expanded["panel2"]}`} onChange={handleChange("panel2")}>
         <AccordionSummary
           className={filterSummaryRoot}
           expandIcon={"+"}
@@ -64,7 +75,7 @@ export default function ProductFilters({ onfilterChange }) {
           </div>
         </AccordionDetails>
       </Accordion>
-      <Accordion className={filter}>
+      <Accordion className={`${filter} ${expanded["panel3"]}`} onChange={handleChange("panel3")}>
         <AccordionSummary
           className={filterSummaryRoot}
           expandIcon={"+"}

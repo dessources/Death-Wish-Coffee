@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 25% 75%;
   grid-template-rows: 48px auto;
-  width: 85%;
+  width: 80%;
   margin: 2rem auto;
   font-size: 1.1rem;
 }
@@ -13,11 +13,39 @@
   gap: 2rem;
   margin-top: 2rem;
 }
-.product img {
+.product {
+  position: relative;
+}
+
+.coverImage img {
   width: 100%;
   height: 80%;
   object-fit: cover;
   cursor: pointer;
+}
+.coverImage video {
+  display: none;
+  position: absolute;
+  width: 100%;
+}
+
+.coverImage:hover > video {
+  display: initial;
+}
+
+.product .addToCart {
+  height: 26px;
+  position: absolute;
+  top: 70%;
+  left: 80%;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  cursor: pointer;
+}
+
+.product:hover > .addToCart {
+  opacity: 1;
 }
 
 .name {
@@ -99,14 +127,12 @@
 
 .filter * {
   font-family: FenomenSans;
-  font-size: 1.4rem;
   color: white;
 }
 
 .filter {
   background-color: transparent;
   margin: 0 !important;
-  padding-top: 12px;
 }
 .filterSummaryRoot {
   padding-left: 0;
@@ -115,6 +141,13 @@
 
 .filterSummaryRoot div {
   margin: 0;
+}
+.filterExpanded .filterSummaryRoot div {
+  margin: 0;
+}
+.filterSummaryRoot p {
+  font-size: 1.4rem;
+  margin: 0.5rem 0;
 }
 
 .filterDetails {
@@ -125,16 +158,16 @@
 .filterDetails div {
   display: flex;
   justify-content: flex-start;
+  height: 4rem;
 }
 .filterDetails button {
   font-family: "FenomenSans-Book";
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
   text-transform: uppercase;
-  padding: 1rem;
+  padding: 0.5rem;
   color: black;
   margin-right: 0.5rem;
-  border-radius: 0;
   width: 30%;
   background: #898e8e;
   border: 1px solid transparent;

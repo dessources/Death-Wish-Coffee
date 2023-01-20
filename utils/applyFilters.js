@@ -1,45 +1,33 @@
-export default function applyFilters(products, action) {
-  if (!products) return;
+export default function applyFilters(state, action) {
+  if (!state) return;
   let quantityDisplayed = 0;
-
+  const products = state.products;
+  //si au moins un des filters est active
   if (action.filters.active) {
     const filteredProducts = products.map((product) => {
-      for (let key in action.filters) {
-        if (action.filters[key].active) {
+      for (let filter in action.filters) {
+        //si le fitler est actif on filtre
+        if (action.filters[filter].active) {
           // si la valeur de l'attribut en question de notre produit
           // est un tableau on verifie qu'au moins un des elements
           // du tableau fait parties de la liste de valeurs selectionées
           // par l'utilisateur pour ce filter.
 
-          if (product.attributes[key] instanceof Array) {
-            if (!product.attributes[key].some((item) => action.filters[key][item])) {
-              console.log(
-                `Aucune des valeurs de ${product.attributes.name}.${key}(${product.attributes[key]}) ne correspond pas aux filters on set hidden:true...`
-              );
+          if (product.attributes[filter] instanceof Array) {
+            if (!product.attributes[filter].some((item) => action.filters[filter][item])) {
               product.hidden = true;
               break;
             } else {
-              console.log(
-                `Une valeur de ${product.attributes.name}.${key}(${product.attributes[key]}) se trouve dans la propriete ${key} des filters`
-              );
               product.hidden = false;
             }
           }
           // sinon si la valeur de l'attribut en qustion de notre produit
-          // ne fait pas partie de la liste de valeurs selectionées
-          // par l'utilisateur pour ce filter et que l'attribut est définie
-          // on ajoute hidden:true
-          else if (!action.filters[key][product.attributes[key]]) {
-            console.log(
-              `${product.attributes.name}.${key}(${product.attributes[key]}) ne correspond pas aux filters on set hidden:true...`
-            );
-            console.info(action.filters[key]);
+          // n'est pas selectionée par l'utilisateur pour ce filter
+          // on met hidden:true
+          else if (!action.filters[filter][product.attributes[filter]]) {
             product.hidden = true;
             break;
           } else {
-            console.log(
-              `Une valeur de ${product.attributes.name}.${key}(${product.attributes[key]}) se trouve dans la propriete ${key} des filters`
-            );
             product.hidden = false;
           }
         }
@@ -51,6 +39,7 @@ export default function applyFilters(products, action) {
     });
     return { quantityDisplayed, products: filteredProducts };
   } else {
+    //sinon on  map tout les produits et on reset hidden a false pour tous
     const filteredProducts = products.map((product) => ({ ...product, hidden: false }));
     quantityDisplayed = products.length;
     return { quantityDisplayed, products: filteredProducts };

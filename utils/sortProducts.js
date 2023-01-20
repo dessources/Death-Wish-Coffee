@@ -1,7 +1,7 @@
 export default function sortProducts(state, action) {
   if (!state) return;
   let sortedProducts;
-  let products = state.products;
+  const products = state.products;
   switch (action.sortOrder) {
     case "price-ascending":
       sortedProducts = [...products.sort((a, b) => a.attributes.price - b.attributes.price)];
