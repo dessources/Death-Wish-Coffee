@@ -109,31 +109,128 @@ a {
   margin-top: 60px;
   width: 90%;
   color: white;
-  height: 800px;
+  height: 700px;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
-
 .card{
-  
   background-color: black;
 }
 
-/*.slick-next{
-  font-size: 40px !important;
-  background-color: 'white' !important;
-  margin: 50px !important;
+.name-product:hover{
+  color: red;
 }
-*/
-/*.slick-prev{
-  font-size: 40px !important;
-  background-color: 'white' !important;
-  margin-right: -100px !important;
+.slick-next{
+  font-size: 50px !important;
+ color:red !important;
+  margin: -100px 40px;
+  width: 50px !important;
+  height: auto !important;
 }
-*/
 
+.slick-prev{
+  font-size: 50px !important;
+  color: red !important;
+  margin: -100px 40px !important;
+  width: 50px !important;
+  height: auto !important;
+  z-index:1 !important;
+}
+
+.products-details{
+  margin-top: 60px;
+  display: flex;
+  width: 100%;
+}
+
+.images-details-product{
+  width: 50%;
+}
+
+.images-details-product img{
+  width: 100%;
+}
+
+.description-details-product{
+width: 50%;
+padding: 75px;
+margin-top: 50px;
+}
+
+.description-details-product h1{
+  color: red;
+  font-weight: bold;
+  font-size: 45px;
+}
+
+.price-details-product{
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.desciption-title-details-product{
+  margin-top: 25px;
+  font-weight: bold;
+  font-size: 27px;
+}
+
+.desciption-details-product{
+  margin-top: 20px;
+  width: 85%;
+  text-align: justify;
+}
+
+.styles-details-product{
+  margin-top: 10px;
+}
+
+.coffee-details{
+  padding: 40px;
+}
+
+.coffee-details li{
+  padding: 10px;
+  width: 80%;
+  
+}
+
+.btn-styles{
+  margin-top: 10px;
+  width: 205px;
+  height: 65px;
+  background-color: rgb(130, 130, 130);
+  color: black;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.btn-styles:focus{
+  background-color: rgb(52, 52, 52);
+  color: white;
+}
+
+.btn-add-cart{
+  margin-top: 50px;
+  background-color: red;
+  color: black;
+  width: 205px;
+  height: 65px;
+  font-weight: bold;
+  font-size: 15px;
+  
+}
+
+.whole-bean-icon{
+  margin-right: 30px;
+  font-size: 50px;
+}
+
+.ground-icon{
+  margin-right: 30px;
+  font-size: 50px;
+}
 
 @media (prefers-color-scheme: dark) {
   html {
