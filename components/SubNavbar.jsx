@@ -118,7 +118,7 @@ const SubNavbar = () => {
           marginLeft: 'auto',
           marginRight: 'auto',
           padding: 20,
-          color: "white"
+          color:"white"
         }}
       >
         Death Wish Coffee delivers a bold, full-bodied yet smooth and flavorful brew that will awaken your taste buds, with an extra kick of caffeine to ignite your attitude. We use the highest quality Fair Trade and organic arabica and robusta beans and roast them to never-bitter perfection.
