@@ -26,13 +26,13 @@ const Subscription = () => {
                 }}
                 className="subscribeHero"
             >
-                <Box style={{
+                <Box /* style={{
                     backgroundColor: 'rgba(0, 0, 0, .5)',
                     width: '550px',
                     height: '450px',
-                    marginLeft: '70%',
+                    marginLeft: '56%',
 
-                    }}
+                    }} */
                     className="save"
                 >
                     <Typography
@@ -732,7 +732,7 @@ const Subscription = () => {
                 </Typography>
                 <Box style={{
                     maxWidth: '100%',
-                    maxHeight: 185,
+                    maxHeight: 185/*  */,
                     backgroundColor: 'black',
                     display: 'flex',
                     justifyContent: 'center'

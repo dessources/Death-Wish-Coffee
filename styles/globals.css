@@ -106,6 +106,8 @@ a {
 }
 
 @media screen and (max-width: 1200px) {
+
+/*------Subnavbar--------*/
   .text-Subnavbar{
     display: none;
     
@@ -117,6 +119,16 @@ a {
   }
   .small-text{
     font-size: 45px;
+    
+  }
+
+/*-------Subscription-------*/
+
+  .save{
+    height: 426px;
+    margin-left: 48%;
+    background-color: rgba(0, 0, 0, .5);
+    width: 550px;
     
   }
 }
@@ -244,6 +256,17 @@ a {
   body {
     color: white;
     background: black;
+  }
+}
+
+@media screen and (min-width: 1200px){
+
+/*---------Subscrition--------*/
+  .save{
+    background-color: rgba(0, 0, 0, .5);
+    width: 550px;
+    height: 450px;
+    margin-left: 56%;
   }
 }
 
