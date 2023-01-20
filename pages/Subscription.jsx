@@ -23,7 +23,8 @@ const Subscription = () => {
                     backgroundImage: `url(${"subscribe2.png.webp"})`,
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat',
-                    backgroundSize: 'cover'
+                    backgroundSize: 'cover',
+                    
                 }}
                 className="subscribeHero"
             >
