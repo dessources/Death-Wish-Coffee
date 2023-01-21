@@ -1,11 +1,10 @@
 import React from "react";
 
-import addToCartIcon from "../public/images/add-to-cart.svg";
 import RatingStars from "../components/RatingStars";
 import ImageVideoCover from "./ImageVideoCover";
-
+import AddToCartForm from "./AddToCartForm";
 //styles
-import { products, product, name, reviews, price, addToCart } from "../styles/Shop.module.css";
+import { products, product, name, reviews, price } from "../styles/Shop.module.css";
 
 export default function Products({ data }) {
   return (
@@ -20,18 +19,17 @@ export default function Products({ data }) {
               <a href="#">
                 <div className={name}>{attributes.name.toLowerCase()}</div>
               </a>
-              {attributes.reviews ? (
+              {attributes.reviews > 0 && (
                 <a href="#">
                   <div className={reviews}>
                     <RatingStars rating={attributes.rating} />
                     {attributes.reviews} reviews
                   </div>
                 </a>
-              ) : (
-                ""
               )}
               <div className={price}>${attributes.price}</div>
-              <img src={addToCartIcon.src} className={addToCart} alt="" />
+
+              <AddToCartForm styles={attributes.styles} sizes={attributes.sizes} uid={attributes.uid} />
             </div>
           );
         } else return "";
