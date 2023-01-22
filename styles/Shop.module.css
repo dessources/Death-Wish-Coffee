@@ -126,7 +126,8 @@
 }
 
 .addToCartForm label svg {
-  height: 2rem;
+  height: 2.5rem;
+  width: 2.5rem;
   margin-right: 0.5rem;
 }
 .addToCartForm input[type="submit"] {
@@ -244,6 +245,10 @@
 
 .filterSummaryRoot div {
   margin: 0;
+}
+.filterSummaryRoot div:nth-child(2) {
+  font-size: 22px;
+  transform: none !important;
 }
 .filterExpanded .filterSummaryRoot div {
   margin: 0;

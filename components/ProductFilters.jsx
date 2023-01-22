@@ -24,7 +24,7 @@ export default function ProductFilters({ onfilterChange }) {
 
   const [expanded, setExpanded] = React.useState({});
 
-  const handleChange = (panel) => (event, isExpanded) => {
+  const handleChange = (panel) => {
     console.log(expanded);
     if (expanded[panel]) {
       setExpanded({ ...expanded, [panel]: "" });
@@ -35,10 +35,10 @@ export default function ProductFilters({ onfilterChange }) {
 
   return (
     <div className={filtersSection}>
-      <Accordion className={`${filter} ${expanded["panel1"]}`} onChange={handleChange("panel1")}>
+      <Accordion className={`${filter} ${expanded["panel1"]}`} onChange={() => handleChange("panel1")}>
         <AccordionSummary
           className={filterSummaryRoot}
-          expandIcon={"+"}
+          expandIcon={expanded["panel1"] ? "–" : "+"}
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
@@ -55,10 +55,10 @@ export default function ProductFilters({ onfilterChange }) {
           </div>
         </AccordionDetails>
       </Accordion>
-      <Accordion className={`${filter} ${expanded["panel2"]}`} onChange={handleChange("panel2")}>
+      <Accordion className={`${filter} ${expanded["panel2"]}`} onChange={() => handleChange("panel2")}>
         <AccordionSummary
           className={filterSummaryRoot}
-          expandIcon={"+"}
+          expandIcon={expanded["panel2"] ? "–" : "+"}
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
@@ -75,10 +75,10 @@ export default function ProductFilters({ onfilterChange }) {
           </div>
         </AccordionDetails>
       </Accordion>
-      <Accordion className={`${filter} ${expanded["panel3"]}`} onChange={handleChange("panel3")}>
+      <Accordion className={`${filter} ${expanded["panel3"]}`} onChange={() => handleChange("panel3")}>
         <AccordionSummary
           className={filterSummaryRoot}
-          expandIcon={"+"}
+          expandIcon={expanded["panel3"] ? "–" : "+"}
           aria-controls="panel3a-content"
           id="panel3a-header"
         >
