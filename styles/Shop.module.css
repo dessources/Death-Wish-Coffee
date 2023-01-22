@@ -15,6 +15,7 @@
 }
 .product {
   position: relative;
+  font-family: "FenomenSans-Book";
 }
 
 .coverImage img {
@@ -33,19 +34,121 @@
   display: initial;
 }
 
-.product .addToCart {
+.addToCart,
+.closeAddToCart {
   height: 26px;
   position: absolute;
-  top: 70%;
-  left: 80%;
   z-index: 10;
   opacity: 0;
   transition: opacity 0.4s ease;
   cursor: pointer;
 }
-
+.addToCart {
+  top: 70%;
+  left: 80%;
+}
+.closeAddToCart {
+  top: 70%;
+  left: 85%;
+  display: none;
+}
 .product:hover > .addToCart {
   opacity: 1;
+}
+
+.addToCart.hide {
+  opacity: 0 !important;
+  display: none;
+}
+
+.addToCartForm {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  margin: 0 auto;
+  height: 81%;
+  background-color: rgba(32, 30, 29, 0.74);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  display: none;
+}
+.show {
+  display: initial;
+  opacity: 1 !important;
+}
+
+.addToCartForm form {
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  margin-bottom: 2rem;
+}
+
+.addToCartForm form div {
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.addToCartForm label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  text-align: center;
+  padding: 0.5rem;
+  height: 4rem;
+  color: black;
+  flex: 1 1 30%;
+  background: #898e8e;
+  border-right: 1px solid #201e1d;
+  border-top: 1px solid #201e1d;
+  cursor: pointer;
+}
+
+.addToCartForm .selectedLabel {
+  border: 1px solid #e12727;
+  background: #555858;
+  color: #dedbd9;
+  fill: #dedbd9;
+}
+
+.addToCartForm label span::first-letter {
+  text-transform: uppercase;
+}
+
+.addToCartForm input[type="radio"] {
+  appearance: none;
+}
+
+.addToCartForm label svg {
+  height: 2rem;
+  margin-right: 0.5rem;
+}
+.addToCartForm input[type="submit"] {
+  cursor: pointer;
+  position: relative;
+  top: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 216px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 0;
+  color: #201e1d;
+  background-color: #e12727;
+  font-size: 16px;
+  font-family: "FenomenSans-Book";
+  line-height: 1.5;
+  appearance: none !important;
+  transition: background-color 0.3s cubic-bezier(0.06, 0.305, 0, 1);
 }
 
 .name {
