@@ -41,6 +41,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: FenomenSans-Book, sans-serif;
+  background-color: black;
 }
 header a {
   font-family: FenomenSans;
