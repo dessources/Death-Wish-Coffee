@@ -25,7 +25,7 @@ export default function AddToCartForm({ styles, sizes, uid }) {
                   id={uid + style}
                   name="style"
                   value={style}
-                  onChange={(e) => setselectedStyle(style)}
+                  onClick={(e) => setselectedStyle(style === selectedStyle ? "" : style)}
                 />
                 <label htmlFor={uid + style} className={selectedStyle === style ? selectedLabel : ""}>
                   {labelIcons[style]}
@@ -43,7 +43,7 @@ export default function AddToCartForm({ styles, sizes, uid }) {
                     id={uid + size}
                     name="size"
                     value={size}
-                    onChange={() => setSelectedSize(size)}
+                    onClick={() => setSelectedSize(size === selectedSize ? "" : size)}
                   />
                   <label htmlFor={uid + size} className={selectedSize === size ? selectedLabel : ""}>
                     {labelIcons[size]}
