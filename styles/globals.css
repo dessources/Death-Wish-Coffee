@@ -124,6 +124,11 @@ a {
     display: none;
   }
   .smallscreen {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 6rem;
     display: flex;
     justify-content: space-around;
   }
