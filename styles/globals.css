@@ -129,6 +129,8 @@ a {
   }
 }
 
+
+
 @media screen and (max-width: 768px) {
   .header > :nth-child(2) {
     position: fixed;

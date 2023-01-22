@@ -26,7 +26,7 @@ const Footer = () => {
                     >
                         LET'S DRINK COFFEE AND THROW THINGS AT HAPPY PEOPLE
                     </Typography>
-                    <form style={{ padding: 20, display: 'flex' }}>
+                    <form style={{ padding: 20, display: 'flex', marginBottom: 50 }}>
                         <TextField
                             style={{
                                 backgroundColor: 'white',
