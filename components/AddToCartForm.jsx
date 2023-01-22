@@ -12,7 +12,7 @@ export default function AddToCartForm({ styles, sizes, uid }) {
   const [selectedSize, setSelectedSize] = React.useState("");
   const [selectedStyle, setselectedStyle] = React.useState("");
   const [addToCartFormVisibility, setAddToCartFormVisibility] = React.useState(false);
-  const labelIcons = { ground: <Ground />, "whole bean": <WholeBean />, 1: "" };
+  const labelIcons = { ground: <Ground />, "whole bean": <WholeBean /> };
   return (
     <>
       <div className={`${addToCartForm} ${addToCartFormVisibility && show}`}>
