@@ -75,8 +75,6 @@ a {
 
 .smallscreen-menu {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100vh;
   transition: 0.5s ease;
@@ -93,6 +91,65 @@ a {
   right: 50px;
 }
 
+
+.title-Coffee-Culture{
+  justify-content: center;
+  margin-top: 50px;
+  display: flex;
+  font-weight: bold;
+  margin-bottom: 50px;
+  font-size: 70px;
+}
+
+.image img{
+  object-fit: cover;
+  width: 100%;
+  max-height: 750px;
+  top: 0;
+  left: 0;
+}
+
+.image:hover{
+  border: solid 5px red;
+}
+
+.slick-prev:before, .slick-next:before {
+  font-size: 25px !important;
+  color: white !important;
+}
+
+.slick-dots li button:before {
+  color: white !important;
+  font-size: 20px !important;
+  margin-top: 25px;
+}
+
+@media screen and (max-width: 1700px) {
+  .image img{
+    height: 700px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .image img{
+    height: 530px;
+  }
+  .title-Coffee-Culture{
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .image img{
+    height: 600px;
+  }
+  .title-Coffee-Culture{
+    font-size: 20px;
+  }
+}
+
+
+=======
 /*--------Subscription-----------------*/
 
 .subscribeButton {
@@ -118,6 +175,7 @@ a {
 .findBrew:hover {
   background-color: #424242;
 }
+
 
 @media screen and (max-width: 1400px) {
   .navbar {
