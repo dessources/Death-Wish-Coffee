@@ -4,11 +4,11 @@ import RatingStars from "../components/RatingStars";
 import ImageVideoCover from "./ImageVideoCover";
 import AddToCartForm from "./AddToCartForm";
 //styles
-import { products, product, name, reviews, price } from "../styles/Shop.module.css";
+import { productSection, product, name, reviews, price } from "../styles/Shop.module.css";
 
 export default function Products({ data }) {
   return (
-    <div className={products}>
+    <div className={productSection}>
       {data?.products?.map(({ id, attributes, hidden }) => {
         if (!hidden) {
           return (
