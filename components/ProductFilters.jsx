@@ -56,6 +56,7 @@ export default function ProductFilters({ onFilterChange, filtersVisible, filters
                         if (filterNameKey !== "active") {
                           return (
                             <button
+                              key={i}
                               data-selected={filterKey[filterNameKey] ? true : false}
                               onClick={handleClick(filterKey, filterNameKey)}
                             >
