@@ -11,8 +11,9 @@ import LoginIcon from "@mui/icons-material/Login";
 import Link from "next/link";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import KeepMountedModal from '../components/Modal.js'
 
-const Navbar = () => {
+const Navbar = ({handleOpen}) => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
@@ -177,7 +178,8 @@ const Navbar = () => {
             aria-label="menu"
             sx={{ mr: 2 }}
           >
-            <ShoppingCartIcon />
+            <ShoppingCartIcon onClick={handleOpen}/>
+            <KeepMountedModal/>
           </IconButton>
         </Box>
 
