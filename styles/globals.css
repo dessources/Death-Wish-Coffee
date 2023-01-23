@@ -156,7 +156,7 @@ a {
 .description-details-product{
 width: 50%;
 padding: 75px;
-margin-top: 50px;
+margin-top: 25px;
 }
 
 .description-details-product h1{
@@ -191,7 +191,7 @@ margin-top: 50px;
 }
 
 .coffee-details li{
-  padding: 10px;
+  padding: 5px;
   width: 80%;
   
 }
@@ -203,17 +203,18 @@ margin-top: 50px;
   background-color: rgb(130, 130, 130);
   color: black;
   font-weight: bold;
+  font-size: 16px;
   margin-right: 10px;
 }
 
 .btn-styles:focus{
   background-color: rgb(52, 52, 52);
   color: white;
+  border: solid red 1px;
 }
 
 .btn-add-cart{
   margin-top: 50px;
-  background-color: red;
   color: black;
   width: 205px;
   height: 65px;

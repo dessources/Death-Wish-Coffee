@@ -41,6 +41,7 @@ export const getStaticProps = async (context) => {
 };
 
 const Detail = ({ coffee }) => {
+
   const settings = {
     dots: false,
     infinite: true,
@@ -48,8 +49,12 @@ const Detail = ({ coffee }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     initialSlide: 0,
-    nextArrow: <FlashOnIcon />,
-    prevArrow: <FlashOnIcon />,
+    nextArrow: <FlashOnIcon style={{
+      color:coffee?.data?.attributes?.accent_color
+    }}/>,
+    prevArrow: <FlashOnIcon style={{
+      color:coffee?.data?.attributes?.accent_color
+    }}/>,
     responsive: [
       {
         breakpoint: 1224,
@@ -81,6 +86,9 @@ const Detail = ({ coffee }) => {
   return (
     <div>
       <Navbar />
+      
+
+      
       <div className="products-details">
         <div className="images-details-product">
           <Slider {...settings}>
@@ -98,7 +106,7 @@ const Detail = ({ coffee }) => {
         </div>
         <div className="description-details-product">
           <div>
-            <h1>{coffee?.data?.attributes?.name}</h1>
+            <h1 style={{color:coffee?.data?.attributes?.accent_color}}>{coffee?.data?.attributes?.name}</h1>
           </div>
           <div className="price-details-product">
             ${coffee?.data?.attributes?.price}
@@ -123,9 +131,9 @@ const Detail = ({ coffee }) => {
           <div>
             {coffee?.data?.attributes?.sizes && (
               <>
-                <p>
+                <h3>
                   <strong>Size</strong>
-                </p>
+                </h3>
 
                 {Object.keys(coffee?.data?.attributes?.sizes).map((size) => (
                   <>
@@ -138,9 +146,9 @@ const Detail = ({ coffee }) => {
             )}
           </div>
           <div className="styles-details-product">
-            <p>
+            <h3>
               <strong>Type</strong>
-            </p>
+            </h3>
             {coffee?.data?.attributes?.styles?.map((style) => (
               <Button
                 className="btn-styles"
@@ -158,10 +166,14 @@ const Detail = ({ coffee }) => {
             ))}
           </div>
 
-          <button className="btn-add-cart">ADD TO CART</button>
+          <button className="btn-add-cart"style={{
+            backgroundColor:coffee?.data?.attributes?.accent_color
+          }}>ADD TO CART
+          </button>
         </div>
       </div>
-      <Footer />
+      <Footer style={{backgroundColor:coffee?.data?.attributes?.accent_color}}/>
+      
     </div>
   );
 };
