@@ -18,26 +18,30 @@ const SubNavbar = () => {
             width: 450,
             marginTop: 40,
             marginLeft: 20,
+            
           }}
+          
         >
           <Typography
             variant="h2"
             style={{
               fontWeight: "bold",
-              color: "white"
+              color:"white"
             }}
           >
             <span style={{
               color: 'red'
             }}>C</span>OLOMBIAN, KICKED UP !
           </Typography>
-          <Typography variant="h6"
-              style={{color: 'white'}}
+          <Typography 
+            variant="h6"
+            style={{color: "white"}}
           >
             Roundhouse your bad habits and start the new year fresh with an
             all-new blend ready to fuel you forward. Available in Ground, Whole
             Bean and Death Cups for a limited time only.
           </Typography>
+          
           <Button
             variant="contained"
             style={{
@@ -64,11 +68,14 @@ const SubNavbar = () => {
             variant="h3"
             style={{
               fontWeight: "bold",
+              color:'white'
             }}
           >
             COLOMBIAN, KICKED UP !
           </Typography>
-          <Typography variant="h6">
+          <Typography variant="h6"
+            style={{color:'white'}}
+          >
             Roundhouse your bad habits and start the new year fresh with an
             all-new blend ready to fuel you forward. Available in Ground, Whole
             Bean and Death Cups for a limited time only.
@@ -97,7 +104,9 @@ const SubNavbar = () => {
           fontSize: '68px'
         }}
       >
-        <div className="small-text">
+        <div className="small-text"
+          style={{backgroundColor:'black'}}
+        >
        REBELLIOUS BY NATURE
        </div>
       </Typography>
@@ -109,7 +118,8 @@ const SubNavbar = () => {
           display: 'block',
           marginLeft: 'auto',
           marginRight: 'auto',
-          padding: 20 
+          padding: 20,
+          color:"white"
         }}
       >
         Death Wish Coffee delivers a bold, full-bodied yet smooth and flavorful brew that will awaken your taste buds, with an extra kick of caffeine to ignite your attitude. We use the highest quality Fair Trade and organic arabica and robusta beans and roast them to never-bitter perfection.
