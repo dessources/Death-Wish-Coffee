@@ -331,7 +331,8 @@ a {
   .truckResp,
   .savingsResp,
   .accessResp,
-  .manageResp {
+  .manageResp,
+  .reviewsResp {
     display: none;
   }
 

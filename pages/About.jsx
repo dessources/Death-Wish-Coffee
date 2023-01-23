@@ -5,25 +5,67 @@ import { Box, Container } from '@mui/system'
 import { Button, Typography } from '@mui/material'
 import Link from "next/link";
 
+//styles
+import {
+  rebelsResp, 
+  rebels,
+  rebelsRespTitle,
+  history,
+  flash1,
+  flash2,
+  historyTitle,
+  timeline
+} from '../styles/About.module.css'
+
 const About = () => {
   return (
     <>
       <Navbar />
       <Box
+          className={rebelsResp}
+          style={{
+            width: 717,
+            height: 180
+          }}
+        >
+          <Typography
+            variant='h1'
+            align='left'
+            className={rebelsRespTitle}
+            
+          >
+            REBELS WITH CAUSES
+
+          </Typography>
+          <Typography
+            variant="body2"
+            style={{
+              color: 'white',
+              fontSize: 16,
+              fontWeight: 'lighter',
+              
+
+            }}
+          >
+            We lead with an alternative point of view, providing bold smooth cups of coffee to our people. We find fresh ways to enjoy coffee and we foster community along the way. Disrupting the status quo interests us, so we create edgy, sarcastic content. We live to rebel against blah beans-and a boring, lackluster life.
+          </Typography>
+
+        </Box>
+      <Box
         style={{
           maxWidth: '100%',
           height: '1194px',
-          backgroundImage: `url(${"rebels.jpg"})`,
+          backgroundImage: `url(${"images/rebels.jpg"})`,
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',
           paddingTop: 220,
 
         }}
-        className="aboutHero"
+        
       >
         <Box
-          className="rebels"
+          className={rebels}
           style={{
             marginLeft: 200,
             width: 629,
@@ -61,50 +103,39 @@ const About = () => {
 
       </Box>
       <Container
-        className="history"
-        style={{
-          backgroundColor: 'black',
-          width: '100%',
-          height: 346,
-          display: 'flex',
-          justifyContent: 'space-evenly',
-
-
-        }}
+        className={history}
+        
       >
         <img
-          src="flash1.png"
+          src="images/flash1.png"
           alt="red flash"
-          style={{ height: 300 }}
+          className={flash1}
         />
+        
         <Typography
           variant='h1'
           align='center'
-          style={{
-            color: 'white',
-            fontSize: 56,
-            fontWeight: '900',
-            fontFamily: 'revansmedium',
-            marginTop: 100
-          }}
+          className={historyTitle}
+          
         >
           OUR HISTORY
         </Typography>
         <img
-          src="flash2.png"
+          src="images/flash2.png"
           alt="red flash"
-          style={{ height: 300 }}
+          className={flash2}
         />
+        
 
       </Container>
       <Container
-        className='timeline'
-        style={{
+        className={timeline}
+        /* style={{
           display: 'flex',
           flexFlow: 'row wrap',
           backgroundColor: 'black',
           maxWidth: 1434
-        }}
+        }} */
       >
         <Box
           style={{
@@ -128,7 +159,7 @@ const About = () => {
             2012
           </Typography>
           <img
-            src="2012.png"
+            src="images/2012.png"
             alt="bottle"
             style={{
               height: 180,
@@ -213,7 +244,7 @@ const About = () => {
           }}
         >
           <img
-            src="2013.png"
+            src="images/2013.png"
             alt="GMA"
             style={{
               height: 180,
@@ -254,7 +285,7 @@ const About = () => {
             2016
           </Typography>
           <img
-            src="2016.png"
+            src="images/2016.png"
             alt="bean"
             style={{
               height: 180,
@@ -338,7 +369,7 @@ const About = () => {
           }}
         >
           <img
-            src="2018.png"
+            src="images/2018.png"
             alt="rocket"
             style={{
               height: 180,
@@ -379,7 +410,7 @@ const About = () => {
             2020
           </Typography>
           <img
-            src="2020.png"
+            src="images/2020.png"
             alt="house"
             style={{
               height: 180,

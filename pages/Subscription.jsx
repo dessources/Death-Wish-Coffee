@@ -18,7 +18,7 @@ const Subscription = () => {
         style={{
           maxWidth: "100%",
           height: "880px",
-          backgroundImage: `url(${"subscribe2.png.webp"})`,
+          backgroundImage: `url(${"images/subscribe2.png.webp"})`,
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
@@ -177,7 +177,7 @@ const Subscription = () => {
           className="cards"
         >
           <Card sx={{ maxWidth: 474 }} style={{ backgroundColor: "black" }} className="truck">
-            <CardMedia component="img" alt="red truck" height="165" image="truck.png" />
+            <CardMedia component="img" alt="red truck" height="165" image="images/truck.png" />
             <CardContent>
               <Typography
                 variant="h5"
@@ -206,7 +206,7 @@ const Subscription = () => {
             </CardContent>
           </Card>
           <Card sx={{ maxWidth: 474 }} style={{ backgroundColor: "black" }} className="savings">
-            <CardMedia component="img" alt="savings" height="165" image="save.png" />
+            <CardMedia component="img" alt="savings" height="165" image="images/save.png" />
             <CardContent>
               <Typography
                 variant="h5"
@@ -236,7 +236,7 @@ const Subscription = () => {
             </CardContent>
           </Card>
           <Card sx={{ maxWidth: 474 }} style={{ backgroundColor: "black" }} className="access">
-            <CardMedia component="img" alt="easy access" height="165" image="access.png" />
+            <CardMedia component="img" alt="easy access" height="165" image="images/access.png" />
             <CardContent>
               <Typography
                 variant="h5"
@@ -265,7 +265,7 @@ const Subscription = () => {
             </CardContent>
           </Card>
           <Card sx={{ maxWidth: 474 }} style={{ backgroundColor: "black" }} className="manage">
-            <CardMedia component="img" alt="manage" height="165" image="manage.png" />
+            <CardMedia component="img" alt="manage" height="165" image="images/manage.png" />
             <CardContent>
               <Typography
                 variant="h5"
@@ -302,7 +302,7 @@ const Subscription = () => {
               sx={{ height: 48, width: 76, margin: "auto" }}
               component="img"
               alt="red truck"
-              image="truck.png"
+              image="images/truck.png"
             />
             <CardContent>
               <Typography
@@ -340,7 +340,7 @@ const Subscription = () => {
               sx={{ height: 48, width: 76, margin: "auto" }}
               component="img"
               alt="savings"
-              image="save.png"
+              image="images/save.png"
             />
             <CardContent>
               <Typography
@@ -375,7 +375,7 @@ const Subscription = () => {
               sx={{ height: 48, width: 76, margin: "auto" }}
               component="img"
               alt="easy access"
-              image="access.png"
+              image="images/access.png"
             />
             <CardContent>
               <Typography
@@ -409,7 +409,7 @@ const Subscription = () => {
               sx={{ height: 48, width: 76, margin: "auto" }}
               component="img"
               alt="manage"
-              image="manage.png"
+              image="images/manage.png"
             />
             <CardContent>
               <Typography
@@ -492,7 +492,7 @@ const Subscription = () => {
           }}
         >
           <Card sx={{ maxWidth: 520 }} style={{ backgroundColor: "black" }}>
-            <CardMedia component="img" alt="ratings" height="50" image="stars.png" />
+            <CardMedia component="img" alt="ratings" height="50" image="images/stars.png" />
             <CardContent>
               <Typography
                 variant="h5"
@@ -535,7 +535,7 @@ const Subscription = () => {
             </CardContent>
           </Card>
           <Card sx={{ maxWidth: 520 }} style={{ backgroundColor: "black" }}>
-            <CardMedia component="img" alt="ratings" height="50" image="stars.png" />
+            <CardMedia component="img" alt="ratings" height="50" image="images/stars.png" />
             <CardContent>
               <Typography
                 variant="h5"
@@ -577,7 +577,7 @@ const Subscription = () => {
             </CardContent>
           </Card>
           <Card sx={{ maxWidth: 520 }} style={{ backgroundColor: "black" }}>
-            <CardMedia component="img" alt="ratings" height="50" image="stars.png" />
+            <CardMedia component="img" alt="ratings" height="50" image="images/stars.png" />
             <CardContent>
               <Typography
                 variant="h5"
@@ -646,18 +646,19 @@ const Subscription = () => {
         <Box
           style={{
             maxWidth: "100%",
-            maxHeight: 185 /*  */,
+            maxHeight: 185,
             backgroundColor: "black",
             display: "flex",
             justifyContent: "center",
           }}
+          
         >
           <Card sx={{ maxWidth: 588 }} style={{ backgroundColor: "black" }}>
             <CardMedia
               sx={{ height: 28, width: 156, margin: "auto" }}
               component="img"
               alt="ratings"
-              image="stars.png"
+              image="images/stars.png"
             />
             <CardContent>
               <Typography
