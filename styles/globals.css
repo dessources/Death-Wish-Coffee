@@ -1,13 +1,51 @@
+@font-face {
+  font-family: "FenomenSans";
+  src: url("../public/fonts/FenomenSans-Bold.eot");
+  src: local("☞Fenomen Sans Bold"), local("FenomenSans-Bold"),
+    url("../public/fonts/FenomenSans-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../public/fonts/FenomenSans-Bold.woff2") format("woff2"),
+    url("../public/fonts/FenomenSans-Bold.woff") format("woff"),
+    url("../public/fonts/FenomenSans-Bold.ttf") format("truetype");
+  font-style: normal;
+}
+@font-face {
+  font-family: "FenomenSans-Book";
+  src: url("../public/fonts/FenomenSans-Book.eot");
+  src: local("☞Fenomen Sans Book"), local("FenomenSans-Book"),
+    url("../public/fonts/FenomenSans-Book.eot?#iefix") format("embedded-opentype"),
+    url("../public/fonts/FenomenSans-Book.woff2") format("woff2"),
+    url("../public/fonts/FenomenSans-Book.woff") format("woff"),
+    url("../public/fonts/FenomenSans-Book.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "revansmedium";
+  src: url("../public/fonts/revans-medium-webfont.woff") format("woff2"),
+    url("../public/fonts/revans-medium-webfont.woff2") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html,
 body {
   position: relative;
   width: 100%;
   overflow-x: hidden;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding: 0;
+  margin: 0;
+  font-family: FenomenSans-Book, sans-serif;
   background-color: black;
 }
-
+header a {
+  font-family: FenomenSans;
+}
 a {
   color: inherit;
   text-decoration: none;
@@ -15,17 +53,12 @@ a {
 
 * {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  scroll-behavior: smooth;
 }
 
 .link:hover {
   text-decoration: underline;
   color: red;
 }
-
-
 
 .home {
   width: 100%;
@@ -42,8 +75,6 @@ a {
 
 .smallscreen-menu {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100vh;
   transition: 0.5s ease;
@@ -60,13 +91,97 @@ a {
   right: 50px;
 }
 
+
+.title-Coffee-Culture{
+  justify-content: center;
+  margin-top: 50px;
+  display: flex;
+  font-weight: bold;
+  margin-bottom: 50px;
+  font-size: 70px;
+}
+
+.image img{
+  object-fit: cover;
+  width: 100%;
+  max-height: 750px;
+  top: 0;
+  left: 0;
+}
+
+.image:hover{
+  border: solid 5px red;
+}
+
+.slick-prev:before, .slick-next:before {
+  font-size: 25px !important;
+  color: white !important;
+}
+
+.slick-dots li button:before {
+  color: white !important;
+  font-size: 20px !important;
+  margin-top: 25px;
+}
+
+@media screen and (max-width: 1700px) {
+  .image img{
+    height: 700px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .image img{
+    height: 530px;
+  }
+  .title-Coffee-Culture{
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .image img{
+    height: 600px;
+  }
+  .title-Coffee-Culture{
+    font-size: 20px;
+  }
+}
+
+/*--------Subscription-----------------*/
+
+.subscribeButton {
+  background-color: red;
+}
+
+.goToLogin {
+  background-color: red;
+}
+
+.findBrew {
+  background-color: red;
+}
+
+.subscribeButton:hover {
+  background-color: #424242;
+}
+
+.goToLogin:hover {
+  background-color: #424242;
+}
+
+.findBrew:hover {
+  background-color: #424242;
+}
+
+
 @media screen and (max-width: 1400px) {
   .navbar {
     display: none;
   }
   .smallscreen {
     display: flex;
-    justify-content:space-around;
+    justify-content: space-around;
   }
 }
 
@@ -83,23 +198,138 @@ a {
   }
 }
 
-.text-smallscreen{
+.text-smallscreen {
   display: none;
 }
 
 @media screen and (max-width: 1200px) {
-  .text-Subnavbar{
+  /*------Subnavbar--------*/
+  .text-Subnavbar {
     display: none;
-    
   }
-  .text-smallscreen{
+  .text-smallscreen {
     display: block;
     justify-content: center;
     text-align: center;
   }
-  .small-text{
+  .small-text {
     font-size: 45px;
-    
+  }
+
+  /*-------Subscription-------*/
+
+  .save {
+    height: 426px;
+    margin-left: 48%;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 550px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header > :nth-child(2) {
+    position: fixed;
+    right: 2rem;
+    z-index: 99;
+  }
+  .header-menu {
+    flex-direction: column;
+    background-color: var(--appColor);
+    padding: 2rem;
+  }
+
+  /*--------Footer----------*/
+
+  .footerRed {
+    display: none;
+  }
+  .footerBlack {
+    display: none;
+  }
+  .footerResp {
+    background-color: black;
+    height: 274px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .footerMenu {
+    max-width: 230px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .footerMenu h2 {
+    color: red;
+    text-align: center;
+  }
+
+  /*---------Subscription-----------*/
+
+  .subscribeHero {
+    max-width: 768px;
+    max-height: 320px;
+  }
+  .save,
+  .truck,
+  .savings,
+  .access,
+  .manage,
+  .reviews {
+    display: none;
+  }
+  .subscribeButtonResp,
+  .goToLoginResp {
+    background-color: red;
+  }
+
+  .subscribeButtonResp:hover,
+  .goToLoginResp:hover {
+    background-color: #424242;
+  }
+
+  .benefits {
+    height: 600px;
+    max-width: 100%;
+  }
+
+  .benefitsTitle {
+    color: white;
+    margin-top: 70px;
+    margin-bottom: 0;
+    font-size: 40px;
+    font-family: "revansmedium";
+  }
+
+  .cards {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .needHelpTitle {
+    color: white;
+    font-size: 40px;
+    font-family: "revansmedium";
+  }
+
+  .needHelpText {
+    color: white;
+    font-size: 14px;
+    font-weight: lighter;
+    font-family: "revansmedium";
+    text-align: center;
+  }
+
+  .findBrew {
+    color: black;
+    width: 180px;
+    height: 58px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 50px;
+    cursor: pointer;
+    margin-left: 33%;
   }
 }
 
@@ -233,6 +463,10 @@ margin-top: 25px;
   font-size: 50px;
 }
 
+.text-smallscreen {
+  display: none;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
@@ -243,38 +477,70 @@ margin-top: 25px;
   }
 }
 
-@media screen and (min-width: 768px){
-  .footerResp{
-    display: none;
+@media screen and (min-width: 1200px) {
+  /*---------Subscrition--------*/
+  .save {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 550px;
+    height: 450px;
+    margin-left: 56%;
   }
 }
 
-@media screen and ( max-width: 768px){
-  .footerRed{
+@media screen and (min-width: 768px) {
+  /*-----Footer-----------*/
+  .footerResp {
     display: none;
   }
-  .footerBlack{
+
+  /*--------Subscription------*/
+  .saveResp {
     display: none;
   }
-  .footerResp{
+  .benefits {
     background-color: black;
-    height: 274px;
+    max-height: 800px;
     max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-   
   }
 
-  .footerMenu{
-    max-width:230px;
-    margin-left: auto;
-    margin-right: auto;
-    
+  .benefitsTitle {
+    color: white;
+    font-size: 69px;
+    font-weight: 1000;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    font-family: "revansmedium";
   }
-  .footerMenu h2{
-    color: red;
+
+  .truckResp,
+  .savingsResp,
+  .accessResp,
+  .manageResp {
+    display: none;
+  }
+
+  .needHelpTitle {
+    color: white;
+    font-size: 69px;
+    font-weight: 1000;
+    font-family: "revansmedium";
+  }
+
+  .needHelpText {
+    color: white;
+    font-size: 24px;
+    font-weight: lighter;
     text-align: center;
+    margin-top: 20px;
   }
 
+  .findBrew {
+    color: black;
+    width: 230px;
+    height: 65px;
+    font-weight: 500;
+    margin-top: 50px;
+    cursor: pointer;
+    margin-left: 45%;
+  }
 }
