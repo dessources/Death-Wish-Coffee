@@ -13,19 +13,17 @@ export default function Products({ data }) {
         if (!hidden) {
           return (
             <div key={id} className={product}>
-              <a href="#">
+              <a href={`/Products/${id}`}>
                 <ImageVideoCover main_image={attributes.main_image} videoUrl={attributes.videoUrl} />
               </a>
-              <a href="#">
+              <a href={`/Products/${id}`}>
                 <div className={name}>{attributes.name.toLowerCase()}</div>
               </a>
               {attributes.reviews > 0 && (
-                <a href="#">
-                  <div className={reviews}>
-                    <RatingStars rating={attributes.rating} />
-                    {attributes.reviews} reviews
-                  </div>
-                </a>
+                <div className={reviews}>
+                  <RatingStars rating={attributes.rating} />
+                  {attributes.reviews} reviews
+                </div>
               )}
               <div className={price}>${attributes.price}</div>
 
