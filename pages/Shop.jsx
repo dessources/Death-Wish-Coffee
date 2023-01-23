@@ -7,27 +7,21 @@ import Products from "../components/Products";
 import useProducts from "../hooks/useProducts";
 
 //styles
-import { mainSection, mobileFilterSort, mobileFiltersSection } from "../styles/Shop.module.css";
+import { mainSection, productsHeader } from "../styles/Shop.module.css";
 
 const Shop = () => {
-  const { data, setFilters, setSortOrder, sortOrder } = useProducts();
+  const { data, setFilters, filters, setSortOrder, sortOrder } = useProducts();
   const [filtersVisible, setFiltersVisible] = React.useState(false);
 
   return (
     <>
       <Navbar />
       <main className={mainSection}>
-        <ProductSort handleChange={setSortOrder} sortOrder={sortOrder} quantity={data?.quantityDisplayed} />
-        <ProductFilters onfilterChange={setFilters} />
-        <div className={mobileFilterSort}>
+        <div className={productsHeader}>
           <span onClick={() => setFiltersVisible(!filtersVisible)}>Filter</span>
           <ProductSort handleChange={setSortOrder} sortOrder={sortOrder} quantity={data?.quantityDisplayed} />
         </div>
-        <ProductFilters
-          className={mobileFiltersSection}
-          filtersVisible={filtersVisible}
-          onfilterChange={setFilters}
-        />
+        <ProductFilters onFilterChange={setFilters} filtersVisible={filtersVisible} filters={filters} />
         <Products data={data} />
       </main>
     </>
