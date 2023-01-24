@@ -3,13 +3,14 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 
+
 const SubNavbar = () => {
   return (
     <>
       <div
         className="home"
         style={{
-          backgroundImage: `url(${"cafe.jpg"})`,
+          backgroundImage: `url(${'cafe.jpg'})`,
         }}
       >
         <Box className="text-Subnavbar"

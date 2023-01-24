@@ -1,8 +1,9 @@
 import React from "react";
 
-export default function ProductSort({ className, handleChange, sortOrder, quantity }) {
+import { sortSection } from "../styles/Shop.module.css";
+export default function ProductSort({ handleChange, sortOrder, quantity }) {
   return (
-    <div className={className}>
+    <div className={sortSection}>
       <span>{quantity} products</span>
       <div>
         <select aria-label="Sort Order" value={sortOrder} onChange={(e) => handleChange(e.target.value)}>
