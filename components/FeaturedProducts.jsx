@@ -56,7 +56,7 @@ const FeaturedProducts = () => {
   React.useEffect(() => {
     setStatus("fetching");
     fetch(
-      `http://localhost:1337/api/coffees?filters[id][$in][0]=78&filters[id][$in][1]=86&filters[id][$in][2]=75&filters[id][$in][3]=80&filters[id][$in][4]=84&populate=main_image,images`
+      `http://localhost:1337/api/coffees?filters[id][$in][0]=6&filters[id][$in][1]=86&filters[id][$in][2]=75&filters[id][$in][3]=80&filters[id][$in][4]=84&populate=main_image,images`
     )
       .then((res) => res.json())
       .then((data) => {
