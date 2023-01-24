@@ -7,6 +7,7 @@ import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import FlashOnIcon from '@mui/icons-material/FlashOn';
 
 
 const galleryImages = [gallery01, gallery02, gallery03, gallery04];
@@ -23,12 +24,14 @@ const CoffeeCulture = () => {
     centerMode: true,
     centerPadding: '10%',
     adaptiveHeight: true,
+    nextArrow: <FlashOnIcon />,
+    prevArrow: <FlashOnIcon />,
     responsive: [
       {
         breakpoint: 1224,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToShow: 1,
+          slidesToScroll: 1,
           infinite: true,
           dots: true
         }
@@ -36,9 +39,9 @@ const CoffeeCulture = () => {
       {
         breakpoint: 850,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 0
         }
       },
       {
