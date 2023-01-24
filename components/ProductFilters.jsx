@@ -57,7 +57,7 @@ export default function ProductFilters({ onFilterChange, filtersVisible, filters
                           return (
                             <button
                               key={i}
-                              data-selected={filterKey[filterNameKey] ? true : false}
+                              data-selected={filters[filterKey][filterNameKey] ? true : false}
                               onClick={handleClick(filterKey, filterNameKey)}
                             >
                               {filterNameKey}

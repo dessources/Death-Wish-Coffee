@@ -377,6 +377,9 @@
     font-weight: 600;
     font-size: 1rem;
   }
+  .addToCart {
+    display: none;
+  }
   .productSection {
     grid-area: 3/1/4/3;
     grid-gap: 1rem;
