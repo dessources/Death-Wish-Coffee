@@ -3,13 +3,14 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 
+
 const SubNavbar = () => {
   return (
     <>
       <div
         className="home"
         style={{
-          backgroundImage: `url(${"cafe.jpg"})`,
+          backgroundImage: `url(${'cafe.jpg'})`,
         }}
       >
         <Box className="text-Subnavbar"
@@ -118,7 +119,7 @@ const SubNavbar = () => {
           marginLeft: 'auto',
           marginRight: 'auto',
           padding: 20,
-          color: "white"
+          color:"white"
         }}
       >
         Death Wish Coffee delivers a bold, full-bodied yet smooth and flavorful brew that will awaken your taste buds, with an extra kick of caffeine to ignite your attitude. We use the highest quality Fair Trade and organic arabica and robusta beans and roast them to never-bitter perfection.

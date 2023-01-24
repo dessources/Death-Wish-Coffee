@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import Detail from '../pages/Products/[id]'
 import getStaticProps from '../pages/Products/[id]'
 
-export default function KeepMountedModal({coffee}) {
+export default function KeepMountedModal({coffee, name, price}) {
     const style = {
         position: 'absolute',
         top: '50%',
@@ -39,8 +39,8 @@ export default function KeepMountedModal({coffee}) {
             <hr/>
           </Typography>
           <Typography id="keep-mounted-modal-description" sx={{ mt: 2 }}>
-          
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+          {name}
+           {price}
           </Typography>
         </Box>
       </Modal>

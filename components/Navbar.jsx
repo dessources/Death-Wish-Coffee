@@ -65,16 +65,26 @@ const Navbar = ({handleOpen}) => {
                 <Link href={"/StoreLocator"}>STORE LOCATOR</Link>
               </Typography>
 
+              <div
+                style={{
+                  height: "120px",
+                  width: "120px",
+                  marginLeft: "60px",
+                  marginRight: "60px",
+                  visibility: "hidden",
+                }}
+              ></div>
+
               <Link href={"/"}>
                 <img
-                  src={
-                    "https://cdn.shopify.com/s/files/1/0271/7209/files/dwc-logo.png?v=1624458280"
-                  }
+                  src={"https://cdn.shopify.com/s/files/1/0271/7209/files/dwc-logo.png?v=1624458280"}
                   alt=""
                   style={{
                     height: "140px",
-                    marginLeft: "60px",
-                    marginRight: "60px",
+                    position: "absolute",
+                    top: "10%",
+                    left: "50%",
+                    transform: "translateX(-50%)",
                   }}
                 />
               </Link>
@@ -105,33 +115,15 @@ const Navbar = ({handleOpen}) => {
 
               <Box className="icons">
                 <Link href={"/Login"}>
-                  <IconButton
-                    size="large"
-                    edge="start"
-                    color="inherit"
-                    aria-label="menu"
-                    sx={{ mr: 2 }}
-                  >
+                  <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                     <LoginIcon />
                   </IconButton>
                 </Link>
 
-                <IconButton
-                  size="large"
-                  edge="start"
-                  color="inherit"
-                  aria-label="menu"
-                  sx={{ mr: 2 }}
-                >
+                <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                   <SearchIcon />
                 </IconButton>
-                <IconButton
-                  size="large"
-                  edge="start"
-                  color="inherit"
-                  aria-label="menu"
-                  sx={{ mr: 2 }}
-                >
+                <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                   <ShoppingCartIcon />
                 </IconButton>
               </Box>
@@ -139,36 +131,19 @@ const Navbar = ({handleOpen}) => {
           </AppBar>
         </Box>
       </div>
-      <div 
-        className="smallscreen"
-        style={{backgroundColor: "black"}}
-        
-        >
+      <div className="smallscreen" style={{ backgroundColor: "black" }}>
         <Box
           style={{
             marginTop: "30px",
-            
           }}
         >
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
+          <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
             <Link href={"/Login"}>
               <LoginIcon />
             </Link>
           </IconButton>
 
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
+          <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
             <SearchIcon />
           </IconButton>
           <IconButton
@@ -185,9 +160,7 @@ const Navbar = ({handleOpen}) => {
 
         <Link href={"/"}>
           <img
-            src={
-              "https://cdn.shopify.com/s/files/1/0271/7209/files/dwc-logo.png?v=1624458280"
-            }
+            src={"https://cdn.shopify.com/s/files/1/0271/7209/files/dwc-logo.png?v=1624458280"}
             alt=""
             style={{
               height: "140px",
@@ -209,14 +182,12 @@ const Navbar = ({handleOpen}) => {
               className="close"
               style={{
                 fontSize: "50",
-                
               }}
             />
             <Box
               style={{
                 textAlign: "center",
                 marginTop: "150px",
-                
               }}
             >
               <hr />
@@ -227,6 +198,7 @@ const Navbar = ({handleOpen}) => {
                 style={{
                   fontWeight: "bold",
                   padding: 40,
+                  color: "white",
                 }}
               >
                 <Link href={"/Subscription"}>SUBSCRIPTION</Link>
@@ -239,6 +211,7 @@ const Navbar = ({handleOpen}) => {
                 style={{
                   fontWeight: "bold",
                   padding: 40,
+                  color: "white",
                 }}
               >
                 <Link href={"/Shop"}>SHOP</Link>
@@ -251,6 +224,7 @@ const Navbar = ({handleOpen}) => {
                 style={{
                   fontWeight: "bold",
                   padding: 40,
+                  color: "white",
                 }}
               >
                 <Link href={"/StoreLocator"}>STORE LOCATOR</Link>
@@ -263,6 +237,7 @@ const Navbar = ({handleOpen}) => {
                 style={{
                   fontWeight: "bold",
                   padding: 40,
+                  color: "white",
                 }}
               >
                 <Link href={"/Blog"}>BLOG & RECIPES</Link>
@@ -275,6 +250,7 @@ const Navbar = ({handleOpen}) => {
                 style={{
                   fontWeight: "bold",
                   padding: 40,
+                  color: "white",
                 }}
               >
                 <Link href={"/About"}>ABOUT</Link>

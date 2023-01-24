@@ -7,12 +7,13 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import FlashOnIcon from "@mui/icons-material/FlashOn";
-import Backdrop from '@mui/material/Backdrop';
-import Box from '@mui/material/Box';
-import Modal from '@mui/material/Modal';
-import Fade from '@mui/material/Fade';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import Backdrop from "@mui/material/Backdrop";
+import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
+import Fade from "@mui/material/Fade";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import KeepMountedModal from '../../components/Modal'
 
 export const getStaticPaths = async () => {
   const res = await fetch(
@@ -45,22 +46,7 @@ export const getStaticProps = async (context) => {
   };
 };
 
-const Detail = ({ coffee }) => {
-
-  const style = {
-    position: 'absolute',
-    top: '22%',
-    left: '82%',
-    transform: 'translate(-50%, -50%)',
-    width: 450,
-    bgcolor: '#2C2A2A',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
-  };
-const [open, setOpen] = React.useState(false);
-const handleOpen = () => setOpen(true);
-const handleClose = () => setOpen(false);
+const Detail = ({ coffee, handleOpen }) => {
 
   const settings = {
     dots: false,
@@ -69,12 +55,20 @@ const handleClose = () => setOpen(false);
     slidesToShow: 1,
     slidesToScroll: 1,
     initialSlide: 0,
-    nextArrow: <FlashOnIcon style={{
-      color:coffee?.data?.attributes?.accent_color
-    }}/>,
-    prevArrow: <FlashOnIcon style={{
-      color:coffee?.data?.attributes?.accent_color
-    }}/>,
+    nextArrow: (
+      <FlashOnIcon
+        style={{
+          color: coffee?.data?.attributes?.accent_color,
+        }}
+      />
+    ),
+    prevArrow: (
+      <FlashOnIcon
+        style={{
+          color: coffee?.data?.attributes?.accent_color,
+        }}
+      />
+    ),
     responsive: [
       {
         breakpoint: 1224,
@@ -106,9 +100,7 @@ const handleClose = () => setOpen(false);
   return (
     <div>
       <Navbar />
-      
 
-      
       <div className="products-details">
         <div className="images-details-product">
           <Slider {...settings}>
@@ -126,7 +118,9 @@ const handleClose = () => setOpen(false);
         </div>
         <div className="description-details-product">
           <div>
-            <h1 style={{color:coffee?.data?.attributes?.accent_color}}>{coffee?.data?.attributes?.name}</h1>
+            <h1 style={{ color: coffee?.data?.attributes?.accent_color }}>
+              {coffee?.data?.attributes?.name}
+            </h1>
           </div>
           <div className="price-details-product">
             ${coffee?.data?.attributes?.price}
@@ -186,32 +180,18 @@ const handleClose = () => setOpen(false);
             ))}
           </div>
 
-          <button className="btn-add-cart" onClick={handleOpen} style={{
-            backgroundColor:coffee?.data?.attributes?.accent_color
-          }}>ADD TO CART
-          </button>
-          <Modal
-        keepMounted
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="keep-mounted-modal-title"
-        aria-describedby="keep-mounted-modal-description"
-      >
-        <Box sx={style}>
-          <Typography id="keep-mounted-modal-title" variant="h6" component="h2">
-            ALL YOUR STUFF
-            <hr/>
-          </Typography>
-          <Typography id="keep-mounted-modal-description" sx={{ mt: 2 }}>
-          {coffee?.data?.attributes?.name}
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography>
-        </Box>
-      </Modal>
+          
+            <KeepMountedModal 
+            name={coffee?.data?.attributes?.name}
+            price={coffee?.data?.attributes?.price}
+            />
+          
+          
         </div>
       </div>
-      <Footer style={{backgroundColor:coffee?.data?.attributes?.accent_color}}/>
-      
+      <Footer
+        style={{ backgroundColor: coffee?.data?.attributes?.accent_color }}
+      />
     </div>
   );
 };
