@@ -21,6 +21,14 @@ export default function useProducts() {
   };
 
   const filtersReducer = (state, button) => {
+    if (button === "reset") {
+      return {
+        roast: { dark: false, medium: false, active: false },
+        styles: { ground: false, "whole bean": false, active: false },
+        format: { canned: false, bagged: false, "single serve": false, active: false },
+        active: false,
+      };
+    }
     state[button.filter][button.value] = button.selected;
     state.active = false;
     for (const [key, value] of Object.entries(state)) {
@@ -70,5 +78,5 @@ export default function useProducts() {
     dispatch({ type: "sort", sortOrder });
   }, [sortOrder]);
 
-  return { data, setSortOrder, setFilters, sortOrder };
+  return { data, setSortOrder, sortOrder, setFilters, filters };
 }

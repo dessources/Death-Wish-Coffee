@@ -1,4 +1,5 @@
 import React from "react";
+
 import { sortSection } from "../styles/Shop.module.css";
 export default function ProductSort({ handleChange, sortOrder, quantity }) {
   return (
