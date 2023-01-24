@@ -312,7 +312,7 @@ const Footer = () => {
                                 style={{
                                     fontSize: 16,
                                     fontWeight: 'lighter',
-                                    marginTop: 25
+                                    marginTop: 22
                                 }}
                             >
                                 Get Wired with us

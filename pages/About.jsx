@@ -14,7 +14,27 @@ import {
   flash1,
   flash2,
   historyTitle,
-  timeline
+  timeline,
+  creation,
+  creationTitle,
+  creationText,
+  goodMorning,
+  goodMorningTitle,
+  goodMorningText,
+  goodMorningDate,
+  superBowl,
+  superBowlDate,
+  superBowlTitle,
+  superBowlText,
+  caffeinated,
+  caffeinatedTitle,
+  caffeinatedText,
+  caffeinatedDate,
+  caffeinatedYear,
+  historic,
+  historicDate,
+  historicTitle,
+  historicText
 } from '../styles/About.module.css'
 
 const About = () => {
@@ -130,30 +150,18 @@ const About = () => {
       </Container>
       <Container
         className={timeline}
-        /* style={{
-          display: 'flex',
-          flexFlow: 'row wrap',
-          backgroundColor: 'black',
-          maxWidth: 1434
-        }} */
+        
       >
         <Box
-          style={{
-            height: 198,
-            maxWidth: '50%',
-            display: 'flex',
-            alignItems: 'center',
-            marginRight: 50,
-            marginLeft: 'auto',
-            marginBottom: 50
-          }}
+          className={creation}
+          
         >
           <Typography
             style={{
               color: 'red',
               fontSize: 40,
               fontWeight: 900,
-              marginLeft: 100
+              
             }}
           >
             2012
@@ -169,79 +177,45 @@ const About = () => {
         <Box
           style={{
             maxWidth: '50%',
-            marginRight: 'auto',
+            marginRight: 25,
             marginBottom: 50
           }}
         >
           <Typography
-            style={{
-              color: 'red',
-              fontSize: 38,
-              fontWeight: 900,
-              textAlign: 'left',
-              fontFamily: 'revansmedium',
-              marginTop: 30
-            }}
+            className={creationTitle}
+            
           >
             THE CREATION
           </Typography>
           <Typography
+            className={creationText}
             variant="body1"
-            style={{
-              color: 'white',
-              fontSize: 24,
-              fontWeight: 'lighter',
-              textAlign: 'left',
-
-            }}
+           
           >
             Mike Brown brings his idea for Death Wish Coffee to life, creating the recipe + roasting process.
           </Typography>
         </Box>
         <Box
-          style={{
-            maxWidth: '50%',
-            marginRight: 50,
-            marginLeft: 'auto',
-            marginBottom: 50
-          }}
+          className={goodMorning}
+          
         >
           <Typography
-            style={{
-              color: 'red',
-              fontSize: 38,
-              fontWeight: 900,
-              textAlign: 'right',
-              fontFamily: 'revansmedium',
-              marginTop: 30
-            }}
+            className={goodMorningTitle}
+            
           >
             GOOD MORNING AMERICA
           </Typography>
           <Typography
+            className={goodMorningText}
             variant="body1"
-            style={{
-              color: 'white',
-              fontSize: 24,
-              fontWeight: 'lighter',
-              textAlign: 'right',
-
-            }}
+            
           >
             "Good Morning America" airs a segment on Death Wish Coffee and introduces us to thousands of people
           </Typography>
         </Box>
         <Box
-          style={{
-            height: 198,
-            maxWidth: '50%',
-            display: 'flex',
-            alignItems: 'center',
-            marginLeft: 50,
-            marginRight: 'auto',
-            marginBottom: 50
-            
-          }}
+          className={goodMorningDate}
+          
         >
           <img
             src="images/2013.png"
@@ -264,23 +238,12 @@ const About = () => {
           </Typography>
         </Box>
         <Box
-          style={{
-            height: 198,
-            maxWidth: '50%',
-            display: 'flex',
-            alignItems: 'center',
-            marginRight: 50,
-            marginLeft: 'auto',
-            marginBottom: 50
-          }}
+          className={superBowl}
+          
         >
           <Typography
-            style={{
-              color: 'red',
-              fontSize: 40,
-              fontWeight: 900,
-              marginLeft: 100
-            }}
+            className={superBowlDate}
+          
           >
             2016
           </Typography>
@@ -300,73 +263,40 @@ const About = () => {
           }}
         >
           <Typography
-            style={{
-              color: 'red',
-              fontSize: 38,
-              fontWeight: 900,
-              textAlign: 'left',
-              fontFamily: 'revansmedium',
-              marginTop: 30
-            }}
+            className={superBowlTitle}
+            
           >
             SUPER BOWL 50 AD AIRS
           </Typography>
           <Typography
+            className={superBowlText}
             variant="body1"
-            style={{
-              color: 'white',
-              fontSize: 24,
-              fontWeight: 'lighter',
-              textAlign: 'left',
-
-            }}
+            
           >
             We become the smallest company to run a commercial during Super Bowl 50, exposing 167 million viewers to Death Wish Coffee.
           </Typography>
         </Box>
         <Box
-          style={{
-            maxWidth: '50%',
-            marginRight: 50,
-            marginLeft: 'auto',
-            marginBottom: 50
-          }}
+          className={caffeinated}
+          
         >
           <Typography
-            style={{
-              color: 'red',
-              fontSize: 38,
-              fontWeight: 900,
-              textAlign: 'right',
-              fontFamily: 'revansmedium',
-              marginTop: 30
-            }}
+            className={caffeinatedTitle}
+            
           >
             CAFFEINATED THE UNIVERSE
           </Typography>
           <Typography
+            className={caffeinatedText}
             variant="body1"
-            style={{
-              color: 'white',
-              fontSize: 24,
-              fontWeight: 'lighter',
-              textAlign: 'right',
-
-            }}
+            
           >
             With the help of NASA Food Labs, Death Wish Coffee developed an instant freeze-dried blend of its coffee to fuel the astronauts on the International Space Station.
           </Typography>
         </Box>
         <Box
-          style={{
-            height: 198,
-            maxWidth: '50%',
-            display: 'flex',
-            alignItems: 'center',
-            marginLeft: 50,
-            marginRight: 'auto',
-            marginBottom: 50
-          }}
+          className={caffeinatedDate}
+          
         >
           <img
             src="images/2018.png"
@@ -377,35 +307,19 @@ const About = () => {
             }}
           />
           <Typography
-            style={{
-              color: 'red',
-              fontSize: 40,
-              fontWeight: 900,
-              marginRight: 100
-
-            }}
+            className={caffeinatedYear}
+            
           >
             2018
           </Typography>
         </Box>
         <Box
-          style={{
-            height: 198,
-            maxWidth: '50%',
-            display: 'flex',
-            alignItems: 'center',
-            marginRight: 50,
-            marginLeft: 'auto',
-            marginBottom: 50
-          }}
+          className={historic}
+          
         >
           <Typography
-            style={{
-              color: 'red',
-              fontSize: 40,
-              fontWeight: 900,
-              marginLeft: 100
-            }}
+            className={historicDate}
+            
           >
             2020
           </Typography>
@@ -425,26 +339,15 @@ const About = () => {
           }}
         >
           <Typography
-            style={{
-              color: 'red',
-              fontSize: 38,
-              fontWeight: 900,
-              textAlign: 'left',
-              fontFamily: 'revansmedium',
-              marginTop: 30
-            }}
+            className={historicTitle}
+            
           >
             HISTORIC HOMECOMINGS
           </Typography>
           <Typography
+            className={historicText}
             variant="body1"
-            style={{
-              color: 'white',
-              fontSize: 24,
-              fontWeight: 'lighter',
-              textAlign: 'left',
-
-            }}
+            
           >
             Death Wish Coffee headquarters moves to historic building from 1889 in Saratoga Springs, NY-the location of our original coffee shop.
           </Typography>
