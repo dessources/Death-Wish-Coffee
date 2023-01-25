@@ -16,12 +16,16 @@ import {
   historyTitle,
   timeline,
   creation,
+  creationYear,
+  creationImg,
   creationTitle,
   creationText,
   goodMorning,
   goodMorningTitle,
   goodMorningText,
   goodMorningDate,
+  gmYearResp,
+  gmYear,
   superBowl,
   superBowlDate,
   superBowlTitle,
@@ -157,21 +161,16 @@ const About = () => {
           
         >
           <Typography
-            style={{
-              color: 'red',
-              fontSize: 40,
-              fontWeight: 900,
-              
-            }}
+            className={creationYear}
+            
           >
             2012
           </Typography>
           <img
+            className={creationImg}
             src="images/2012.png"
             alt="bottle"
-            style={{
-              height: 180,
-            }}
+            
           />
         </Box>
         <Box
@@ -217,6 +216,12 @@ const About = () => {
           className={goodMorningDate}
           
         >
+          <Typography
+            className={gmYearResp}
+            
+          >
+            2013
+          </Typography>
           <img
             src="images/2013.png"
             alt="GMA"
@@ -226,13 +231,8 @@ const About = () => {
             }}
           />
           <Typography
-            style={{
-              color: 'red',
-              fontSize: 40,
-              fontWeight: 900,
-              marginRight: 100
-
-            }}
+            className={gmYear}
+            
           >
             2013
           </Typography>
@@ -379,6 +379,7 @@ const About = () => {
           }}
         >
           APPLY YOURSELF
+
         </Typography>
         <Typography
             variant="body1"
