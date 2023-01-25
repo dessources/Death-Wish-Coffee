@@ -21,9 +21,9 @@ export default async function handler(req, res) {
               currency: "usd",
               product_data: {
                 name: item.name,
-                description: `${item.size.replace("_", " ")} ${item.style}`,
+                //description: `${item.size.replace("_", " ")} ${item.style}`,
                 images: [
-                  "https://res.cloudinary.com/dbndsbjqo/image/upload/v1673335661/thumbnail_Columbian_137_5f45b930ea.jpg",
+                  item.main_image.data.attributes.formats.thumbnail.url,
                 ],
               },
               unit_amount: 450,
