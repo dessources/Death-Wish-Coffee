@@ -8,9 +8,19 @@ import {
   removeFromCart,
 } from '../redux/cart.slice';
 import {container, body, header, image, buttons} from '../styles/CartePage.module.css';
+import getStripe from "../lib/getStripe";
+import axios from "axios";
 
 
 const CartPage = () => {
+
+  const handleCheckout = async () => {
+  
+       const stripe = await getStripe();
+       const res = await axios.post("/api/stripe", cart);
+       console.log(res.data);
+       await stripe.redirectToCheckout({ sessionId: res.data.id });
+  }
 
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
@@ -61,6 +71,9 @@ console.log(cart)
           <h2>Grand Total: $ {getTotalPrice()}</h2>
         </>
       )}
+      <button onClick={handleCheckout}>
+        CHECKOUT
+      </button>
     </div>
   );
 };

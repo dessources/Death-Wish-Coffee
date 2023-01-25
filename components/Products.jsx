@@ -13,12 +13,11 @@ export default function Products({ data }) {
         if (!hidden) {
           return (
             <div key={id} className={product}>
-              <a href={`/Products/${id}`}>
+             
                <Link href={`/Products/${id}`}>
                 <ImageVideoCover main_image={attributes.main_image} videoUrl={attributes.videoUrl} />
-              </a>
-              <a href={`/Products/${id}`}>
               </Link>
+        
               <Link href={`/Products/${id}`}>
                 <div className={name}>{attributes.name.toLowerCase()}</div>
               </Link>
