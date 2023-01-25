@@ -14,7 +14,6 @@ export default function useProducts() {
       // qu'ils ne doivent pas etre affiché
       return applyFilters(state, action);
     } else if (action.type === "initialize") {
-      console.log(`initialize dispatched...`);
       // return action.payload;
       return { products: action.payload.sort((a, b) => a.id - b.id), quantityDisplayed: action.payload.length };
     } else throw new Error("Action inconnue");
@@ -60,16 +59,13 @@ export default function useProducts() {
 
   //requete api
   React.useEffect(() => {
-    console.log("loading...");
     axios.get(coffeesQueryURL).then((data) => {
-      console.log("request finished");
       dispatch({ type: "initialize", payload: data.data.data });
     });
   }, []);
 
   // rerender quan les filters changent
   React.useEffect(() => {
-    console.log("the filters are", filters);
     dispatch({ type: "filter", filters });
   }, [filters]);
 

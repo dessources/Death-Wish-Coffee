@@ -34,34 +34,7 @@
   display: initial;
 }
 
-.addToCart,
-.closeAddToCart {
-  height: 26px;
-  position: absolute;
-  z-index: 10;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  cursor: pointer;
-}
-.addToCart {
-  top: 70%;
-  left: 80%;
-}
-.closeAddToCart {
-  top: 70%;
-  left: 85%;
-  display: none;
-}
-.product:hover > .addToCart {
-  opacity: 1;
-}
-
-.addToCart.hide {
-  opacity: 0 !important;
-  display: none;
-}
-
-.addToCartForm {
+.addToCartContainer {
   position: absolute;
   top: 0;
   left: 50%;
@@ -69,13 +42,55 @@
   width: 100%;
   margin: 0 auto;
   height: 81%;
+}
+.addToCart,
+.closeAddToCart {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 85px;
+  height: 70px;
+  padding: 0 24px 21px 0;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.closeAddToCart {
+  z-index: 9;
+}
+
+.addToCart img,
+.closeAddToCart svg {
+  width: 100%;
+  height: 26px;
+}
+.product:hover .addToCart {
+  opacity: 1;
+}
+
+.addToCart.hide,
+.closeAddToCart.hide {
+  opacity: 0 !important;
+  display: none;
+}
+
+.closeAddToCart.show {
+  opacity: 1 !important;
+}
+.addToCartForm {
+  position: absolute;
+  width: 100%;
+  height: 100%;
   background-color: rgba(32, 30, 29, 0.74);
   opacity: 0;
   transition: opacity 0.5s ease;
   display: none;
 }
-.addToCartForm.show,
-.closeAddToCart.show {
+.addToCartForm.show {
   display: initial;
   opacity: 1 !important;
 }
@@ -312,7 +327,7 @@
   background: #555858;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
   .mainSection {
     grid-template-columns: 33% 66%;
   }
@@ -377,17 +392,23 @@
     font-weight: 600;
     font-size: 1rem;
   }
-  .addToCart {
+  .addToCart,
+  .addToCartForm {
     display: none;
   }
+
   .productSection {
     grid-area: 3/1/4/3;
     grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    grid-template-columns: repeat(3, minmax(10rem, 1fr));
     margin-top: 3rem;
   }
 }
-
+@media screen and (max-width: 768px) {
+  .productSection {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  }
+}
 @media screen and (max-width: 520px) {
   .reviews {
     flex-direction: column;
