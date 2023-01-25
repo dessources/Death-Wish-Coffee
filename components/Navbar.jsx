@@ -11,11 +11,16 @@ import LoginIcon from "@mui/icons-material/Login";
 import Link from "next/link";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import KeepMountedModal from '../components/Modal.js';
 import {navbar, smallscreen, link, close, smallscreenMenu} from '../styles/Navbar.module.css';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
+  const cart = useSelector((state) => state.cart);
+
+  const getItemsCount = () => {
+    return cart.reduce((accumulator, item) => accumulator + item.quantity, 0);
+  };
 
   return (
     <nav>
@@ -125,10 +130,19 @@ const Navbar = () => {
                   <SearchIcon />
                 </IconButton>
                 <Link href={"/Cart"}>
-                <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+                <IconButton  size="large" edge="start" color="inherit" aria-label="menu" >
                   <ShoppingCartIcon />
+                  <span style={{
+                    color:'red',
+                    fontSize:'16px',
+                    fontWeight: 'bold'
+                    }}
+                    >
+                      {getItemsCount()}
+                    </span>
                 </IconButton>
                 </Link>
+                
               </Box>
             </Toolbar>
           </AppBar>
@@ -157,7 +171,14 @@ const Navbar = () => {
             sx={{ mr: 2 }}
           >
             <ShoppingCartIcon />
-            
+            <span style={{
+                    color:'red',
+                    fontSize:'16px',
+                    fontWeight: 'bold'
+                    }}
+                    >
+                      {getItemsCount()}
+                    </span>
           </IconButton>
         </Box>
           

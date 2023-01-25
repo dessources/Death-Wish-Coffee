@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import Detail from '../pages/Products/[id]'
 import getStaticProps from '../pages/Products/[id]'
 
-export default function KeepMountedModal({coffee, name, price}) {
+export default function KeepMountedModal() {
     const style = {
         position: 'absolute',
         top: '50%',
