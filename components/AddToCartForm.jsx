@@ -38,10 +38,10 @@ export default function AddToCartForm({ styles, sizes, uid }) {
       // setCart([...cart, data])
 
       //demo chekcout with stripe
-      const stripe = await getStripe();
-      const res = await axios.post("/api/stripe", [data]);
-      console.log(res.data);
-      await stripe.redirectToCheckout({ sessionId: res.data.id });
+      // const stripe = await getStripe();
+      // const res = await axios.post("/api/stripe", [data]);
+      // console.log(res.data);
+      // await stripe.redirectToCheckout({ sessionId: res.data.id });
     }
   };
   return (
