@@ -8,6 +8,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import FlashOnIcon from '@mui/icons-material/FlashOn';
+import { titleCoffeeCulture, imageCaroussel } from '../styles/CoffeeCulture.module.css';
 
 
 const galleryImages = [gallery01, gallery02, gallery03, gallery04];
@@ -56,14 +57,14 @@ const CoffeeCulture = () => {
 
 
   return (
-    <div className="CoffeeCulture">
+    <div>
       
-      <h1 className="title-Coffee-Culture">COFFEE CULTURE</h1>
+      <h1 className={titleCoffeeCulture}>COFFEE CULTURE</h1>
       <Slider {...settings}>
       
             {galleryImages.map((image, index) => (
               
-              <div className="image">
+              <div className={imageCaroussel}>
                 <Image src={image} alt="" />
               </div>          
             ))}          

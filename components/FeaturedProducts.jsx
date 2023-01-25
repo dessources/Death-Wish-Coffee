@@ -11,6 +11,8 @@ import "slick-carousel/slick/slick-theme.css";
 import Link from "next/link";
 import FlashOnIcon from '@mui/icons-material/FlashOn';
 import Skeleton from '@mui/material/Skeleton';
+import RatingStars from "../components/RatingStars";
+import { reviews, card, featuredProducts, nameProduct } from "../styles/FeaturedProducts.module.css";
 
 const FeaturedProducts = () => {
   const settings = {
@@ -56,7 +58,7 @@ const FeaturedProducts = () => {
   React.useEffect(() => {
     setStatus("fetching");
     fetch(
-      `http://localhost:1337/api/coffees?filters[id][$in][0]=78&filters[id][$in][1]=86&filters[id][$in][2]=75&filters[id][$in][3]=80&filters[id][$in][4]=84&populate=main_image,images`
+      `http://localhost:1337/api/coffees?filters[id][$in][0]=6&filters[id][$in][1]=86&filters[id][$in][2]=75&filters[id][$in][3]=80&filters[id][$in][4]=84&populate=main_image,images`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -66,10 +68,10 @@ const FeaturedProducts = () => {
       });
   }, []);
   return (
-    <div className="FeaturedProducts">
+    <div className={featuredProducts}>
       <Slider {...settings}>
         {data?.map((coffee, id) => (
-          <Card className="card">
+          <Card className={card}>
             <CardActionArea
               style={{
                 backgroundColor: "black",
@@ -95,7 +97,7 @@ const FeaturedProducts = () => {
               <CardContent style={{}}>
                 <Box
                   style={{
-                    height: "90px",
+                    height: "60px",
                   }}
                 >
                   <Link href={`/Products/${coffee?.id}`}>
@@ -105,7 +107,7 @@ const FeaturedProducts = () => {
                       component="div"
                       fontWeight="bold"
                     >
-                      <span className="name-product">
+                      <span className={nameProduct}>
                         {coffee?.attributes?.name}
                       </span>
                     </Typography>
@@ -122,10 +124,21 @@ const FeaturedProducts = () => {
                   <Box
                     style={{
                       fontWeight: "bold",
-                      fontSize: "22px",
+                      fontSize: "15px",
                     }}
                   >
-                    {coffee?.attributes?.rating}⭐ ${coffee?.attributes?.price}
+                    <Box className={reviews}>
+                    <RatingStars rating={coffee?.attributes?.rating} style={{
+                      
+                    }}/>
+                    {coffee?.attributes?.reviews} Reviews
+                    </Box>
+                    <Box style={{
+                      fontSize: '20px',
+                      fontWeight: 'bold'
+                    }}>
+                    ${coffee?.attributes?.price}
+                    </Box>
                   </Box>
                 </Typography>
               </CardContent>

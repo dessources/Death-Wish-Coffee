@@ -24,8 +24,7 @@ export default function KeepMountedModal({coffee, name, price}) {
 
   return (
     <div>
-     <button className="btn-add-cart" onClick={handleOpen}>ADD TO CART
-    </button>
+     
       <Modal
         keepMounted
         open={open}
@@ -36,10 +35,11 @@ export default function KeepMountedModal({coffee, name, price}) {
         <Box sx={style}>
           <Typography id="keep-mounted-modal-title" variant="h6" component="h2">
             ALL YOUR STUFF
-            <hr/>
+            
           </Typography>
           <Typography id="keep-mounted-modal-description" sx={{ mt: 2 }}>
           {name}
+          
            {price}
           </Typography>
         </Box>

@@ -1,5 +1,5 @@
 import React from "react";
-
+import Link from "next/link";
 import RatingStars from "../components/RatingStars";
 import ImageVideoCover from "./ImageVideoCover";
 import AddToCartForm from "./AddToCartForm";
@@ -13,12 +13,12 @@ export default function Products({ data }) {
         if (!hidden) {
           return (
             <div key={id} className={product}>
-              <a href="#">
+               <Link href={`/Products/${id}`}>
                 <ImageVideoCover main_image={attributes.main_image} videoUrl={attributes.videoUrl} />
-              </a>
-              <a href="#">
+              </Link>
+              <Link href={`/Products/${id}`}>
                 <div className={name}>{attributes.name.toLowerCase()}</div>
-              </a>
+              </Link>
               {attributes.reviews > 0 && (
                 <a href="#">
                   <div className={reviews}>

@@ -55,99 +55,6 @@ a {
   box-sizing: border-box;
 }
 
-.link:hover {
-  text-decoration: underline;
-  color: red;
-}
-
-.home {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.smallscreen {
-  display: none;
-}
-
-.smallscreen-menu {
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  transition: 0.5s ease;
-  flex-direction: column;
-  z-index: 5;
-  background-color: black;
-}
-
-.close {
-  font-size: 27px;
-  cursor: pointer;
-  position: absolute;
-  top: 30px;
-  right: 50px;
-}
-
-
-.title-Coffee-Culture{
-  justify-content: center;
-  margin-top: 50px;
-  display: flex;
-  font-weight: bold;
-  margin-bottom: 50px;
-  font-size: 70px;
-}
-
-.image img{
-  object-fit: cover;
-  width: 100%;
-  max-height: 750px;
-  top: 0;
-  left: 0;
-}
-
-.image:hover{
-  border: solid 5px red;
-}
-
-.slick-prev:before, .slick-next:before {
-  font-size: 25px !important;
-  color: white !important;
-}
-
-.slick-dots li button:before {
-  color: white !important;
-  font-size: 20px !important;
-  margin-top: 25px;
-}
-
-@media screen and (max-width: 1700px) {
-  .image img{
-    height: 700px;
-  }
-}
-
-@media screen and (max-width: 1400px) {
-  .image img{
-    height: 530px;
-  }
-  .title-Coffee-Culture{
-    font-size: 40px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .image img{
-    height: 600px;
-  }
-  .title-Coffee-Culture{
-    font-size: 20px;
-  }
-}
-
 /*--------Subscription-----------------*/
 
 .subscribeButton {
@@ -174,17 +81,6 @@ a {
   background-color: #424242;
 }
 
-
-@media screen and (max-width: 1400px) {
-  .navbar {
-    display: none;
-  }
-  .smallscreen {
-    display: flex;
-    justify-content: space-around;
-  }
-}
-
 @media screen and (max-width: 768px) {
   .header > :nth-child(2) {
     position: fixed;
@@ -203,18 +99,6 @@ a {
 }
 
 @media screen and (max-width: 1200px) {
-  /*------Subnavbar--------*/
-  .text-Subnavbar {
-    display: none;
-  }
-  .text-smallscreen {
-    display: block;
-    justify-content: center;
-    text-align: center;
-  }
-  .small-text {
-    font-size: 45px;
-  }
 
   /*-------Subscription-------*/
 
@@ -333,25 +217,6 @@ a {
   }
 }
 
-.FeaturedProducts{
-  background-color: black;
-  margin: 0 auto;
-  margin-top: 60px;
-  width: 90%;
-  color: white;
-  height: 700px;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.card{
-  background-color: black;
-}
-
-.name-product:hover{
-  color: red;
-}
 .slick-next{
   font-size: 50px !important;
  color:red !important;
@@ -368,105 +233,6 @@ a {
   height: auto !important;
   z-index:1 !important;
 }
-
-.products-details{
-  margin-top: 60px;
-  display: flex;
-  width: 100%;
-}
-
-.images-details-product{
-  width: 50%;
-}
-
-.images-details-product img{
-  width: 100%;
-}
-
-.description-details-product{
-width: 50%;
-padding: 75px;
-margin-top: 25px;
-}
-
-.description-details-product h1{
-  color: red;
-  font-weight: bold;
-  font-size: 45px;
-}
-
-.price-details-product{
-  font-weight: bold;
-  font-size: 22px;
-}
-
-.desciption-title-details-product{
-  margin-top: 25px;
-  font-weight: bold;
-  font-size: 27px;
-}
-
-.desciption-details-product{
-  margin-top: 20px;
-  width: 85%;
-  text-align: justify;
-}
-
-.styles-details-product{
-  margin-top: 10px;
-}
-
-.coffee-details{
-  padding: 40px;
-}
-
-.coffee-details li{
-  padding: 5px;
-  width: 80%;
-  
-}
-
-.btn-styles{
-  margin-top: 10px;
-  width: 205px;
-  height: 65px;
-  background-color: rgb(130, 130, 130);
-  color: black;
-  font-weight: bold;
-  font-size: 16px;
-  margin-right: 10px;
-}
-
-.btn-styles:focus{
-  background-color: rgb(52, 52, 52);
-  color: white;
-  border: solid red 1px;
-}
-
-.btn-add-cart{
-  margin-top: 50px;
-  color: black;
-  width: 205px;
-  height: 65px;
-  font-weight: bold;
-  font-size: 15px;
-  
-}
-
-.whole-bean-icon{
-  margin-right: 30px;
-  font-size: 50px;
-}
-
-.ground-icon{
-  margin-right: 30px;
-  font-size: 50px;
-}
-
-.text-smallscreen {
-  display: none;
-}
-
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

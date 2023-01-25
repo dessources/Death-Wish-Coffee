@@ -2,18 +2,19 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import { home, textSubnavbar, textSmallscreen, smallText, } from '../styles/SubNavbar.module.css'
 
 
 const SubNavbar = () => {
   return (
     <>
       <div
-        className="home"
+        className={home}
         style={{
           backgroundImage: `url(${'cafe.jpg'})`,
         }}
       >
-        <Box className="text-Subnavbar"
+        <Box className={textSubnavbar}
           sx={{
             width: 450,
             marginTop: 40,
@@ -58,7 +59,7 @@ const SubNavbar = () => {
         </Box>
       </div>
 
-      <Box className="text-smallscreen"
+      <Box className={textSmallscreen}
           sx={{
             padding: '55px'
             
@@ -104,7 +105,7 @@ const SubNavbar = () => {
           fontSize: '68px'
         }}
       >
-        <div className="small-text"
+        <div className={smallText}
           style={{backgroundColor:'black'}}
         >
        REBELLIOUS BY NATURE

@@ -11,14 +11,15 @@ import LoginIcon from "@mui/icons-material/Login";
 import Link from "next/link";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import KeepMountedModal from '../components/Modal.js'
+import KeepMountedModal from '../components/Modal.js';
+import {navbar, smallscreen, link, close, smallscreenMenu} from '../styles/Navbar.module.css';
 
-const Navbar = ({handleOpen}) => {
+const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
     <nav>
-      <div className="navbar">
+      <div className={navbar}>
         <Box sx={{ flexGrow: 1 }}>
           <AppBar
             position="fixed"
@@ -30,7 +31,7 @@ const Navbar = ({handleOpen}) => {
           >
             <Toolbar>
               <Typography
-                className="link"
+                className={link}
                 variant="h6"
                 component="div"
                 sx={{ flexGrow: 1 }}
@@ -43,7 +44,7 @@ const Navbar = ({handleOpen}) => {
               </Typography>
 
               <Typography
-                className="link"
+                className={link}
                 variant="h6"
                 component="div"
                 sx={{ flexGrow: 1 }}
@@ -55,7 +56,7 @@ const Navbar = ({handleOpen}) => {
               </Typography>
 
               <Typography
-                className="link"
+                className={link}
                 variant="h6"
                 component="div"
                 style={{
@@ -90,7 +91,7 @@ const Navbar = ({handleOpen}) => {
               </Link>
 
               <Typography
-                className="link"
+                className={link}
                 variant="h6"
                 component="div"
                 sx={{ flexGrow: 1 }}
@@ -102,7 +103,7 @@ const Navbar = ({handleOpen}) => {
               </Typography>
 
               <Typography
-                className="link"
+                className={link}
                 variant="h6"
                 component="div"
                 sx={{ flexGrow: 1 }}
@@ -113,7 +114,7 @@ const Navbar = ({handleOpen}) => {
                 <Link href={"/About"}>ABOUT</Link>
               </Typography>
 
-              <Box className="icons">
+              <Box>
                 <Link href={"/Login"}>
                   <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                     <LoginIcon />
@@ -123,15 +124,17 @@ const Navbar = ({handleOpen}) => {
                 <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                   <SearchIcon />
                 </IconButton>
+                <Link href={"/Cart"}>
                 <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                   <ShoppingCartIcon />
                 </IconButton>
+                </Link>
               </Box>
             </Toolbar>
           </AppBar>
         </Box>
       </div>
-      <div className="smallscreen" style={{ backgroundColor: "black" }}>
+      <div className={smallscreen} style={{ backgroundColor: "black" }}>
         <Box
           style={{
             marginTop: "30px",
@@ -153,11 +156,11 @@ const Navbar = ({handleOpen}) => {
             aria-label="menu"
             sx={{ mr: 2 }}
           >
-            <ShoppingCartIcon onClick={handleOpen}/>
-            <KeepMountedModal/>
+            <ShoppingCartIcon />
+            
           </IconButton>
         </Box>
-
+          
         <Link href={"/"}>
           <img
             src={"https://cdn.shopify.com/s/files/1/0271/7209/files/dwc-logo.png?v=1624458280"}
@@ -176,10 +179,10 @@ const Navbar = ({handleOpen}) => {
           }}
         />
         {toggleMenu && (
-          <div className="smallscreen-menu">
+          <div className={smallscreenMenu}>
             <CloseIcon
               onClick={() => setToggleMenu(false)}
-              className="close"
+              className={close}
               style={{
                 fontSize: "50",
               }}
@@ -192,7 +195,7 @@ const Navbar = ({handleOpen}) => {
             >
               <hr />
               <Typography
-                className="link"
+                className={link}
                 variant="h4"
                 component="div"
                 style={{
@@ -205,7 +208,7 @@ const Navbar = ({handleOpen}) => {
               </Typography>
               <hr />
               <Typography
-                className="link"
+                className={link}
                 variant="h4"
                 component="div"
                 style={{
@@ -218,7 +221,7 @@ const Navbar = ({handleOpen}) => {
               </Typography>
               <hr />
               <Typography
-                className="link"
+                className={link}
                 variant="h4"
                 component="div"
                 style={{
@@ -231,7 +234,7 @@ const Navbar = ({handleOpen}) => {
               </Typography>
               <hr />
               <Typography
-                className="link"
+                className={link}
                 variant="h4"
                 component="div"
                 style={{
@@ -244,7 +247,7 @@ const Navbar = ({handleOpen}) => {
               </Typography>
               <hr />
               <Typography
-                className="link"
+                className={link}
                 variant="h4"
                 component="div"
                 style={{

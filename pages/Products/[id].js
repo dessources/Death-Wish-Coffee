@@ -7,13 +7,16 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import FlashOnIcon from "@mui/icons-material/FlashOn";
-import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
-import Modal from "@mui/material/Modal";
-import Fade from "@mui/material/Fade";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import KeepMountedModal from '../../components/Modal'
+import Product from '../../components/Products.jsx'
+import {productsDetails, imagesDetailsProduct, descriptionDetailsProduct, priceDetailsProduct, desciptionTitleDetailsProduct, 
+  desciptionDetailsProduct, stylesDetailsProduct, coffeeDetails, btnStyles, btnAddCart } from "../../styles/id.module.css";
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../redux/cart.slice'
+import Link from "next/link";
 
 export const getStaticPaths = async () => {
   const res = await fetch(
@@ -46,7 +49,9 @@ export const getStaticProps = async (context) => {
   };
 };
 
-const Detail = ({ coffee, handleOpen }) => {
+const Detail = ({ coffee }) => {
+
+  const dispatch = useDispatch();
 
   const settings = {
     dots: false,
@@ -101,8 +106,8 @@ const Detail = ({ coffee, handleOpen }) => {
     <div>
       <Navbar />
 
-      <div className="products-details">
-        <div className="images-details-product">
+      <div className={productsDetails}>
+        <div className={imagesDetailsProduct}>
           <Slider {...settings}>
             <img
               src={
@@ -116,23 +121,23 @@ const Detail = ({ coffee, handleOpen }) => {
             ))}
           </Slider>
         </div>
-        <div className="description-details-product">
+        <div className={descriptionDetailsProduct}>
           <div>
             <h1 style={{ color: coffee?.data?.attributes?.accent_color }}>
               {coffee?.data?.attributes?.name}
             </h1>
           </div>
-          <div className="price-details-product">
+          <div className={priceDetailsProduct}>
             ${coffee?.data?.attributes?.price}
           </div>
           <div>{coffee?.data?.attributes?.rating}</div>
-          <div className="desciption-title-details-product">
+          <div className={desciptionTitleDetailsProduct}>
             {coffee?.data?.attributes?.description_title}
           </div>
-          <div className="desciption-details-product">
+          <div className={desciptionDetailsProduct}>
             {coffee?.data?.attributes?.descriptions}
           </div>
-          <div className="coffee-details">
+          <div className={coffeeDetails}>
             {coffee?.data?.attributes?.details?.map((detail) => (
               <ul>
                 {detail?.content.map((contents) => (
@@ -151,7 +156,7 @@ const Detail = ({ coffee, handleOpen }) => {
 
                 {Object.keys(coffee?.data?.attributes?.sizes).map((size) => (
                   <>
-                    <Button className="btn-styles" variant="contained">
+                    <Button className={btnStyles} variant="contained">
                       ${coffee?.data?.attributes?.sizes[size]}
                     </Button>
                   </>
@@ -159,13 +164,13 @@ const Detail = ({ coffee, handleOpen }) => {
               </>
             )}
           </div>
-          <div className="styles-details-product">
+          <div className={stylesDetailsProduct}>
             <h3>
               <strong>Type</strong>
             </h3>
             {coffee?.data?.attributes?.styles?.map((style) => (
               <Button
-                className="btn-styles"
+                className={btnStyles}
                 variant="contained"
                 startIcon={
                   style == "ground" ? (
@@ -179,12 +184,17 @@ const Detail = ({ coffee, handleOpen }) => {
               </Button>
             ))}
           </div>
-
+          <button
+            className={btnAddCart}
+            onClick={() => dispatch(addToCart(coffee.data.attributes))}
+            style={{
+              backgroundColor: coffee?.data?.attributes?.accent_color,
+            }}
+          >
+             
+            ADD TO CART
           
-            <KeepMountedModal 
-            name={coffee?.data?.attributes?.name}
-            price={coffee?.data?.attributes?.price}
-            />
+          </button>
           
           
         </div>
