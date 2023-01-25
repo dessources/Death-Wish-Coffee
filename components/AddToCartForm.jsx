@@ -15,33 +15,19 @@ import {
   hide,
   closeAddToCart,
 } from "../styles/Shop.module.css";
-import getStripe from "../lib/getStripe";
-import axios from "axios";
 
-export default function AddToCartForm({ styles, sizes, uid }) {
+export default function AddToCartForm({ styles, sizes, uid, onSubmit }) {
   const [selectedSize, setSelectedSize] = React.useState("");
   const [selectedStyle, setselectedStyle] = React.useState("");
   const [visible, setvisible] = React.useState(false);
   const labelIcons = { ground: <Ground />, "whole bean": <WholeBean /> };
 
-  const handleCheckout = async () => {
+  const handleSubmit = async () => {
     if ((!selectedStyle && styles) || (!selectedSize && sizes)) {
       // TODO : aficher un modal qui affiche le message de l'alert
       alert("Veuillez indiquez votre choix pour tous les options disponibles");
     } else {
-      let data = {
-        name: "SomeCoffee",
-        style: selectedStyle,
-        size: selectedSize,
-      };
-      //ajouter le produit au panier
-      // setCart([...cart, data])
-
-      //demo chekcout with stripe
-      // const stripe = await getStripe();
-      // const res = await axios.post("/api/stripe", [data]);
-      // console.log(res.data);
-      // await stripe.redirectToCheckout({ sessionId: res.data.id });
+      onSubmit({ selectedSize, selectedStyle, uid, price: sizes?.[selectedSize] });
     }
   };
   return (
@@ -85,12 +71,11 @@ export default function AddToCartForm({ styles, sizes, uid }) {
                 ))}
             </div>
           </form>
-          <input type="submit" value="Add to cart" onClick={handleCheckout} />
+          <input type="submit" value="Add to cart" onClick={handleSubmit} />
         </div>
         <div
           className={`${addToCart} ${visible && hide}`}
           onClick={() => {
-            console.log("clicked");
             setvisible(true);
           }}
         >
