@@ -20,7 +20,7 @@ export default function RatingStars({ rating }) {
     stars.push(<HalfStar key={integerRating} />);
   }
   //empty stars
-  for (let i = 0; i < 5 - Math.round(rating); i++) {
+  for (let i = 0; i < 5 - stars.length; i++) {
     // stars.push(<img key={integerRating + 1 + i} src={emptyStar.src} alt="" />);
     stars.push(<EmptyStar key={integerRating + 1 + i} />);
   }
