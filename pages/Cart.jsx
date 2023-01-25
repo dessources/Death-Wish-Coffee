@@ -7,9 +7,10 @@ import {
   decrementQuantity,
   removeFromCart,
 } from '../redux/cart.slice';
-import {container, body, header, image, buttons} from '../styles/CartePage.module.css';
+import {container, body, header, image, buttons, btnCheckout} from '../styles/CartePage.module.css';
 import getStripe from "../lib/getStripe";
 import axios from "axios";
+import Navbar from '../components/Navbar';
 
 
 const CartPage = () => {
@@ -31,8 +32,10 @@ const CartPage = () => {
       0
     );
   };
-console.log(cart)
+
   return (
+    <div>
+      <Navbar/>
     <div className={container}>
       {cart.length === 0 ? (
         <h1>Your Cart is Empty!</h1>
@@ -71,9 +74,10 @@ console.log(cart)
           <h2>Grand Total: $ {getTotalPrice()}</h2>
         </>
       )}
-      <button onClick={handleCheckout}>
-        CHECKOUT
+      <button className={btnCheckout} onClick={handleCheckout}>
+        CHECK OUT
       </button>
+    </div>
     </div>
   );
 };

@@ -1,5 +1,4 @@
 import React from "react";
-
 import addToCartIcon from "../public/icons/add-to-cart.svg";
 import WholeBean from "../components/WholeBean";
 import Ground from "../components/GroundIcon";

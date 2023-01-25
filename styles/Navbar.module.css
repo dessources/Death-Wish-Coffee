@@ -1,11 +1,6 @@
-@media screen and (max-width: 1400px) {
-    .navbar {
-      display: none;
-    }
-    .smallscreen {
-      display: flex;
-      justify-content: space-around;
-    }
+
+  .smallscreen {
+    display: none;
   }
 
   .link:hover {
@@ -20,10 +15,6 @@
     top: 30px;
     right: 50px;
   }
-
-  .smallscreen {
-    display: none;
-  }
   
   .smallscreenMenu {
     position: fixed;
@@ -33,4 +24,14 @@
     flex-direction: column;
     z-index: 5;
     background-color: black;
+  }
+
+  @media screen and (max-width: 1400px) {
+    .navbar {
+      display: none;
+    }
+    .smallscreen {
+      display: flex;
+      justify-content: space-around;
+    }
   }
