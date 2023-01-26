@@ -10,11 +10,10 @@ export async function getServerSideProps(params) {
   const order = await Stripe.checkout.sessions.retrieve(params.query.session_id, {
     expand: ["line_items"],
   });
-  console.log(order);
+
   return { props: { order } };
 }
 export default function StripeSuccess({ order }) {
-  console.log(order);
   const router = useRouter();
   return (
     <>
@@ -26,7 +25,7 @@ export default function StripeSuccess({ order }) {
           <h2>{order.customer_details.email}</h2>
           <div className={infoWrapper}>
             <div className={adress}>
-              <h3>Adress</h3>
+              <h3>Adresse</h3>
 
               {Object.entries(order.customer_details.address).map(([key, val]) => (
                 <p key={key}>{val ? `${key} : ${val}` : ""}</p>
@@ -34,7 +33,7 @@ export default function StripeSuccess({ order }) {
             </div>
 
             <div className={orderInfo}>
-              <h3>Products</h3>
+              <h3>Produits</h3>
               {order.line_items.data.map((item) => (
                 <div key={item.id}>
                   <p>name: {item.description} </p>
@@ -44,7 +43,9 @@ export default function StripeSuccess({ order }) {
               ))}
             </div>
           </div>
-          <button onClick={() => router.push("/Shop")}>Continuer à shopper</button>
+          <button>
+            <Link href="/Shop">Continuer à shopper</Link>
+          </button>
         </div>
       </main>
     </>
