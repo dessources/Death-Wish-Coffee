@@ -13,6 +13,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import {navbar, smallscreen, link, close, smallscreenMenu} from '../styles/Navbar.module.css';
 import { useSelector } from 'react-redux';
+import BasicModal from '../components/Modal.js'
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -129,9 +130,9 @@ const Navbar = () => {
                 <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                   <SearchIcon />
                 </IconButton>
-                <Link href={"/Cart"}>
-                <IconButton  size="large" edge="start" color="inherit" aria-label="menu" >
-                  <ShoppingCartIcon />
+                
+                <IconButton  size="large" edge="start" color="inherit" aria-label="menu">
+                  <BasicModal/>
                   <span style={{
                     color:'red',
                     fontSize:'16px',
@@ -140,8 +141,9 @@ const Navbar = () => {
                     >
                       {getItemsCount()}
                     </span>
+                    
                 </IconButton>
-                </Link>
+                
                 
               </Box>
             </Toolbar>
@@ -170,7 +172,8 @@ const Navbar = () => {
             aria-label="menu"
             sx={{ mr: 2 }}
           >
-            <ShoppingCartIcon />
+            <BasicModal />
+            
             <span style={{
                     color:'red',
                     fontSize:'16px',

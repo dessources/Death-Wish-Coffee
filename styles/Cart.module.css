@@ -1,0 +1,56 @@
+.productModal{
+    display: flex;
+}
+
+.scroll{
+    height: 400px;
+    scrollbar-width: thin;
+    padding-right: 10px;
+    overflow-y: auto;
+}
+
+.imgModal{
+    width: 40%;
+}
+
+.infoProduct{
+    width: 60%;
+    margin-left: 15px;
+    
+}
+
+.titleRemove{
+    display: flex;
+}
+
+.numberQuantity{
+    display: block;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.numberQuantity button{
+   margin-left: 10px;
+   margin-right: 10px;
+   
+}
+
+.numberQuantity p {
+    margin-left: 15px;
+}
+
+.btnCheckout{
+    width: 380px;
+    height: 50px;
+    background-color: red;
+    color: black;
+    font-weight: bold;
+    font-size: 17px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.btnCheckout:hover{
+    background-color: orange;
+    border-radius: 8%;
+}
