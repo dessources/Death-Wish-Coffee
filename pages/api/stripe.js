@@ -22,17 +22,15 @@ export default async function handler(req, res) {
               product_data: {
                 name: item.name,
                 //description: `${item.size.replace("_", " ")} ${item.style}`,
-                images: [
-                  item.main_image.data.attributes.formats.thumbnail.url,
-                ],
+                images: [item.main_image.data.attributes.formats.thumbnail.url],
               },
               unit_amount: 450,
             },
             quantity: 3,
           };
         }),
-        success_url: `${req.headers.origin}/StripeSuccess`,
-        cancel_url: `${req.headers.origin}/Shop`,
+        success_url: `${req.headers.origin}/StripeSuccess?session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `${req.headers.origin}/Cart`,
       });
       res.status(200).json(session);
     } catch (err) {

@@ -1,12 +1,13 @@
-import React from 'react'
-import { createSlice } from '@reduxjs/toolkit';
+import React from "react";
+import { createSlice } from "@reduxjs/toolkit";
 
 const cartSlice = createSlice({
-  name: 'cart',
+  name: "cart",
   initialState: [],
   reducers: {
     addToCart: (state, action) => {
-        
+      console.log("the payload is");
+      console.log(action.payload);
       const itemExists = state.find((item) => item.uid === action.payload.uid);
       if (itemExists) {
         itemExists.quantity++;
@@ -36,9 +37,4 @@ const cartSlice = createSlice({
 
 export const cartReducer = cartSlice.reducer;
 
-export const {
-  addToCart,
-  incrementQuantity,
-  decrementQuantity,
-  removeFromCart,
-} = cartSlice.actions;
+export const { addToCart, incrementQuantity, decrementQuantity, removeFromCart } = cartSlice.actions;
