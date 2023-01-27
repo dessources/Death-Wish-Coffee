@@ -3,7 +3,7 @@ import WholeBean from "../components/WholeBean";
 import Ground from "../components/GroundIcon";
 import CloseIcon from "@mui/icons-material/Clear";
 import { useDispatch } from "react-redux";
-import { addToCarte } from "../redux/cart.slice.js";
+import { addToCart } from "../redux/cart.slice.js";
 import Detail from '../pages/Products/[id].js'
 
 //styles

@@ -23,10 +23,10 @@ import {
   btnAddCart,
   reviews,
 } from "../../styles/id.module.css";
-import { useDispatch } from "react-redux";
-import { addToCarte } from "../../redux/cart.slice";
 import RatingStars from "../../components/RatingStars.jsx";
-import Link from "next/link";
+import handleAddToCart from '../../utils/handleAddToCart';
+import { useDispatch, useSelector } from "react-redux";
+import {addToCart} from '../../redux/cart.slice'
 
 export const getStaticPaths = async () => {
   const res = await fetch(
@@ -61,17 +61,18 @@ export const getStaticProps = async (context) => {
 
 const Detail = ({ coffee }) => {
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
   const [selectedSize, setSelectedSize] = React.useState("");
   const [selectedStyle, setselectedStyle] = React.useState("");
   const labelIcons = { ground: <Ground />, "whole bean": <WholeBean /> };
 
-  const handleSubmit = async () => {
+  const handleSubmit = () => {
     if ((!selectedStyle && styles) || (!selectedSize && sizes)) {
       // TODO : aficher un modal qui affiche le message de l'alert
       alert("Veuillez indiquez votre choix pour tous les options disponibles");
     } else {
-      onSubmit({ selectedSize, selectedStyle, uid, price: sizes?.[selectedSize] }, dispatch(addToCarte(coffee.data.attributes)));
+      const data=handleAddToCart({...coffee?.data?.attributes, size:selectedSize, style:selectedStyle, });
+     dispatch(addToCart(data))
      
     }
   };

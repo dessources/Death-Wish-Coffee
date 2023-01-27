@@ -24,22 +24,9 @@ import {
 import formatProductDescription from "../utils/formatProductDescription";
 
 export default function Product({ id, attributes }) {
-  const dispatch = useDispatch();
-  const state = useSelector((state) => state.cart);
 
   const [formVisible, setFormVisible] = React.useState(false);
-
-  const handleAddToCart = ({ size, style, uid, price }) => {
-    console.log("the state is before adding the produtc :");
-    console.info(state);
-    const cartPayload = {
-      uid: uid,
-      name: `${attributes.name} ${formatProductDescription(size, style)}`,
-      main_image: attributes.main_image,
-      price: price || attributes.price,
-    };
-    dispatch(addToCart(cartPayload));
-  };
+ 
   return (
     <div className={product}>
       <div className={productHeader}>

@@ -13,7 +13,7 @@ import Image from "next/image";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import logo from "../images/logo.webp";
-
+import BasicModal from '../components/Cart'
 import { navbar, smallscreen, link, close, smallscreenMenu } from "../styles/Navbar.module.css";
 import { useSelector } from "react-redux";
 
@@ -134,7 +134,7 @@ const Navbar = () => {
                   <SearchIcon />
                 </IconButton>
                 
-                <IconButton  size="large" edge="start" color="inherit" aria-label="menu">
+                
                   <BasicModal/>
                   <span style={{
                     color:'red',
@@ -144,10 +144,6 @@ const Navbar = () => {
                     >
                       {getItemsCount()}
                     </span>
-                    
-                </IconButton>
-                
-                
               </Box>
             </Toolbar>
           </AppBar>

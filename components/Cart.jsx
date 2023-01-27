@@ -1,4 +1,5 @@
 import * as React from "react";
+import IconButton from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
@@ -59,7 +60,9 @@ export default function BasicModal() {
 
   return (
     <div>
+      <IconButton  size="large" edge="start" color="inherit" aria-label="menu">
       <ShoppingCartIcon onClick={handleOpen} />
+      </IconButton>
       <Modal
         open={open}
         onClose={handleClose}
@@ -91,8 +94,7 @@ export default function BasicModal() {
                       <div className={imgModal}>
                         <img
                           src={
-                            item?.main_image?.data?.attributes?.formats
-                              ?.thumbnail?.url
+                           item?.main_image
                           }
                           alt=""
                         />
@@ -139,7 +141,7 @@ export default function BasicModal() {
                           >
                             -
                           </button>
-                          <p>$ {item.quantity * item?.price}</p>
+                          <p>$ {(item.quantity * item?.price).toFixed(2)}</p>
                         </div>
                         
                       </div>
@@ -148,7 +150,7 @@ export default function BasicModal() {
                   </div>
                 ))}
                 </div>
-                <h2>SubTotal: ${getTotalPrice()}</h2>
+                <h2>SubTotal: ${getTotalPrice().toFixed(2)}</h2>
                 <p style={{
                   fontSize: '14px',
                   fontWeight: 'bold'
