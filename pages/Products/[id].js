@@ -7,9 +7,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import FlashOnIcon from "@mui/icons-material/FlashOn";
-import Box from "@mui/material/Box";
+
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import Button from "@mui/material/Button";
+
 import {
   productsDetails,
   imagesDetailsProduct,
