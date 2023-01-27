@@ -4,6 +4,8 @@ import Link from "next/link";
 import RatingStars from "../components/RatingStars";
 import ImageVideoCover from "./ImageVideoCover";
 import AddToCartForm from "./AddToCartForm";
+//formaters
+import formatProductDescription from "../utils/formatProductDescription";
 //styles
 import { productSection, product, name, reviews, price } from "../styles/Shop.module.css";
 import { addToCart } from "../redux/cart.slice";
@@ -19,9 +21,7 @@ export default function Products({ data }) {
 
     const cartPayload = {
       uid: uid,
-      name: product.attributes.name,
-      style: style,
-      size: size,
+      name: `${product.attributes.name} ${formatProductDescription(size, style)}`,
       main_image: product.attributes.main_image,
       price: price || product.attributes.price,
     };

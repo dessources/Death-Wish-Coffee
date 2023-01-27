@@ -26,7 +26,12 @@ export default function AddToCartForm({ styles, sizes, uid, onSubmit }) {
       // TODO : aficher un modal qui affiche le message de l'alert
       alert("Veuillez indiquez votre choix pour tous les options disponibles");
     } else {
-      onSubmit({ selectedSize, selectedStyle, uid, price: sizes?.[selectedSize] });
+      onSubmit({
+        size: selectedSize,
+        style: selectedStyle,
+        uid,
+        price: sizes?.[selectedSize],
+      });
     }
   };
   return (

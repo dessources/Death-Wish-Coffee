@@ -21,12 +21,11 @@ export default async function handler(req, res) {
               currency: "usd",
               product_data: {
                 name: item.name,
-                //description: `${item.size.replace("_", " ")} ${item.style}`,
                 images: [item.main_image.data.attributes.formats.thumbnail.url],
               },
-              unit_amount: 450,
+              unit_amount_decimal: Number((item.price * 100).toFixed(2)),
             },
-            quantity: 3,
+            quantity: item.quantity,
           };
         }),
         success_url: `${req.headers.origin}/StripeSuccess?session_id={CHECKOUT_SESSION_ID}`,

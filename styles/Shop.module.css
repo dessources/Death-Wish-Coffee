@@ -16,6 +16,7 @@
 .product {
   position: relative;
   font-family: "FenomenSans-Book";
+  cursor: pointer;
 }
 
 .coverImage img {
