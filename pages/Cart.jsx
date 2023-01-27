@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useSelector, useDispatch } from "react-redux";
 // Importing actions from  cart.slice.js
 import { incrementQuantity, decrementQuantity, removeFromCart } from "../redux/cart.slice";
-import { container, body, header, image, buttons, btnCheckout } from "../styles/CartePage.module.css";
+import { container, body, header, image, buttons, btnCheckout, cartEmpty } from "../styles/CartePage.module.css";
 import getStripe from "../lib/getStripe";
 import axios from "axios";
 import Navbar from "../components/Navbar";
@@ -27,7 +27,7 @@ const CartPage = () => {
       <Navbar />
       <div className={container}>
         {cart.length === 0 ? (
-          <h1>Your Cart is Empty!</h1>
+          <h1 className={cartEmpty}>Your Cart is Empty!</h1>
         ) : (
           <>
             <div className={header}>
@@ -54,12 +54,12 @@ const CartPage = () => {
                 <p>$ {item.quantity * item?.price}</p>
               </div>
             ))}
-            <h2>Grand Total: $ {getTotalPrice()}</h2>
+            <h2>Grand Total: $ {getTotalPrice().toFixed(2)}</h2>
+            <button className={btnCheckout} onClick={handleCheckout}>
+              CHECK OUT
+            </button>
           </>
         )}
-        <button className={btnCheckout} onClick={handleCheckout}>
-          CHECK OUT
-        </button>
       </div>
     </div>
   );

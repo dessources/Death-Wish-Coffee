@@ -1,5 +1,4 @@
 import React from "react";
-import addToCartIcon from "../public/icons/add-to-cart.svg";
 import WholeBean from "../components/WholeBean";
 import Ground from "../components/GroundIcon";
 import CloseIcon from "@mui/icons-material/Clear";
@@ -9,16 +8,14 @@ import {
   addToCartContainer,
   addToCartForm,
   selectedLabel,
-  addToCart,
   show,
-  hide,
   closeAddToCart,
 } from "../styles/Shop.module.css";
 
-export default function AddToCartForm({ styles, sizes, uid, onSubmit }) {
+export default function AddToCartForm({ styles, sizes, uid, onSubmit, formVisible, setFormVisible }) {
   const [selectedSize, setSelectedSize] = React.useState("");
   const [selectedStyle, setselectedStyle] = React.useState("");
-  const [visible, setvisible] = React.useState(false);
+
   const labelIcons = { ground: <Ground />, "whole bean": <WholeBean /> };
 
   const handleSubmit = async () => {
@@ -36,8 +33,8 @@ export default function AddToCartForm({ styles, sizes, uid, onSubmit }) {
   };
   return (
     <>
-      <div className={addToCartContainer}>
-        <div className={`${addToCartForm} ${visible && show}`}>
+      <div className={`${addToCartContainer} ${formVisible && show}`}>
+        <div className={`${addToCartForm} ${formVisible && show}`}>
           <form action="">
             <div>
               {styles?.map((style, i) => (
@@ -77,15 +74,8 @@ export default function AddToCartForm({ styles, sizes, uid, onSubmit }) {
           </form>
           <input type="submit" value="Add to cart" onClick={handleSubmit} />
         </div>
-        <div
-          className={`${addToCart} ${visible && hide}`}
-          onClick={() => {
-            setvisible(true);
-          }}
-        >
-          <img src={addToCartIcon.src} alt="" />
-        </div>
-        <div className={`${closeAddToCart} ${visible && show}`} onClick={() => setvisible(false)}>
+
+        <div className={`${closeAddToCart} ${formVisible && show}`} onClick={() => setFormVisible(false)}>
           <CloseIcon />
         </div>
       </div>
