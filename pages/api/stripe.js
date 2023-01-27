@@ -21,7 +21,7 @@ export default async function handler(req, res) {
               currency: "usd",
               product_data: {
                 name: item.name,
-                images: [item.main_image.data.attributes.formats.thumbnail.url],
+                images: [item.main_image],
               },
               unit_amount_decimal: Number((item.price * 100).toFixed(2)),
             },

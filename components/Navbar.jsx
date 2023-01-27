@@ -13,7 +13,7 @@ import Image from "next/image";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import logo from "../images/logo.webp";
-import BasicModal from '../components/Cart'
+import BasicModal from "../components/Cart";
 import { navbar, smallscreen, link, close, smallscreenMenu } from "../styles/Navbar.module.css";
 import { useSelector } from "react-redux";
 
@@ -22,7 +22,7 @@ const Navbar = () => {
   const cart = useSelector((state) => state.cart);
 
   const getItemsCount = () => {
-    return cart.reduce((accumulator, item) => accumulator + item.quantity, 0);
+    return cart.products.reduce((accumulator, item) => accumulator + item.quantity, 0);
   };
 
   return (
@@ -123,7 +123,7 @@ const Navbar = () => {
                 <Link href={"/About"}>ABOUT</Link>
               </Typography>
 
-              <Box>
+              <Box sx={{ display: "flex" }}>
                 <Link href={"/Login"}>
                   <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                     <LoginIcon />
@@ -133,17 +133,17 @@ const Navbar = () => {
                 <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                   <SearchIcon />
                 </IconButton>
-                
-                
-                  <BasicModal/>
-                  <span style={{
-                    color:'red',
-                    fontSize:'16px',
-                    fontWeight: 'bold'
-                    }}
-                    >
-                      {getItemsCount()}
-                    </span>
+
+                <BasicModal />
+                <span
+                  style={{
+                    color: "red",
+                    fontSize: "16px",
+                    fontWeight: "bold",
+                  }}
+                >
+                  {getItemsCount()}
+                </span>
               </Box>
             </Toolbar>
           </AppBar>
@@ -164,23 +164,18 @@ const Navbar = () => {
           <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
             <SearchIcon />
           </IconButton>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
+          <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
             <BasicModal />
-            
-            <span style={{
-                    color:'red',
-                    fontSize:'16px',
-                    fontWeight: 'bold'
-                    }}
-                    >
-                      {getItemsCount()}
-                    </span>
+
+            <span
+              style={{
+                color: "red",
+                fontSize: "16px",
+                fontWeight: "bold",
+              }}
+            >
+              {getItemsCount()}
+            </span>
           </IconButton>
         </Box>
 

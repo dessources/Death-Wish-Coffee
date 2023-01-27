@@ -3,38 +3,40 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const cartSlice = createSlice({
   name: "cart",
-  initialState: [],
+  initialState: { open: false, products: [] },
   reducers: {
     addToCart: (state, action) => {
-      console.log("the payload is");
-      console.log(action.payload);
-      const itemExists = state.find((item) => item.uid === action.payload.uid);
+      const itemExists = state.products.find((item) => item.uid === action.payload.uid);
       if (itemExists) {
         itemExists.quantity++;
       } else {
-        state.push({ ...action.payload, quantity: 1 });
+        state.products.push({ ...action.payload, quantity: 1 });
       }
     },
     incrementQuantity: (state, action) => {
-      const item = state.find((item) => item.uid === action.payload);
+      const item = state.products.find((item) => item.uid === action.payload);
       item.quantity++;
     },
     decrementQuantity: (state, action) => {
-      const item = state.find((item) => item.uid === action.payload);
+      const item = state.products.find((item) => item.uid === action.payload);
       if (item.quantity === 1) {
-        const index = state.findIndex((item) => item.uid === action.payload);
-        state.splice(index, 1);
+        const index = state.products.findIndex((item) => item.uid === action.payload);
+        state.products.splice(index, 1);
       } else {
         item.quantity--;
       }
     },
     removeFromCart: (state, action) => {
-      const index = state.findIndex((item) => item.uid === action.payload);
-      state.splice(index, 1);
+      const index = state.products.findIndex((item) => item.uid === action.payload);
+      state.products.splice(index, 1);
+    },
+    showCart(state, action) {
+      console.log(action.payload);
+      state.open = action.payload ? true : false;
     },
   },
 });
 
 export const cartReducer = cartSlice.reducer;
 
-export const { addToCart, incrementQuantity, decrementQuantity, removeFromCart } = cartSlice.actions;
+export const { addToCart, incrementQuantity, decrementQuantity, removeFromCart, showCart } = cartSlice.actions;
