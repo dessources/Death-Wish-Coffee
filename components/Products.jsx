@@ -1,32 +1,14 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
 import RatingStars from "../components/RatingStars";
 import ImageVideoCover from "./ImageVideoCover";
 import AddToCartForm from "./AddToCartForm";
 //styles
 import { productSection, product, name, reviews, price } from "../styles/Shop.module.css";
-import { addToCart } from "../redux/cart.slice";
+import handleAddToCart from '../utils/handleAddToCart.js';
 
 export default function Products({ data }) {
-  const dispatch = useDispatch();
-  const state = useSelector((state) => state.cart);
 
-  const handleAddToCart = ({ size, style, uid, price }) => {
-    console.log("the state is before adding the produtc :");
-    console.info(state);
-    const [product] = data.products.filter(({ attributes }) => attributes.uid === uid);
-
-    const cartPayload = {
-      uid: uid,
-      name: product.attributes.name,
-      style: style,
-      size: size,
-      main_image: product.attributes.main_image,
-      price: price || product.attributes.price,
-    };
-    dispatch(addToCart(cartPayload));
-  };
   return (
     <div className={productSection}>
       {data?.products?.map(({ id, attributes, hidden }) => {

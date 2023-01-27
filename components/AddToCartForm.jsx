@@ -3,6 +3,9 @@ import addToCartIcon from "../public/icons/add-to-cart.svg";
 import WholeBean from "../components/WholeBean";
 import Ground from "../components/GroundIcon";
 import CloseIcon from "@mui/icons-material/Clear";
+import { useDispatch } from "react-redux";
+import { addToCarte } from "../redux/cart.slice.js";
+import Detail from '../pages/Products/[id].js'
 
 //styles
 import {
@@ -15,7 +18,8 @@ import {
   closeAddToCart,
 } from "../styles/Shop.module.css";
 
-export default function AddToCartForm({ styles, sizes, uid, onSubmit }) {
+export default function AddToCartForm({ styles, sizes, uid, onSubmit, coffee }) {
+  const dispatch = useDispatch()
   const [selectedSize, setSelectedSize] = React.useState("");
   const [selectedStyle, setselectedStyle] = React.useState("");
   const [visible, setvisible] = React.useState(false);
@@ -26,7 +30,8 @@ export default function AddToCartForm({ styles, sizes, uid, onSubmit }) {
       // TODO : aficher un modal qui affiche le message de l'alert
       alert("Veuillez indiquez votre choix pour tous les options disponibles");
     } else {
-      onSubmit({ selectedSize, selectedStyle, uid, price: sizes?.[selectedSize] });
+      onSubmit({ selectedSize, selectedStyle, uid, price: sizes?.[selectedSize] }, dispatch(addToCarte(coffee.data.attributes)));
+     
     }
   };
   return (

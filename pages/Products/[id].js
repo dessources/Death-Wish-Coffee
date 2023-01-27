@@ -1,8 +1,8 @@
 import React from "react";
 import Navbar from "../../components/Navbar.jsx";
 import Footer from "../../components/Footer.jsx";
-import GrainIcon from "@mui/icons-material/Grain";
-import LensBlurIcon from "@mui/icons-material/LensBlur";
+import WholeBean from "../../components/WholeBean.jsx";
+import Ground from "../../components/GroundIcon.jsx";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -24,7 +24,7 @@ import {
   reviews,
 } from "../../styles/id.module.css";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../../redux/cart.slice";
+import { addToCarte } from "../../redux/cart.slice";
 import RatingStars from "../../components/RatingStars.jsx";
 import Link from "next/link";
 
@@ -60,7 +60,21 @@ export const getStaticProps = async (context) => {
 };
 
 const Detail = ({ coffee }) => {
+
   const dispatch = useDispatch();
+  const [selectedSize, setSelectedSize] = React.useState("");
+  const [selectedStyle, setselectedStyle] = React.useState("");
+  const labelIcons = { ground: <Ground />, "whole bean": <WholeBean /> };
+
+  const handleSubmit = async () => {
+    if ((!selectedStyle && styles) || (!selectedSize && sizes)) {
+      // TODO : aficher un modal qui affiche le message de l'alert
+      alert("Veuillez indiquez votre choix pour tous les options disponibles");
+    } else {
+      onSubmit({ selectedSize, selectedStyle, uid, price: sizes?.[selectedSize] }, dispatch(addToCarte(coffee.data.attributes)));
+     
+    }
+  };
 
   const settings = {
     dots: false,
@@ -160,10 +174,18 @@ const Detail = ({ coffee }) => {
 
                 {Object.keys(coffee?.data?.attributes?.sizes).map((size) => (
                   <>
-                    <Button className={btnStyles} variant="contained">
-                      ${coffee?.data?.attributes?.sizes[size]}
-                    </Button>
-                  </>
+                    <input className={btnStyles} 
+                    type="radio"
+                    name="size"
+                    id={coffee?.data?.attributes?.uid + size}
+                    value={size}
+                    onClick={() => setSelectedSize(size === selectedSize ? "" : size)}
+                    />
+                      <label htmlFor={coffee?.data?.attributes?.uid + size}>
+                      {size.replace("_", " ")}  
+                      : ${coffee?.data?.attributes?.sizes[size]}
+                      </label>
+                      </>
                 ))}
               </>
             )}
@@ -176,26 +198,29 @@ const Detail = ({ coffee }) => {
                   <strong>Type</strong>
                 </h3>
                 {coffee?.data?.attributes?.styles?.map((style) => (
-                  <Button
+                  <>
+                  <input
                     className={btnStyles}
-                    variant="contained"
-                    startIcon={
-                      style == "ground" ? (
-                        <LensBlurIcon style={{ fontSize: "50px" }} />
-                      ) : (
-                        <GrainIcon style={{ fontSize: "50px" }} />
-                      )
-                    }
-                  >
+                    type="radio"
+                    id={coffee?.data?.attributes?.uid + style}
+                    name="style"
+                    value={style}
+                    onClick={(e) => setselectedStyle(style === selectedStyle ? "" : style)}
+                   
+                  />
+                  <label htmlFor={coffee?.data?.attributes?.uid + style}>
+                    {labelIcons[style]}
                     {style}
-                  </Button>
+                  </label>
+                    </>
+                  
                 ))}
               </>
             )}
           </div>
           <button
             className={btnAddCart}
-            onClick={() => dispatch(addToCart(coffee.data.attributes))}
+            onClick={handleSubmit}
             style={{
               backgroundColor: coffee?.data?.attributes?.accent_color,
             }}

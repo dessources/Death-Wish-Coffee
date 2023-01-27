@@ -5,7 +5,7 @@ const cartSlice = createSlice({
   name: "cart",
   initialState: [],
   reducers: {
-    addToCart: (state, action) => {
+    addToCarte: (state, action) => {
       console.log("the payload is");
       console.log(action.payload);
       const itemExists = state.find((item) => item.uid === action.payload.uid);
@@ -37,4 +37,4 @@ const cartSlice = createSlice({
 
 export const cartReducer = cartSlice.reducer;
 
-export const { addToCart, incrementQuantity, decrementQuantity, removeFromCart } = cartSlice.actions;
+export const { addToCarte, incrementQuantity, decrementQuantity, removeFromCart } = cartSlice.actions;

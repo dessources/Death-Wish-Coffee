@@ -13,7 +13,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import {navbar, smallscreen, link, close, smallscreenMenu} from '../styles/Navbar.module.css';
 import { useSelector } from 'react-redux';
-import BasicModal from '../components/Modal.js'
+import BasicModal from './Cart.jsx'
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);

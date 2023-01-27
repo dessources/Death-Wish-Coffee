@@ -6,7 +6,6 @@ import Modal from "@mui/material/Modal";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useSelector, useDispatch } from "react-redux";
 import CloseIcon from "@mui/icons-material/Close";
-// Importing actions from  cart.slice.js
 import {
   incrementQuantity,
   decrementQuantity,
