@@ -9,11 +9,13 @@ import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import LoginIcon from "@mui/icons-material/Login";
 import Link from "next/link";
+import Image from "next/image";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import {navbar, smallscreen, link, close, smallscreenMenu} from '../styles/Navbar.module.css';
-import { useSelector } from 'react-redux';
-import BasicModal from './Cart.jsx'
+import logo from "../images/logo.webp";
+
+import { navbar, smallscreen, link, close, smallscreenMenu } from "../styles/Navbar.module.css";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -83,11 +85,12 @@ const Navbar = () => {
               ></div>
 
               <Link href={"/"}>
-                <img
-                  src={"https://cdn.shopify.com/s/files/1/0271/7209/files/dwc-logo.png?v=1624458280"}
+                <Image
+                  src={logo}
                   alt=""
                   style={{
-                    height: "140px",
+                    height: "130px",
+                    width: "130px",
                     position: "absolute",
                     top: "10%",
                     left: "50%",
@@ -184,7 +187,7 @@ const Navbar = () => {
                     </span>
           </IconButton>
         </Box>
-          
+
         <Link href={"/"}>
           <img
             src={"https://cdn.shopify.com/s/files/1/0271/7209/files/dwc-logo.png?v=1624458280"}

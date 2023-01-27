@@ -9,8 +9,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Link from "next/link";
-import FlashOnIcon from '@mui/icons-material/FlashOn';
-import Skeleton from '@mui/material/Skeleton';
+import FlashOnIcon from "@mui/icons-material/FlashOn";
+import Skeleton from "@mui/material/Skeleton";
 import RatingStars from "../components/RatingStars";
 import { reviews, card, featuredProducts, nameProduct } from "../styles/FeaturedProducts.module.css";
 
@@ -20,7 +20,7 @@ const FeaturedProducts = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToScroll: 1,
     initialSlide: 0,
     nextArrow: <FlashOnIcon />,
     prevArrow: <FlashOnIcon />,
@@ -53,16 +53,13 @@ const FeaturedProducts = () => {
   };
 
   const [data, setData] = React.useState();
-  const [status, setStatus] = React.useState("idle");
 
   React.useEffect(() => {
-    setStatus("fetching");
     fetch(
       `http://localhost:1337/api/coffees?filters[id][$in][0]=6&filters[id][$in][1]=86&filters[id][$in][2]=75&filters[id][$in][3]=80&filters[id][$in][4]=84&populate=main_image,images`
     )
       .then((res) => res.json())
       .then((data) => {
-        setStatus("done");
         console.log(data.data);
         setData(data.data);
       });
@@ -71,27 +68,26 @@ const FeaturedProducts = () => {
     <div className={featuredProducts}>
       <Slider {...settings}>
         {data?.map((coffee, id) => (
-          <Card className={card}>
+          <Card className={card} sx={{ borderRadius: "0", background: "transparent" }}>
             <CardActionArea
               style={{
                 backgroundColor: "black",
                 color: "white",
                 padding: "0 20px",
               }}
+              sx={{ "& .MuiCardActionArea-focusHighlight": { opacity: "0!important" } }}
             >
               {coffee ? (
-              <Link href={`/Products/${coffee?.id}`}>
-                <CardMedia
-                  className="image-coffee"
-                  component="img"
-                  image={
-                    coffee?.attributes?.main_image?.data?.attributes?.formats
-                      ?.medium?.url
-                  }
-                  alt="coffee"
-                />
-              </Link>) :(
-                 <Skeleton variant="rectangular" width={400} height={400} />
+                <Link href={`/Products/${coffee?.id}`}>
+                  <CardMedia
+                    className="image-coffee"
+                    component="img"
+                    image={coffee?.attributes?.main_image?.data?.attributes?.formats?.medium?.url}
+                    alt="coffee"
+                  />
+                </Link>
+              ) : (
+                <Skeleton variant="rectangular" width={400} height={400} />
               )}
 
               <CardContent style={{}}>
@@ -101,15 +97,8 @@ const FeaturedProducts = () => {
                   }}
                 >
                   <Link href={`/Products/${coffee?.id}`}>
-                    <Typography
-                      gutterBottom
-                      variant="h5"
-                      component="div"
-                      fontWeight="bold"
-                    >
-                      <span className={nameProduct}>
-                        {coffee?.attributes?.name}
-                      </span>
+                    <Typography gutterBottom variant="h5" component="div" fontWeight="bold">
+                      <span className={nameProduct}>{coffee?.attributes?.name}</span>
                     </Typography>
                   </Link>
                 </Box>
@@ -128,14 +117,16 @@ const FeaturedProducts = () => {
                     }}
                   >
                     <Box className={reviews}>
-                    <RatingStars rating={coffee?.attributes?.rating}/>
-                    {coffee?.attributes?.reviews} Reviews
+                      <RatingStars rating={coffee?.attributes?.rating} />
+                      {coffee?.attributes?.reviews} Reviews
                     </Box>
-                    <Box style={{
-                      fontSize: '20px',
-                      fontWeight: 'bold'
-                    }}>
-                    ${coffee?.attributes?.price}
+                    <Box
+                      style={{
+                        fontSize: "20px",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      ${coffee?.attributes?.price}
                     </Box>
                   </Box>
                 </Typography>
