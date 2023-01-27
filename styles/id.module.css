@@ -1,7 +1,7 @@
 .productsDetails{
-    margin-top: 60px;
     display: flex;
     width: 100%;
+    margin-top: 60px;
   }
   
   .imagesDetailsProduct{
@@ -14,8 +14,8 @@
   
   .descriptionDetailsProduct{
   width: 50%;
-  padding: 75px;
   margin-top: 25px;
+  margin-left: 70px;
   }
   
   .descriptionDetailsProduct h1{
@@ -46,7 +46,7 @@
   }
   
   .coffeeDetails{
-    padding: 40px;
+    margin-top: 80px;
   }
   
   .coffeeDetails li{
@@ -79,6 +79,57 @@
     height: 65px;
     font-weight: bold;
     font-size: 15px;
+    
+  }
+
+  .reviews {
+    line-height: 24px;
+    cursor: pointer;
+  }
+ 
+  .reviews span {
+    margin-right: 7px;
+    display: inline-flex;
+  }
+  .reviews svg {
+    /* vertical-align: baseline; */
+    font-size: 1.2rem;
+    margin-left: -2px;
+  }
+
+  @media screen and (max-width: 1100px) {
+    .productsDetails{
+      width: 100%;
+      display: block;
+      flex-direction: column;
+    }
+    .imagesDetailsProduct{
+      width: 100%;
+    }
+    .descriptionDetailsProduct{
+      width: 100%;
+      margin: 0;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+    }
+    .desciptionDetailsProduct{
+      width: 80%;
+      justify-content: center;
+      text-align: center;
+      margin-left: 10%;
+    }
+    .coffeeDetails{
+      display: none;
+    }
+
+    .descriptionDetailsProduct h1{
+      font-size: 30px;
+    }
+  .desciptionTitleDetailsProduct{
+    font-size: 20px;
+  }
+    
     
   }
   

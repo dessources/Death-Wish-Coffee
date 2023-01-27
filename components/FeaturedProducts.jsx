@@ -128,9 +128,7 @@ const FeaturedProducts = () => {
                     }}
                   >
                     <Box className={reviews}>
-                    <RatingStars rating={coffee?.attributes?.rating} style={{
-                      
-                    }}/>
+                    <RatingStars rating={coffee?.attributes?.rating}/>
                     {coffee?.attributes?.reviews} Reviews
                     </Box>
                     <Box style={{

@@ -8,14 +8,24 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import FlashOnIcon from "@mui/icons-material/FlashOn";
 import Box from "@mui/material/Box";
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import KeepMountedModal from '../../components/Modal'
-import Product from '../../components/Products.jsx'
-import {productsDetails, imagesDetailsProduct, descriptionDetailsProduct, priceDetailsProduct, desciptionTitleDetailsProduct, 
-  desciptionDetailsProduct, stylesDetailsProduct, coffeeDetails, btnStyles, btnAddCart } from "../../styles/id.module.css";
-import { useDispatch } from 'react-redux';
-import { addToCart } from '../../redux/cart.slice'
+import {
+  productsDetails,
+  imagesDetailsProduct,
+  descriptionDetailsProduct,
+  priceDetailsProduct,
+  desciptionTitleDetailsProduct,
+  desciptionDetailsProduct,
+  stylesDetailsProduct,
+  coffeeDetails,
+  btnStyles,
+  btnAddCart,
+  reviews,
+} from "../../styles/id.module.css";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/cart.slice";
+import RatingStars from "../../components/RatingStars.jsx";
 import Link from "next/link";
 
 export const getStaticPaths = async () => {
@@ -50,7 +60,6 @@ export const getStaticProps = async (context) => {
 };
 
 const Detail = ({ coffee }) => {
-
   const dispatch = useDispatch();
 
   const settings = {
@@ -105,7 +114,6 @@ const Detail = ({ coffee }) => {
   return (
     <div>
       <Navbar />
-
       <div className={productsDetails}>
         <div className={imagesDetailsProduct}>
           <Slider {...settings}>
@@ -130,21 +138,17 @@ const Detail = ({ coffee }) => {
           <div className={priceDetailsProduct}>
             ${coffee?.data?.attributes?.price}
           </div>
-          <div>{coffee?.data?.attributes?.rating}</div>
+          <div className={reviews}>
+            <span style={{ color: coffee?.data?.attributes?.accent_color }}>
+              <RatingStars rating={coffee?.data?.attributes?.rating} />
+              {coffee?.data?.attributes?.reviews} reviews
+            </span>
+          </div>
           <div className={desciptionTitleDetailsProduct}>
             {coffee?.data?.attributes?.description_title}
           </div>
           <div className={desciptionDetailsProduct}>
             {coffee?.data?.attributes?.descriptions}
-          </div>
-          <div className={coffeeDetails}>
-            {coffee?.data?.attributes?.details?.map((detail) => (
-              <ul>
-                {detail?.content.map((contents) => (
-                  <li>{contents}</li>
-                ))}
-              </ul>
-            ))}
           </div>
 
           <div>
@@ -164,25 +168,30 @@ const Detail = ({ coffee }) => {
               </>
             )}
           </div>
+
           <div className={stylesDetailsProduct}>
-            <h3>
-              <strong>Type</strong>
-            </h3>
-            {coffee?.data?.attributes?.styles?.map((style) => (
-              <Button
-                className={btnStyles}
-                variant="contained"
-                startIcon={
-                  style == "ground" ? (
-                    <LensBlurIcon style={{ fontSize: "50px" }} />
-                  ) : (
-                    <GrainIcon style={{ fontSize: "50px" }} />
-                  )
-                }
-              >
-                {style}
-              </Button>
-            ))}
+            {coffee?.data?.attributes?.styles && (
+              <>
+                <h3>
+                  <strong>Type</strong>
+                </h3>
+                {coffee?.data?.attributes?.styles?.map((style) => (
+                  <Button
+                    className={btnStyles}
+                    variant="contained"
+                    startIcon={
+                      style == "ground" ? (
+                        <LensBlurIcon style={{ fontSize: "50px" }} />
+                      ) : (
+                        <GrainIcon style={{ fontSize: "50px" }} />
+                      )
+                    }
+                  >
+                    {style}
+                  </Button>
+                ))}
+              </>
+            )}
           </div>
           <button
             className={btnAddCart}
@@ -191,13 +200,66 @@ const Detail = ({ coffee }) => {
               backgroundColor: coffee?.data?.attributes?.accent_color,
             }}
           >
-             
             ADD TO CART
-          
           </button>
-          
-          
+          <div className={coffeeDetails}>
+            {coffee?.data?.attributes?.details && (
+              <>
+                <p
+                  style={{
+                    color: coffee?.data?.attributes?.accent_color,
+                    fontWeight: "bold",
+                    textDecoration: "underline",
+                    cursor: "pointer",
+                  }}
+                >
+                  Coffee Details :
+                </p>
+                {coffee?.data?.attributes?.details?.map((detail) => (
+                  <ul>
+                    {detail?.content.map((contents) => (
+                      <li>{contents}</li>
+                    ))}
+                  </ul>
+                ))}
+              </>
+            )}
+          </div>
         </div>
+      </div>
+      <div className={reviews} style={{
+         justifyContent: 'center',
+         alignItems: 'center',
+         display: 'flex',
+         marginTop: '50px'
+         
+          }}>
+      <span style={{
+         color: coffee?.data?.attributes?.accent_color,
+         
+          }}>
+              <RatingStars rating={coffee?.data?.attributes?.rating} />
+      </span>
+      </div>
+      <div style={{
+        justifyContent: 'center',
+        alignItems: 'center',
+        display: 'flex',
+        fontWeight: 'bold',
+        fontSize: '30px'
+      }}>
+      {coffee?.data?.attributes?.reviews} reviews
+      </div>
+      <div style={{
+        justifyContent: 'center',
+        alignItems: 'center',
+        display: 'flex',
+      }}>
+      <KeyboardArrowDownIcon style={{
+        fontSize: '50px',
+        color:coffee?.data?.attributes?.accent_color,
+        cursor: 'pointer'
+      }}/>
       </div>
       <Footer
         style={{ backgroundColor: coffee?.data?.attributes?.accent_color }}
