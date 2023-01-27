@@ -1,7 +1,7 @@
 import * as React from "react";
 import IconButton from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
+
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -64,9 +64,8 @@ export default function BasicModal() {
 
   return (
     <div>
-      <IconButton size="large" edge="start" color="inherit" aria-label="menu">
-        <ShoppingCartIcon onClick={handleOpen} />
-      </IconButton>
+      <ShoppingCartIcon onClick={handleOpen} />
+
       <Modal
         open={cart.open}
         onClose={handleClose}
