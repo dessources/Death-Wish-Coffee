@@ -1,7 +1,7 @@
 import React from "react";
 import { addToCart } from "../redux/cart.slice";
 import { useDispatch, useSelector } from "react-redux";
-
+import handleAddToCart from "../utils/handleAddToCart";
 //components
 import Link from "next/link";
 import RatingStars from "../components/RatingStars";
@@ -20,13 +20,10 @@ import {
   price,
   hide,
 } from "../styles/Shop.module.css";
-//formaters
-import formatProductDescription from "../utils/formatProductDescription";
 
 export default function Product({ id, attributes }) {
-
   const [formVisible, setFormVisible] = React.useState(false);
- 
+
   return (
     <div className={product}>
       <div className={productHeader}>
@@ -37,6 +34,9 @@ export default function Product({ id, attributes }) {
           styles={attributes.styles}
           sizes={attributes.sizes}
           uid={attributes.uid}
+          name={attributes.name}
+          price={attributes.price}
+          main_image={attributes.main_image}
           onSubmit={handleAddToCart}
           formVisible={formVisible}
           setFormVisible={setFormVisible}

@@ -29,7 +29,7 @@ export default async function handler(req, res) {
           };
         }),
         success_url: `${req.headers.origin}/StripeSuccess?session_id={CHECKOUT_SESSION_ID}`,
-        cancel_url: `${req.headers.origin}/Cart`,
+        cancel_url: `${req.headers.origin}/Shop`,
       });
       res.status(200).json(session);
     } catch (err) {

@@ -2,9 +2,8 @@ import React from "react";
 import WholeBean from "../components/WholeBean";
 import Ground from "../components/GroundIcon";
 import CloseIcon from "@mui/icons-material/Clear";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../redux/cart.slice.js";
-import Detail from '../pages/Products/[id].js'
 
 //styles
 import {
@@ -15,23 +14,40 @@ import {
   closeAddToCart,
 } from "../styles/Shop.module.css";
 
-export default function AddToCartForm({ styles, sizes, uid, onSubmit, formVisible, setFormVisible }) {
+export default function AddToCartForm({
+  styles,
+  sizes,
+  uid,
+  name,
+  onSubmit,
+  formVisible,
+  setFormVisible,
+  main_image,
+  price,
+}) {
   const [selectedSize, setSelectedSize] = React.useState("");
   const [selectedStyle, setselectedStyle] = React.useState("");
 
   const labelIcons = { ground: <Ground />, "whole bean": <WholeBean /> };
-
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart);
   const handleSubmit = async () => {
+    console.log("the thicnis ", cart);
     if ((!selectedStyle && styles) || (!selectedSize && sizes)) {
       // TODO : aficher un modal qui affiche le message de l'alert
       alert("Veuillez indiquez votre choix pour tous les options disponibles");
     } else {
-      onSubmit({
-        size: selectedSize,
-        style: selectedStyle,
+      const data = onSubmit({
+        name: name,
+        main_image: main_image,
         uid,
-        price: sizes?.[selectedSize],
+        style: selectedStyle,
+        size: selectedSize,
+        styles: styles,
+        price: sizes?.[selectedSize] || price,
       });
+
+      dispatch(addToCart(data));
     }
   };
   return (
