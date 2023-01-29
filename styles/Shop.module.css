@@ -22,6 +22,9 @@
 .productHeader {
   position: relative;
 }
+.coverImage {
+  position: relative;
+}
 
 .coverImage img {
   width: 100%;
@@ -193,8 +196,6 @@
 }
 
 .name {
-  text-transform: lowercase;
-  text-transform: capitalize;
   margin-top: 5px;
 }
 .name,

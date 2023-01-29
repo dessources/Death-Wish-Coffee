@@ -27,6 +27,15 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "Revans";
+  src: url("../public/fonts/Revans-Bold.otf") format("opentype"),
+    url("../public/fonts/Revans-Bold.woff2") format("woff2"),
+    url("../public/fonts/Revans-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 * {
   box-sizing: border-box;
 }
@@ -93,7 +102,6 @@ a {
 }
 
 @media screen and (max-width: 1200px) {
-
   /*-------Subscription-------*/
 
   .save {
@@ -211,21 +219,21 @@ a {
   }
 }
 
-.slick-next{
+.slick-next {
   font-size: 50px !important;
- color:red !important;
+  color: red !important;
   margin: -100px 40px;
   width: 50px !important;
   height: auto !important;
 }
 
-.slick-prev{
+.slick-prev {
   font-size: 50px !important;
   color: red !important;
   margin: -100px 40px !important;
   width: 50px !important;
   height: auto !important;
-  z-index:1 !important;
+  z-index: 1 !important;
 }
 @media (prefers-color-scheme: dark) {
   html {

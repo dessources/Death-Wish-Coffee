@@ -138,7 +138,13 @@ const Detail = ({ coffee }) => {
         </div>
         <div className={descriptionDetailsProduct}>
           <div>
-            <h1 style={{ color: coffee?.data?.attributes?.accent_color }}>{coffee?.data?.attributes?.name}</h1>
+            <h1
+              style={{
+                color: coffee?.data?.attributes?.accent_color,
+              }}
+            >
+              {coffee?.data?.attributes?.name}
+            </h1>
           </div>
           <div className={priceDetailsProduct}>${coffee?.data?.attributes?.price}</div>
           <div className={reviews}>

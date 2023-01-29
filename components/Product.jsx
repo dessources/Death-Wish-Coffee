@@ -52,7 +52,7 @@ export default function Product({ id, attributes }) {
       </div>
       <div className={producInfo}>
         <Link href={`/Products/${id}`}>
-          <div className={name}>{attributes.name.toLowerCase()}</div>
+          <div className={name}>{attributes.name}</div>
         </Link>
         {attributes.reviews > 0 && (
           <div className={reviews}>
