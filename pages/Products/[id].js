@@ -131,7 +131,7 @@ const Detail = ({ coffee }) => {
         <div className={imagesDetailsProduct}>
           <Slider {...settings}>
             <img src={coffee?.data?.attributes?.main_image?.data?.attributes?.formats?.medium?.url} alt="" />
-            {coffee?.data?.attributes?.images.data.map((image) => (
+            {coffee?.data?.attributes?.images?.data?.map((image) => (
               <img src={image?.attributes?.formats?.medium?.url} alt="" />
             ))}
           </Slider>
@@ -150,7 +150,7 @@ const Detail = ({ coffee }) => {
           <div className={reviews}>
             <span style={{ color: coffee?.data?.attributes?.accent_color }}>
               <RatingStars rating={coffee?.data?.attributes?.rating} />
-              {coffee?.data?.attributes?.reviews} reviews
+              {coffee?.data?.attributes?.reviews ? `${coffee?.data?.attributes?.reviews} reviews` : ""}
             </span>
           </div>
           <div className={desciptionTitleDetailsProduct}>{coffee?.data?.attributes?.description_title}</div>
