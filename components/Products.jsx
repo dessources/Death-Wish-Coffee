@@ -2,7 +2,6 @@ import React from "react";
 
 //components
 import Product from "./Product";
-
 //styles
 import { productSection, product, name, reviews, price } from "../styles/Shop.module.css";
 import handleAddToCart from '../utils/handleAddToCart.js';
