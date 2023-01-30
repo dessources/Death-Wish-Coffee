@@ -3,8 +3,8 @@ import React from "react";
 import { coverImage } from "../styles/Shop.module.css";
 import useImageVideoCover from "../hooks/useImageVideoCover";
 
-export default function ImageVideoCover({ videoUrl, main_image }) {
-  const { imageProps, videoProps, containerProps } = useImageVideoCover(videoUrl, main_image);
+export default function ImageVideoCover({ videoUrl, image }) {
+  const { imageProps, videoProps, containerProps } = useImageVideoCover(videoUrl, image);
   return (
     <div className={coverImage} {...containerProps}>
       {videoUrl ? <video muted {...videoProps}></video> : ""}

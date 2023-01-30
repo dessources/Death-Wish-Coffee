@@ -1,6 +1,5 @@
 import React from "react";
-import axios from "axios";
-import { coffeesQueryURL } from "../utils/queries";
+import { getAllCoffees } from "../utils/queries";
 import applyFilters from "../utils/applyFilters";
 import sortProducts from "../utils/sortProducts";
 
@@ -59,8 +58,8 @@ export default function useProducts() {
 
   //requete api
   React.useEffect(() => {
-    axios.get(coffeesQueryURL).then((data) => {
-      dispatch({ type: "initialize", payload: data.data.data });
+    getAllCoffees().then((data) => {
+      dispatch({ type: "initialize", payload: data.coffees });
     });
   }, []);
 

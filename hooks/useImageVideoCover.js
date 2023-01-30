@@ -1,6 +1,6 @@
 import React from "react";
-export default function useImageVideoCover(videoUrl, main_image) {
-  let imageProps = { src: main_image?.data?.attributes?.formats?.small?.url };
+export default function useImageVideoCover(videoUrl, image) {
+  let imageProps = { src: image };
   let videoProps = {};
   let containerProps = {};
   if (videoUrl) {
