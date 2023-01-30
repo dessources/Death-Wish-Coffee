@@ -7,9 +7,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import FlashOnIcon from "@mui/icons-material/FlashOn";
-
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-
 import {
   productsDetails,
   imagesDetailsProduct,
@@ -22,6 +20,9 @@ import {
   btnStyles,
   btnAddCart,
   reviews,
+  selectedLabel,
+  size,
+  style,
 } from "../../styles/id.module.css";
 import RatingStars from "../../components/RatingStars.jsx";
 import handleAddToCart from "../../utils/handleAddToCart";
@@ -69,7 +70,11 @@ const Detail = ({ coffee }) => {
       // TODO : aficher un modal qui affiche le message de l'alert
       alert("Veuillez indiquez votre choix pour tous les options disponibles");
     } else {
-      const data = handleAddToCart({ ...coffee?.data?.attributes, size: selectedSize, style: selectedStyle });
+      const data = handleAddToCart({
+        ...coffee?.data?.attributes,
+        size: selectedSize,
+        style: selectedStyle,
+      });
       dispatch(addToCart(data));
       dispatch(showCart(true));
     }
@@ -131,20 +136,14 @@ const Detail = ({ coffee }) => {
         <div className={imagesDetailsProduct}>
           <Slider {...settings}>
             <img src={coffee?.data?.attributes?.main_image?.data?.attributes?.formats?.medium?.url} alt="" />
-            {coffee?.data?.attributes?.images?.data?.map((image) => (
+            {coffee?.data?.attributes?.images.data.map((image) => (
               <img src={image?.attributes?.formats?.medium?.url} alt="" />
             ))}
           </Slider>
         </div>
         <div className={descriptionDetailsProduct}>
           <div>
-            <h1
-              style={{
-                color: coffee?.data?.attributes?.accent_color,
-              }}
-            >
-              {coffee?.data?.attributes?.name}
-            </h1>
+            <h1 style={{ color: coffee?.data?.attributes?.accent_color }}>{coffee?.data?.attributes?.name}</h1>
           </div>
           <div className={priceDetailsProduct}>${coffee?.data?.attributes?.price}</div>
           <div className={reviews}>
@@ -162,22 +161,26 @@ const Detail = ({ coffee }) => {
                 <h3>
                   <strong>Size</strong>
                 </h3>
-
-                {Object.keys(coffee?.data?.attributes?.sizes).map((size) => (
-                  <>
-                    <input
-                      className={btnStyles}
-                      type="radio"
-                      name="size"
-                      id={coffee?.data?.attributes?.uid + size}
-                      value={size}
-                      onClick={() => setSelectedSize(size === selectedSize ? "" : size)}
-                    />
-                    <label htmlFor={coffee?.data?.attributes?.uid + size}>
-                      {size.replace("_", " ")}: ${coffee?.data?.attributes?.sizes[size]}
-                    </label>
-                  </>
-                ))}
+                <div className={size}>
+                  {Object.keys(coffee?.data?.attributes?.sizes).map((size) => (
+                    <>
+                      <input
+                        className={btnStyles}
+                        type="radio"
+                        name="size"
+                        id={coffee?.data?.attributes?.uid + size}
+                        value={size}
+                        onClick={() => setSelectedSize(size === selectedSize ? "" : size)}
+                      />
+                      <label
+                        htmlFor={coffee?.data?.attributes?.uid + size}
+                        className={selectedSize === size ? selectedLabel : ""}
+                      >
+                        {size.replace("_", " ")}: ${coffee?.data?.attributes?.sizes[size]}
+                      </label>
+                    </>
+                  ))}
+                </div>
               </>
             )}
           </div>
@@ -188,22 +191,27 @@ const Detail = ({ coffee }) => {
                 <h3>
                   <strong>Type</strong>
                 </h3>
-                {coffee?.data?.attributes?.styles?.map((style) => (
-                  <>
-                    <input
-                      className={btnStyles}
-                      type="radio"
-                      id={coffee?.data?.attributes?.uid + style}
-                      name="style"
-                      value={style}
-                      onClick={(e) => setselectedStyle(style === selectedStyle ? "" : style)}
-                    />
-                    <label htmlFor={coffee?.data?.attributes?.uid + style}>
-                      {labelIcons[style]}
-                      {style}
-                    </label>
-                  </>
-                ))}
+                <div className={style}>
+                  {coffee?.data?.attributes?.styles?.map((style) => (
+                    <>
+                      <input
+                        className={btnStyles}
+                        type="radio"
+                        id={coffee?.data?.attributes?.uid + style}
+                        name="style"
+                        value={style}
+                        onClick={(e) => setselectedStyle(style === selectedStyle ? "" : style)}
+                      />
+                      <label
+                        htmlFor={coffee?.data?.attributes?.uid + style}
+                        className={selectedStyle === style ? selectedLabel : ""}
+                      >
+                        <span>{labelIcons[style]}</span>
+                        <p style={{ marginLeft: "10px" }}>{style}</p>
+                      </label>
+                    </>
+                  ))}
+                </div>
               </>
             )}
           </div>
