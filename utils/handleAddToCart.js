@@ -1,8 +1,7 @@
-import React from "react";
-import { addToCart } from "../redux/cart.slice";
 import formatProductDescription from "../utils/formatProductDescription";
 
 const handleAddToCart = ({ size, style, uid, price, sizes, name, main_image }) => {
+  console.log(sizes?.[size], " is sizes[size");
   const cartPayload = {
     uid: uid,
     name: `${name} ${formatProductDescription(size, style)}`,

@@ -123,7 +123,7 @@ const Navbar = () => {
                 <Link href={"/About"}>ABOUT</Link>
               </Typography>
 
-              <Box sx={{ display: "flex" }}>
+              <Box sx={{ display: "flex", alignItems: "center" }}>
                 <Link href={"/Login"}>
                   <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                     <LoginIcon />
@@ -140,6 +140,7 @@ const Navbar = () => {
                     color: "red",
                     fontSize: "16px",
                     fontWeight: "bold",
+                    alignSelf: "flex-start",
                   }}
                 >
                   {getItemsCount()}
