@@ -9,6 +9,7 @@
   scrollbar-width: thin;
   padding-right: 10px;
   overflow-y: auto;
+  margin-top: 1rem;
 }
 
 .imgModal {
@@ -22,6 +23,23 @@
 
 .titleRemove {
   display: flex;
+  align-items: flex-start;
+}
+.titleRemove h4,
+.titleRemove div,
+.titleRemove p {
+  margin: 0;
+}
+.titleRemove div {
+  flex: 1 1 90%;
+}
+.titleRemove svg {
+  margin: 0;
+  flex: 1 1 10%;
+}
+.titleRemove p {
+  font-size: 14px;
+  font-weight: 400;
 }
 
 .numberQuantity {
@@ -53,4 +71,10 @@
 .btnCheckout:hover {
   background-color: orange;
   border-radius: 8%;
+}
+
+@media screen and (max-width: 992px) {
+  .modalContainer {
+    display: none;
+  }
 }

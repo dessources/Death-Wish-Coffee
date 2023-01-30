@@ -1,4 +1,4 @@
-/* .productsDetails {
+/* /* .productsDetails {
   display: flex;
   width: 100%;
   margin-top: 60px;
@@ -259,11 +259,13 @@
 
 .btnAddCart {
   margin-top: 50px;
-  color: black;
+  color: #201e1d;
   width: 205px;
   height: 65px;
   font-weight: bold;
   font-size: 15px;
+  border: none;
+  cursor: pointer;
 }
 
 .reviews {

@@ -3,7 +3,7 @@ import WholeBean from "../components/WholeBean";
 import Ground from "../components/GroundIcon";
 import CloseIcon from "@mui/icons-material/Clear";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../redux/cart.slice.js";
+import { addToCart, showCart } from "../redux/cart.slice.js";
 
 //styles
 import {
@@ -22,7 +22,7 @@ export default function AddToCartForm({
   onSubmit,
   formVisible,
   setFormVisible,
-  main_image,
+  image,
   price,
 }) {
   const [selectedSize, setSelectedSize] = React.useState("");
@@ -32,14 +32,13 @@ export default function AddToCartForm({
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
   const handleSubmit = async () => {
-    console.log("the thicnis ", cart);
-    if ((!selectedStyle && styles) || (!selectedSize && sizes)) {
+    if ((!selectedStyle && styles.length) || (!selectedSize && sizes)) {
       // TODO : aficher un modal qui affiche le message de l'alert
       alert("Veuillez indiquez votre choix pour tous les options disponibles");
     } else {
       const data = onSubmit({
         name: name,
-        main_image: main_image,
+        thumbnailImage: image,
         uid,
         style: selectedStyle,
         size: selectedSize,
@@ -48,6 +47,7 @@ export default function AddToCartForm({
       });
 
       dispatch(addToCart(data));
+      dispatch(showCart(true));
     }
   };
   return (

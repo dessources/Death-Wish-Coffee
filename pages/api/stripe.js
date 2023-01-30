@@ -1,4 +1,5 @@
 import Stripe from "stripe";
+import formatProductDescription from "../../utils/formatProductDescription";
 const stripe = new Stripe(`${process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY}`);
 
 export default async function handler(req, res) {
@@ -20,8 +21,8 @@ export default async function handler(req, res) {
             price_data: {
               currency: "usd",
               product_data: {
-                name: item.name,
-                images: [item.main_image],
+                name: `${item.name} ${formatProductDescription(item.size, item.style, true)}`,
+                images: [item.image],
               },
               unit_amount_decimal: Number((item.price * 100).toFixed(2)),
             },

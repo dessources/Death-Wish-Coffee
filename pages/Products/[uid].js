@@ -161,8 +161,8 @@ const Detail = ({ coffee }) => {
                   <strong>Size</strong>
                 </h3>
                 <div className={size}>
-                  {Object.keys(coffee?.sizes).map((size) => (
-                    <>
+                  {Object.keys(coffee?.sizes).map((size, id) => (
+                    <React.Fragment key={id}>
                       <input
                         className={btnStyles}
                         type="radio"
@@ -174,7 +174,7 @@ const Detail = ({ coffee }) => {
                       <label htmlFor={coffee?.uid + size} className={selectedSize === size ? selectedLabel : ""}>
                         {size.replace("_", " ")}: ${coffee?.sizes[size]}
                       </label>
-                    </>
+                    </React.Fragment>
                   ))}
                 </div>
               </>
@@ -188,8 +188,8 @@ const Detail = ({ coffee }) => {
                   <strong>Style</strong>
                 </h3>
                 <div className={style}>
-                  {coffee?.styles?.map((style) => (
-                    <>
+                  {coffee?.styles?.map((style, i) => (
+                    <React.Fragment key={i}>
                       <input
                         className={btnStyles}
                         type="radio"
@@ -205,7 +205,7 @@ const Detail = ({ coffee }) => {
                         <span>{labelIcons[style]}</span>
                         <p style={{ marginLeft: "10px" }}>{style}</p>
                       </label>
-                    </>
+                    </React.Fragment>
                   ))}
                 </div>
               </>
@@ -235,8 +235,8 @@ const Detail = ({ coffee }) => {
                 </p>
                 {coffee?.details?.map((detail) => (
                   <ul>
-                    {detail?.content.map((contents) => (
-                      <li>{contents}</li>
+                    {detail?.content.map((contents, i) => (
+                      <li key={i}>{contents}</li>
                     ))}
                   </ul>
                 ))}

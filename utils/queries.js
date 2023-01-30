@@ -28,6 +28,7 @@ export const getOneCoffee = (uid) =>
           smallImage
           thumbnailImage
           styles
+          sizes
           format
           roast
           accentColor
@@ -56,6 +57,7 @@ export const getAllCoffees = () =>
           smallImage
           thumbnailImage
           styles
+          sizes
           format
           roast
           accentColor

@@ -35,7 +35,7 @@ export default function Product({ coffee }) {
           uid={coffee?.uid}
           name={coffee?.name}
           price={coffee?.price}
-          image={coffee?.mediumImage}
+          image={coffee?.thumbnailImage}
           onSubmit={handleAddToCart}
           formVisible={formVisible}
           setFormVisible={setFormVisible}

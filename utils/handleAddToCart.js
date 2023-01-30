@@ -1,12 +1,13 @@
 import formatProductDescription from "../utils/formatProductDescription";
 
-const handleAddToCart = ({ size, style, uid, price, sizes, name, main_image }) => {
-  console.log(sizes?.[size], " is sizes[size");
+const handleAddToCart = ({ size, style, uid, price, sizes, name, thumbnailImage }) => {
   const cartPayload = {
     uid: uid,
-    name: `${name} ${formatProductDescription(size, style)}`,
-    main_image: main_image?.data?.attributes?.formats?.thumbnail?.url,
+    name: `${name} `,
+    image: thumbnailImage,
     price: sizes?.[size] || price,
+    style: style,
+    size: size,
   };
   return cartPayload;
 };
