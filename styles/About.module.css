@@ -33,6 +33,10 @@
     max-width: 1434px;
 }
 
+.timelineResp{
+    display: none;
+}
+
 .creation{
     height: 198px;
     max-width: 50%;
@@ -498,6 +502,10 @@
     }
 
     .timeline{
+        display: none;
+    }
+
+    .timelineResp{
         display: flex;
         flex-direction: column;
         background-color: black;
@@ -506,92 +514,4 @@
         align-items: center;
     }
 
-    .creation{
-        height: 150px;
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 10px;
-    }
-
-    .creationYear{
-        color: red;
-        font-size: 20px;
-        font-weight: 900;
-    }
-
-    .creationImg{
-        margin-left: 50px;
-    }
-
-    .creationTitle{
-        color: red;
-        font-size: 18px;
-        font-weight: 900;
-        font-family: 'revansmedium';
-        margin-top: 0px;
-        max-width: 100%;
-        margin-left: 50px;
-        margin-right: auto;
-        text-align: center;
-
-    }
-
-    .creationText{
-        color: white;
-        font-size: 18px;
-        font-weight: lighter;
-        text-align: center;
-        margin-left: 30px;
-        max-width: 100%;
-    }
-
-    .goodMorning{
-        max-height: 150px;
-        max-width: 100%;
-        margin-right: auto;
-        margin-left: auto;
-        margin-bottom: 30px;
-        
-    }
-
-    .goodMorningTitle{
-        color: red;
-        font-size: 18px;
-        font-weight: 900;
-        text-align: center;
-        font-family: 'revansmedium';
-        margin-top: 20px;
-    }
-
-    .goodMorningText{
-        color: white;
-        font-size: 18px;
-        font-weight: lighter;
-        text-align: right;
-        text-align: center;
-    }
-
-    .goodMorningDate{
-        height: 150px;
-        max-width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-left: 50px;
-        margin-right: auto;
-        margin-bottom: 20px;
-    }
-
-    .gmYearResp{
-        display: block;
-        color: red;
-        font-size: 20px;
-        font-weight: 900;
-        
-    }
-
-    .gmYear{
-        display: none;
-    }
 }

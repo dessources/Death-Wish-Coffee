@@ -24,7 +24,6 @@ import {
   goodMorningTitle,
   goodMorningText,
   goodMorningDate,
-  gmYearResp,
   gmYear,
   superBowl,
   superBowlDate,
@@ -38,7 +37,9 @@ import {
   historic,
   historicDate,
   historicTitle,
-  historicText
+  historicText,
+  timelineResp,
+  
 } from '../styles/About.module.css'
 
 const About = () => {
@@ -216,12 +217,7 @@ const About = () => {
           className={goodMorningDate}
           
         >
-          <Typography
-            className={gmYearResp}
-            
-          >
-            2013
-          </Typography>
+          
           <img
             src="images/2013.png"
             alt="GMA"
@@ -353,6 +349,275 @@ const About = () => {
           </Typography>
         </Box>
 
+      </Container>
+      <Container
+        className={timelineResp}
+      >
+        <Box
+        style={{
+          height: 150,
+          display: 'flex',
+          flexDirection: 'column',
+          marginBottom: 120,
+          marginTop: 50
+        }}
+        >
+          <Typography
+            style={{
+              color: 'red',
+              fontSize: 20,
+              fontWeight:900
+            }}
+            align='center'
+          >
+            2012
+          </Typography>
+            <img 
+              src="images/2012.png" 
+              alt="2012"
+              style={{
+                height: 136,
+                width: 200,
+                marginLeft: 110
+              }}
+             />
+             <Typography
+                style={{
+                  color: 'red',
+                  fontSize: 18,
+                  fontWeight: 900,
+                  fontFamily: 'revansmedium',
+                  marginTop: 15
+                }}
+                align='center'
+             >
+              THE CREATION
+             </Typography>
+             <Typography
+                variant='body1'
+                style={{
+                  color: 'white',
+                  fontSize: 14,
+                  fontWeight: 'lighter',
+                  
+                }}
+                align='center'
+             >
+              Mike Brown brings his idea for Death Wish Coffee to life, creating the recipe + roasting process.
+             </Typography>
+        </Box>
+        <Box
+        style={{
+          height: 150,
+          display: 'flex',
+          flexDirection: 'column',
+          marginBottom: 120,
+          marginTop: 50
+        }}
+        >
+          <Typography
+            style={{
+              color: 'red',
+              fontSize: 20,
+              fontWeight:900
+            }}
+            align='center'
+          >
+            2013
+          </Typography>
+            <img 
+              src="images/2013.png" 
+              alt="GMA"
+              style={{
+                height: 136,
+                width: 200,
+                marginLeft: 60
+              }}
+             />
+             <Typography
+                style={{
+                  color: 'red',
+                  fontSize: 18,
+                  fontWeight: 900,
+                  fontFamily: 'revansmedium',
+                  marginTop: 15
+                }}
+                align='center'
+             >
+              GOOD MORNING AMERICA
+             </Typography>
+             <Typography
+                variant='body1'
+                style={{
+                  color: 'white',
+                  fontSize: 14,
+                  fontWeight: 'lighter',
+                  
+                }}
+                align='center'
+             >
+              "Good Morning America" airs a segment on Death Wish Coffee and introduces us to thousands of people.
+             </Typography>
+        </Box>
+        <Box
+        style={{
+          height: 150,
+          display: 'flex',
+          flexDirection: 'column',
+          marginBottom: 120,
+          marginTop: 50
+        }}
+        >
+          <Typography
+            style={{
+              color: 'red',
+              fontSize: 20,
+              fontWeight:900
+            }}
+            align='center'
+          >
+            2016
+          </Typography>
+            <img 
+              src="images/2016.png" 
+              alt="bean"
+              style={{
+                height: 136,
+                width: 200,
+                marginLeft: 110
+              }}
+             />
+             <Typography
+                style={{
+                  color: 'red',
+                  fontSize: 18,
+                  fontWeight: 900,
+                  fontFamily: 'revansmedium',
+                  marginTop: 15
+                }}
+                align='center'
+             >
+              SUPER BOWL 50 AD AIRS
+             </Typography>
+             <Typography
+                variant='body1'
+                style={{
+                  color: 'white',
+                  fontSize: 14,
+                  fontWeight: 'lighter',
+                  
+                }}
+                align='center'
+             >
+              We become the smallest company to run a commercial during Super Bowl 50, exposing 167 million viewers to Death Wish Coffee.
+             </Typography>
+        </Box>
+        <Box
+        style={{
+          height: 150,
+          display: 'flex',
+          flexDirection: 'column',
+          marginBottom: 120,
+          marginTop: 50
+        }}
+        >
+          <Typography
+            style={{
+              color: 'red',
+              fontSize: 20,
+              fontWeight:900
+            }}
+            align='center'
+          >
+            2018
+          </Typography>
+            <img 
+              src="images/2018.png" 
+              alt="rocket"
+              style={{
+                height: 136,
+                width: 200,
+                marginLeft: 60
+              }}
+             />
+             <Typography
+                style={{
+                  color: 'red',
+                  fontSize: 18,
+                  fontWeight: 900,
+                  fontFamily: 'revansmedium',
+                  marginTop: 15
+                }}
+                align='center'
+             >
+              CAFFEINATED THE UNIVERSE
+             </Typography>
+             <Typography
+                variant='body1'
+                style={{
+                  color: 'white',
+                  fontSize: 14,
+                  fontWeight: 'lighter',
+                  
+                }}
+                align='center'
+             >
+              With the help of NASA Food Labs, Death Wish Coffee developed an instant freeze-dried blend of its coffee to fuel the astronauts on the International Space Station.
+             </Typography>
+        </Box>
+        <Box
+        style={{
+          height: 150,
+          display: 'flex',
+          flexDirection: 'column',
+          marginBottom: 120,
+          marginTop: 50
+        }}
+        >
+          <Typography
+            style={{
+              color: 'red',
+              fontSize: 20,
+              fontWeight:900
+            }}
+            align='center'
+          >
+            2020
+          </Typography>
+            <img 
+              src="images/2020.png" 
+              alt="GMA"
+              style={{
+                height: 136,
+                width: 200,
+                marginLeft: 120
+              }}
+             />
+             <Typography
+                style={{
+                  color: 'red',
+                  fontSize: 18,
+                  fontWeight: 900,
+                  fontFamily: 'revansmedium',
+                  marginTop: 15
+                }}
+                align='center'
+             >
+              HISTORIC HOMECOMINGS
+             </Typography>
+             <Typography
+                variant='body1'
+                style={{
+                  color: 'white',
+                  fontSize: 14,
+                  fontWeight: 'lighter',
+                  
+                }}
+                align='center'
+             >
+              Death Wish Coffee headquarters moves to historic building from 1889 in Saratoga Springs, NY-the location of our original coffee shop.
+             </Typography>
+        </Box>
       </Container>
       <Container
         className="apply"
