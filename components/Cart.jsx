@@ -1,7 +1,6 @@
 import * as React from "react";
 import IconButton from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
-
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
