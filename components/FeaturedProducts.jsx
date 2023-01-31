@@ -9,11 +9,11 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Link from "next/link";
-import FlashOnIcon from "@mui/icons-material/FlashOn";
+import CarouselLightningIcon from "./CarouselLightningIcon";
 import Skeleton from "@mui/material/Skeleton";
 import RatingStars from "../components/RatingStars";
 import { reviews, card, featuredProducts, nameProduct } from "../styles/FeaturedProducts.module.css";
-
+import { getSpecificCoffees } from "../utils/queries";
 const FeaturedProducts = () => {
   const settings = {
     dots: false,
@@ -22,8 +22,13 @@ const FeaturedProducts = () => {
     slidesToShow: 4,
     slidesToScroll: 1,
     initialSlide: 0,
-    nextArrow: <FlashOnIcon />,
-    prevArrow: <FlashOnIcon />,
+    nextArrow: <CarouselLightningIcon type={"next"} sx={{ transform: "translate(-15%,0%) !important" }} />,
+    prevArrow: (
+      <CarouselLightningIcon
+        type={"prev"}
+        sx={{ transform: "rotateX(0) rotateY(180deg) translate(-15%,0%) !important " }}
+      />
+    ),
     responsive: [
       {
         breakpoint: 1224,
@@ -55,14 +60,7 @@ const FeaturedProducts = () => {
   const [data, setData] = React.useState();
 
   React.useEffect(() => {
-    fetch(
-      `http://localhost:1337/api/coffees?filters[id][$in][0]=6&filters[id][$in][1]=86&filters[id][$in][2]=75&filters[id][$in][3]=80&filters[id][$in][4]=84&populate=main_image,images`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data.data);
-        setData(data.data);
-      });
+    getSpecificCoffees({ featured: true }).then((data) => setData(data.coffees));
   }, []);
   return (
     <div className={featuredProducts}>
@@ -78,13 +76,8 @@ const FeaturedProducts = () => {
               sx={{ "& .MuiCardActionArea-focusHighlight": { opacity: "0!important" } }}
             >
               {coffee ? (
-                <Link href={`/Products/${coffee?.id}`}>
-                  <CardMedia
-                    className="image-coffee"
-                    component="img"
-                    image={coffee?.attributes?.main_image?.data?.attributes?.formats?.medium?.url}
-                    alt="coffee"
-                  />
+                <Link href={`/Products/${coffee?.uid}`}>
+                  <CardMedia className="image-coffee" component="img" image={coffee?.mediumImage} alt="coffee" />
                 </Link>
               ) : (
                 <Skeleton variant="rectangular" width={400} height={400} />
@@ -96,9 +89,9 @@ const FeaturedProducts = () => {
                     height: "60px",
                   }}
                 >
-                  <Link href={`/Products/${coffee?.id}`}>
+                  <Link href={`/Products/${coffee?.uid}`}>
                     <Typography gutterBottom variant="h5" component="div" fontWeight="bold">
-                      <span className={nameProduct}>{coffee?.attributes?.name}</span>
+                      <span className={nameProduct}>{coffee?.name}</span>
                     </Typography>
                   </Link>
                 </Box>
@@ -117,8 +110,8 @@ const FeaturedProducts = () => {
                     }}
                   >
                     <Box className={reviews}>
-                      <RatingStars rating={coffee?.attributes?.rating} />
-                      {coffee?.attributes?.reviews} Reviews
+                      <RatingStars rating={coffee?.rating} />
+                      {coffee?.reviews} Reviews
                     </Box>
                     <Box
                       style={{
@@ -126,7 +119,7 @@ const FeaturedProducts = () => {
                         fontWeight: "bold",
                       }}
                     >
-                      ${coffee?.attributes?.price}
+                      ${coffee?.price}
                     </Box>
                   </Box>
                 </Typography>
@@ -138,7 +131,7 @@ const FeaturedProducts = () => {
                 justifyContent: "center",
               }}
             >
-              <Link href={`/Products/${coffee?.id}`}>
+              <Link href={`/Products/${coffee?.uid}`}>
                 <Button
                   size="small"
                   style={{

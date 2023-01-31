@@ -1,6 +1,5 @@
 import React from "react";
-import { addToCart } from "../redux/cart.slice";
-import { useDispatch, useSelector } from "react-redux";
+
 import handleAddToCart from "../utils/handleAddToCart";
 //components
 import Link from "next/link";
@@ -21,22 +20,22 @@ import {
   hide,
 } from "../styles/Shop.module.css";
 
-export default function Product({ id, attributes }) {
+export default function Product({ coffee }) {
   const [formVisible, setFormVisible] = React.useState(false);
 
   return (
     <div className={product}>
       <div className={productHeader}>
-        <Link href={`/Products/${id}`}>
-          <ImageVideoCover main_image={attributes.main_image} videoUrl={attributes.videoUrl} />
+        <Link href={`/Products/${coffee?.uid}`}>
+          <ImageVideoCover image={coffee?.mediumImage} videoUrl={coffee?.videoUrl} />
         </Link>
         <AddToCartForm
-          styles={attributes.styles}
-          sizes={attributes.sizes}
-          uid={attributes.uid}
-          name={attributes.name}
-          price={attributes.price}
-          main_image={attributes.main_image}
+          styles={coffee?.styles}
+          sizes={coffee?.sizes}
+          uid={coffee?.uid}
+          name={coffee?.name}
+          price={coffee?.price}
+          image={coffee?.thumbnailImage}
           onSubmit={handleAddToCart}
           formVisible={formVisible}
           setFormVisible={setFormVisible}
@@ -51,16 +50,16 @@ export default function Product({ id, attributes }) {
         </div>
       </div>
       <div className={producInfo}>
-        <Link href={`/Products/${id}`}>
-          <div className={name}>{attributes.name}</div>
+        <Link href={`/Products/${coffee?.uid}`}>
+          <div className={name}>{coffee?.name}</div>
         </Link>
-        {attributes.reviews > 0 && (
+        {coffee?.reviews > 0 && (
           <div className={reviews}>
-            <RatingStars rating={attributes.rating} />
-            {attributes.reviews} reviews
+            <RatingStars rating={coffee?.rating} />
+            {coffee?.reviews} reviews
           </div>
         )}
-        <div className={price}>${attributes.price}</div>
+        <div className={price}>${coffee?.price}</div>
       </div>
     </div>
   );

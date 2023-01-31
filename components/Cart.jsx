@@ -18,13 +18,15 @@ import {
   btnCheckout,
   scroll,
   modalTriangle,
+  modalContainer,
 } from "../styles/Cart.module.css";
 import { showCart } from "../redux/cart.slice";
+import formatProductDescription from "../utils/formatProductDescription";
 
 const style = {
   position: "absolute",
-  top: "48%",
-  left: "80%",
+  top: "28rem",
+  right: " -4.5rem",
   transform: "translate(-50%, -50%)",
   width: 450,
   bgcolor: "#201e1d",
@@ -37,7 +39,7 @@ const style = {
     borderWidth: "10px 15px 10px 0",
     borderColor: "transparent #201e1d transparent transparent",
     position: "absolute",
-    left: "82%",
+    left: "85%",
     top: "-17px",
     transform: "rotate(90deg)",
   },
@@ -66,12 +68,13 @@ export default function BasicModal() {
       <ShoppingCartIcon onClick={handleOpen} />
 
       <Modal
+        className={modalContainer}
         open={cart.open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style} style={modalTriangle}>
+        <Box sx={cart.products.length ? style : { ...style, top: "14rem" }} style={modalTriangle}>
           <Box
             style={{
               display: "flex",
@@ -81,7 +84,7 @@ export default function BasicModal() {
             <Typography color="gray" fontWeight="bold" id="modal-modal-title" variant="h6" component="h2">
               ALL YOUR STUFF
             </Typography>
-            <CloseIcon onClick={handleClose} />
+            <CloseIcon onClick={handleClose} sx={{ cursor: "pointer" }} />
           </Box>
           <hr />
           <div>
@@ -94,17 +97,19 @@ export default function BasicModal() {
                     <div>
                       <div className={productModal}>
                         <div className={imgModal}>
-                          <img src={item?.main_image} alt="" />
+                          <img src={item?.image} alt="" />
                         </div>
                         <div className={infoProduct}>
                           <div className={titleRemove}>
-                            <h4>{item?.name}</h4>
+                            <div>
+                              <h4>{item?.name}</h4>
+                              <p>{formatProductDescription(item?.size, item?.style, false)}</p>
+                            </div>
                             <CloseIcon
                               onClick={() => dispatch(removeFromCart(item?.uid))}
                               style={{
                                 height: "25px",
-                                marginTop: "15px",
-                                marginLeft: "50px",
+
                                 color: "red",
                                 cursor: "pointer",
                               }}
