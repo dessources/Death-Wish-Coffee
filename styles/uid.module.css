@@ -67,23 +67,28 @@
 .priceDetailsProduct {
   font-weight: bold;
   font-size: 22px;
+  font-family: "FenomenSans";
 }
 
 .desciptionTitleDetailsProduct {
   margin-top: 25px;
   font-weight: bold;
   font-size: 27px;
+  font-family: "FenomenSans";
 }
 
 .desciptionDetailsProduct {
   margin-top: 20px;
-  width: 85%;
+  width: 80%;
   text-align: justify;
 }
 .descriptionDetailsProduct h1 {
   font-family: "Revans";
   text-transform: uppercase;
-  width: 70%;
+  width: 85%;
+}
+.descriptions {
+  width: 80%;
 }
 .stylesDetailsProduct {
   margin-top: 10px;
@@ -91,11 +96,16 @@
 
 .coffeeDetails {
   margin-top: 80px;
+  display: flex;
+  width: 85%;
+}
+
+.coffeeDetails div {
+  padding-right: 0.5rem;
 }
 
 .coffeeDetails li {
-  padding: 5px;
-  width: 80%;
+  padding: 1px;
 }
 
 .btnStyles {
@@ -124,8 +134,12 @@
   font-size: 15px;
   border: none;
   cursor: pointer;
+  font-family: "FenomenSans-Book";
 }
 
+.btnAddCart:hover {
+  color: #fff;
+}
 .reviews {
   line-height: 24px;
   cursor: pointer;

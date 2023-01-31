@@ -133,13 +133,17 @@ const Detail = ({ coffee }) => {
           </div>
           <div className={priceDetailsProduct}>${coffee?.price}</div>
           <div className={reviews}>
-            <span style={{ color: coffee?.accentColor }}>
-              <RatingStars rating={coffee?.rating} />
+            <span>
+              <RatingStars rating={coffee?.rating} style={{ color: coffee?.accentColor }} />
               {coffee?.reviews ? `${coffee?.reviews} reviews` : ""}
             </span>
           </div>
-          <div className={desciptionTitleDetailsProduct}>{coffee?.description_title}</div>
-          <div className={descriptions}>{coffee?.descriptions}</div>
+          <div className={desciptionTitleDetailsProduct}>{coffee?.descriptionTitle}</div>
+          <div className={descriptions}>
+            {coffee?.descriptions?.map((description, i) => (
+              <p key={i}>{description}</p>
+            ))}
+          </div>
 
           <div>
             {coffee?.sizes && (
@@ -210,22 +214,15 @@ const Detail = ({ coffee }) => {
           <div className={coffeeDetails}>
             {coffee?.details && (
               <>
-                <p
-                  style={{
-                    color: coffee?.accentColor,
-                    fontWeight: "bold",
-
-                    cursor: "pointer",
-                  }}
-                >
-                  Coffee Details :
-                </p>
-                {coffee?.details?.map((detail) => (
-                  <ul>
-                    {detail?.content.map((contents, i) => (
-                      <li key={i}>{contents}</li>
-                    ))}
-                  </ul>
+                {coffee?.details?.map((detail, i) => (
+                  <div key={i}>
+                    <h4>{`${detail.title} Details`}</h4>
+                    <ul>
+                      {detail?.content.map((contents, i) => (
+                        <li key={i}>{contents}</li>
+                      ))}
+                    </ul>
+                  </div>
                 ))}
               </>
             )}
@@ -260,7 +257,7 @@ const Detail = ({ coffee }) => {
       >
         {coffee?.reviews} reviews
       </div>
-      <div
+      {/* <div
         style={{
           justifyContent: "center",
           alignItems: "center",
@@ -274,7 +271,7 @@ const Detail = ({ coffee }) => {
             cursor: "pointer",
           }}
         />
-      </div>
+      </div> */}
       <Footer style={{ backgroundColor: coffee?.accentColor }} />
     </div>
   );
