@@ -8,7 +8,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import CarouselLightningIcon from "../../components/CarouselLightningIcon";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-
 import {
   productsDetails,
   imagesDetailsProduct,
@@ -18,14 +17,13 @@ import {
   descriptions,
   stylesDetailsProduct,
   coffeeDetails,
-  selectedLabel,
-  detail,
   btnStyles,
   btnAddCart,
-  style,
   size,
   reviews,
-} from "../../styles/uid.module.css";
+  selectedLabel,
+  style,
+} from "../../styles/id.module.css";
 import RatingStars from "../../components/RatingStars.jsx";
 import handleAddToCart from "../../utils/handleAddToCart";
 import { useDispatch, useSelector } from "react-redux";
@@ -141,11 +139,7 @@ const Detail = ({ coffee }) => {
             </span>
           </div>
           <div className={desciptionTitleDetailsProduct}>{coffee?.description_title}</div>
-          <div className={descriptions}>
-            {coffee?.descriptions?.map((description) => (
-              <p>{description}</p>
-            ))}
-          </div>
+          <div className={descriptions}>{coffee?.descriptions}</div>
 
           <div>
             {coffee?.sizes && (
@@ -215,7 +209,7 @@ const Detail = ({ coffee }) => {
           </button>
           <div className={coffeeDetails}>
             {coffee?.details && (
-              <div className={detail}>
+              <>
                 <p
                   style={{
                     color: coffee?.accentColor,
@@ -233,7 +227,7 @@ const Detail = ({ coffee }) => {
                     ))}
                   </ul>
                 ))}
-              </div>
+              </>
             )}
           </div>
         </div>
