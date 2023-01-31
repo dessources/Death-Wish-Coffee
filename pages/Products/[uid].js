@@ -7,10 +7,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import FlashOnIcon from "@mui/icons-material/FlashOn";
-<<<<<<< HEAD:pages/Products/[id].js
-=======
 import CarouselLightningIcon from "../../components/CarouselLightningIcon";
->>>>>>> 2abd997b27b7e59e1ff8c6434ff53535e9932681:pages/Products/[uid].js
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import {
   productsDetails,
