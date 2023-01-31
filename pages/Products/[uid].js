@@ -7,7 +7,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import FlashOnIcon from "@mui/icons-material/FlashOn";
-
+import CarouselLightningIcon from "../../components/CarouselLightningIcon";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 import {
@@ -16,13 +16,14 @@ import {
   descriptionDetailsProduct,
   priceDetailsProduct,
   desciptionTitleDetailsProduct,
-  desciptionDetailsProduct,
+  descriptions,
   stylesDetailsProduct,
   coffeeDetails,
   selectedLabel,
   btnStyles,
   btnAddCart,
   style,
+  size,
   reviews,
 } from "../../styles/uid.module.css";
 import RatingStars from "../../components/RatingStars.jsx";
@@ -80,20 +81,8 @@ const Detail = ({ coffee }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     initialSlide: 0,
-    nextArrow: (
-      <FlashOnIcon
-        style={{
-          color: coffee?.accent_color,
-        }}
-      />
-    ),
-    prevArrow: (
-      <FlashOnIcon
-        style={{
-          color: coffee?.accent_color,
-        }}
-      />
-    ),
+    nextArrow: <CarouselLightningIcon type={"next"} />,
+    prevArrow: <CarouselLightningIcon type={"prev"} />,
     responsive: [
       {
         breakpoint: 1224,
@@ -152,7 +141,7 @@ const Detail = ({ coffee }) => {
             </span>
           </div>
           <div className={desciptionTitleDetailsProduct}>{coffee?.description_title}</div>
-          <div className={desciptionDetailsProduct}>{coffee?.descriptions}</div>
+          <div className={descriptions}>{coffee?.descriptions}</div>
 
           <div>
             {coffee?.sizes && (
@@ -227,7 +216,7 @@ const Detail = ({ coffee }) => {
                   style={{
                     color: coffee?.accentColor,
                     fontWeight: "bold",
-                    textDecoration: "underline",
+
                     cursor: "pointer",
                   }}
                 >

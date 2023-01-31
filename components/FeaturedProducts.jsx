@@ -9,7 +9,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Link from "next/link";
-import FlashOnIcon from "@mui/icons-material/FlashOn";
+import CarouselLightningIcon from "./CarouselLightningIcon";
 import Skeleton from "@mui/material/Skeleton";
 import RatingStars from "../components/RatingStars";
 import { reviews, card, featuredProducts, nameProduct } from "../styles/FeaturedProducts.module.css";
@@ -22,8 +22,13 @@ const FeaturedProducts = () => {
     slidesToShow: 4,
     slidesToScroll: 1,
     initialSlide: 0,
-    nextArrow: <FlashOnIcon />,
-    prevArrow: <FlashOnIcon />,
+    nextArrow: <CarouselLightningIcon type={"next"} sx={{ transform: "translate(-15%,0%) !important" }} />,
+    prevArrow: (
+      <CarouselLightningIcon
+        type={"prev"}
+        sx={{ transform: "rotateX(0) rotateY(180deg) translate(-15%,0%) !important " }}
+      />
+    ),
     responsive: [
       {
         breakpoint: 1224,

@@ -75,7 +75,7 @@ export default function BasicModal() {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style} style={modalTriangle}>
+        <Box sx={cart.products.length ? style : { ...style, top: "14rem" }} style={modalTriangle}>
           <Box
             style={{
               display: "flex",

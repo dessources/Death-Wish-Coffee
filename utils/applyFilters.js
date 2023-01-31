@@ -13,8 +13,8 @@ export default function applyFilters(state, action) {
           // du tableau fait parties de la liste de valeurs selectionées
           // par l'utilisateur pour ce filter.
 
-          if (product.attributes[filter] instanceof Array) {
-            if (!product.attributes[filter].some((item) => action.filters[filter][item])) {
+          if (product[filter] instanceof Array) {
+            if (!product[filter].some((item) => action.filters[filter][item])) {
               product.hidden = true;
               break;
             } else {
@@ -24,7 +24,7 @@ export default function applyFilters(state, action) {
           // sinon si la valeur de l'attribut en qustion de notre produit
           // n'est pas selectionée par l'utilisateur pour ce filter
           // on met hidden:true
-          else if (!action.filters[filter][product.attributes[filter]]) {
+          else if (!action.filters[filter][product[filter]]) {
             product.hidden = true;
             break;
           } else {

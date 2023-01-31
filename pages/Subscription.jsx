@@ -9,6 +9,7 @@ import Link from "next/link";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
+import { runOut } from "../styles/Subscription.module.css";
 
 const Subscription = () => {
   return (
@@ -42,11 +43,11 @@ const Subscription = () => {
           <Typography
             variant="body1"
             style={{
-              color: "white",
               fontSize: 24,
               fontWeight: "lighter",
               textAlign: "center",
               marginTop: 20,
+              fontFamily: "'FenomenSans-Book'",
             }}
           >
             Never run out of coffee and save 10% on all coffee subscription orders. Start a subscription today to
@@ -56,6 +57,7 @@ const Subscription = () => {
           <Button
             variant="contained"
             style={{
+              fontFamily: "'FenomenSans-Book'",
               color: "black",
               width: "210px",
               height: "60px",
@@ -73,6 +75,8 @@ const Subscription = () => {
           <Button
             variant="contained"
             style={{
+              fontFamily: "'FenomenSans-Book'",
+
               color: "black",
               width: "160px",
               height: "60px",
@@ -113,16 +117,18 @@ const Subscription = () => {
           SUBSCRIBE & SAVE
         </Typography>
         <Typography
-          variant="body1"
+          // variant="body1"
           style={{
-            color: "white",
+            color: "red",
             fontSize: 21,
+            fontFamily: `"FenomenSans-Book" !important`,
             fontWeight: "lighter",
             textAlign: "center",
             marginTop: 10,
             paddingRight: 3,
             paddingLeft: 3,
           }}
+          className={runOut}
         >
           Never run out of coffee and save 10% on all coffee subscription orders. Start a subscription today to
           take advantage of subscriber-only savings, early access to exclusive products and more.
@@ -134,6 +140,8 @@ const Subscription = () => {
             color: "black",
             width: "210px",
             height: "60px",
+            fontFamily: "FenomenSans-Book",
+
             fontWeight: "500",
             marginTop: "25px",
             marginLeft: "auto",
@@ -147,13 +155,14 @@ const Subscription = () => {
         </Button>
         <Button
           variant="contained"
-          style={{
+          sx={{
             color: "black",
             width: "160px",
             height: "60px",
             fontWeight: "500",
             marginTop: "30px",
             marginLeft: "auto",
+            fontFamily: "FenomenSans-Book",
             marginRight: "auto",
             cursor: "pointer",
             display: "block",

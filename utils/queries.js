@@ -45,10 +45,12 @@ export const getAllCoffees = () =>
       {
         coffees(first: 22) {
           uid
+
           name
           price
           reviews
           rating
+          createdAt
           descriptions
           descriptionTitle
           details

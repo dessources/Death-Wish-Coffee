@@ -76,7 +76,7 @@
   right: 0;
   bottom: 0;
 
-  padding: 0 16px 10px 0;
+  padding: 0 5px 5px 0;
   color: #fff;
   cursor: pointer;
   z-index: 10;
@@ -179,7 +179,7 @@
   top: 70%;
   left: 50%;
   transform: translateX(-50%);
-  width: 216px;
+  width: 60%;
   height: 64px;
   display: flex;
   justify-content: center;
@@ -292,12 +292,27 @@
   display: none;
 }
 
+@media screen and (max-width: 1555px) {
+  .addToCartForm input[type="submit"] {
+    width: 70%;
+  }
+
+  .addToCartForm label svg {
+    height: 1.1rem;
+    width: 1.1rem;
+  }
+}
+
 @media screen and (max-width: 1400px) {
   .mainSection {
     margin: 4rem auto 1rem auto;
   }
 }
 @media screen and (max-width: 1230px) {
+  .addToCartContainer,
+  .addToCartClass {
+    display: none !important;
+  }
   .mainSection {
     width: 95%;
   }

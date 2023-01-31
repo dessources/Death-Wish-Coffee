@@ -14,7 +14,10 @@ export default function useProducts() {
       return applyFilters(state, action);
     } else if (action.type === "initialize") {
       // return action.payload;
-      return { products: action.payload.sort((a, b) => a.id - b.id), quantityDisplayed: action.payload.length };
+      return {
+        products: action.payload.sort((a, b) => b.rating - a.rating),
+        quantityDisplayed: action.payload.length,
+      };
     } else throw new Error("Action inconnue");
   };
 
@@ -58,9 +61,11 @@ export default function useProducts() {
 
   //requete api
   React.useEffect(() => {
-    getAllCoffees().then((data) => {
-      dispatch({ type: "initialize", payload: data.coffees });
-    });
+    getAllCoffees()
+      .then((data) => {
+        dispatch({ type: "initialize", payload: data.coffees });
+      })
+      .catch((err) => console.dir(err, { depth: 0 }));
   }, []);
 
   // rerender quan les filters changent
