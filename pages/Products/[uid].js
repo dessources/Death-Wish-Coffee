@@ -23,7 +23,7 @@ import {
   reviews,
   selectedLabel,
   style,
-} from "../../styles/id.module.css";
+} from "../../styles/uid.module.css";
 import RatingStars from "../../components/RatingStars.jsx";
 import handleAddToCart from "../../utils/handleAddToCart";
 import { useDispatch, useSelector } from "react-redux";
