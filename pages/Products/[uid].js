@@ -6,7 +6,6 @@ import Ground from "../../components/GroundIcon.jsx";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import FlashOnIcon from "@mui/icons-material/FlashOn";
 import CarouselLightningIcon from "../../components/CarouselLightningIcon";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
@@ -20,6 +19,7 @@ import {
   stylesDetailsProduct,
   coffeeDetails,
   selectedLabel,
+  detail,
   btnStyles,
   btnAddCart,
   style,
@@ -141,7 +141,11 @@ const Detail = ({ coffee }) => {
             </span>
           </div>
           <div className={desciptionTitleDetailsProduct}>{coffee?.description_title}</div>
-          <div className={descriptions}>{coffee?.descriptions}</div>
+          <div className={descriptions}>
+            {coffee?.descriptions?.map((description) => (
+              <p>{description}</p>
+            ))}
+          </div>
 
           <div>
             {coffee?.sizes && (
@@ -211,7 +215,7 @@ const Detail = ({ coffee }) => {
           </button>
           <div className={coffeeDetails}>
             {coffee?.details && (
-              <>
+              <div className={detail}>
                 <p
                   style={{
                     color: coffee?.accentColor,
@@ -229,7 +233,7 @@ const Detail = ({ coffee }) => {
                     ))}
                   </ul>
                 ))}
-              </>
+              </div>
             )}
           </div>
         </div>

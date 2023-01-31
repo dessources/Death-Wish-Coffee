@@ -39,6 +39,7 @@ export const getOneCoffee = (uid) =>
     `,
     { uid: uid }
   );
+
 export const getAllCoffees = () =>
   connectHygraph().request(
     gql`

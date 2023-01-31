@@ -66,7 +66,7 @@ const FeaturedProducts = () => {
     <div className={featuredProducts}>
       <Slider {...settings}>
         {data?.map((coffee, id) => (
-          <Card className={card} sx={{ borderRadius: "0", background: "transparent" }}>
+          <Card key={id} className={card} sx={{ borderRadius: "0", background: "transparent" }}>
             <CardActionArea
               style={{
                 backgroundColor: "black",
@@ -95,34 +95,30 @@ const FeaturedProducts = () => {
                     </Typography>
                   </Link>
                 </Box>
-                <Typography
+
+                <Box
                   fontWeight="bold"
                   variant="body1"
                   color="text.secondary"
                   style={{
                     color: "white",
+                    fontWeight: "bold",
+                    fontSize: "15px",
                   }}
                 >
+                  <Box className={reviews}>
+                    <RatingStars rating={coffee?.rating} />
+                    {coffee?.reviews} Reviews
+                  </Box>
                   <Box
                     style={{
+                      fontSize: "20px",
                       fontWeight: "bold",
-                      fontSize: "15px",
                     }}
                   >
-                    <Box className={reviews}>
-                      <RatingStars rating={coffee?.rating} />
-                      {coffee?.reviews} Reviews
-                    </Box>
-                    <Box
-                      style={{
-                        fontSize: "20px",
-                        fontWeight: "bold",
-                      }}
-                    >
-                      ${coffee?.price}
-                    </Box>
+                    ${coffee?.price}
                   </Box>
-                </Typography>
+                </Box>
               </CardContent>
             </CardActionArea>
             <CardActions

@@ -9,7 +9,7 @@ export default function useImageVideoCover(videoUrl, image) {
     const handleMouseEnter = (e) => {
       videoRef.current.style.zIndex = 1;
       videoRef.current.play();
-      imageRef.current.style.opacity = 0;
+      // imageRef.current.style.opacity = 0;
     };
     const handleMouseLeave = (e) => {
       imageRef.current.style.opacity = 1;
