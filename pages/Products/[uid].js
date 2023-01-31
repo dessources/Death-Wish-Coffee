@@ -59,7 +59,7 @@ const Detail = ({ coffee }) => {
   const dispatch = useDispatch();
   const [selectedSize, setSelectedSize] = React.useState("");
   const [selectedStyle, setselectedStyle] = React.useState("");
-  const labelIcons = { ground: <Ground />, "whole bean": <WholeBean />};
+  const labelIcons = { ground: <Ground />, "whole bean": <WholeBean /> };
 
   const handleSubmit = () => {
     if ((!selectedStyle && coffee?.styles.length) || (!selectedSize && coffee?.sizes)) {

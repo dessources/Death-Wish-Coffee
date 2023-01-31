@@ -1,6 +1,6 @@
 import React from "react";
 import SvgIcon from "@mui/material/SvgIcon";
-export default function CarouselLightningIcon({ type, ...props }) {
+export default function CarouselLightningIcon({ type, currentSlide, slideCount, ...props }) {
   const style =
     type === "prev"
       ? { transform: "rotateX(0) rotateY(180deg) translateY(100%) !important" }

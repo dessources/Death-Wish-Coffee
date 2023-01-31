@@ -5,6 +5,7 @@ import useImageVideoCover from "../hooks/useImageVideoCover";
 
 export default function ImageVideoCover({ videoUrl, image }) {
   const { imageProps, videoProps, containerProps } = useImageVideoCover(videoUrl, image);
+
   return (
     <div className={coverImage} {...containerProps}>
       {videoUrl ? <video muted {...videoProps}></video> : ""}
