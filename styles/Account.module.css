@@ -1,0 +1,14 @@
+.wrapper{
+    background-color: #201e1d;
+    padding: 0 25px 155px;
+}
+
+.container{
+    width: 60%;
+    margin-left: 20%;
+    padding-top: 20px;
+}
+
+.TabInfo{
+    width: 100%;
+}
