@@ -1,8 +1,11 @@
 import { gql } from "graphql-request";
-import connectHygraph from "../lib/hygraph";
+// import connectHygraph from "../lib/hygraph";
+import { GraphQLClient } from "graphql-request";
+
+const hygraph = new GraphQLClient(`${process.env.NEXT_PUBLIC_HYGRAPH_PUBLIC_URL}`);
 
 export const getCoffeesUid = () =>
-  connectHygraph().request(gql`
+  hygraph.request(gql`
     {
       coffees(first: 22) {
         uid
@@ -11,7 +14,7 @@ export const getCoffeesUid = () =>
   `);
 
 export const getOneCoffee = (uid) =>
-  connectHygraph().request(
+  hygraph.request(
     gql`
       query getOneCoffee($uid: String!) {
         coffees(where: { uid: $uid }) {
@@ -41,7 +44,7 @@ export const getOneCoffee = (uid) =>
   );
 
 export const getAllCoffees = () =>
-  connectHygraph().request(
+  hygraph.request(
     gql`
       {
         coffees(first: 22) {
@@ -72,7 +75,7 @@ export const getAllCoffees = () =>
   );
 
 export const getSpecificCoffees = (filters) =>
-  connectHygraph().request(
+  hygraph.request(
     gql`
       query getSpecificCoffees($filters: CoffeeWhereInput!) {
         coffees(where: $filters) {
