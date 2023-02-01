@@ -14,11 +14,7 @@ function TabPanel(props) {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          <p>{children}</p>
-        </Box>
-      )}
+      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
     </div>
   );
 }
@@ -55,19 +51,30 @@ export default function BasicTabs() {
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        Item One is choose the format
+        <h2> How do you brew ?</h2>
+        <div>Single Serve Pods</div>
+        <div>Bagged Coffee</div>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two is choose the style
+        <h2>Choose your roast</h2>
+        <div>Medium Roast</div>
+        <div>Dark Roast</div>
+        <div>Espresso Roast</div>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three chooose the size
+        How many cups ?<div>10 count</div>
+        <div>20 count</div>
+        <div>50 count</div>
       </TabPanel>
       <TabPanel value={value} index={3}>
-        Item Four chooose the Frequency
+        <h2> Choose your Frequency</h2>
+        <div>30 days</div>
+        <div>60 days</div>
+        <div>90 days</div>
       </TabPanel>
       <TabPanel value={value} index={4}>
-        Subscribe
+        <button>Subscribe</button>
+        <i>*You will be charged the above price each time your order ships</i>
       </TabPanel>
     </>
   );
