@@ -33,8 +33,6 @@
     max-width: 1434px;
 }
 
-<<<<<<< HEAD
-=======
 .timelineResp{
     display: none;
 }
@@ -225,7 +223,6 @@
     text-align: left;
 }
 
->>>>>>> 2c2b03cb21fae7f157b7f60b12a0b464ab2927de
 @media screen and (max-width: 1024px){
     .rebels{
         display: none;
@@ -241,11 +238,7 @@
     .rebelsRespTitle{
         color: red;
         font-size: 56px;
-<<<<<<< HEAD
-        margin-top: 50px;
-=======
         margin-top: 150px;
->>>>>>> 2c2b03cb21fae7f157b7f60b12a0b464ab2927de
         font-weight: 900;
         font-family: 'revansmedium';
         
