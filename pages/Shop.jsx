@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import ProductFilters from "../components/ProductFilters";
 import ProductSort from "../components/ProductSort";
 import Products from "../components/Products";
+
 //hooks
 import useProducts from "../hooks/useProducts";
 

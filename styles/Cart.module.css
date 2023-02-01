@@ -1,0 +1,81 @@
+.productModal {
+  display: flex;
+}
+/* .modalTriangle::before{
+
+} */
+.scroll {
+  height: 400px;
+  scrollbar-width: thin;
+  padding-right: 10px;
+  overflow-y: auto;
+  margin-top: 1rem;
+}
+
+.imgModal {
+  width: 40%;
+}
+
+.infoProduct {
+  width: 60%;
+  margin-left: 15px;
+}
+
+.titleRemove {
+  display: flex;
+  align-items: flex-start;
+}
+.titleRemove h4,
+.titleRemove div,
+.titleRemove p {
+  margin: 0;
+}
+.titleRemove div {
+  flex: 1 1 90%;
+}
+.titleRemove svg {
+  margin: 0;
+  flex: 1 1 10%;
+}
+.titleRemove p {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.numberQuantity {
+  display: block;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.numberQuantity button {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.numberQuantity p {
+  margin-left: 15px;
+}
+
+.btnCheckout {
+  width: 380px;
+  height: 50px;
+  background-color: #e12727;
+  font-family: "FenomenSans-Book";
+  color: black;
+  font-weight: bold;
+  font-size: 17px;
+  margin-top: 15px;
+  cursor: pointer;
+  border: none;
+}
+
+.btnCheckout:hover {
+  color: #fff;
+}
+
+@media screen and (max-width: 992px) {
+  .modalContainer {
+    display: none;
+  }
+}

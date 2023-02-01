@@ -1,4 +1,5 @@
 import Stripe from "stripe";
+import formatProductDescription from "../../utils/formatProductDescription";
 const stripe = new Stripe(`${process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY}`);
 
 export default async function handler(req, res) {
@@ -20,18 +21,15 @@ export default async function handler(req, res) {
             price_data: {
               currency: "usd",
               product_data: {
-                name: item.name,
-                //description: `${item.size.replace("_", " ")} ${item.style}`,
-                images: [
-                  item.main_image.data.attributes.formats.thumbnail.url,
-                ],
+                name: `${item.name} ${formatProductDescription(item.size, item.style, true)}`,
+                images: [item.image],
               },
-              unit_amount: 450,
+              unit_amount_decimal: Number((item.price * 100).toFixed(2)),
             },
-            quantity: 3,
+            quantity: item.quantity,
           };
         }),
-        success_url: `${req.headers.origin}/StripeSuccess`,
+        success_url: `${req.headers.origin}/StripeSuccess?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${req.headers.origin}/Shop`,
       });
       res.status(200).json(session);

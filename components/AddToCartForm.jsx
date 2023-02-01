@@ -1,53 +1,59 @@
 import React from "react";
-
-import addToCartIcon from "../public/icons/add-to-cart.svg";
 import WholeBean from "../components/WholeBean";
 import Ground from "../components/GroundIcon";
 import CloseIcon from "@mui/icons-material/Clear";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart, showCart } from "../redux/cart.slice.js";
 
 //styles
 import {
   addToCartContainer,
   addToCartForm,
   selectedLabel,
-  addToCart,
   show,
-  hide,
   closeAddToCart,
 } from "../styles/Shop.module.css";
-import getStripe from "../lib/getStripe";
-import axios from "axios";
 
-export default function AddToCartForm({ styles, sizes, uid }) {
+export default function AddToCartForm({
+  styles,
+  sizes,
+  uid,
+  name,
+  onSubmit,
+  formVisible,
+  setFormVisible,
+  image,
+  price,
+}) {
   const [selectedSize, setSelectedSize] = React.useState("");
   const [selectedStyle, setselectedStyle] = React.useState("");
-  const [visible, setvisible] = React.useState(false);
-  const labelIcons = { ground: <Ground />, "whole bean": <WholeBean /> };
 
-  const handleCheckout = async () => {
-    if ((!selectedStyle && styles) || (!selectedSize && sizes)) {
+  const labelIcons = { ground: <Ground />, "whole bean": <WholeBean /> };
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart);
+  const handleSubmit = async () => {
+    if ((!selectedStyle && styles.length) || (!selectedSize && sizes)) {
       // TODO : aficher un modal qui affiche le message de l'alert
       alert("Veuillez indiquez votre choix pour tous les options disponibles");
     } else {
-      let data = {
-        name: "SomeCoffee",
+      const data = onSubmit({
+        name: name,
+        thumbnailImage: image,
+        uid,
         style: selectedStyle,
         size: selectedSize,
-      };
-      //ajouter le produit au panier
-      // setCart([...cart, data])
+        styles: styles,
+        price: sizes?.[selectedSize] || price,
+      });
 
-      //demo chekcout with stripe
-      // const stripe = await getStripe();
-      // const res = await axios.post("/api/stripe", [data]);
-      // console.log(res.data);
-      // await stripe.redirectToCheckout({ sessionId: res.data.id });
+      dispatch(addToCart(data));
+      dispatch(showCart(true));
     }
   };
   return (
     <>
-      <div className={addToCartContainer}>
-        <div className={`${addToCartForm} ${visible && show}`}>
+      <div className={`${addToCartContainer} ${formVisible && show}`}>
+        <div className={`${addToCartForm} ${formVisible && show}`}>
           <form action="">
             <div>
               {styles?.map((style, i) => (
@@ -85,18 +91,10 @@ export default function AddToCartForm({ styles, sizes, uid }) {
                 ))}
             </div>
           </form>
-          <input type="submit" value="Add to cart" onClick={handleCheckout} />
+          <input type="submit" value="Add to cart" onClick={handleSubmit} />
         </div>
-        <div
-          className={`${addToCart} ${visible && hide}`}
-          onClick={() => {
-            console.log("clicked");
-            setvisible(true);
-          }}
-        >
-          <img src={addToCartIcon.src} alt="" />
-        </div>
-        <div className={`${closeAddToCart} ${visible && show}`} onClick={() => setvisible(false)}>
+
+        <div className={`${closeAddToCart} ${formVisible && show}`} onClick={() => setFormVisible(false)}>
           <CloseIcon />
         </div>
       </div>

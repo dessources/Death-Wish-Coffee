@@ -1,0 +1,224 @@
+.productsDetails {
+  display: flex;
+  width: 100%;
+  margin-top: 60px;
+}
+
+.size,
+.style {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  width: 75%;
+}
+
+.productsDetails input[type="radio"] {
+  display: none;
+}
+
+.productsDetails .selectedLabel {
+  border: 1px solid #e12727;
+  background: #555858;
+  color: #dedbd9;
+  fill: #dedbd9;
+}
+
+.productsDetails label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  text-align: center;
+  padding: 0.5rem;
+  height: 4rem;
+  color: black;
+  width: 208px;
+  background: #898e8e;
+  border-right: 1px solid #201e1d;
+  border-top: 1px solid #201e1d;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.productsDetails label p::first-letter {
+  text-transform: uppercase;
+}
+
+.imagesDetailsProduct {
+  width: 50%;
+}
+
+.imagesDetailsProduct img {
+  width: 100%;
+}
+
+.descriptionDetailsProduct {
+  width: 50%;
+  margin-top: 50px;
+  margin-left: 70px;
+}
+
+.descriptionDetailsProduct h1 {
+  color: red;
+  font-weight: bold;
+  font-size: 45px;
+}
+
+.priceDetailsProduct {
+  font-weight: bold;
+  font-size: 22px;
+  font-family: "FenomenSans";
+}
+
+.desciptionTitleDetailsProduct {
+  margin-top: 25px;
+  font-weight: bold;
+  font-size: 27px;
+  font-family: "FenomenSans";
+}
+
+.desciptionDetailsProduct {
+  margin-top: 20px;
+  width: 80%;
+  text-align: justify;
+}
+.descriptionDetailsProduct h1 {
+  font-family: "Revans";
+  text-transform: uppercase;
+  width: 85%;
+}
+.descriptions {
+  width: 80%;
+}
+.stylesDetailsProduct {
+  margin-top: 10px;
+}
+
+.coffeeDetails {
+  margin-top: 80px;
+  display: flex;
+  width: 85%;
+}
+
+.coffeeDetails div {
+  padding-right: 0.5rem;
+}
+
+.coffeeDetails li {
+  padding: 1px;
+}
+
+.btnStyles {
+  margin-top: 10px;
+  width: 205px;
+  height: 65px;
+  background-color: rgb(130, 130, 130);
+  color: black;
+  font-weight: bold;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.btnStyles:focus {
+  background-color: rgb(52, 52, 52);
+  color: white;
+  border: solid red 1px;
+}
+
+.btnAddCart {
+  margin-top: 50px;
+  color: #201e1d;
+  width: 205px;
+  height: 65px;
+  font-weight: bold;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  font-family: "FenomenSans-Book";
+}
+
+.btnAddCart:hover {
+  color: #fff;
+}
+.reviews {
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.reviews span {
+  margin-right: 7px;
+  display: inline-flex;
+}
+.reviews svg {
+  /* vertical-align: baseline; */
+  font-size: 1.2rem;
+  margin-left: -2px;
+}
+
+@media screen and (max-width: 1100px) {
+  .productsDetails {
+    width: 100%;
+    display: block;
+    flex-direction: column;
+  }
+  .imagesDetailsProduct {
+    width: 100%;
+    height: 85vh;
+  }
+  .imagesDetailsProduct img {
+    height: 80vh;
+    object-fit: cover;
+  }
+
+  .imagesDetailsProduct svg {
+    color: #e12727;
+    width: 4rem;
+  }
+  .descriptionDetailsProduct {
+    width: 100%;
+    margin: 0;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+  .desciptionDetailsProduct {
+    width: 80%;
+    justify-content: center;
+    text-align: center;
+    margin-left: 10%;
+  }
+  .descriptionDetailsProduct h1 {
+    width: 100%;
+  }
+  .coffeeDetails {
+    display: none;
+  }
+
+  .descriptionDetailsProduct h1 {
+    font-size: 30px;
+  }
+  .desciptionTitleDetailsProduct {
+    font-size: 20px;
+  }
+  .descriptions {
+    text-align: justify;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .size {
+    justify-content: center;
+    text-align: center;
+  }
+  .style {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .size label {
+    margin: 10px;
+  }
+
+  .style label {
+    margin: 10px;
+  }
+}

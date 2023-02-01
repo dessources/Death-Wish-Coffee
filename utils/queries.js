@@ -1,1 +1,89 @@
-export const coffeesQueryURL = "http://localhost:1337/api/coffees?populate=main_image";
+import { gql } from "graphql-request";
+import connectHygraph from "../lib/hygraph";
+
+export const getCoffeesUid = () =>
+  connectHygraph().request(gql`
+    {
+      coffees(first: 22) {
+        uid
+      }
+    }
+  `);
+
+export const getOneCoffee = (uid) =>
+  connectHygraph().request(
+    gql`
+      query getOneCoffee($uid: String!) {
+        coffees(where: { uid: $uid }) {
+          uid
+          name
+          price
+          reviews
+          rating
+          descriptions
+          descriptionTitle
+          details
+          images
+          mediumImage
+          smallImage
+          thumbnailImage
+          styles
+          sizes
+          format
+          roast
+          accentColor
+          additionalInformation
+          videoUrl
+        }
+      }
+    `,
+    { uid: uid }
+  );
+
+export const getAllCoffees = () =>
+  connectHygraph().request(
+    gql`
+      {
+        coffees(first: 22) {
+          uid
+
+          name
+          price
+          reviews
+          rating
+          createdAt
+          descriptions
+          descriptionTitle
+          details
+          images
+          mediumImage
+          smallImage
+          thumbnailImage
+          styles
+          sizes
+          format
+          roast
+          accentColor
+          additionalInformation
+          videoUrl
+        }
+      }
+    `
+  );
+
+export const getSpecificCoffees = (filters) =>
+  connectHygraph().request(
+    gql`
+      query getSpecificCoffees($filters: CoffeeWhereInput!) {
+        coffees(where: $filters) {
+          uid
+          name
+          price
+          mediumImage
+          rating
+          reviews
+        }
+      }
+    `,
+    { filters }
+  );
