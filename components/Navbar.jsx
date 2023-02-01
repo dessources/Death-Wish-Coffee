@@ -9,15 +9,25 @@ import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import LoginIcon from "@mui/icons-material/Login";
 import Link from "next/link";
+import Image from "next/image";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import logo from "../images/logo.webp";
+import BasicModal from "../components/Cart";
+import { navbar, smallscreen, link, close, smallscreenMenu } from "../styles/Navbar.module.css";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
+  const cart = useSelector((state) => state.cart);
+
+  const getItemsCount = () => {
+    return cart.products.reduce((accumulator, item) => accumulator + item.quantity, 0);
+  };
 
   return (
     <nav>
-      <div className="navbar">
+      <div className={navbar}>
         <Box sx={{ flexGrow: 1 }}>
           <AppBar
             position="fixed"
@@ -29,7 +39,7 @@ const Navbar = () => {
           >
             <Toolbar>
               <Typography
-                className="link"
+                className={link}
                 variant="h6"
                 component="div"
                 sx={{ flexGrow: 1 }}
@@ -42,7 +52,7 @@ const Navbar = () => {
               </Typography>
 
               <Typography
-                className="link"
+                className={link}
                 variant="h6"
                 component="div"
                 sx={{ flexGrow: 1 }}
@@ -54,7 +64,7 @@ const Navbar = () => {
               </Typography>
 
               <Typography
-                className="link"
+                className={link}
                 variant="h6"
                 component="div"
                 style={{
@@ -75,11 +85,12 @@ const Navbar = () => {
               ></div>
 
               <Link href={"/"}>
-                <img
-                  src={"https://cdn.shopify.com/s/files/1/0271/7209/files/dwc-logo.png?v=1624458280"}
+                <Image
+                  src={logo}
                   alt=""
                   style={{
-                    height: "140px",
+                    height: "130px",
+                    width: "130px",
                     position: "absolute",
                     top: "10%",
                     left: "50%",
@@ -89,7 +100,7 @@ const Navbar = () => {
               </Link>
 
               <Typography
-                className="link"
+                className={link}
                 variant="h6"
                 component="div"
                 sx={{ flexGrow: 1 }}
@@ -101,7 +112,7 @@ const Navbar = () => {
               </Typography>
 
               <Typography
-                className="link"
+                className={link}
                 variant="h6"
                 component="div"
                 sx={{ flexGrow: 1 }}
@@ -112,7 +123,7 @@ const Navbar = () => {
                 <Link href={"/About"}>ABOUT</Link>
               </Typography>
 
-              <Box className="icons">
+              <Box sx={{ display: "flex", alignItems: "center" }}>
                 <Link href={"/Login"}>
                   <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                     <LoginIcon />
@@ -122,15 +133,24 @@ const Navbar = () => {
                 <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                   <SearchIcon />
                 </IconButton>
-                <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-                  <ShoppingCartIcon />
-                </IconButton>
+
+                <BasicModal />
+                <span
+                  style={{
+                    color: "red",
+                    fontSize: "16px",
+                    fontWeight: "bold",
+                    alignSelf: "flex-start",
+                  }}
+                >
+                  {getItemsCount()}
+                </span>
               </Box>
             </Toolbar>
           </AppBar>
         </Box>
       </div>
-      <div className="smallscreen" style={{ backgroundColor: "black" }}>
+      <div className={smallscreen} style={{ backgroundColor: "black" }}>
         <Box
           style={{
             marginTop: "30px",
@@ -146,7 +166,17 @@ const Navbar = () => {
             <SearchIcon />
           </IconButton>
           <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-            <ShoppingCartIcon />
+            <BasicModal />
+
+            <span
+              style={{
+                color: "red",
+                fontSize: "16px",
+                fontWeight: "bold",
+              }}
+            >
+              {getItemsCount()}
+            </span>
           </IconButton>
         </Box>
 
@@ -168,10 +198,10 @@ const Navbar = () => {
           }}
         />
         {toggleMenu && (
-          <div className="smallscreen-menu">
+          <div className={smallscreenMenu}>
             <CloseIcon
               onClick={() => setToggleMenu(false)}
-              className="close"
+              className={close}
               style={{
                 fontSize: "50",
               }}
@@ -184,7 +214,7 @@ const Navbar = () => {
             >
               <hr />
               <Typography
-                className="link"
+                className={link}
                 variant="h4"
                 component="div"
                 style={{
@@ -197,7 +227,7 @@ const Navbar = () => {
               </Typography>
               <hr />
               <Typography
-                className="link"
+                className={link}
                 variant="h4"
                 component="div"
                 style={{
@@ -210,7 +240,7 @@ const Navbar = () => {
               </Typography>
               <hr />
               <Typography
-                className="link"
+                className={link}
                 variant="h4"
                 component="div"
                 style={{
@@ -223,7 +253,7 @@ const Navbar = () => {
               </Typography>
               <hr />
               <Typography
-                className="link"
+                className={link}
                 variant="h4"
                 component="div"
                 style={{
@@ -236,7 +266,7 @@ const Navbar = () => {
               </Typography>
               <hr />
               <Typography
-                className="link"
+                className={link}
                 variant="h4"
                 component="div"
                 style={{

@@ -27,9 +27,16 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "Revans";
+  src: url("../public/fonts/Revans-Bold.otf") format("opentype"),
+    url("../public/fonts/Revans-Bold.woff2") format("woff2"),
+    url("../public/fonts/Revans-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -55,141 +62,6 @@ a {
   box-sizing: border-box;
 }
 
-.link:hover {
-  text-decoration: underline;
-  color: red;
-}
-
-.home {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.smallscreen {
-  display: none;
-}
-
-.smallscreen-menu {
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  transition: 0.5s ease;
-  flex-direction: column;
-  z-index: 5;
-  background-color: black;
-}
-
-.close {
-  font-size: 27px;
-  cursor: pointer;
-  position: absolute;
-  top: 30px;
-  right: 50px;
-}
-
-
-.title-Coffee-Culture{
-  justify-content: center;
-  margin-top: 50px;
-  display: flex;
-  font-weight: bold;
-  margin-bottom: 50px;
-  font-size: 70px;
-}
-
-.image img{
-  object-fit: cover;
-  width: 100%;
-  max-height: 750px;
-  top: 0;
-  left: 0;
-}
-
-.image:hover{
-  border: solid 5px red;
-}
-
-.slick-prev:before, .slick-next:before {
-  font-size: 25px !important;
-  color: white !important;
-}
-
-.slick-dots li button:before {
-  color: white !important;
-  font-size: 20px !important;
-  margin-top: 25px;
-}
-
-@media screen and (max-width: 1700px) {
-  .image img{
-    height: 700px;
-  }
-}
-
-@media screen and (max-width: 1400px) {
-  .image img{
-    height: 530px;
-  }
-  .title-Coffee-Culture{
-    font-size: 40px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .image img{
-    height: 600px;
-  }
-  .title-Coffee-Culture{
-    font-size: 20px;
-  }
-}
-
-/*--------Subscription-----------------*/
-
-.subscribeButton {
-  background-color: red;
-}
-
-.goToLogin {
-  background-color: red;
-}
-
-.findBrew {
-  background-color: red;
-}
-
-.subscribeButton:hover {
-  background-color: #424242;
-}
-
-.goToLogin:hover {
-  background-color: #424242;
-}
-
-.findBrew:hover {
-  background-color: #424242;
-}
-
-
-@media screen and (max-width: 1400px) {
-  .navbar {
-    display: none;
-  }
-  .smallscreen {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    height: 6rem;
-    display: flex;
-    justify-content: space-around;
-  }
-}
-
 @media screen and (max-width: 768px) {
   .header > :nth-child(2) {
     position: fixed;
@@ -202,276 +74,30 @@ a {
     padding: 2rem;
   }
 }
+
 
 .text-smallscreen {
   display: none;
 }
 
-@media screen and (max-width: 1200px) {
-  /*------Subnavbar--------*/
-  .text-Subnavbar {
-    display: none;
-  }
-  .text-smallscreen {
-    display: block;
-    justify-content: center;
-    text-align: center;
-  }
-  .small-text {
-    font-size: 45px;
-  }
 
-  /*-------Subscription-------*/
 
-  .save {
-    height: 426px;
-    margin-left: 48%;
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 550px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .header > :nth-child(2) {
-    position: fixed;
-    right: 2rem;
-    z-index: 99;
-  }
-  .header-menu {
-    flex-direction: column;
-    background-color: var(--appColor);
-    padding: 2rem;
-  }
-
-  /*--------Footer----------*/
-
-  .footerRed {
-    display: none;
-  }
-  .footerBlack {
-    display: none;
-  }
-  .footerResp {
-    background-color: black;
-    height: 274px;
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .footerMenu {
-    max-width: 230px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .footerMenu h2 {
-    color: red;
-    text-align: center;
-  }
-
-  /*---------Subscription-----------*/
-
-  .subscribeHero {
-    max-width: 768px;
-    max-height: 320px;
-  }
-  .save,
-  .truck,
-  .savings,
-  .access,
-  .manage,
-  .reviews {
-    display: none;
-  }
-  .subscribeButtonResp,
-  .goToLoginResp {
-    background-color: red;
-  }
-
-  .subscribeButtonResp:hover,
-  .goToLoginResp:hover {
-    background-color: #424242;
-  }
-
-  .benefits {
-    height: 600px;
-    max-width: 100%;
-  }
-
-  .benefitsTitle {
-    color: white;
-    margin-top: 70px;
-    margin-bottom: 0;
-    font-size: 40px;
-    font-family: "revansmedium";
-  }
-
-  .cards {
-    display: flex;
-    flex-flow: row wrap;
-  }
-
-  .needHelpTitle {
-    color: white;
-    font-size: 40px;
-    font-family: "revansmedium";
-  }
-
-  .needHelpText {
-    color: white;
-    font-size: 14px;
-    font-weight: lighter;
-    font-family: "revansmedium";
-    text-align: center;
-  }
-
-  .findBrew {
-    color: black;
-    width: 180px;
-    height: 58px;
-    font-size: 14px;
-    font-weight: 500;
-    margin-top: 50px;
-    cursor: pointer;
-    margin-left: 33%;
-  }
-}
-
-.FeaturedProducts{
-  background-color: black;
-  margin: 0 auto;
-  margin-top: 60px;
-  width: 90%;
-  color: white;
-  height: 700px;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.card{
-  background-color: black;
-}
-
-.name-product:hover{
-  color: red;
-}
-.slick-next{
+.slick-next {
   font-size: 50px !important;
- color:red !important;
+  color: red !important;
   margin: -100px 40px;
   width: 50px !important;
   height: auto !important;
 }
 
-.slick-prev{
+.slick-prev {
   font-size: 50px !important;
   color: red !important;
   margin: -100px 40px !important;
   width: 50px !important;
   height: auto !important;
-  z-index:1 !important;
+  z-index: 1 !important;
 }
-
-.products-details{
-  margin-top: 60px;
-  display: flex;
-  width: 100%;
-}
-
-.images-details-product{
-  width: 50%;
-}
-
-.images-details-product img{
-  width: 100%;
-}
-
-.description-details-product{
-width: 50%;
-padding: 75px;
-margin-top: 25px;
-}
-
-.description-details-product h1{
-  color: red;
-  font-weight: bold;
-  font-size: 45px;
-}
-
-.price-details-product{
-  font-weight: bold;
-  font-size: 22px;
-}
-
-.desciption-title-details-product{
-  margin-top: 25px;
-  font-weight: bold;
-  font-size: 27px;
-}
-
-.desciption-details-product{
-  margin-top: 20px;
-  width: 85%;
-  text-align: justify;
-}
-
-.styles-details-product{
-  margin-top: 10px;
-}
-
-.coffee-details{
-  padding: 40px;
-}
-
-.coffee-details li{
-  padding: 5px;
-  width: 80%;
-  
-}
-
-.btn-styles{
-  margin-top: 10px;
-  width: 205px;
-  height: 65px;
-  background-color: rgb(130, 130, 130);
-  color: black;
-  font-weight: bold;
-  font-size: 16px;
-  margin-right: 10px;
-}
-
-.btn-styles:focus{
-  background-color: rgb(52, 52, 52);
-  color: white;
-  border: solid red 1px;
-}
-
-.btn-add-cart{
-  margin-top: 50px;
-  color: black;
-  width: 205px;
-  height: 65px;
-  font-weight: bold;
-  font-size: 15px;
-  
-}
-
-.whole-bean-icon{
-  margin-right: 30px;
-  font-size: 50px;
-}
-
-.ground-icon{
-  margin-right: 30px;
-  font-size: 50px;
-}
-
-.text-smallscreen {
-  display: none;
-}
-
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
@@ -482,70 +108,8 @@ margin-top: 25px;
   }
 }
 
-@media screen and (min-width: 1200px) {
-  /*---------Subscrition--------*/
-  .save {
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 550px;
-    height: 450px;
-    margin-left: 56%;
-  }
-}
+ 
+  
 
-@media screen and (min-width: 768px) {
-  /*-----Footer-----------*/
-  .footerResp {
-    display: none;
-  }
 
-  /*--------Subscription------*/
-  .saveResp {
-    display: none;
-  }
-  .benefits {
-    background-color: black;
-    max-height: 800px;
-    max-width: 100%;
-  }
-
-  .benefitsTitle {
-    color: white;
-    font-size: 69px;
-    font-weight: 1000;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    font-family: "revansmedium";
-  }
-
-  .truckResp,
-  .savingsResp,
-  .accessResp,
-  .manageResp {
-    display: none;
-  }
-
-  .needHelpTitle {
-    color: white;
-    font-size: 69px;
-    font-weight: 1000;
-    font-family: "revansmedium";
-  }
-
-  .needHelpText {
-    color: white;
-    font-size: 24px;
-    font-weight: lighter;
-    text-align: center;
-    margin-top: 20px;
-  }
-
-  .findBrew {
-    color: black;
-    width: 230px;
-    height: 65px;
-    font-weight: 500;
-    margin-top: 50px;
-    cursor: pointer;
-    margin-left: 45%;
-  }
-}
+ 

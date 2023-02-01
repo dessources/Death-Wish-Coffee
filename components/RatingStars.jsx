@@ -4,7 +4,7 @@ import HalfStar from "@mui/icons-material/StarHalf";
 import EmptyStar from "@mui/icons-material/StarOutline";
 
 // import
-export default function RatingStars({ rating }) {
+export default function RatingStars({ rating, ...props }) {
   if (!rating) return "";
   let integerRating = Math.floor(rating);
   const stars = [];
@@ -25,5 +25,11 @@ export default function RatingStars({ rating }) {
     stars.push(<EmptyStar key={integerRating + 1 + i} />);
   }
 
-  return <span>{stars.map((star) => star)}</span>;
+  return (
+    <span {...props}>
+      {stars.map((star, i) => (
+        <React.Fragment key={i}>{star}</React.Fragment>
+      ))}
+    </span>
+  );
 }

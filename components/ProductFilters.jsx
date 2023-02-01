@@ -1,18 +1,12 @@
 import React from "react";
+//components
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
-import {
-  filtersSection,
-  filter,
-  filterSummary,
-  filterSummaryRoot,
-  filterDetails,
-  filterExpanded,
-  mobileActions,
-  show,
-} from "../styles/Shop.module.css";
+//styles
+import { filtersSection, mobileActions, show } from "../styles/Shop.module.css";
+import { filterRoot, filterSummary, filterDetails } from "../styles/FilterStyles.js";
 
 export default function ProductFilters({ onFilterChange, filtersVisible, filters }) {
   const handleClick = (filter, value) => (e) => {
@@ -24,9 +18,9 @@ export default function ProductFilters({ onFilterChange, filtersVisible, filters
   const handleChange = (panel) => {
     console.log(expanded);
     if (expanded[panel]) {
-      setExpanded({ ...expanded, [panel]: "" });
+      setExpanded({ ...expanded, [panel]: false });
     } else {
-      setExpanded({ ...expanded, [panel]: filterExpanded });
+      setExpanded({ ...expanded, [panel]: true });
     }
   };
 
@@ -37,20 +31,16 @@ export default function ProductFilters({ onFilterChange, filtersVisible, filters
           Object.keys(filters).map((filterKey, i) => {
             if (filterKey !== "active") {
               return (
-                <Accordion
-                  className={`${filter} ${expanded[`panel${i}`]}`}
-                  onChange={() => handleChange(`panel${i}`)}
-                  key={i}
-                >
+                <Accordion sx={filterRoot} onChange={() => handleChange(`panel${i}`)} key={i}>
                   <AccordionSummary
-                    className={filterSummaryRoot}
+                    sx={filterSummary}
                     expandIcon={expanded[`panel${i}`] ? "–" : "+"}
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                   >
-                    <Typography className={filterSummary}>{filterKey}</Typography>
+                    <Typography>{filterKey}</Typography>
                   </AccordionSummary>
-                  <AccordionDetails className={filterDetails}>
+                  <AccordionDetails sx={filterDetails}>
                     <div>
                       {Object.keys(filters[filterKey]).map((filterNameKey, i) => {
                         if (filterNameKey !== "active") {

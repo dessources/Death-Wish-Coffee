@@ -33,6 +33,199 @@
     max-width: 1434px;
 }
 
+<<<<<<< HEAD
+=======
+.timelineResp{
+    display: none;
+}
+
+.creation{
+    height: 198px;
+    max-width: 50%;
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+    margin-left: auto;
+    margin-bottom: 50px;
+}
+
+.creationTitle{
+    color: red;
+    font-size: 38px;
+    font-weight: 900;
+    text-align: left;
+    font-family: 'revansmedium';
+    margin-top: 30px;
+}
+
+.creationText{
+    color: white;
+    font-size: 24px;
+    font-weight: lighter;
+    text-align: left;
+}
+
+.creationYear{
+    color: red;
+    font-size: 40px;
+    font-weight: 900;
+}
+
+.creationImg{
+    height: 180px;
+}
+
+.goodMorning{
+    max-width: 50%;
+    margin-right: 50px;
+    margin-left: auto;
+    margin-bottom: 50px;
+}
+
+.goodMorningTitle{
+    color: red;
+    font-size: 38px;
+    font-weight: 900;
+    text-align: right;
+    font-family: 'revansmedium';
+    margin-top: 30px;
+}
+
+.goodMorningText{
+    color: white;
+    font-size: 24px;
+    font-weight: lighter;
+    text-align: right;
+}
+
+.goodMorningDate{
+    height: 198px;
+    max-width: 50%;
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+.gmYearResp{
+    display: none;
+}
+
+.gmYear{
+    color: red;
+    font-size: 40px;
+    font-weight: 900;
+    margin-right: 100px;
+}
+
+.superBowl{
+    height: 198px;
+    max-width: 50%;
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+    margin-left: auto;
+    margin-bottom: 50px;
+}
+
+.superBowlDate{
+    color: red;
+    font-size: 40px;
+    font-weight: 900;
+    margin-left: 100px;
+}
+
+.superBowlTitle{
+    color: red;
+    font-size: 38px;
+    font-weight: 900;
+    text-align: left;
+    font-family: 'revansmedium';
+    margin-top: 30px;
+}
+
+.superBowlText{
+    color: white;
+    font-size: 24px;
+    font-weight: lighter;
+    text-align: left;
+}
+
+.caffeinated{
+    max-width: 50%;
+    margin-right: 50px;
+    margin-left: auto;
+    margin-bottom: 50px;
+}
+
+.caffeinatedTitle{
+    color: red;
+    font-size: 38px;
+    font-weight: 900;
+    text-align: right;
+    font-family: 'revansmedium';
+    margin-top: 30px;
+}
+
+.caffeinatedText{
+    color: white;
+    font-size: 24px;
+    font-weight: lighter;
+    text-align: right;
+}
+
+.caffeinatedDate{
+    height: 198px;
+    max-width: 50%;
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+.caffeinatedYear{
+    color: red;
+    font-size: 40px;
+    font-weight: 900;
+    margin-right: 100px;
+}
+
+.historic{
+    height: 198px;
+    max-width: 50%;
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+    margin-left: auto;
+    margin-bottom: 50px;
+}
+
+.historicDate{
+    color: red;
+    font-size: 40px;
+    font-weight: 900;
+    margin-left: 100px;
+}
+
+.historicTitle{
+    color: red;
+    font-size: 38px;
+    font-weight: 900;
+    text-align: left;
+    font-family: 'revansmedium';
+    margin-top: 30px;
+}
+
+.historicText{
+    color: white;
+    font-size: 24px;
+    font-weight: lighter;
+    text-align: left;
+}
+
+>>>>>>> 2c2b03cb21fae7f157b7f60b12a0b464ab2927de
 @media screen and (max-width: 1024px){
     .rebels{
         display: none;
@@ -48,7 +241,11 @@
     .rebelsRespTitle{
         color: red;
         font-size: 56px;
+<<<<<<< HEAD
         margin-top: 50px;
+=======
+        margin-top: 150px;
+>>>>>>> 2c2b03cb21fae7f157b7f60b12a0b464ab2927de
         font-weight: 900;
         font-family: 'revansmedium';
         
@@ -95,6 +292,188 @@
         max-width: 100%;
     }
 
+<<<<<<< HEAD
+=======
+    .timeline img{
+        max-width: 200px;
+        max-height: 130px;
+        
+    }
+
+    .creation{
+        height: 150px;
+        max-width: 50%;
+        display: flex;
+        align-items: center;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 10px;
+    }
+
+    .creationTitle{
+        color: red;
+        font-size: 30px;
+        font-weight: 900;
+        text-align: left;
+        font-family: 'revansmedium';
+        margin-top: 30px;
+    }
+
+    .creationText{
+        color: white;
+        font-size: 20px;
+        font-weight: lighter;
+        text-align: left;
+    }
+
+    .goodMorning{
+        max-height: 150px;
+        max-width: 50%;
+        margin-right: auto;
+        margin-left: 15px;
+        margin-bottom: 50px;
+    }
+
+    .goodMorningTitle{
+        color: red;
+        font-size: 30px;
+        font-weight: 900;
+        text-align: left;
+        font-family: 'revansmedium';
+        margin-top: 20px;
+    }
+
+    .goodMorningText{
+        color: white;
+        font-size: 20px;
+        font-weight: lighter;
+        text-align: right;
+    }
+
+    .goodMorningDate{
+        height: 150px;
+        max-width: 50%;
+        display: flex;
+        align-items: center;
+        margin-left: 50px;
+        margin-right: auto;
+        margin-bottom: 20px;
+    }
+
+    .superBowl{
+        height: 150px;
+        max-width: 50%;
+        display: flex;
+        align-items: center;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 10px;
+    }
+
+    .superBowlDate{
+        color: red;
+        font-size: 40px;
+        font-weight: 900;
+        margin-left: auto;
+    }
+
+    .superBowlTitle{
+        color: red;
+        font-size: 30px;
+        font-weight: 900;
+        text-align: left;
+        font-family: 'revansmedium';
+        margin-top: 20px;
+        margin-left: 60px;
+    }
+
+    .superBowlText{
+        color: white;
+        font-size: 20px;
+        font-weight: lighter;
+        text-align: left;
+        margin-left: 60px;
+        
+    }
+
+    .caffeinated{
+        max-width: 50%;
+        max-height: 150px;
+        margin-right: auto;
+        margin-left: 15px;
+        margin-bottom: 50px;
+    }
+
+    .caffeinatedTitle{
+        color: red;
+        font-size: 30px;
+        font-weight: 900;
+        text-align: left;
+        font-family: 'revansmedium';
+        margin-top: 20px;
+    }
+
+    .caffeinatedText{
+        color: white;
+        font-size: 20px;
+        font-weight: lighter;
+        text-align: right;
+    }
+
+    .caffeinatedDate{
+        height: 150px;
+        max-width: 50%;
+        display: flex;
+        align-items: center;
+        margin-left: 50px;
+        margin-right: auto;
+        margin-bottom: 20px;
+    }
+
+    .caffeinatedYear{
+        color: red;
+        font-size: 40px;
+        font-weight: 900;
+        margin-right: 50px;
+    }
+
+    .historic{
+        height: 150px;
+        max-width: 50%;
+        display: flex;
+        align-items: center;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 10px;
+    }
+
+    .historicDate{
+        color: red;
+        font-size: 40px;
+        font-weight: 900;
+        margin-left: auto;
+    }
+
+    .historicTitle{
+        color: red;
+        font-size: 30px;
+        font-weight: 900;
+        text-align: left;
+        font-family: 'revansmedium';
+        margin-top: 30px;
+        margin-left: 60px;
+    }
+
+    .historicText{
+        color: white;
+        font-size: 20px;
+        font-weight: lighter;
+        text-align: left;
+        margin-left: 60px;
+    }
+
+
+>>>>>>> 2c2b03cb21fae7f157b7f60b12a0b464ab2927de
      
 
 }
@@ -103,14 +482,22 @@
     .rebelsRespTitle{
         color: red;
         font-size: 26px;
+<<<<<<< HEAD
         margin-top: 50px;
+=======
+        margin-top: 150px;
+>>>>>>> 2c2b03cb21fae7f157b7f60b12a0b464ab2927de
         font-weight: 900;
         font-family: 'revansmedium'
     }
 
     .historyTitle{
         color: white;
+<<<<<<< HEAD
         font-size: 26px;
+=======
+        font-size: 40px;
+>>>>>>> 2c2b03cb21fae7f157b7f60b12a0b464ab2927de
         font-weight: 900;
         font-family: 'revansmedium';
         margin-top: 40px;
@@ -123,12 +510,35 @@
     .flash1{
         margin-left: 20%;
         height: 200px;
+<<<<<<< HEAD
         width: 150px;
+=======
+        width: 200px;
+>>>>>>> 2c2b03cb21fae7f157b7f60b12a0b464ab2927de
     }
 
     .flash2{
         margin-right: 20%;
         height: 200px;
+<<<<<<< HEAD
         width: 150px;
     }
+=======
+        width: 200px;
+    }
+
+    .timeline{
+        display: none;
+    }
+
+    .timelineResp{
+        display: flex;
+        flex-direction: column;
+        background-color: black;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+>>>>>>> 2c2b03cb21fae7f157b7f60b12a0b464ab2927de
 }
