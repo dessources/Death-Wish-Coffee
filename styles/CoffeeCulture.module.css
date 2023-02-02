@@ -3,8 +3,10 @@
     margin-top: 50px;
     display: flex;
     font-weight: bold;
+    font-family: "revansmedium";
     margin-bottom: 50px;
-    font-size: 70px;
+    font-size: 60px;
+    color: white;
   }
   
   .imageCaroussel img{
