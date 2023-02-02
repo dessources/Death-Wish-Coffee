@@ -3,16 +3,41 @@ import { Box, Container } from '@mui/system'
 import { Button, Typography } from '@mui/material'
 import Link from "next/link";
 
+//styles
+import {
+    handsText,
+    coffeeContainer,
+    coffee,
+    coffeeTitle,
+    coffeeVideo,
+    coffeeText,
+    coffeeTextResp,
+    coffeeButton,
+    coffeeButtonResp,
+    brewContainer,
+    brew,
+    brewVideo,
+    brewTitle,
+    brewText,
+    brewButton,
+    beansContainer,
+    beans,
+    beansTitle,
+    beansVideo,
+    beansText,
+    beansTextResp,
+    beansButton,
+    beansButtonResp
+} from '../styles/HomepageVideos.module.css'
+
 const HomepageVideos = () => {
     return (
         <>
             <Box style={{
-                width: 1076,
+                width: '100%',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                marginRight: 'auto',
-                marginLeft: 'auto',
                 marginBottom: 50
             }}>
                 <img
@@ -20,43 +45,28 @@ const HomepageVideos = () => {
                     alt="handshake"
                     style={{
                         width: 180,
-                        height: 100
+                        height: 100,
+                        marginTop: 60
                     }}
                 />
                 <Typography
                     align='center'
-                    style={{
-                        color: 'white',
-                        marginTop: 10,
-                        fontFamily: 'revansmedium',
-                        fontWeight: 900,
-                        fontSize: 30
-                    }}
+                    className={handsText}
+
                 >
                     Our Medium Roast, Dark Roast, Espresso Roast and Valhalia Java Coffees are always Fair Trade + USDA Certified Organic.
                 </Typography>
             </Box>
-            <Container style={{
-                display: "flex",
-                alignItems: 'center',
-                marginBottom: 150
-            }}>
-                <Box style={{
-                    width: 912,
-                    zIndex: 2,
-                    position: 'absolute',
-                    
-                }}
+            <Container
+                className={coffeeContainer}
+            >
+                <Box className={coffee}
+
                 >
                     <Typography
                         variant="h1"
-                        style={{
-                            fontFamily: 'Revans',
-                            fontWeight: 900,
-                            fontSize: 200,
-                            color: 'white',
-                            
-                        }}
+                        className={coffeeTitle}
+
                     >
                         COFFEE THAT SLAPS
                     </Typography>
@@ -67,13 +77,7 @@ const HomepageVideos = () => {
 
                 }}>
                     <video
-                        className="video__el js-video"
-                        style={{
-                            height: 600,
-                            width: 600,
-                            position: 'relative',
-                            left: 700
-                        }}
+                        className={coffeeVideo}
                         data-src="https://embed-ssl.wistia.com/deliveries/d9a39eb6a2274b30f628820bf7e9bd5871488da6/file.mp4"
                         autoplay="true"
                         loop="true"
@@ -84,56 +88,46 @@ const HomepageVideos = () => {
                     </video>
                     <Typography
                         variant='body2'
-                        style={{
-                            fontWeight: 'lighter',
-                            fontSize: 20,
-                            color: 'white',
-                            marginTop: 50,
-                            marginLeft: 700
+                        className={coffeeText}
 
-                        }}
                     >
                         Always sourced from the highest-quality beans. Ruining other coffee since 2012.
                     </Typography>
                     <Button
                         variant="contained"
-                        style={{
-                            fontFamily: "'FenomenSans-Book'",
-                            color: "black",
-                            backgroundColor: 'red',
-                            width: "210px",
-                            height: "60px",
-                            fontWeight: "500",
-                            marginTop: "50px",
-                            marginLeft: 700,
-                            marginRight: 15,
-                            display: "inline-block",
-                            cursor: 'pointer'
-                        }}
-                        
+                        className={coffeeButton}
+
                     >
                         <Link href={"/Shop"}>SHOP NOW</Link>
                     </Button>
                 </Box>
+                <Box>
+                <Typography
+                    variant='body2'
+                    className={coffeeTextResp}
 
+                >
+                    Always sourced from the highest-quality beans. Ruining other coffee since 2012.
+                </Typography>
+                <Button
+                    variant="contained"
+                    className={coffeeButtonResp}
+
+                >
+                    <Link href={"/Shop"}>SHOP NOW</Link>
+                </Button>
+                </Box>
             </Container>
-            <Container style={{
-                display: "flex",
-                alignItems: 'center',
-                marginBottom: 150
-            }}>
-                <Box fontStyle={{
+
+            <Container
+                className={brewContainer} 
+                >
+                <Box style={{
                     marginTop: 50,
                     width: 600
                 }}>
                     <video
-                        className="video__el js-video"
-                        style={{
-                            height: 600,
-                            width: 600,
-                            position: 'relative',
-
-                        }}
+                        className={brewVideo}
                         data-src="https://embed-ssl.wistia.com/deliveries/42ece833a6917e2cb95dc8c45cb8254e/file.mp4"
                         autoplay="true"
                         loop="true"
@@ -144,53 +138,27 @@ const HomepageVideos = () => {
                     </video>
                     <Typography
                         variant='body2'
-                        style={{
-                            fontWeight: 'lighter',
-                            fontSize: 20,
-                            color: 'white',
-                            textAlign: 'right',
-                            marginTop: 50,
-                        }}
+                        className={brewText}
+                        
                     >
                         Handcrafted mugs, tees, hoodies and more to pair with caffeine-heavy habits.
                     </Typography>
                     <Button
                         variant="contained"
-                        style={{
-                            fontFamily: "'FenomenSans-Book'",
-                            color: "black",
-                            backgroundColor: 'red',
-                            width: "210px",
-                            height: "60px",
-                            fontWeight: "500",
-                            marginTop: "50px",
-                            marginLeft: 380,
-                            display: "inline-block",
-                            cursor: 'pointer'
-                        }}
-                        
+                        className={brewButton}
+                       
                     >
                         <Link href={"/Shop"}>SHOP NOW</Link>
                     </Button>
                 </Box>
-                <Box style={{
-                    width: 912,
-                    zIndex: 2,
-                    position: 'absolute',
-                    left: 700,
+                <Box 
+                    className={brew}
                     
-                }}
                 >
                     <Typography
                         variant="h1"
-                        style={{
-                            fontFamily: 'Revans',
-                            fontWeight: 900,
-                            fontSize: 200,
-                            color: 'white',
-                            textAlign: 'right',
-                            
-                        }}
+                        className={brewTitle}
+                        
                     >
                         EMBODY THE BREW
                     </Typography>
@@ -198,27 +166,16 @@ const HomepageVideos = () => {
 
 
             </Container>
-            <Container style={{
-                display: "flex",
-                alignItems: 'center',
-                marginBottom: 250
-            }}>
-                <Box style={{
-                    width: 912,
-                    zIndex: 2,
-                    position: 'absolute',
-                    
-                }}
+            <Container 
+                className={beansContainer}
+               >
+                <Box className={beans}
+                
                 >
                     <Typography
                         variant="h1"
-                        style={{
-                            fontFamily: 'Revans',
-                            fontWeight: 900,
-                            fontSize: 200,
-                            color: 'white',
-                            
-                        }}
+                        className={beansTitle}
+                        
                     >
                         HANDLE OUR BEANS
                     </Typography>
@@ -227,13 +184,7 @@ const HomepageVideos = () => {
                     marginTop: 50
                 }}>
                     <video
-                        className="video__el js-video"
-                        style={{
-                            height: 600,
-                            width: 600,
-                            position: 'relative',
-                            left: 700
-                        }}
+                        className={beansVideo}
                         data-src="https://embed-ssl.wistia.com/deliveries/afddc092f9ffceeb8d79f1136c2d60511f83a26f/file.mp4"
                         autoplay="true"
                         loop="true"
@@ -245,20 +196,15 @@ const HomepageVideos = () => {
 
                     <Typography
                         variant='body2'
-                        style={{
-                            fontWeight: 'lighter',
-                            fontSize: 20,
-                            color: 'white',
-                            marginTop: 50,
-                            marginLeft: 700
-
-                        }}
+                        className={beansText}
+                        
                     >
                         Prefer the hands-on experience over online shopping? Find Death Wish Coffee in a grocery store near you.
                     </Typography>
                     <Button
                         variant="contained"
-                        style={{
+                        className={beansButton}
+                        /* style={{
                             fontFamily: "'FenomenSans-Book'",
                             color: "black",
                             backgroundColor: 'red',
@@ -270,13 +216,28 @@ const HomepageVideos = () => {
                             marginRight: 15,
                             display: "inline-block",
                             cursor: 'pointer'
-                        }}
-                        
+                        }} */
+
                     >
                         <Link href="#">THE STORE</Link>
                     </Button>
                 </Box>
-
+                <Box>
+                <Typography
+                        variant='body2'
+                        className={beansTextResp}
+                        
+                    >
+                        Prefer the hands-on experience over online shopping? Find Death Wish Coffee in a grocery store near you.
+                    </Typography>
+                    <Button
+                        variant="contained"
+                        className={beansButtonResp}
+                       
+                    >
+                        <Link href="#">THE STORE</Link>
+                    </Button>
+                </Box>
             </Container>
 
         </>
