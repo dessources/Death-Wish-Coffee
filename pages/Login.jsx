@@ -61,7 +61,7 @@ export default function Login() {
             fontWeight: "bold",
             textAlign: "center",
             marginBottom: "50px",
-            marginTop: "50px",
+            marginTop: "150px",
           }}
         >
           LOGIN

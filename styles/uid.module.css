@@ -208,17 +208,28 @@
   .size {
     justify-content: center;
     text-align: center;
+    display: block;
   }
   .style {
     justify-content: center;
     text-align: center;
+    display: block;
   }
 
   .size label {
-    margin: 10px;
+    margin: 25px;
   }
 
   .style label {
-    margin: 10px;
+    margin: 25px;
+  }
+
+  .btnAddCart{
+    display: block;
+    margin: 25px;
+  }
+  .titleSize{
+    text-align: start;
+    margin: 25px;
   }
 }
