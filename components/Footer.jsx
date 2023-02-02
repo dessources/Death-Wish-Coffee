@@ -7,7 +7,13 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 
-
+//styles
+import {footerRed,
+        footerBlack,
+        link,
+        footerResp,
+        footerMenu
+        } from '../styles/Footer.module.css'
 
 
 
@@ -16,7 +22,7 @@ const Footer = () => {
 
         <Box >
             <AppBar position='static' sx={{ top: 'auto', bottom: 0,marginTop:'100px' }} >
-                <Container style={{ backgroundColor: '#e12727', maxHeight: 206, maxWidth: '100%' }} className="footerRed">
+                <Container style={{ backgroundColor: '#e12727', maxHeight: 206, maxWidth: '100%' }} className={footerRed}>
                     <Typography
                         variant='h5'
                         color='black'
@@ -26,7 +32,7 @@ const Footer = () => {
                     >
                         LET'S DRINK COFFEE AND THROW THINGS AT HAPPY PEOPLE
                     </Typography>
-                    <form style={{ padding: 20, display: 'flex' }}>
+                    <form style={{ padding: 20, display: 'flex', marginBottom: 50 }}>
                         <TextField
                             style={{
                                 backgroundColor: 'white',
@@ -55,7 +61,7 @@ const Footer = () => {
                     </form>
 
                 </Container>
-                <Container style={{ backgroundColor: 'black', maxHeight: 423, maxWidth: '100%' }} className="footerBlack">
+                <Container style={{ backgroundColor: 'black', maxHeight: 423, maxWidth: '100%' }} className={footerBlack}>
                     <div style={{ display: 'flex', flexDirection: 'row' }} >
                         <Link href={"/"}
                             style={{
@@ -97,7 +103,7 @@ const Footer = () => {
                                 Company
                             </Typography>
                             <Typography
-                                className="link"
+                                className={link}
                                 style={{
                                     fontSize: 16,
                                     fontWeight: 'lighter'
@@ -108,7 +114,7 @@ const Footer = () => {
                                 Reviews
                             </Typography>
                             <Typography
-                                className="link"
+                                className={link}
                                 style={{
                                     fontSize: 16,
                                     fontWeight: 'lighter'
@@ -119,7 +125,7 @@ const Footer = () => {
                                 FAQ + Help
                             </Typography>
                             <Typography
-                                className="link"
+                                className={link}
                                 style={{
                                     fontSize: 16,
                                     fontWeight: 'lighter',
@@ -208,7 +214,7 @@ const Footer = () => {
                                 Accounts + Orders
                             </Typography>
                             <Typography
-                                className="link"
+                                className={link}
                                 style={{
                                     fontSize: 16,
                                     fontWeight: 'lighter',
@@ -220,7 +226,7 @@ const Footer = () => {
                                 Your Account
                             </Typography>
                             <Typography
-                                className="link"
+                                className={link}
                                 style={{
                                     fontSize: 16,
                                     fontWeight: 'lighter',
@@ -232,7 +238,7 @@ const Footer = () => {
                                 Shopping Details
                             </Typography>
                             <Typography
-                                className="link"
+                                className={link}
                                 style={{
                                     fontSize: 16,
                                     fontWeight: 'lighter',
@@ -244,7 +250,7 @@ const Footer = () => {
                                 Subscription
                             </Typography>
                             <Typography
-                                className="link"
+                                className={link}
                                 style={{
                                     fontSize: 16,
                                     fontWeight: 'lighter',
@@ -274,7 +280,7 @@ const Footer = () => {
                                 Legal
                             </Typography>
                             <Typography
-                                className="link"
+                                className={link}
                                 style={{
                                     fontSize: 16,
                                     fontWeight: 'lighter',
@@ -286,7 +292,7 @@ const Footer = () => {
                                 Terms + Conditions
                             </Typography>
                             <Typography
-                                className="link"
+                                className={link}
                                 style={{
                                     fontSize: 16,
                                     fontWeight: 'lighter',
@@ -298,7 +304,7 @@ const Footer = () => {
                                 Privacy Policy
                             </Typography>
                             <Typography
-                                className="link"
+                                className={link}
                                 style={{
                                     fontSize: 16,
                                     fontWeight: 'lighter',
@@ -312,7 +318,7 @@ const Footer = () => {
                                 style={{
                                     fontSize: 16,
                                     fontWeight: 'lighter',
-                                    marginTop: 25
+                                    marginTop: 22
                                 }}
                             >
                                 Get Wired with us
@@ -323,8 +329,8 @@ const Footer = () => {
                     </div>
 
                 </Container>
-                <Container className="footerResp">
-                    <div className="footerMenu">
+                <Container className={footerResp}>
+                    <div className={footerMenu}>
                         <h2>END OF THE ROAD, JACK.</h2>
                         <Typography
                             style={{

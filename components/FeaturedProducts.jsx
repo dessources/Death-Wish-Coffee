@@ -14,6 +14,7 @@ import Skeleton from "@mui/material/Skeleton";
 import RatingStars from "../components/RatingStars";
 import { reviews, card, featuredProducts, nameProduct } from "../styles/FeaturedProducts.module.css";
 import { getSpecificCoffees } from "../utils/queries";
+
 const FeaturedProducts = () => {
   const settings = {
     dots: false,

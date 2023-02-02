@@ -11,6 +11,35 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import { runOut } from "../styles/Subscription.module.css";
 
+//styles
+import {subscribeHero,
+        save,
+        subscribeButton,
+        goToLogin,
+        saveResp,
+        subscribeButtonResp,
+        goToLoginResp,
+        benefits,
+        cards,
+        truck,
+        benefitsTitle,
+        savings,
+        access,
+        manage,
+        truckResp,
+        savingsResp,
+        accessResp,
+        manageResp,
+        needHelpTitle,
+        needHelpText,
+        findBrew,
+        reviews,
+        reviewsResp,
+        footerBlack,
+        footerResp,
+        footerMenu
+        } from '../styles/Subscription.module.css'
+
 const Subscription = () => {
   return (
     <>
@@ -19,14 +48,14 @@ const Subscription = () => {
         style={{
           maxWidth: "100%",
           height: "880px",
-          backgroundImage: `url(${"subscribe2.png.webp"})`,
+          backgroundImage: `url(${"images/subscribe2.png.webp"})`,
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
         }}
-        className="subscribeHero"
+        className={subscribeHero}
       >
-        <Box className="save">
+        <Box className={save}>
           <Typography
             variant="h1"
             align="center"
@@ -68,7 +97,7 @@ const Subscription = () => {
               cursor: "pointer",
               display: "inline-block",
             }}
-            className="subscribeButton"
+            className={subscribeButton}
           >
             <Link href="#">CHOOSE SUBSCRIPTION</Link>
           </Button>
@@ -87,7 +116,7 @@ const Subscription = () => {
               cursor: "pointer",
               display: "inline-block",
             }}
-            className="goToLogin"
+            className={goToLogin}
           >
             <Link href={"/Login"}>MEMBER LOGIN</Link>
           </Button>
@@ -101,7 +130,7 @@ const Subscription = () => {
           marginLeft: "auto",
           marginRight: "auto",
         }}
-        className="saveResp"
+        className={saveResp}
       >
         <Typography
           variant="h1"
@@ -149,7 +178,7 @@ const Subscription = () => {
             cursor: "pointer",
             display: "block",
           }}
-          className="subscribeButtonResp"
+          className={subscribeButtonResp}
         >
           <Link href="#">CHOOSE SUBSCRIPTION</Link>
         </Button>
@@ -167,13 +196,13 @@ const Subscription = () => {
             cursor: "pointer",
             display: "block",
           }}
-          className="goToLoginResp"
+          className={goToLoginResp}
         >
           <Link href={"/Login"}>MEMBER LOGIN</Link>
         </Button>
       </Box>
-      <Container className="benefits">
-        <Typography variant="h1" align="center" className="benefitsTitle">
+      <Container className={benefits}>
+        <Typography variant="h1" align="center" className={benefitsTitle}>
           SUBSCRIPTION BENEFITS
         </Typography>
         <Box
@@ -183,10 +212,10 @@ const Subscription = () => {
             backgroundColor: "black",
             display: "flex",
           }}
-          className="cards"
+          className={cards}
         >
-          <Card sx={{ maxWidth: 474 }} style={{ backgroundColor: "black" }} className="truck">
-            <CardMedia component="img" alt="red truck" height="165" image="truck.png" />
+          <Card sx={{ maxWidth: 474 }} style={{ backgroundColor: "black" }} className={truck}>
+            <CardMedia component="img" alt="red truck" height="165" image="images/truck.png" />
             <CardContent>
               <Typography
                 variant="h5"
@@ -214,8 +243,8 @@ const Subscription = () => {
               </Typography>
             </CardContent>
           </Card>
-          <Card sx={{ maxWidth: 474 }} style={{ backgroundColor: "black" }} className="savings">
-            <CardMedia component="img" alt="savings" height="165" image="save.png" />
+          <Card sx={{ maxWidth: 474 }} style={{ backgroundColor: "black" }} className={savings}>
+            <CardMedia component="img" alt="savings" height="165" image="images/save.png" />
             <CardContent>
               <Typography
                 variant="h5"
@@ -244,8 +273,8 @@ const Subscription = () => {
               </Typography>
             </CardContent>
           </Card>
-          <Card sx={{ maxWidth: 474 }} style={{ backgroundColor: "black" }} className="access">
-            <CardMedia component="img" alt="easy access" height="165" image="access.png" />
+          <Card sx={{ maxWidth: 474 }} style={{ backgroundColor: "black" }} className={access}>
+            <CardMedia component="img" alt="easy access" height="165" image="images/access.png" />
             <CardContent>
               <Typography
                 variant="h5"
@@ -273,8 +302,8 @@ const Subscription = () => {
               </Typography>
             </CardContent>
           </Card>
-          <Card sx={{ maxWidth: 474 }} style={{ backgroundColor: "black" }} className="manage">
-            <CardMedia component="img" alt="manage" height="165" image="manage.png" />
+          <Card sx={{ maxWidth: 474 }} style={{ backgroundColor: "black" }} className={manage}>
+            <CardMedia component="img" alt="manage" height="165" image="images/manage.png" />
             <CardContent>
               <Typography
                 variant="h5"
@@ -305,13 +334,13 @@ const Subscription = () => {
           <Card
             sx={{ maxWidth: "50%" }}
             style={{ backgroundColor: "black", marginTop: 15 }}
-            className="truckResp"
+            className={truckResp}
           >
             <CardMedia
               sx={{ height: 48, width: 76, margin: "auto" }}
               component="img"
               alt="red truck"
-              image="truck.png"
+              image="images/truck.png"
             />
             <CardContent>
               <Typography
@@ -343,13 +372,13 @@ const Subscription = () => {
           <Card
             sx={{ maxWidth: "50%" }}
             style={{ backgroundColor: "black", marginTop: 15 }}
-            className="savingsResp"
+            className={savingsResp}
           >
             <CardMedia
               sx={{ height: 48, width: 76, margin: "auto" }}
               component="img"
               alt="savings"
-              image="save.png"
+              image="images/save.png"
             />
             <CardContent>
               <Typography
@@ -379,12 +408,12 @@ const Subscription = () => {
               </Typography>
             </CardContent>
           </Card>
-          <Card sx={{ maxWidth: "50%" }} style={{ backgroundColor: "black" }} className="accessResp">
+          <Card sx={{ maxWidth: "50%" }} style={{ backgroundColor: "black" }} className={accessResp}>
             <CardMedia
               sx={{ height: 48, width: 76, margin: "auto" }}
               component="img"
               alt="easy access"
-              image="access.png"
+              image="images/access.png"
             />
             <CardContent>
               <Typography
@@ -413,12 +442,12 @@ const Subscription = () => {
               </Typography>
             </CardContent>
           </Card>
-          <Card sx={{ maxWidth: "50%" }} style={{ backgroundColor: "black" }} className="manageResp">
+          <Card sx={{ maxWidth: "50%" }} style={{ backgroundColor: "black" }} className={manageResp}>
             <CardMedia
               sx={{ height: 48, width: 76, margin: "auto" }}
               component="img"
               alt="manage"
-              image="manage.png"
+              image="images/manage.png"
             />
             <CardContent>
               <Typography
@@ -458,13 +487,13 @@ const Subscription = () => {
           paddingBottom: 100,
         }}
       >
-        <Typography variant="h1" align="center" className="needHelpTitle">
+        <Typography variant="h1" align="center" className={needHelpTitle}>
           NEED HELP CHOOSING ?
         </Typography>
-        <Typography variant="body1" className="needHelpText">
+        <Typography variant="body1" className={needHelpText}>
           Take a short quiz to figure out which one of our everyday roasts is best for you.
         </Typography>
-        <Button variant="contained" className="findBrew">
+        <Button variant="contained" className={findBrew}>
           <Link href="/Quizz">FIND MY BREW</Link>
         </Button>
       </Container>
@@ -475,7 +504,7 @@ const Subscription = () => {
           maxWidth: "100%",
           marginBottom: "100px",
         }}
-        className="reviews"
+        className={reviews}
       >
         <Typography
           variant="h1"
@@ -501,7 +530,7 @@ const Subscription = () => {
           }}
         >
           <Card sx={{ maxWidth: 520 }} style={{ backgroundColor: "black" }}>
-            <CardMedia component="img" alt="ratings" height="50" image="stars.png" />
+            <CardMedia component="img" alt="ratings" height="50" image="images/stars.png" />
             <CardContent>
               <Typography
                 variant="h5"
@@ -544,7 +573,7 @@ const Subscription = () => {
             </CardContent>
           </Card>
           <Card sx={{ maxWidth: 520 }} style={{ backgroundColor: "black" }}>
-            <CardMedia component="img" alt="ratings" height="50" image="stars.png" />
+            <CardMedia component="img" alt="ratings" height="50" image="images/stars.png" />
             <CardContent>
               <Typography
                 variant="h5"
@@ -586,7 +615,7 @@ const Subscription = () => {
             </CardContent>
           </Card>
           <Card sx={{ maxWidth: 520 }} style={{ backgroundColor: "black" }}>
-            <CardMedia component="img" alt="ratings" height="50" image="stars.png" />
+            <CardMedia component="img" alt="ratings" height="50" image="images/stars.png" />
             <CardContent>
               <Typography
                 variant="h5"
@@ -636,7 +665,7 @@ const Subscription = () => {
           maxWidth: "100%",
           marginBottom: "20px",
         }}
-        className="reviewsResp"
+        className={reviewsResp}
       >
         <Typography
           variant="h1"
@@ -655,18 +684,19 @@ const Subscription = () => {
         <Box
           style={{
             maxWidth: "100%",
-            maxHeight: 185 /*  */,
+            maxHeight: 185,
             backgroundColor: "black",
             display: "flex",
             justifyContent: "center",
           }}
+          
         >
           <Card sx={{ maxWidth: 588 }} style={{ backgroundColor: "black" }}>
             <CardMedia
               sx={{ height: 28, width: 156, margin: "auto" }}
               component="img"
               alt="ratings"
-              image="stars.png"
+              image="images/stars.png"
             />
             <CardContent>
               <Typography
@@ -714,7 +744,7 @@ const Subscription = () => {
       <AppBar position="static" sx={{ top: "auto", bottom: 0 }}>
         <Container
           style={{ backgroundColor: "black", maxHeight: 423, maxWidth: "100%" }}
-          className="footerBlack"
+          className={footerBlack}
         >
           <div style={{ display: "flex", flexDirection: "row" }}>
             <Link
@@ -751,7 +781,7 @@ const Subscription = () => {
                 Company
               </Typography>
               <Typography
-                className="link"
+                
                 style={{
                   fontSize: 16,
                   fontWeight: "lighter",
@@ -771,7 +801,7 @@ const Subscription = () => {
                 FAQ + Help
               </Typography>
               <Typography
-                className="link"
+                
                 style={{
                   fontSize: 16,
                   fontWeight: "lighter",
@@ -958,8 +988,8 @@ const Subscription = () => {
             </Box>
           </div>
         </Container>
-        <Container className="footerResp">
-          <div className="footerMenu">
+        <Container className={footerResp}>
+          <div className={footerMenu}>
             <h2>END OF THE ROAD, JACK.</h2>
             <Typography
               style={{
