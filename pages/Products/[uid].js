@@ -23,6 +23,7 @@ import {
   reviews,
   selectedLabel,
   style,
+  titleSize
 } from "../../styles/uid.module.css";
 import RatingStars from "../../components/RatingStars.jsx";
 import handleAddToCart from "../../utils/handleAddToCart";
@@ -144,7 +145,7 @@ const Detail = ({ coffee }) => {
           <div>
             {coffee?.sizes && (
               <>
-                <h3>
+                <h3 className={titleSize}>
                   <strong>Size</strong>
                 </h3>
                 <div className={size}>
@@ -171,7 +172,7 @@ const Detail = ({ coffee }) => {
           <div className={stylesDetailsProduct}>
             {coffee?.styles.length > 0 && (
               <>
-                <h3>
+                <h3 className={titleSize}>
                   <strong>Style</strong>
                 </h3>
                 <div className={style}>
