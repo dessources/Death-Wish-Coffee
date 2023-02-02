@@ -77,6 +77,7 @@ const Subscription = () => {
               textAlign: "center",
               marginTop: 20,
               fontFamily: "'FenomenSans-Book'",
+              color: "white"
             }}
           >
             Never run out of coffee and save 10% on all coffee subscription orders. Start a subscription today to
