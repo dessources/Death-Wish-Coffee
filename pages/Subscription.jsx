@@ -70,7 +70,7 @@ const Subscription = () => {
             }}
             className="subscribeButton"
           >
-            <Link href="#">CHOOSE SUBSCRIPTION</Link>
+            <Link href="/CreateSubscription">CHOOSE SUBSCRIPTION</Link>
           </Button>
           <Button
             variant="contained"

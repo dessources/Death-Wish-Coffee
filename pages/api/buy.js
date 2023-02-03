@@ -6,7 +6,6 @@ export default async function handler(req, res) {
   if (req.method === "POST") {
     try {
       //create checkout seesion
-
       const session = await stripe.checkout.sessions.create({
         submit_type: "pay",
         mode: "payment",

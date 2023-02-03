@@ -27,7 +27,9 @@ export async function getServerSideProps(params) {
   const order = await Stripe.checkout.sessions.retrieve(params.query.session_id, {
     expand: ["line_items", "payment_intent"],
   });
-  order.payment_details = await Stripe.paymentMethods.retrieve(order.payment_intent.payment_method);
+  console.dir(order, { depth: null });
+  if (order.mode !== "subscription")
+    order.payment_details = await Stripe.paymentMethods.retrieve(order.payment_intent.payment_method);
   return { props: { order } };
 }
 export default function StripeSuccess({ order }) {

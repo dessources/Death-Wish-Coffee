@@ -48,7 +48,7 @@ const style = {
 export default function BasicModal() {
   const handleCheckout = async () => {
     const stripe = await getStripe();
-    const res = await axios.post("/api/stripe", cart.products);
+    const res = await axios.post("/api/buy", cart.products);
     console.log(res.data);
     await stripe.redirectToCheckout({ sessionId: res.data.id });
   };
