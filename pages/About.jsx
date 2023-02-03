@@ -675,7 +675,7 @@ const About = () => {
           }}
           className="applyButton"
         >
-            <Link href="#" className='applyLink'>APPLY HERE</Link>
+            <Link href="#">APPLY HERE</Link>
             
         </Button>
       </Container>
