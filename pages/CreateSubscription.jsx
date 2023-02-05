@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Tabs, Tab } from "@mui/material";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import TabPanel from "../components/TabPanel";
 import unavailableImage from "../images/unavailable.png";
 import { getSpecificCoffees, getSubscriptionImages } from "../utils/queries";
@@ -69,11 +70,11 @@ export default function CreateSubscription({ coffees, images }) {
     ({ currentTarget }) => {
       setSubscripitionData((subscriptionData) => {
         let { format, style, roast, size, frequency } = subscriptionData;
-        //if all the subscription properties are set, then subscribe is true
-        let subscribe =
-          format && roast && size && frequency && ((format === "bagged" && style) || format === "single serve");
         //if format and roast and size are set we know which coffee the user chose
         let coffee = format && roast && size ? coffees[format][roast] : {};
+        //if all the subscription properties are set, then subscribe is true
+        let subscribe = coffee && frequency && ((format === "bagged" && style) || format === "single serve");
+
         return {
           ...subscriptionData,
           [currentTarget.dataset.for]: value,
@@ -90,6 +91,7 @@ export default function CreateSubscription({ coffees, images }) {
     };
 
   const handleSubscribe = () => stripeCheckout("subscribe", subscriptionData);
+  const mediumScreen = useMediaQuery("(min-width:1750px)");
   return (
     <main className={main}>
       <div>
@@ -97,8 +99,18 @@ export default function CreateSubscription({ coffees, images }) {
           <Tabs
             value={currentTab}
             onChange={handleChange}
+            variant="scrollable"
+            allowScrollButtonsMobile
+            scrollButtons
             aria-label="basic tabs example"
-            sx={{ "& .MuiTabs-indicator": { background: "#e63d2f" } }}
+            sx={{
+              "& .MuiTabs-indicator": { background: "#e63d2f" },
+              "& .MuiTabs-scrollButtons": mediumScreen
+                ? {
+                    opacity: 0,
+                  }
+                : "",
+            }}
           >
             {tabLabels.map((attr, i) => {
               return (

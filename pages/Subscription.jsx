@@ -12,33 +12,34 @@ import CardContent from "@mui/material/CardContent";
 import { runOut } from "../styles/Subscription.module.css";
 
 //styles
-import {subscribeHero,
-        save,
-        subscribeButton,
-        goToLogin,
-        saveResp,
-        subscribeButtonResp,
-        goToLoginResp,
-        benefits,
-        cards,
-        truck,
-        benefitsTitle,
-        savings,
-        access,
-        manage,
-        truckResp,
-        savingsResp,
-        accessResp,
-        manageResp,
-        needHelpTitle,
-        needHelpText,
-        findBrew,
-        reviews,
-        reviewsResp,
-        footerBlack,
-        footerResp,
-        footerMenu
-        } from '../styles/Subscription.module.css'
+import {
+  subscribeHero,
+  save,
+  subscribeButton,
+  goToLogin,
+  saveResp,
+  subscribeButtonResp,
+  goToLoginResp,
+  benefits,
+  cards,
+  truck,
+  benefitsTitle,
+  savings,
+  access,
+  manage,
+  truckResp,
+  savingsResp,
+  accessResp,
+  manageResp,
+  needHelpTitle,
+  needHelpText,
+  findBrew,
+  reviews,
+  reviewsResp,
+  footerBlack,
+  footerResp,
+  footerMenu,
+} from "../styles/Subscription.module.css";
 
 const Subscription = () => {
   return (
@@ -77,31 +78,34 @@ const Subscription = () => {
               textAlign: "center",
               marginTop: 20,
               fontFamily: "'FenomenSans-Book'",
-              color: 'white'
+              color: "white",
             }}
           >
             Never run out of coffee and save 10% on all coffee subscription orders. Start a subscription today to
             take advantage of subscriber-only savings, early access to exclusive products and more.
           </Typography>
 
-          <Button
-            variant="contained"
-            style={{
-              fontFamily: "'FenomenSans-Book'",
-              color: "black",
-              width: "210px",
-              height: "60px",
-              fontWeight: "500",
-              marginTop: "50px",
-              marginLeft: "15%",
-              marginRight: 15,
-              cursor: "pointer",
-              display: "inline-block",
-            }}
-            className={subscribeButton}
-          >
-            <Link href="/CreateSubscription">CHOOSE SUBSCRIPTION</Link>
-          </Button>
+          <Link href="/CreateSubscription">
+            <Button
+              variant="contained"
+              style={{
+                fontFamily: "'FenomenSans-Book'",
+                color: "black",
+                width: "210px",
+                height: "60px",
+                fontWeight: "500",
+                marginTop: "50px",
+                marginLeft: "15%",
+                marginRight: 15,
+                cursor: "pointer",
+                display: "inline-block",
+              }}
+              className="subscribeButton"
+            >
+              CHOOSE SUBSCRIPTION
+            </Button>
+          </Link>
+
           <Button
             variant="contained"
             style={{
@@ -123,7 +127,7 @@ const Subscription = () => {
           </Button>
         </Box>
       </Box>
-      <Box
+      {/* <Box
         style={{
           backgroundColor: "rgba(0, 0, 0, .5)",
           width: "612px",
@@ -163,26 +167,27 @@ const Subscription = () => {
           Never run out of coffee and save 10% on all coffee subscription orders. Start a subscription today to
           take advantage of subscriber-only savings, early access to exclusive products and more.
         </Typography>
+        <Link href="#">
+          <Button
+            variant="contained"
+            style={{
+              color: "black",
+              width: "210px",
+              height: "60px",
+              fontFamily: "FenomenSans-Book",
 
-        <Button
-          variant="contained"
-          style={{
-            color: "black",
-            width: "210px",
-            height: "60px",
-            fontFamily: "FenomenSans-Book",
-
-            fontWeight: "500",
-            marginTop: "25px",
-            marginLeft: "auto",
-            marginRight: "auto",
-            cursor: "pointer",
-            display: "block",
-          }}
-          className={subscribeButtonResp}
-        >
-          <Link href="#">CHOOSE SUBSCRIPTION</Link>
-        </Button>
+              fontWeight: "500",
+              marginTop: "25px",
+              marginLeft: "auto",
+              marginRight: "auto",
+              cursor: "pointer",
+              display: "block",
+            }}
+            className="subscribeButtonResp"
+          >
+            CHOOSE SUBSCRIPTION
+          </Button>
+        </Link>
         <Button
           variant="contained"
           sx={{
@@ -201,9 +206,9 @@ const Subscription = () => {
         >
           <Link href={"/Login"}>MEMBER LOGIN</Link>
         </Button>
-      </Box>
-      <Container className={benefits}>
-        <Typography variant="h1" align="center" className={benefitsTitle}>
+      </Box> */}
+      <Container className="benefits">
+        <Typography variant="h1" align="center" className="benefitsTitle">
           SUBSCRIPTION BENEFITS
         </Typography>
         <Box
@@ -690,7 +695,6 @@ const Subscription = () => {
             display: "flex",
             justifyContent: "center",
           }}
-          
         >
           <Card sx={{ maxWidth: 588 }} style={{ backgroundColor: "black" }}>
             <CardMedia
@@ -782,7 +786,6 @@ const Subscription = () => {
                 Company
               </Typography>
               <Typography
-                
                 style={{
                   fontSize: 16,
                   fontWeight: "lighter",
@@ -802,7 +805,6 @@ const Subscription = () => {
                 FAQ + Help
               </Typography>
               <Typography
-                
                 style={{
                   fontSize: 16,
                   fontWeight: "lighter",
