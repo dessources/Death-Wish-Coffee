@@ -54,46 +54,51 @@ const Subscription = () => {
             take advantage of subscriber-only savings, early access to exclusive products and more.
           </Typography>
 
-          <Button
-            variant="contained"
-            style={{
-              fontFamily: "'FenomenSans-Book'",
-              color: "black",
-              width: "210px",
-              height: "60px",
-              fontWeight: "500",
-              marginTop: "50px",
-              marginLeft: "15%",
-              marginRight: 15,
-              cursor: "pointer",
-              display: "inline-block",
-            }}
-            className="subscribeButton"
-          >
-            <Link href="/CreateSubscription">CHOOSE SUBSCRIPTION</Link>
-          </Button>
-          <Button
-            variant="contained"
-            style={{
-              fontFamily: "'FenomenSans-Book'",
+          <Link href="/CreateSubscription">
+            {" "}
+            <Button
+              variant="contained"
+              style={{
+                fontFamily: "'FenomenSans-Book'",
+                color: "black",
+                width: "210px",
+                height: "60px",
+                fontWeight: "500",
+                marginTop: "50px",
+                marginLeft: "15%",
+                marginRight: 15,
+                cursor: "pointer",
+                display: "inline-block",
+              }}
+              className="subscribeButton"
+            >
+              CHOOSE SUBSCRIPTION
+            </Button>
+          </Link>
+          <Link href={"/Login"}>
+            <Button
+              variant="contained"
+              style={{
+                fontFamily: "'FenomenSans-Book'",
 
-              color: "black",
-              width: "160px",
-              height: "60px",
-              fontWeight: "500",
-              marginTop: "50px",
-              marginLeft: 5,
-              marginRight: "auto",
-              cursor: "pointer",
-              display: "inline-block",
-            }}
-            className="goToLogin"
-          >
-            <Link href={"/Login"}>MEMBER LOGIN</Link>
-          </Button>
+                color: "black",
+                width: "160px",
+                height: "60px",
+                fontWeight: "500",
+                marginTop: "50px",
+                marginLeft: 5,
+                marginRight: "auto",
+                cursor: "pointer",
+                display: "inline-block",
+              }}
+              className="goToLogin"
+            >
+              MEMBER LOGIN
+            </Button>
+          </Link>
         </Box>
       </Box>
-      <Box
+      {/* <Box
         style={{
           backgroundColor: "rgba(0, 0, 0, .5)",
           width: "612px",
@@ -133,26 +138,27 @@ const Subscription = () => {
           Never run out of coffee and save 10% on all coffee subscription orders. Start a subscription today to
           take advantage of subscriber-only savings, early access to exclusive products and more.
         </Typography>
+        <Link href="#">
+          <Button
+            variant="contained"
+            style={{
+              color: "black",
+              width: "210px",
+              height: "60px",
+              fontFamily: "FenomenSans-Book",
 
-        <Button
-          variant="contained"
-          style={{
-            color: "black",
-            width: "210px",
-            height: "60px",
-            fontFamily: "FenomenSans-Book",
-
-            fontWeight: "500",
-            marginTop: "25px",
-            marginLeft: "auto",
-            marginRight: "auto",
-            cursor: "pointer",
-            display: "block",
-          }}
-          className="subscribeButtonResp"
-        >
-          <Link href="#">CHOOSE SUBSCRIPTION</Link>
-        </Button>
+              fontWeight: "500",
+              marginTop: "25px",
+              marginLeft: "auto",
+              marginRight: "auto",
+              cursor: "pointer",
+              display: "block",
+            }}
+            className="subscribeButtonResp"
+          >
+            CHOOSE SUBSCRIPTION
+          </Button>
+        </Link>
         <Button
           variant="contained"
           sx={{
@@ -171,7 +177,7 @@ const Subscription = () => {
         >
           <Link href={"/Login"}>MEMBER LOGIN</Link>
         </Button>
-      </Box>
+      </Box> */}
       <Container className="benefits">
         <Typography variant="h1" align="center" className="benefitsTitle">
           SUBSCRIPTION BENEFITS
