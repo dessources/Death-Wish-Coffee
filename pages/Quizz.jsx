@@ -1,12 +1,15 @@
 import React from 'react'
+import { Widget } from '@typeform/embed-react'
 
 
 const Quizz = () => {
-    return ( 
-        <>
-            <h1 style={{color:"white"}}>Quizz</h1>
-        </>
-     );
+    return <Widget 
+                id= "qdUtnfqh"
+                style={{
+                    height: '100vh'
+                }}
+                
+            />
 }
- 
+
 export default Quizz;
