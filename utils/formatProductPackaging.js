@@ -1,6 +1,5 @@
 export default function formatProductPackaging(format, size) {
   const amount = size?.split("_")[0];
-  console.log(amount);
   if (format === "bagged") {
     switch (size?.split("_")[1]) {
       case "bag":
@@ -10,7 +9,7 @@ export default function formatProductPackaging(format, size) {
       case "lb":
         return `1 - 1lb bag`;
       case "lbs":
-        return amount === 5 ? `1 - 5lbs bag` : `${amount} - 1lb bag`;
+        return amount === 5 ? `1 - 5lbs bag` : `${amount} - 1lb bags`;
     }
   } else {
     switch (amount) {

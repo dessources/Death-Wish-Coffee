@@ -7,8 +7,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useSelector, useDispatch } from "react-redux";
 import CloseIcon from "@mui/icons-material/Close";
 import { incrementQuantity, decrementQuantity, removeFromCart } from "../redux/cart.slice";
-import getStripe from "../lib/getStripe";
-import axios from "axios";
+
 import {
   productModal,
   numberQuantity,
@@ -46,12 +45,7 @@ const style = {
 };
 
 export default function BasicModal() {
-  const handleCheckout = async () => {
-    const stripe = await getStripe();
-    const res = await axios.post("/api/buy", cart.products);
-    console.log(res.data);
-    await stripe.redirectToCheckout({ sessionId: res.data.id });
-  };
+  const handleCheckout = () => stripeCheckout("buy", cart.products);
 
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();

@@ -1,15 +1,11 @@
 import React from "react";
 import { Box, Tabs, Tab } from "@mui/material";
 import TabPanel from "../components/TabPanel";
-import Image from "next/image";
-import NotInterested from "@mui/icons-material/NotInterested";
 import unavailableImage from "../images/unavailable.png";
 import { getSpecificCoffees, getSubscriptionImages } from "../utils/queries";
-import axios from "axios";
-import getStripe from "../lib/getStripe";
 import formatMoney from "../utils/formatMoney";
 import formatProductPackaging from "../utils/formatProductPackaging";
-
+// import
 //styles
 import {
   main,
@@ -25,6 +21,8 @@ import {
   infoContainer,
   unavailable,
 } from "../styles/CreateSubscription.module.css";
+import formatProductDescription from "../utils/formatProductDescription";
+import stripeCheckout from "../lib/stripeCheckout";
 
 export const getStaticProps = async () => {
   const { assets } = await getSubscriptionImages();
@@ -63,48 +61,35 @@ export default function CreateSubscription({ coffees, images }) {
     setCurrentTab(newCurrentTab);
   };
 
-  React.useEffect(() => {
-    console.dir(subscriptionData);
-  }, [currentTab]);
-
   const [subscriptionData, setSubscripitionData] = React.useState({});
-  const subscriptionAttr = ["format", "style", "roast", "size", "frequency", "subscribe"];
+  const tabLabels = ["format", "style", "roast", "size", "frequency", "subscribe"];
 
-  const handleClick = (value) => (e) => {
-    setSubscripitionData((subscriptionData) => {
-      let newData = { ...subscriptionData, [subscriptionAttr[currentTab]]: value };
-      let { format, style, roast, size, frequency } = subscriptionData;
-      let subscribe =
-        format && roast && size && frequency && ((format === "bagged" && style) || format === "single serve");
-      let coffee = format && roast && size ? coffees[format][roast] : {};
-      newData = {
-        ...newData,
-        subscribe,
-        name: coffee?.name,
-        image: coffee?.smallImage,
-        price: coffee.sizes?.[size],
-      };
-      return newData;
-    });
+  const handleClick =
+    (value) =>
+    ({ currentTarget }) => {
+      setSubscripitionData((subscriptionData) => {
+        let { format, style, roast, size, frequency } = subscriptionData;
+        //if all the subscription properties are set, then subscribe is true
+        let subscribe =
+          format && roast && size && frequency && ((format === "bagged" && style) || format === "single serve");
+        //if format and roast and size are set we know which coffee the user chose
+        let coffee = format && roast && size ? coffees[format][roast] : {};
+        return {
+          ...subscriptionData,
+          [currentTarget.dataset.for]: value,
+          subscribe,
+          name: coffee?.name,
+          description: formatProductDescription(style, size) || " ",
+          image: coffee?.smallImage,
+          price: coffee.sizes?.[size],
+        };
+      });
 
-    if (value == "single serve") setCurrentTab(2);
-    else setCurrentTab((currentTab) => currentTab + 1);
-  };
+      if (value == "single serve") setCurrentTab(2);
+      else setCurrentTab((currentTab) => currentTab + 1);
+    };
 
-  const handleSubscribe = async () => {
-    const coffee = coffees[subscriptionData.format][subscriptionData.roast];
-    const price = Number(coffee.sizes[subscriptionData.size]);
-    const image = coffee.thumbnailImage;
-    const stripe = await getStripe();
-    const res = await axios.post("/api/subscribe", {
-      ...subscriptionData,
-      name: coffee.name,
-      price,
-      image,
-    });
-
-    await stripe.redirectToCheckout({ sessionId: res.data.id });
-  };
+  const handleSubscribe = () => stripeCheckout("subscribe", subscriptionData);
   return (
     <main className={main}>
       <div>
@@ -115,7 +100,7 @@ export default function CreateSubscription({ coffees, images }) {
             aria-label="basic tabs example"
             sx={{ "& .MuiTabs-indicator": { background: "#e63d2f" } }}
           >
-            {subscriptionAttr.map((attr, i) => {
+            {tabLabels.map((attr, i) => {
               return (
                 <Tab
                   key={i}
@@ -130,10 +115,9 @@ export default function CreateSubscription({ coffees, images }) {
             })}
           </Tabs>
         </Box>
-        <TabPanel className={tabPanelClass} currentTab={currentTab} index={0}>
+        <TabPanel className={tabPanelClass} currentTab={currentTab} index={0} dataFor="format">
           <h2> How do you brew ?</h2>
           <div className={cards}>
-            {" "}
             <div onClick={handleClick("single serve")} className={card}>
               <img alt="" src="https://media.graphassets.com/Uq5C4GOgQOuNMt5LAsh3" className={cardImage} />
               <div className={cardDescription}>Single Serve Pods</div>
@@ -144,10 +128,9 @@ export default function CreateSubscription({ coffees, images }) {
             </div>
           </div>
         </TabPanel>
-        <TabPanel className={tabPanelClass} currentTab={currentTab} index={1}>
+        <TabPanel className={tabPanelClass} currentTab={currentTab} index={1} dataFor="style">
           <h2>Choose your Style</h2>
           <div className={cards}>
-            {" "}
             <div onClick={handleClick("whole bean")} className={card}>
               <img src="https://media.graphassets.com/VlD8l8EKT7mFiMOz3hgj" alt="" className={cardImage} />
               <div className={cardDescription}> Whole bean</div>
@@ -159,7 +142,7 @@ export default function CreateSubscription({ coffees, images }) {
           </div>
         </TabPanel>
 
-        <TabPanel className={tabPanelClass} currentTab={currentTab} index={2}>
+        <TabPanel className={tabPanelClass} currentTab={currentTab} index={2} dataFor="roast">
           <h2>Choose your roast</h2>
 
           <div className={cards}>
@@ -183,7 +166,7 @@ export default function CreateSubscription({ coffees, images }) {
               : ""}
           </div>
         </TabPanel>
-        <TabPanel className={tabPanelClass} currentTab={currentTab} index={3}>
+        <TabPanel className={tabPanelClass} currentTab={currentTab} index={3} dataFor="size">
           <h2> Choose your amount </h2>
 
           <div className={cards}>
@@ -201,20 +184,20 @@ export default function CreateSubscription({ coffees, images }) {
               : ""}
           </div>
         </TabPanel>
-        <TabPanel className={tabPanelClass} currentTab={currentTab} index={4}>
+        <TabPanel className={tabPanelClass} currentTab={currentTab} index={4} dataFor="frequency">
           <h2> Choose the frequency</h2>
           <div className={cards}>
             <div onClick={handleClick("30")} className={card}>
               <img src="https://media.graphassets.com/e2GLTuvT6SBc4F3WyKbG" className={cardImage}></img>
-              <div className={cardDescription}> 30 days</div>
+              <div className={cardDescription}> every month</div>
             </div>
             <div onClick={handleClick("60")} className={card}>
               <img src="https://media.graphassets.com/evmrpCqyR42pOVtuxJwj" alt="" className={cardImage} />
-              <div className={cardDescription}> 60 days</div>
+              <div className={cardDescription}> every 2 months</div>
             </div>
             <div onClick={handleClick("90")} className={card}>
               <img src="https://media.graphassets.com/hmKZeWXmSW6L3BhARZcI" alt="" className={cardImage} />
-              <div className={cardDescription}> 90 days</div>
+              <div className={cardDescription}> every 3 months</div>
             </div>
           </div>
         </TabPanel>

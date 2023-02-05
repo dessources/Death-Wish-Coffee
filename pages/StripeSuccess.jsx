@@ -28,8 +28,11 @@ export async function getServerSideProps(params) {
     expand: ["line_items", "payment_intent"],
   });
   console.dir(order, { depth: null });
-  if (order.mode !== "subscription")
+  if (order.mode === "payment") {
     order.payment_details = await Stripe.paymentMethods.retrieve(order.payment_intent.payment_method);
+  } else {
+    order.payment_details = await Stripe.customers.retrieve(order.customer);
+  }
   return { props: { order } };
 }
 export default function StripeSuccess({ order }) {
@@ -44,7 +47,7 @@ export default function StripeSuccess({ order }) {
             <Image src={logo} alt=""></Image>
           </div>
           <div className={message}>
-            <h1> Merci pour votre Achat !</h1>
+            <h1> Merci pour votre {order.mode === "payment" ? "Achat" : "Abonnement"}!</h1>
             <p>Hello {order.customer_details.name},</p>
             <p className={confirmed}>Votre commande a été confirmée et sera bientôt expédiée.</p>
             <p>Un email de confirmation a été envoyé à: </p>
