@@ -31,7 +31,9 @@ export async function getServerSideProps(params) {
   if (order.mode === "payment") {
     order.payment_details = await Stripe.paymentMethods.retrieve(order.payment_intent.payment_method);
   } else {
-    order.payment_details = await Stripe.customers.retrieve(order.customer);
+    // A way to retrieve payment methods in subscription mode will be
+    // Designed later...
+    // order.payment_details = await Stripe.customers.retrieve(order.customer);
   }
   return { props: { order } };
 }
@@ -59,10 +61,22 @@ export default function StripeSuccess({ order }) {
               <p>Date: {formatDateTime(order.created)}</p>
 
               <p>Adresse de livraison: {formatAdress(order.shipping_details.address)}</p>
-              <p>
-                Methode de payment: {order.payment_details?.card?.brand} - ...
-                {order.payment_details?.card?.last4}
-              </p>
+              {order.mode === "subscription" ? (
+                <p>
+                  Fréquence de livraison: {order.line_items.data[0].price.recurring.interval_count}{" "}
+                  {order.line_items.data[0].price.recurring.interval}s
+                </p>
+              ) : (
+                ""
+              )}
+              {order.payment_details ? (
+                <p>
+                  Methode de payment: {order.payment_details?.card?.brand} - ...
+                  {order.payment_details?.card?.last4}
+                </p>
+              ) : (
+                ""
+              )}
             </div>
 
             <div className={productInfo}>

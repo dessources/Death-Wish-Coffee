@@ -219,7 +219,7 @@ export default function CreateSubscription({ coffees, images }) {
               <button onClick={handleSubscribe}>Subscribe</button>
             </div>
           </div>
-          <i>*You will be charged the above price each time your order ships</i>
+          <i>*An invoice will be sent to you for the above price each time your order ships</i>
         </TabPanel>
       </div>
     </main>

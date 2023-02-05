@@ -5,15 +5,6 @@ const stripe = new Stripe(`${process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY}`);
 export default async function handler(req, res) {
   if (req.method === "POST") {
     try {
-      //create a customer
-      //   const { name, email, paymentMethod, coffee } = req.body;
-      //   const customer = await stripe.customers.create({
-      //     email,
-      //     name,
-      //     payment_method: paymentMethod,
-      //     invoice_settings: { default_payment_method: paymentMethod },
-      //   });
-
       const session = await stripe.checkout.sessions.create({
         mode: "subscription",
         payment_method_types: ["card"],
