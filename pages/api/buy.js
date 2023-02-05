@@ -6,7 +6,6 @@ export default async function handler(req, res) {
   if (req.method === "POST") {
     try {
       //create checkout seesion
-
       const session = await stripe.checkout.sessions.create({
         submit_type: "pay",
         mode: "payment",
@@ -21,8 +20,9 @@ export default async function handler(req, res) {
             price_data: {
               currency: "usd",
               product_data: {
-                name: `${item.name} ${formatProductDescription(item.size, item.style, true)}`,
+                name: `${item.name}`,
                 images: [item.image],
+                description: item.description,
               },
               unit_amount_decimal: Number((item.price * 100).toFixed(2)),
             },

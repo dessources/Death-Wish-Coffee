@@ -83,10 +83,25 @@ export const getSpecificCoffees = (filters) =>
           name
           price
           mediumImage
+          thumbnailImage
+          smallImage
           rating
           reviews
+          format
+          roast
+          sizes
         }
       }
     `,
     { filters }
   );
+
+export const getSubscriptionImages = () =>
+  connectHygraph().request(gql`
+    {
+      assets(where: { fileName_contains: "_", fileName_not_contains: "-" }, first: 50) {
+        fileName
+        url
+      }
+    }
+  `);

@@ -49,5 +49,9 @@ const filterDetails = {
     borderColor: "#e12727",
     background: "#555858",
   },
+  "& button[data-selected='false']": {
+    borderColor: "transparent",
+    background: "#898e8e",
+  },
 };
 export { filterRoot, filterSummary, filterDetails };
