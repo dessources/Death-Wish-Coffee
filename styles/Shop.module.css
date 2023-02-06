@@ -1,0 +1,427 @@
+.mainSection {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  grid-template-rows: 48px auto;
+  width: 80%;
+  margin: 12rem auto 1rem;
+  font-size: 1.1rem;
+}
+.productSection {
+  grid-area: 2/2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.product {
+  position: relative;
+  font-family: "FenomenSans-Book";
+  cursor: pointer;
+}
+
+.productHeader {
+  position: relative;
+}
+.coverImage {
+  position: relative;
+}
+
+.coverImage img {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+  cursor: pointer;
+}
+.coverImage video {
+  display: none;
+  position: absolute;
+  width: 100%;
+}
+
+.coverImage:hover > video {
+  display: initial;
+}
+
+.addToCartContainer {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+.addToCartContainer.show {
+  pointer-events: all;
+}
+.addToCartClass {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 85px;
+  height: 70px;
+  padding: 0 24px 21px 0;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.closeAddToCart {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  padding: 0 5px 5px 0;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.closeAddToCart {
+  z-index: 9;
+}
+.closeAddToCart svg {
+  height: 30px;
+  width: 30px;
+}
+.addToCartClass img {
+  width: 100%;
+  height: 26px;
+}
+.product:hover .addToCartClass {
+  opacity: 1;
+}
+
+.addToCartClass.hide,
+.closeAddToCart.hide {
+  opacity: 0 !important;
+  display: none;
+}
+
+.closeAddToCart.show {
+  opacity: 1 !important;
+}
+.addToCartForm {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(32, 30, 29, 0.74);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  display: none;
+}
+.addToCartForm.show {
+  display: initial;
+  opacity: 1 !important;
+}
+
+.addToCartForm form {
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  margin-bottom: 2rem;
+}
+
+.addToCartForm form div {
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.addToCartForm label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  text-align: center;
+  padding: 0.5rem;
+  height: 4rem;
+  color: black;
+  flex: 1 1 30%;
+  background: #898e8e;
+  border-right: 1px solid #201e1d;
+  border-top: 1px solid #201e1d;
+  cursor: pointer;
+}
+
+.addToCartForm .selectedLabel {
+  border: 1px solid #e12727;
+  background: #555858;
+  color: #dedbd9;
+  fill: #dedbd9;
+}
+
+.addToCartForm label span::first-letter {
+  text-transform: uppercase;
+}
+
+.addToCartForm input[type="radio"] {
+  appearance: none;
+  margin: 0;
+}
+
+.addToCartForm label svg {
+  height: 2.5rem;
+  width: 2.5rem;
+  margin-right: 0.5rem;
+}
+.addToCartForm input[type="submit"] {
+  cursor: pointer;
+  position: relative;
+  top: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 0;
+  color: #201e1d;
+  background-color: #e12727;
+  font-size: 16px;
+  font-family: "FenomenSans-Book";
+  line-height: 1.5;
+  appearance: none !important;
+  transition: background-color 0.3s cubic-bezier(0.06, 0.305, 0, 1);
+}
+
+.name {
+  margin-top: 5px;
+  color: white;
+}
+.name,
+.reviews {
+  line-height: 24px;
+  cursor: pointer;
+}
+.reviews {
+  display: flex;
+  align-items: center;
+}
+.reviews span {
+  margin-right: 7px;
+  display: inline-flex;
+}
+.reviews svg {
+  /* vertical-align: baseline; */
+  font-size: 1.2rem;
+  color: #e63d2f;
+  margin-left: -2px;
+}
+.price {
+  font-family: FenomenSans;
+  font-size: 1.25rem;
+  line-height: 24px;
+  margin-top: 5px;
+}
+.productsHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  grid-area: 1/1/2/3;
+}
+.productsHeader > span {
+  flex: 1 1 25%;
+  visibility: hidden;
+}
+
+.sortSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1 1 75%;
+}
+.sortSection > span {
+  z-index: 1;
+}
+
+.sortSection select {
+  width: 100%;
+  border: 1px solid #dedbd9;
+  outline: none;
+  height: 48px;
+  padding: 0 1.2rem;
+  appearance: none;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  background-color: transparent;
+  font-family: "FenomenSans-Book";
+  font-size: 1.1rem;
+  line-height: 2.5rem;
+}
+.sortSection div {
+  position: relative;
+  width: 216px;
+}
+.sortSection div::before {
+  content: "+";
+  position: absolute;
+  top: calc(50% - 3px);
+  right: 16px;
+  transform: translateY(-50%);
+}
+
+.sortSection select option {
+  color: black;
+  cursor: pointer;
+}
+
+.sortSection select option:hover {
+  color: white !important;
+}
+
+.filtersSection {
+  grid-area: 2/1;
+  margin-right: 3rem;
+  display: flex;
+
+  justify-content: center;
+}
+
+.filtersSection .mobileActions {
+  display: none;
+}
+
+@media screen and (max-width: 1555px) {
+  .addToCartForm input[type="submit"] {
+    width: 70%;
+  }
+
+  .addToCartForm label svg {
+    height: 1.1rem;
+    width: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .mainSection {
+    margin: 4rem auto 1rem auto;
+  }
+}
+@media screen and (max-width: 1230px) {
+  .addToCartContainer,
+  .addToCartClass {
+    display: none !important;
+  }
+  .mainSection {
+    width: 95%;
+  }
+  .filtersSection {
+    width: 85%;
+    display: block;
+  }
+
+  .filtersSection div {
+    row-gap: 0.5rem;
+  }
+}
+@media screen and (max-width: 992px) {
+  .mainSection {
+    grid-template-columns: 33% 66%;
+    width: 80%;
+  }
+
+  .productsHeader {
+    grid-area: 1/1/2/3;
+    justify-content: space-around;
+    align-items: center;
+    border: 0;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    width: 100%;
+    height: 4rem;
+  }
+  .productsHeader > span {
+    visibility: visible;
+    text-align: center;
+    flex: 1 1 33%;
+  }
+
+  .sortSection {
+    display: flex;
+    flex: 1 1 66%;
+  }
+  .sortSection span {
+    display: none;
+  }
+  .sortSection div {
+    width: 100%;
+  }
+  .sortSection select {
+    border: none;
+    border-left: 1px solid;
+  }
+  .filtersSection {
+    display: none;
+    grid-area: 2/1/3/3;
+    margin-top: 1rem;
+
+    width: 100%;
+    border-bottom: 1px solid;
+  }
+
+  .filtersSection.show {
+    display: block;
+  }
+
+  .filtersSection .mobileActions {
+    display: flex;
+    gap: 0 1rem;
+    margin: 2rem 0 2rem;
+    width: 100%;
+  }
+
+  .filtersSection .mobileActions button {
+    flex: 1 1 50%;
+    height: 3rem;
+    background: #898e8e;
+    color: #201e1d;
+    border: none;
+    font-family: "FenomenSans-Book";
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  .addToCart,
+  .addToCartContainer {
+    display: none;
+  }
+
+  .productSection {
+    grid-area: 3/1/4/3;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(3, minmax(10rem, 1fr));
+    margin-top: 3rem;
+  }
+}
+@media screen and (max-width: 940px) {
+  .mainSection {
+    margin: 10rem auto 1rem auto;
+  }
+}
+@media screen and (max-width: 768px) {
+  .productSection {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  }
+  .reviews {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+
+@media screen and (max-width: 424px) {
+  .reviews {
+    flex-direction: row;
+    align-items: center;
+  }
+}

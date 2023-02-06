@@ -1,0 +1,35 @@
+.featuredProducts {
+  background-color: black;
+  margin: 0 auto;
+  margin-top: 60px;
+  width: 90%;
+  color: white;
+  height: 700px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.card {
+  background-color: black;
+}
+
+.nameProduct:hover {
+  color: red;
+}
+
+.reviews {
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.reviews span {
+  margin-right: 7px;
+  display: inline-flex;
+}
+.reviews svg {
+  /* vertical-align: baseline; */
+  font-size: 1.2rem;
+  color: #e63d2f;
+  margin-left: -2px;
+}

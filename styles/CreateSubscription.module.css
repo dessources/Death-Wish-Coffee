@@ -1,0 +1,120 @@
+.main {
+  width: 100%;
+  min-height: 100vh;
+  background: #201e1d;
+}
+
+.main > div {
+  width: 33%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.tabsClass {
+  margin-bottom: 10rem;
+}
+
+.tabPanelClass,
+.tabsClass {
+  display: flex;
+  justify-content: center;
+}
+
+.tabPanelClass h2 {
+  text-align: center;
+}
+.cards {
+  display: flex;
+  gap: 1rem;
+}
+.card {
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.card .cardDescription {
+  background-color: #e63d2f;
+  height: 2rem;
+  display: flex;
+  transform: translateY(-32%);
+  align-items: center;
+  justify-content: center;
+}
+
+.card .cardImage {
+  display: block;
+  width: 16rem;
+}
+.card.unavailable {
+  pointer-events: none;
+}
+
+.subscriptionSummary {
+  display: flex;
+  width: 100%;
+  margin: 0 auto 2rem;
+  column-gap: 1.5rem;
+}
+.subscriptionSummary .imageContainer,
+.subscriptionSummary .infoContainer {
+  flex: 1 1 50%;
+}
+.imageContainer img {
+  width: 100%;
+}
+
+.subscriptionSummary h3 {
+  text-transform: capitalize;
+}
+.subscriptionSummary .priceClass {
+  font-weight: 600;
+}
+
+.subscriptionSummary button {
+  color: #201e1d;
+
+  padding: 0.5rem 1.1rem;
+  background: #e63d2f;
+
+  font-weight: bold;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  font-family: "FenomenSans-Book";
+}
+
+@media screen and (max-width: 1766px) {
+  .main > div {
+    width: 100%;
+  }
+  .tabPanelClass > div {
+    padding: 0.5rem;
+  }
+}
+@media screen and (max-width: 1440px) {
+  .tabsClass {
+    margin-bottom: 5rem;
+  }
+  .subscriptionSummary {
+    flex-direction: column;
+  }
+
+  .infoContainer {
+    text-align: center;
+  }
+  .tabPanelClass i {
+    display: inline-block;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .cards {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card .cardImage {
+    width: 100%;
+    /* max-width: 16rem; */
+  }
+}
