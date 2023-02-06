@@ -8,7 +8,7 @@ import {
   handsText,
   coffeeContainer,
   coffee,
-  coffeeTitle,
+  // coffeeTitle,
   coffeeVideo,
   coffeeText,
   coffeeTextResp,
@@ -29,7 +29,12 @@ import {
   beansButton,
   beansButtonResp,
 } from "../styles/HomepageVideos.module.css";
-
+const coffeeTitle = {
+  fontFamily: "Revans",
+  fontWeight: "900",
+  fontSize: "200px",
+  color: "white",
+};
 const HomepageVideos = () => {
   return (
     <>
@@ -58,7 +63,7 @@ const HomepageVideos = () => {
       </Box>
       <Container className={coffeeContainer}>
         <Box className={coffee}>
-          <Typography variant="h1" className={coffeeTitle}>
+          <Typography variant="h1" style={coffeeTitle}>
             COFFEE THAT SLAPS
           </Typography>
         </Box>
