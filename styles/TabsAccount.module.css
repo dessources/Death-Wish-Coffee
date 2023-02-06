@@ -5,14 +5,14 @@
     width: 394px;
 }
 
+.wrapperForm input::placeholder{
+    color: #fff;
+}
+
 .wrapperAddress{
     margin-bottom: 11px;
     background: #201e1d;
     color: #fff;
-}
-
-.btnAddress{
-    margin-top: 20px;
 }
 
 .btnAddAddress{
@@ -24,8 +24,24 @@
 }
 
 .info{
-    margin-right: 150px;
     color: black;
+    display: flex;
+}
+
+.leftSide{
+    margin-right: 150px;
+}
+
+.btnEditDelete{
+    margin-right: 20px;
+    margin-bottom: 30px;
+    background-color: transparent;
+    border: none;
+    color: red;
+}
+
+.btnEditDelete:hover{
+    text-decoration: underline;
 }
 
 .formFieldInput{
@@ -92,6 +108,10 @@
     text-decoration: none;
     text-transform: uppercase;
     width: 170px;
+}
+
+.btnCancel:hover{
+    background-color: #e12727;
 }
 
 .btnUpdate{
