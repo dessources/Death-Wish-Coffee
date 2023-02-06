@@ -34,7 +34,6 @@ const cartSlice = createSlice({
       state.products.splice(index, 1);
     },
     showCart(state, action) {
-      console.log(action.payload);
       state.open = action.payload ? true : false;
     },
   },
@@ -42,4 +41,5 @@ const cartSlice = createSlice({
 
 export const cartReducer = cartSlice.reducer;
 
-export const { addToCart, incrementQuantity, decrementQuantity, removeFromCart, showCart } = cartSlice.actions;
+export const { addToCart, incrementQuantity, decrementQuantity, removeFromCart, showCart, setCartRight } =
+  cartSlice.actions;

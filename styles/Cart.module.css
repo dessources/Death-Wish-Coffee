@@ -58,7 +58,7 @@
 }
 
 .btnCheckout {
-  width: 380px;
+  width: 90%;
   height: 50px;
   background-color: #e12727;
   font-family: "FenomenSans-Book";
@@ -73,9 +73,9 @@
 .btnCheckout:hover {
   color: #fff;
 }
-
+/* 
 @media screen and (max-width: 992px) {
   .modalContainer {
-    display: none;
+    
   }
-}
+} */

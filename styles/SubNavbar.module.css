@@ -1,30 +1,31 @@
 .home {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+  margin-top: 30px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-  .textSmallscreen {
+.textSmallscreen {
+  display: none;
+}
+
+@media screen and (max-width: 1200px) {
+  /*------Subnavbar--------*/
+  .textSubnavbar {
     display: none;
   }
-
-  @media screen and (max-width: 1200px) {
-    /*------Subnavbar--------*/
-    .textSubnavbar {
-      display: none;
-    }
-    .textSmallscreen {
-      display: block;
-      justify-content: center;
-      text-align: center;
-    }
-    .smallText {
-      font-size: 45px;
-    }
-    .home{
-      height: 500px;
-    }
+  .textSmallscreen {
+    display: block;
+    justify-content: center;
+    text-align: center;
   }
+  .smallText {
+    font-size: 45px;
+  }
+  .home {
+    height: 500px;
+  }
+}

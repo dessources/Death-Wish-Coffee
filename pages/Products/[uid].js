@@ -23,7 +23,7 @@ import {
   reviews,
   selectedLabel,
   style,
-  titleSize
+  titleSize,
 } from "../../styles/uid.module.css";
 import RatingStars from "../../components/RatingStars.jsx";
 import handleAddToCart from "../../utils/handleAddToCart";
@@ -80,8 +80,8 @@ const Detail = ({ coffee }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     initialSlide: 0,
-    nextArrow: <CarouselLightningIcon type={"next"} />,
-    prevArrow: <CarouselLightningIcon type={"prev"} />,
+    nextArrow: <CarouselLightningIcon />,
+    prevArrow: <CarouselLightningIcon />,
     responsive: [
       {
         breakpoint: 1224,

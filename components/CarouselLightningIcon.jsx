@@ -1,10 +1,6 @@
 import React from "react";
 import SvgIcon from "@mui/material/SvgIcon";
-export default function CarouselLightningIcon({ type, currentSlide, slideCount, ...props }) {
-  const style =
-    type === "prev"
-      ? { transform: "rotateX(0) rotateY(180deg) translateY(100%) !important" }
-      : { transform: "translateY(100%) !important" };
+export default function CarouselLightningIcon({ currentSlide, slideCount, ...props }) {
   return (
     <SvgIcon
       aria-hidden="true"
@@ -12,7 +8,6 @@ export default function CarouselLightningIcon({ type, currentSlide, slideCount, 
       data-prefix="fas"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 50 22.607"
-      sx={style}
       {...props}
     >
       <path
