@@ -197,6 +197,7 @@
 
 .name {
   margin-top: 5px;
+  color: white;
 }
 .name,
 .reviews {
@@ -252,7 +253,7 @@
   padding: 0 1.2rem;
   appearance: none;
   position: relative;
-  z-index: 2;
+  z-index: 1;
   cursor: pointer;
   background-color: transparent;
   font-family: "FenomenSans-Book";
@@ -401,6 +402,11 @@
     grid-gap: 1rem;
     grid-template-columns: repeat(3, minmax(10rem, 1fr));
     margin-top: 3rem;
+  }
+}
+@media screen and (max-width: 940px) {
+  .mainSection {
+    margin: 10rem auto 1rem auto;
   }
 }
 @media screen and (max-width: 768px) {

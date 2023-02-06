@@ -12,7 +12,14 @@ import Link from "next/link";
 import CarouselLightningIcon from "./CarouselLightningIcon";
 import Skeleton from "@mui/material/Skeleton";
 import RatingStars from "../components/RatingStars";
-import { reviews, card, featuredProducts, nameProduct } from "../styles/FeaturedProducts.module.css";
+import {
+  reviews,
+  card,
+  featuredProducts,
+  nameProduct,
+  slickNext,
+  slickPrev,
+} from "../styles/FeaturedProducts.module.css";
 import { getSpecificCoffees } from "../utils/queries";
 
 const FeaturedProducts = () => {
@@ -23,13 +30,8 @@ const FeaturedProducts = () => {
     slidesToShow: 4,
     slidesToScroll: 1,
     initialSlide: 0,
-    nextArrow: <CarouselLightningIcon type={"next"} sx={{ transform: "translate(-15%,0%) !important" }} />,
-    prevArrow: (
-      <CarouselLightningIcon
-        type={"prev"}
-        sx={{ transform: "rotateX(0) rotateY(180deg) translate(-15%,0%) !important " }}
-      />
-    ),
+    nextArrow: <CarouselLightningIcon id="featSlickNext" />,
+    prevArrow: <CarouselLightningIcon id="featSlickPrev" />,
     responsive: [
       {
         breakpoint: 1224,
