@@ -100,7 +100,7 @@ const Subscription = () => {
                 cursor: "pointer",
                 display: "inline-block",
               }}
-              className="subscribeButton"
+              className={subscribeButton}
             >
               CHOOSE SUBSCRIPTION
             </Button>
@@ -127,7 +127,7 @@ const Subscription = () => {
           </Button>
         </Box>
       </Box>
-      {/* <Box
+       <Box
         style={{
           backgroundColor: "rgba(0, 0, 0, .5)",
           width: "612px",
@@ -153,7 +153,7 @@ const Subscription = () => {
         <Typography
           // variant="body1"
           style={{
-            color: "red",
+            color: "white",
             fontSize: 21,
             fontFamily: `"FenomenSans-Book" !important`,
             fontWeight: "lighter",
@@ -162,7 +162,7 @@ const Subscription = () => {
             paddingRight: 3,
             paddingLeft: 3,
           }}
-          className={runOut}
+          
         >
           Never run out of coffee and save 10% on all coffee subscription orders. Start a subscription today to
           take advantage of subscriber-only savings, early access to exclusive products and more.
@@ -175,7 +175,7 @@ const Subscription = () => {
               width: "210px",
               height: "60px",
               fontFamily: "FenomenSans-Book",
-
+              backgroundColor: 'red',
               fontWeight: "500",
               marginTop: "25px",
               marginLeft: "auto",
@@ -183,7 +183,7 @@ const Subscription = () => {
               cursor: "pointer",
               display: "block",
             }}
-            className="subscribeButtonResp"
+            className={subscribeButtonResp}
           >
             CHOOSE SUBSCRIPTION
           </Button>
@@ -206,9 +206,9 @@ const Subscription = () => {
         >
           <Link href={"/Login"}>MEMBER LOGIN</Link>
         </Button>
-      </Box> */}
-      <Container className="benefits">
-        <Typography variant="h1" align="center" className="benefitsTitle">
+      </Box> 
+      <Container className={benefits}>
+        <Typography variant="h1" align="center" className={benefitsTitle}>
           SUBSCRIPTION BENEFITS
         </Typography>
         <Box
