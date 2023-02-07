@@ -5,7 +5,6 @@ import Typography from "@mui/material/Typography";
 import { useSelector, useDispatch } from "react-redux";
 import CloseIcon from "@mui/icons-material/Close";
 import { incrementQuantity, decrementQuantity, removeFromCart } from "../redux/cart.slice";
-import getRightFunc from "../utils/getRightFunc";
 
 import {
   productModal,
@@ -19,8 +18,11 @@ import {
   modalContainer,
 } from "../styles/Cart.module.css";
 import modalStyles from "../styles/modalStyles";
+import { triangleRight } from "../styles/modalStyles";
+
 import { showCart } from "../redux/cart.slice";
 import formatProductDescription from "../utils/formatProductDescription";
+import getRightFunc from "../utils/getRightFunc";
 
 export default function Cart() {
   const handleCheckout = () => stripeCheckout("buy", cart.products);
@@ -34,13 +36,13 @@ export default function Cart() {
   };
   const [cartRight, setCartRight] = React.useState(0);
   React.useEffect(() => {
-    setCartRight(getRightFunc(modalStyles["&::before"].right));
+    setCartRight(getRightFunc(triangleRight));
     window.onresize = () => {
-      setCartRight(getRightFunc(modalStyles["&::before"].right));
+      setCartRight(getRightFunc(triangleRight));
     };
     return () => (window.onresize = null);
-  }, []);
-
+  });
+  const cartStyles = { ...modalStyles, right: cartRight };
   return (
     <Modal
       className={modalContainer}
@@ -49,10 +51,7 @@ export default function Cart() {
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
     >
-      <Box
-        sx={cart.products.length ? { ...modalStyles, right: cartRight } : { ...modalStyles, right: cartRight }}
-        style={modalTriangle}
-      >
+      <Box sx={cartStyles} style={modalTriangle}>
         <Box
           style={{
             display: "flex",

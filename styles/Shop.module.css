@@ -204,7 +204,10 @@
   line-height: 24px;
   cursor: pointer;
 }
+/* .stars {
+} */
 .reviews {
+  color: white;
   display: flex;
   align-items: center;
 }
@@ -219,6 +222,7 @@
   margin-left: -2px;
 }
 .price {
+  color: white;
   font-family: FenomenSans;
   font-size: 1.25rem;
   line-height: 24px;
