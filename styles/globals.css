@@ -1,13 +1,10 @@
 @font-face {
   font-family: "FenomenSans";
-  src: url("../public/fonts/FenomenSans-Bold.eot");
-  src: local("☞Fenomen Sans Bold"), local("FenomenSans-Bold"),
-    url("../public/fonts/FenomenSans-Bold.eot?#iefix") format("embedded-opentype"),
-    url("../public/fonts/FenomenSans-Bold.woff2") format("woff2"),
-    url("../public/fonts/FenomenSans-Bold.woff") format("woff"),
-    url("../public/fonts/FenomenSans-Bold.ttf") format("truetype");
+  src: url("../public/fonts/Fenomen-Sans-Bold.woff2") format("woff2");
+
   font-style: normal;
 }
+
 @font-face {
   font-family: "FenomenSans-Book";
   src: url("../public/fonts/FenomenSans-Book.eot");
@@ -81,8 +78,8 @@ a {
 
 .slick-next {
   font-size: 50px !important;
-  color: red !important;
-  margin: -100px 40px;
+  color: #e63d2f !important;
+  margin: -100px 40px !important;
   width: 50px !important;
   height: auto !important;
   transform: translateY(5rem) !important;
@@ -90,7 +87,7 @@ a {
 
 .slick-prev {
   font-size: 50px !important;
-  color: red !important;
+  color: #e63d2f !important;
   margin: -100px 40px !important;
   width: 50px !important;
   height: auto !important;
@@ -102,6 +99,12 @@ a {
 }
 #featSlickPrev {
   transform: rotateX(0) rotateY(180deg) translate(-15%, 0) !important;
+}
+.slick-active {
+  border: 5px solid transparent;
+}
+.slick-active:hover {
+  border-color: #e63d2f;
 }
 @media screen and (max-width: 425px) {
   svg.slick-next.slick-arrow,

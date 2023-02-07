@@ -17,8 +17,9 @@ import {
   card,
   featuredProducts,
   nameProduct,
-  slickNext,
-  slickPrev,
+  cardActionAreaClass,
+  price,
+  imageContainer,
 } from "../styles/FeaturedProducts.module.css";
 import { getSpecificCoffees } from "../utils/queries";
 
@@ -39,7 +40,6 @@ const FeaturedProducts = () => {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true,
         },
       },
       {
@@ -61,7 +61,6 @@ const FeaturedProducts = () => {
   };
 
   const [data, setData] = React.useState();
-
   React.useEffect(() => {
     getSpecificCoffees({ featured: true }).then((data) => setData(data.coffees));
   }, []);
@@ -69,83 +68,38 @@ const FeaturedProducts = () => {
     <div className={featuredProducts}>
       <Slider {...settings}>
         {data?.map((coffee, id) => (
-          <Card key={id} className={card} sx={{ borderRadius: "0", background: "transparent" }}>
-            <CardActionArea
-              style={{
-                backgroundColor: "black",
-                color: "white",
-                padding: "0 20px",
-              }}
-              sx={{ "& .MuiCardActionArea-focusHighlight": { opacity: "0!important" } }}
-            >
+          <div key={id} className={card}>
+            <div className={cardActionAreaClass}>
               {coffee ? (
-                <Link href={`/Products/${coffee?.uid}`}>
-                  <CardMedia className="image-coffee" component="img" image={coffee?.mediumImage} alt="coffee" />
-                </Link>
+                <>
+                  <div className={imageContainer}>
+                    <Link href={`/Products/${coffee?.uid}`}>
+                      <img src={coffee?.mediumImage} className="image-coffee" alt="coffee" />
+                    </Link>
+                  </div>
+                </>
               ) : (
                 <Skeleton variant="rectangular" width={400} height={400} />
               )}
 
-              <CardContent style={{}}>
-                <Box
-                  style={{
-                    height: "60px",
-                  }}
-                >
-                  <Link href={`/Products/${coffee?.uid}`}>
-                    <Typography gutterBottom variant="h5" component="div" fontWeight="bold">
-                      <span className={nameProduct}>{coffee?.name}</span>
-                    </Typography>
-                  </Link>
-                </Box>
-
-                <Box
-                  fontWeight="bold"
-                  variant="body1"
-                  color="text.secondary"
-                  style={{
-                    color: "white",
-                    fontWeight: "bold",
-                    fontSize: "15px",
-                  }}
-                >
-                  <Box className={reviews}>
+              <div>
+                <Link href={`/Products/${coffee?.uid}`}>
+                  <h4 className={nameProduct}>{coffee?.name}</h4>
+                </Link>
+                <div>
+                  <div className={reviews}>
                     <RatingStars rating={coffee?.rating} />
                     {coffee?.reviews} Reviews
-                  </Box>
-                  <Box
-                    style={{
-                      fontSize: "20px",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    ${coffee?.price}
-                  </Box>
-                </Box>
-              </CardContent>
-            </CardActionArea>
-            <CardActions
-              style={{
-                backgroundColor: "black",
-                justifyContent: "center",
-              }}
-            >
-              <Link href={`/Products/${coffee?.uid}`}>
-                <Button
-                  size="small"
-                  style={{
-                    color: "black",
-                    backgroundColor: "red",
-                    width: "185px",
-                    height: "70px",
-                    fontWeight: "bold",
-                  }}
-                >
-                  SHOP NOW
-                </Button>
-              </Link>
-            </CardActions>
-          </Card>
+                  </div>
+                  <div className={price}>${coffee?.price}</div>
+                </div>
+              </div>
+            </div>
+
+            <Link href={`/Products/${coffee?.uid}`}>
+              <button>SHOP NOW</button>
+            </Link>
+          </div>
         ))}
       </Slider>
     </div>
