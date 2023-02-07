@@ -54,7 +54,7 @@ const CoffeeCulture = () => {
   };
 
   return (
-    <div className={CoffeeCultureSection}>
+    <div className={CoffeeCultureSection} id="coffeeCulture">
       <h1 className={titleCoffeeCulture}>COFFEE CULTURE</h1>
       <Slider {...settings}>
         {galleryImages.map((image, index) => (
