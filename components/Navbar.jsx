@@ -186,6 +186,7 @@ const Navbar = () => {
                 onClick={() => setToggleMenu(false)}
                 className={close}
                 style={{
+                  color: "white",
                   fontSize: "50",
                 }}
               />

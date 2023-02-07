@@ -14,7 +14,6 @@ import {
   titleRemove,
   btnCheckout,
   scroll,
-  modalTriangle,
   modalContainer,
 } from "../styles/Cart.module.css";
 import modalStyles from "../styles/modalStyles";
@@ -51,7 +50,7 @@ export default function Cart() {
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
     >
-      <Box sx={cartStyles} style={modalTriangle}>
+      <Box sx={cartStyles}>
         <Box
           style={{
             display: "flex",
@@ -61,7 +60,7 @@ export default function Cart() {
           <Typography color="gray" fontWeight="bold" id="modal-modal-title" variant="h6" component="h2">
             ALL YOUR STUFF
           </Typography>
-          <CloseIcon onClick={handleClose} sx={{ cursor: "pointer" }} />
+          <CloseIcon onClick={handleClose} sx={{ color: "white", cursor: "pointer" }} />
         </Box>
         <hr />
         <div>
@@ -100,6 +99,7 @@ export default function Cart() {
                               backgroundColor: "#201e1d",
                               fontSize: "15px",
                               fontWeight: "bold",
+                              marginRight: "10px",
                             }}
                           >
                             +
@@ -112,6 +112,7 @@ export default function Cart() {
                               backgroundColor: "#201e1d",
                               fontSize: "15px",
                               fontWeight: "bold",
+                              marginLeft: "10px",
                             }}
                           >
                             -
