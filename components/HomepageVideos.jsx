@@ -37,7 +37,7 @@ const HomepageVideos = () => {
           <h3 className={sectionTitle}>COFFEE THAT SLAPS</h3>
         </div>
         <div className={videoText}>
-          <video
+          {/* <video
             className={sectionVideo}
             data-src="https://embed-ssl.wistia.com/deliveries/d9a39eb6a2274b30f628820bf7e9bd5871488da6/file.mp4"
             autoPlay={true}
@@ -45,6 +45,15 @@ const HomepageVideos = () => {
             muted={true}
             playsInline=""
             src="https://embed-ssl.wistia.com/deliveries/d9a39eb6a2274b30f628820bf7e9bd5871488da6/file.mp4"
+          ></video> */}
+          <video
+            className={sectionVideo}
+            data-src="https://embed-ssl.wistia.com/deliveries/afddc092f9ffceeb8d79f1136c2d60511f83a26f/file.mp4"
+            autoPlay={true}
+            loop={true}
+            muted={true}
+            playsInline=""
+            src="https://embed-ssl.wistia.com/deliveries/afddc092f9ffceeb8d79f1136c2d60511f83a26f/file.mp4"
           ></video>
           <div className={sectionText}>
             <p>Always sourced from the highest-quality beans. Ruining other coffee since 2012.</p>
