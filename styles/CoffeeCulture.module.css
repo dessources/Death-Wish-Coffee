@@ -59,3 +59,8 @@
     margin-top: 3rem;
   }
 }
+@media screen and (max-width: 425px) {
+  .CoffeeCultureSection {
+    padding-top: 3rem;
+  }
+}

@@ -5,7 +5,6 @@ const modalStyles = {
   width: "100%",
   maxWidth: 450,
   bgcolor: "#201e1d",
-  border: "2px solid #000",
   boxShadow: 24,
   p: 4,
   "&::before": {
@@ -20,4 +19,7 @@ const modalStyles = {
   },
 };
 
+const triangleRight = modalStyles["&::before"].right;
+
 export default modalStyles;
+export { triangleRight };
