@@ -155,7 +155,7 @@ const Navbar = () => {
 
                   <span
                     style={{
-                      color: "red",
+                      color: "#e63d2f",
                       fontSize: "16px",
                       fontWeight: "bold",
                       alignSelf: "flex-start",

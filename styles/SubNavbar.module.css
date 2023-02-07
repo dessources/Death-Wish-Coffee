@@ -1,3 +1,11 @@
+.home *,
+.rebellious *,
+.textSmallscreen * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .home {
   margin-top: 30px;
   width: 100%;
@@ -6,14 +14,75 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  background-image: url("../public/cafe.jpg");
+}
+.textSubnavbar {
+  width: 450px;
+  margin-top: 20%;
+  margin-left: 10%;
+}
+.textSubnavbar h2 {
+  font-weight: bold;
+  color: white;
+  font-family: Revans;
+  font-size: 4.125rem;
+}
+.textSubnavbar span {
+  color: #e63d2f;
+}
+.textSubnavbar p {
+  font-size: 1.25rem;
 }
 
+.textSubnavbar button {
+  width: 50%;
+  padding: 1.5rem 1rem;
+  background-color: #e12727;
+  font-family: "FenomenSans-Book";
+  color: black;
+  font-weight: bold;
+  font-size: 17px;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  border: none;
+}
+
+.textSubnavbar button:hover {
+  color: #fff;
+}
 .textSmallscreen {
   display: none;
 }
 
-@media screen and (max-width: 1200px) {
+.rebellious h5 {
+  font-family: Revans;
+  font-weight: bold;
+  color: #e12727;
+  text-align: center;
+  margin: 2rem auto 0.5rem;
+  font-size: 68px;
+}
+.rebellious p {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.25rem;
+}
+.rebellious h6 {
+  text-align: center;
+  font-size: 1.75rem;
+  font-family: "FenomenSans";
+  color: #e12727;
+  margin-top: 1rem;
+}
+
+@media screen and (max-width: 940px) {
   /*------Subnavbar--------*/
+  .home {
+    width: 100%;
+    background-position: 86% -16%;
+  }
   .textSubnavbar {
     display: none;
   }
@@ -21,11 +90,38 @@
     display: block;
     justify-content: center;
     text-align: center;
+    margin-bottom: 10rem;
+  }
+
+  .textSmallscreen h3 {
+    font-family: "Revans";
+    font-size: 4.125rem;
+    margin: 1rem auto 0;
+    width: 97%;
+  }
+  .textSmallscreen p {
+    margin: 0 auto;
+    width: 90%;
+    font-size: 1.25rem;
+  }
+
+  .textSmallscreen button {
+    color: black;
+    height: 70px;
+    font-weight: bold;
+    width: 15rem;
+    padding: 1.5rem 0.5rem;
+    background-color: #e12727;
+    font-family: "FenomenSans-Book";
+    font-size: 1.1rem;
+    margin-top: 2rem;
+    cursor: pointer;
+    border: none;
   }
   .smallText {
     font-size: 45px;
   }
   .home {
-    height: 500px;
+    height: 565px;
   }
 }

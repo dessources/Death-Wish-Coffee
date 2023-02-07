@@ -1,13 +1,10 @@
 @font-face {
   font-family: "FenomenSans";
-  src: url("../public/fonts/FenomenSans-Bold.eot");
-  src: local("☞Fenomen Sans Bold"), local("FenomenSans-Bold"),
-    url("../public/fonts/FenomenSans-Bold.eot?#iefix") format("embedded-opentype"),
-    url("../public/fonts/FenomenSans-Bold.woff2") format("woff2"),
-    url("../public/fonts/FenomenSans-Bold.woff") format("woff"),
-    url("../public/fonts/FenomenSans-Bold.ttf") format("truetype");
+  src: url("../public/fonts/Fenomen-Sans-Bold.woff2") format("woff2");
+
   font-style: normal;
 }
+
 @font-face {
   font-family: "FenomenSans-Book";
   src: url("../public/fonts/FenomenSans-Book.eot");
@@ -82,7 +79,7 @@ a {
 .slick-next {
   font-size: 50px !important;
   color: red !important;
-  margin: -100px 40px;
+  margin: -100px 40px !important;
   width: 50px !important;
   height: auto !important;
   transform: translateY(5rem) !important;
