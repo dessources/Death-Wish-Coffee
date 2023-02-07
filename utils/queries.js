@@ -1,5 +1,8 @@
 import { gql } from "graphql-request";
-import connectHygraph from "../lib/hygraph";
+// import connectHygraph from "../lib/hygraph";
+import { GraphQLClient } from "graphql-request";
+
+const hygraph = new GraphQLClient(`${process.env.NEXT_PUBLIC_HYGRAPH_PUBLIC_URL}`);
 
 const hygraph = connectHygraph();
 
