@@ -1,57 +1,61 @@
-.titleCoffeeCulture{
-    justify-content: center;
-    margin-top: 50px;
-    display: flex;
-    font-weight: bold;
-    font-family: "revansmedium";
-    margin-bottom: 50px;
-    font-size: 60px;
-    color: white;
-  }
-  
-  .imageCaroussel img{
-    object-fit: cover;
-    width: 100%;
-    max-height: 750px;
-    top: 0;
-    left: 0;
-  }
-  
-  .imageCaroussel:hover{
-    border: solid 5px red;
-  }
+.titleCoffeeCulture {
+  justify-content: center;
+  margin-top: 50px;
+  display: flex;
+  font-weight: bold;
+  font-family: "revansmedium";
+  margin-bottom: 50px;
+  font-size: 60px;
+  color: white;
+}
+.imageCaroussel {
+  outline: none !important;
+  margin-right: 0.5rem;
+}
+.imageCaroussel img {
+  object-fit: cover;
+  width: 100%;
+  height: 750px;
+  top: 0;
+  left: 0;
+}
 
-  .slick-prev:before, .slick-next:before {
-    font-size: 25px !important;
-    color: white !important;
+.slick-prev:before,
+.slick-next:before {
+  font-size: 25px !important;
+  color: white !important;
+}
+
+.slick-dots li button:before {
+  color: white !important;
+  font-size: 20px !important;
+  margin-top: 25px;
+}
+
+@media screen and (max-width: 1700px) {
+  .imageCaroussel img {
+    height: 700px;
   }
-  
-  .slick-dots li button:before {
-    color: white !important;
-    font-size: 20px !important;
-    margin-top: 25px;
+}
+
+@media screen and (max-width: 1400px) {
+  .imageCaroussel img {
+    height: 530px;
   }
-  
-  @media screen and (max-width: 1700px) {
-    .imageCaroussel img{
-      height: 700px;
-    }
+  .titleCoffeeCulture {
+    font-size: 40px;
   }
-  
-  @media screen and (max-width: 1400px) {
-    .imageCaroussel img{
-      height: 530px;
-    }
-    .titleCoffeeCulture{
-      font-size: 40px;
-    }
+}
+
+@media screen and (max-width: 768px) {
+  .CoffeeCultureSection {
+    margin-top: 3rem;
   }
-  
-  @media screen and (max-width: 768px) {
-    .imageCaroussel img{
-      height: 600px;
-    }
-    .titleCoffeeCulture{
-      font-size: 20px;
-    }
+  .imageCaroussel img {
+    height: 400px;
   }
+  .titleCoffeeCulture {
+    font-size: 20px;
+    margin-top: 3rem;
+  }
+}

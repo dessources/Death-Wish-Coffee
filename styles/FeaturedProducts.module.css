@@ -1,3 +1,8 @@
+.featuredProducts * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .featuredProducts {
   background-color: black;
   margin: 0 auto;
@@ -9,18 +14,58 @@
   align-items: center;
   text-align: center;
 }
-
+.cardActionAreaClass {
+  background-color: black;
+  color: white;
+  padding: 0 20px;
+}
+.cardActionAreaClass .imageContainer {
+  height: 24rem;
+}
+.cardActionAreaClass .imageContainer img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+.cardActionAreaClass .imageContainer:hover {
+  opacity: 0.5;
+}
 .card {
   background-color: black;
+  border-radius: 0;
+  background: transparent;
+}
+.card button {
+  color: black;
+  height: 70px;
+  font-weight: bold;
+  width: 50%;
+  padding: 1.5rem 0.5rem;
+  background-color: #e12727;
+  font-family: "FenomenSans-Book";
+  font-size: 17px;
+  margin-top: 15px;
+  cursor: pointer;
+  border: none;
+}
+.nameProduct {
+  font-size: 1.75rem;
+  font-weight: 600;
+  font-family: "FenomenSans";
+  margin: 1rem 0;
 }
 
 .nameProduct:hover {
-  color: red;
+  color: #e12727;
 }
 
 .reviews {
   line-height: 24px;
   cursor: pointer;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 .reviews span {
@@ -28,8 +73,34 @@
   display: inline-flex;
 }
 .reviews svg {
-  /* vertical-align: baseline; */
   font-size: 1.2rem;
   color: #e63d2f;
   margin-left: -2px;
+}
+.price {
+  font-family: "FenomenSans";
+  font-size: 1.3rem;
+}
+
+@media screen and (max-width: 1130px) {
+  .cardActionAreaClass {
+    padding: 0 10px;
+  }
+  .nameProduct {
+    margin-top: -3rem;
+  }
+  .cardActionAreaClass .imageContainer img {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .card button {
+    width: 216px;
+  }
+}
+
+@media screen and (max-width: 940px) {
+  .nameProduct {
+    margin-top: 0.5rem;
+  }
 }
