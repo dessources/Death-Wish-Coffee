@@ -41,7 +41,7 @@ function User({ session, handleSignOut }) {
         <div className={TabInfo}>
           <VerticalTabs />
 
-          <Box>
+          
             <p>
               <strong>Customer Info :</strong>
             </p>
@@ -54,7 +54,7 @@ function User({ session, handleSignOut }) {
               <strong>Email : </strong>
               {session.user.email}
             </p>
-          </Box>
+          
         </div>
       </div>
     </div>

@@ -6,6 +6,9 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { getSession, useSession, signOut } from "next-auth/react";
 import { useState } from "react";
+import { createTheme, ThemeProvider, useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
+
 import {
   wrapperForm,
   wrapperAddress,
@@ -20,23 +23,22 @@ import {
   btnEditDelete
 } from "../styles/TabsAccount.module.css";
 
+
 function TabPanel(props) {
+
   const { children, value, index, ...other } = props;
 
   return (
-    <div
+    <Typography
+      component="div"
       role="tabpanel"
       hidden={value !== index}
-      id={`vertical-tabpanel-${index}`}
-      aria-labelledby={`vertical-tab-${index}`}
+      id={`full-width-tabpanel-${index}`}
+      aria-labelledby={`full-width-tab-${index}`}
       {...other}
     >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
+      <Box p={3}>{children}</Box>
+    </Typography>
   );
 }
 
@@ -53,7 +55,27 @@ function a11yProps(index) {
   };
 }
 
+const theme = createTheme();
+
 export default function VerticalTabs() {
+
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down('sm'));
+  const style = matches ? {flexDirection: 'row',
+                          display: 'flex',
+                          justifyContent: 'center',
+                          width: "300px"                       
+                          } : {minWidth: "240px",
+                          width: "300px"}
+/* const useStyles = makeStyles(() => ({
+  root: {
+    flexDirection: isSmallScreen ? 'row' : 'column',
+    justifyContent: isSmallScreen ? 'center' : 'flex-start',
+    display: 'flex',
+  },
+})); */
+
+
   const [value, setValue] = React.useState(0);
 
   const handleChangeTabs = (event, newValue) => {
@@ -113,6 +135,7 @@ export default function VerticalTabs() {
   };
 
   return (
+    <ThemeProvider theme={theme}>
     <Box
       sx={{
         flexGrow: 1,
@@ -123,7 +146,8 @@ export default function VerticalTabs() {
     >
       <Tabs
         orientation="vertical"
-        variant="scrollable"
+        style={style}
+        variant="fullWidth"
         value={value}
         onChange={handleChangeTabs}
         aria-label="Vertical tabs example"
@@ -131,10 +155,6 @@ export default function VerticalTabs() {
         borderRight: 8, borderColor: "divider",
         "& button:focus": {backgroundColor: 'gray!important'},
         "& button:hover": {filter: 'brightness(50%)'},
-        }}
-        style={{
-          maxWidth: "240px",
-          width: "100%",
         }}
       >
         <Tab
@@ -145,6 +165,7 @@ export default function VerticalTabs() {
             color: "black",
             fontWeight: "bold",
             backgroundColor: "#dedbd9",
+            textTransform: 'capitalize'
           }}
         />
         <Tab
@@ -155,6 +176,7 @@ export default function VerticalTabs() {
             color: "black",
             fontWeight: "bold",
             backgroundColor: "#dedbd9",
+            textTransform: 'capitalize'
           }}
         />
         <Tab
@@ -165,6 +187,7 @@ export default function VerticalTabs() {
             color: "black",
             fontWeight: "bold",
             backgroundColor: "#dedbd9",
+            textTransform: 'capitalize'
           }}
         />
         <Tab
@@ -176,8 +199,10 @@ export default function VerticalTabs() {
             color: "black",
             fontWeight: "bold",
             backgroundColor: "#dedbd9",
+            textTransform: 'capitalize'
           }}
         />
+        
       </Tabs>
       <TabPanel
         value={value}
@@ -629,5 +654,6 @@ export default function VerticalTabs() {
         Log Out
       </TabPanel>
     </Box>
+    </ThemeProvider>
   );
 }
