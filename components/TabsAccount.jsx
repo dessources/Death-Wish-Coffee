@@ -64,7 +64,7 @@ export default function VerticalTabs() {
   const style = matches ? {flexDirection: 'row',
                           display: 'flex',
                           justifyContent: 'center',
-                          width: "300px"                       
+                                                 
                           } : {minWidth: "240px",
                           width: "300px"}
 /* const useStyles = makeStyles(() => ({
@@ -145,7 +145,7 @@ export default function VerticalTabs() {
       }}
     >
       <Tabs
-        orientation="vertical"
+        orientation={matches ? 'horizontal' : 'vertical'}
         style={style}
         variant="fullWidth"
         value={value}
