@@ -6,6 +6,14 @@
   box-sizing: border-box;
 }
 
+.home *,
+.rebellious *,
+.textSmallscreen * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .home {
   margin-top: 30px;
   width: 100%;

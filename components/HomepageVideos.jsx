@@ -53,16 +53,7 @@ const HomepageVideos = () => {
             </Link>
           </div>
         </div>
-        {/* <div>
-          <p className={sectionTextResp}>
-            Always sourced from the highest-quality beans. Ruining other coffee since 2012.
-          </p>
-          <Link href={"/Shop"}>
-            <p className={sectionButtonResp}>SHOP NOW</p>
-          </Link>
-        </div> */}
       </div>
-
       <div className={sectionContainer}>
         <div className={videoText}>
           <video
