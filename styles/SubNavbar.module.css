@@ -68,10 +68,11 @@
   font-weight: bold;
   color: #e12727;
   text-align: center;
-  margin: 2rem auto 0.5rem;
+  margin: 2.1rem auto 0.5rem !important;
   font-size: 68px;
 }
 .rebellious p {
+  color: white !important;
   width: 90%;
   margin: 0 auto;
   text-align: center;
@@ -105,8 +106,8 @@
   .textSmallscreen h3 {
     font-family: "Revans";
     font-size: 4.125rem;
-    margin: 1rem auto 0;
-    width: 97%;
+    margin: 2rem auto 0;
+    width: 96.5%;
   }
   .textSmallscreen p {
     color: white;

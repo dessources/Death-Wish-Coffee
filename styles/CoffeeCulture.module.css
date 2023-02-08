@@ -56,11 +56,11 @@
   }
   .titleCoffeeCulture {
     font-size: 20px;
-    margin-top: 3rem;
+    margin-top: 3rem !important;
   }
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 426px) {
   .CoffeeCultureSection {
-    padding-top: 3rem;
+    padding-top: 3.1rem !important;
   }
 }

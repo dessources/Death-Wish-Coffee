@@ -68,6 +68,14 @@ div .caffeinatedText,
 div .historicText {
   font-family: FenomenSans-Book !important;
 }
+
+div .creationTitle,
+div .goodMorningTitle,
+div .creationTitle,
+div .historicTitle {
+  font-family: revansmedium !important;
+}
+
 .creationYear {
   color: red;
   font-size: 40px;
@@ -469,6 +477,7 @@ div .historicText {
     height: unset !important;
   }
   .rebelsRespTitle {
+    font-family: revansmedium !important;
     color: red;
     font-size: 1.6rem;
     margin-top: 12rem;
@@ -489,7 +498,7 @@ div .historicText {
     color: white;
     font-size: 40px;
     font-weight: 900;
-    font-family: "revansmedium";
+    font-family: "revansmedium" !important;
     margin-top: 40px;
     padding-left: 0;
     padding-right: 0;
@@ -507,8 +516,9 @@ div .historicText {
     width: 90px;
   }
 
-  .timeline {
-    display: none;
+  .timeline,
+  .timeline * {
+    display: none !important;
   }
 
   .timelineResp {

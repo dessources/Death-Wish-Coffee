@@ -195,7 +195,7 @@ const Detail = ({ coffee }) => {
                         className={selectedStyle === style ? selectedLabel : ""}
                       >
                         <span>{labelIcons[style]}</span>
-                        <p style={{ marginLeft: "10px" }}>{style}</p>
+                        <p style={{ marginLeft: "10px", color: "white" }}>{style}</p>
                       </label>
                     </React.Fragment>
                   ))}
@@ -220,7 +220,9 @@ const Detail = ({ coffee }) => {
                     <h4>{`${detail.title} Details`}</h4>
                     <ul>
                       {detail?.content.map((contents, i) => (
-                        <li key={i}>{contents}</li>
+                        <li key={i} style={{ color: "white" }}>
+                          {contents}
+                        </li>
                       ))}
                     </ul>
                   </div>
@@ -237,6 +239,7 @@ const Detail = ({ coffee }) => {
           alignItems: "center",
           display: "flex",
           marginTop: "50px",
+          color: "white",
         }}
       >
         <span
@@ -253,6 +256,7 @@ const Detail = ({ coffee }) => {
           alignItems: "center",
           display: "flex",
           fontWeight: "bold",
+          color: "white",
           fontSize: "30px",
         }}
       >

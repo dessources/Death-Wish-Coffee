@@ -347,6 +347,7 @@
     height: 4rem;
   }
   .productsHeader > span {
+    color: white;
     visibility: visible;
     text-align: center;
     flex: 1 1 33%;
@@ -363,6 +364,7 @@
     width: 100%;
   }
   .sortSection select {
+    color: white;
     border: none;
     border-left: 1px solid;
   }

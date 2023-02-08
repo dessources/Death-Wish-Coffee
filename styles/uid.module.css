@@ -33,7 +33,7 @@
   height: 4rem;
   color: black;
   width: 208px;
-  background: #898e8e;
+  background-color: #898e8e !important;
   border-right: 1px solid #201e1d;
   border-top: 1px solid #201e1d;
   cursor: pointer;
@@ -78,6 +78,7 @@
 }
 
 .desciptionDetailsProduct {
+  color: white !important;
   margin-top: 20px;
   width: 80%;
   text-align: justify;

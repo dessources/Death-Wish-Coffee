@@ -1,14 +1,11 @@
-import { AppBar, Container, Box, Typography, Button } from "@mui/material";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import YouTubeIcon from "@mui/icons-material/YouTube";
+import { Container, Box, Typography, Button } from "@mui/material";
 import React from "react";
 import Navbar from "../components/Navbar";
 import Link from "next/link";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
+import Footer from "../components/Footer";
 import { runOut } from "../styles/Subscription.module.css";
 
 //styles
@@ -53,6 +50,7 @@ const Subscription = () => {
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
+          paddingTop: "3rem",
         }}
         className={subscribeHero}
       >
@@ -127,7 +125,7 @@ const Subscription = () => {
           </Button>
         </Box>
       </Box>
-       <Box
+      <Box
         style={{
           backgroundColor: "rgba(0, 0, 0, .5)",
           width: "612px",
@@ -162,7 +160,6 @@ const Subscription = () => {
             paddingRight: 3,
             paddingLeft: 3,
           }}
-          
         >
           Never run out of coffee and save 10% on all coffee subscription orders. Start a subscription today to
           take advantage of subscriber-only savings, early access to exclusive products and more.
@@ -175,7 +172,7 @@ const Subscription = () => {
               width: "210px",
               height: "60px",
               fontFamily: "FenomenSans-Book",
-              backgroundColor: 'red',
+              backgroundColor: "red",
               fontWeight: "500",
               marginTop: "25px",
               marginLeft: "auto",
@@ -206,7 +203,7 @@ const Subscription = () => {
         >
           <Link href={"/Login"}>MEMBER LOGIN</Link>
         </Button>
-      </Box> 
+      </Box>
       <Container className={benefits}>
         <Typography variant="h1" align="center" className={benefitsTitle}>
           SUBSCRIPTION BENEFITS
@@ -746,7 +743,8 @@ const Subscription = () => {
           </Card>
         </Box>
       </Container>
-      <AppBar position="static" sx={{ top: "auto", bottom: 0 }}>
+      <Footer id="subscriptionFooter" />
+      {/* <AppBar position="static" sx={{ top: "auto", bottom: 0 }}>
         <Container
           style={{ backgroundColor: "black", maxHeight: 423, maxWidth: "100%" }}
           className={footerBlack}
@@ -1084,7 +1082,7 @@ const Subscription = () => {
             </Typography>
           </div>
         </Container>
-      </AppBar>
+      </AppBar> */}
     </>
   );
 };

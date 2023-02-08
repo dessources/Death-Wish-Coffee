@@ -1,6 +1,5 @@
 import React from "react";
 
-import { p } from "@mui/material";
 import Link from "next/link";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -21,11 +20,11 @@ import {
   footerSection,
 } from "../styles/Footer.module.css";
 import logo from "../images/logo.webp";
-const Footer = () => {
+const Footer = ({ id }) => {
   return (
-    <div className={footerSection}>
+    <div className={footerSection} id={id}>
       <div>
-        <div className={newsLetter}>
+        <div className={newsLetter} id="newsletter">
           <h5>LET'S DRINK COFFEE AND THROW THINGS AT HAPPY PEOPLE</h5>
           <form>
             <input type={"email"} placeholder="Enter your Email Address" />
