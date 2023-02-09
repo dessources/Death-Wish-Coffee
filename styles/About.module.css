@@ -9,7 +9,7 @@
   width: 100%;
   height: 346px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .historyTitle {
@@ -72,7 +72,8 @@ div .historicText {
 div .creationTitle,
 div .goodMorningTitle,
 div .creationTitle,
-div .historicTitle div .superBowlTitle,
+div .historicTitle,
+div .superBowlTitle,
 div .caffeinatedTitle {
   font-family: revansmedium !important;
 }
@@ -261,7 +262,7 @@ div .caffeinatedTitle {
     background-color: black;
     max-width: 100%;
     height: 200px;
-    display: flex;
+    display: flex !important;
     justify-content: space-evenly;
     padding-left: 40%;
     padding-right: 40%;
@@ -523,7 +524,7 @@ div .caffeinatedTitle {
   }
 
   .timelineResp {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     background-color: black;
     width: 100%;
