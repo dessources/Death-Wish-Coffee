@@ -121,7 +121,7 @@
 @media screen and (max-width: 768px) {
   .sectionVideo,
   .sectionText {
-    left: -20%;
+    left: -25%;
     right: unset;
   }
   .sectionTitle {
