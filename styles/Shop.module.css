@@ -152,6 +152,10 @@
   cursor: pointer;
 }
 
+.addToCartForm label:hover {
+  color: white;
+}
+
 .addToCartForm .selectedLabel {
   border: 1px solid #e12727;
   background: #555858;
@@ -192,7 +196,11 @@
   font-family: "FenomenSans-Book";
   line-height: 1.5;
   appearance: none !important;
-  transition: background-color 0.3s cubic-bezier(0.06, 0.305, 0, 1);
+  /* transition: background-color 0.3s cubic-bezier(0.06, 0.305, 0, 1); */
+}
+
+.addToCartForm input[type="submit"]:hover {
+  color: white;
 }
 
 .name {
@@ -204,7 +212,10 @@
   line-height: 24px;
   cursor: pointer;
 }
+/* .stars {
+} */
 .reviews {
+  color: white;
   display: flex;
   align-items: center;
 }
@@ -219,6 +230,7 @@
   margin-left: -2px;
 }
 .price {
+  color: white;
   font-family: FenomenSans;
   font-size: 1.25rem;
   line-height: 24px;
@@ -337,12 +349,13 @@
     justify-content: space-around;
     align-items: center;
     border: 0;
-    border-top: 1px solid;
-    border-bottom: 1px solid;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
     width: 100%;
     height: 4rem;
   }
   .productsHeader > span {
+    color: white;
     visibility: visible;
     text-align: center;
     flex: 1 1 33%;
@@ -359,6 +372,7 @@
     width: 100%;
   }
   .sortSection select {
+    color: white;
     border: none;
     border-left: 1px solid;
   }

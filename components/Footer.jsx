@@ -1,6 +1,5 @@
 import React from "react";
-import AppBar from "@mui/material/AppBar";
-import { TextField, Typography, Button, Box, Container } from "@mui/material";
+
 import Link from "next/link";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -9,388 +8,82 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 
 //styles
 import {
-  footerRed,
   footerBlack,
   link,
-  footerResp,
-  footerMenu,
+  companyLinks,
+  rights,
+  socialIcons,
+  footerBlackContainer,
+  mobileFooterHeading,
+  logoIcon,
   newsLetter,
   footerSection,
 } from "../styles/Footer.module.css";
 import logo from "../images/logo.webp";
-const Footer = () => {
+const Footer = ({ id }) => {
   return (
-    <div className={footerSection}>
+    <div className={footerSection} id={id}>
       <div>
-        <div className={newsLetter}>
-          <h5 style={{ fontSize: 18.5, fontWeight: "700", marginTop: 50 }}>
-            LET'S DRINK COFFEE AND THROW THINGS AT HAPPY PEOPLE
-          </h5>
-          <form style={{ padding: 20, display: "flex", marginBottom: 50 }}>
-            <TextField
-              style={{
-                backgroundColor: "white",
-                width: 343,
-                height: 48,
-                margin: "auto",
-                marginRight: 0,
-              }}
-              placeholder="Enter your Email Address"
-            />
-            <Button
-              type="submit"
-              style={{
-                width: 216,
-                height: 48,
-                backgroundColor: "black",
-                color: "white",
-                marginLeft: 0,
-                marginRight: "auto",
-                cursor: "pointer",
-              }}
-            >
-              SIGN ME UP
-            </Button>
+        <div className={newsLetter} id="newsletter">
+          <h5>LET'S DRINK COFFEE AND THROW THINGS AT HAPPY PEOPLE</h5>
+          <form>
+            <input type={"email"} placeholder="Enter your Email Address" />
+            <button type="submit">SIGN ME UP</button>
           </form>
         </div>
-        <Container
-          style={{ backgroundColor: "black", maxHeight: 423, maxWidth: "100%" }}
-          className={footerBlack}
-        >
-          <div style={{ display: "flex", flexDirection: "row" }}>
-            <Link
-              href={"/"}
-              style={{
-                marginRight: 50,
-                marginLeft: "auto",
-                marginTop: 100,
-              }}
-            >
-              <img
-                src={logo.src}
-                alt=""
-                style={{
-                  height: 250,
-                  width: 250,
-                }}
-              />
+        <div className={footerBlackContainer}>
+          <h5 className={mobileFooterHeading}>End of the road, Jack</h5>
+          <div className={footerBlack}>
+            <Link className={logoIcon} href={"/"}>
+              <img src={logo.src} alt="" />
             </Link>
-            <div
-              style={{
-                marginRight: 50,
-                marginLeft: 50,
-                maxWidth: 104,
-              }}
-            >
-              <p
-                style={{
-                  fontSize: 20,
-                  fontWeight: "bold",
-                  marginTop: 130,
-                }}
-              >
-                Company
-              </p>
-              <p
-                className={link}
-                style={{
-                  fontSize: 16,
-                  fontWeight: "lighter",
-                }}
-              >
-                Reviews
-              </p>
-              <Typography
-                className={link}
-                style={{
-                  fontSize: 16,
-                  fontWeight: "lighter",
-                }}
-                gutterBottom
-              >
-                FAQ + Help
-              </Typography>
-              <Typography
-                className={link}
-                style={{
-                  fontSize: 16,
-                  fontWeight: "lighter",
-                }}
-                gutterBottom
-              >
-                Refund Policy
-              </Typography>
-              <div style={{ width: 650, display: "flex" }}>
-                <Typography
-                  style={{
-                    fontSize: 16,
-                    fontWeight: "lighter",
-                    marginTop: 60,
-                  }}
-                  gutterBottom
-                >
-                  @ Death Wish Coffee Co 2023 All Rights Reserved.
-                </Typography>
+            <div className={companyLinks}>
+              <div>
+                <h5>Company</h5>
+                <p className={link}>Reviews</p>
+                <p className={link}>FAQ + Help</p>
+                <p className={link}>Refund Policy</p>
+              </div>
 
-                <Link href="#">
-                  <TwitterIcon
-                    style={{
-                      color: "black",
-                      maxHeight: 35,
-                      width: 30,
-                      marginLeft: 90,
-                      marginTop: 60,
-                      borderRadius: "50%",
-                      backgroundColor: "white",
-                      padding: 3,
-                    }}
-                  />
-                </Link>
-                <Link href="#">
-                  <FacebookIcon
-                    style={{
-                      color: "black",
-                      maxHeight: 35,
-                      width: 30,
-                      marginLeft: 12,
-                      marginTop: 60,
-                      borderRadius: "50%",
-                      backgroundColor: "white",
-                      padding: 3,
-                    }}
-                  />
-                </Link>
-                <Link href="#">
-                  <InstagramIcon
-                    style={{
-                      color: "black",
-                      maxHeight: 35,
-                      width: 30,
-                      marginLeft: 12,
-                      marginTop: 60,
-                      borderRadius: "50%",
-                      backgroundColor: "white",
-                      padding: 3,
-                    }}
-                  />
-                </Link>
-                <Link href="#">
-                  <YouTubeIcon
-                    style={{
-                      color: "black",
-                      maxHeight: 35,
-                      width: 30,
-                      marginLeft: 12,
-                      marginTop: 60,
-                      borderRadius: "50%",
-                      backgroundColor: "white",
-                      padding: 3,
-                    }}
-                  />
-                </Link>
+              <div>
+                <h5>Accounts + Orders</h5>
+                <p className={link}>
+                  <Link href={"/Account"}>Your Account</Link>
+                </p>
+                <p className={link}>Shopping Details</p>
+                <p className={link}>
+                  <Link href={"/Subscription"}>Subscription</Link>
+                </p>
+                <p className={link}>Wholesale</p>
+              </div>
+              <div>
+                <h5>Legal</h5>
+                <p className={link}>Terms + Conditions</p>
+                <p className={link}>Privacy Policy</p>
+                <p className={link}>PROP 65</p>
+              </div>
+
+              <p className={rights}>@ Death Wish Coffee Co 2023 All Rights Reserved.</p>
+              <div className={socialIcons}>
+                <p>Get Wired with us</p>
+                <div>
+                  <Link href="#">
+                    <TwitterIcon />
+                  </Link>
+                  <Link href="#">
+                    <FacebookIcon />
+                  </Link>
+                  <Link href="#">
+                    <InstagramIcon />
+                  </Link>
+                  <Link href="#">
+                    <YouTubeIcon />
+                  </Link>
+                </div>
               </div>
             </div>
-
-            <Box style={{ marginRight: 50, marginLeft: 50 }}>
-              <Typography
-                style={{
-                  fontSize: 20,
-                  fontWeight: "bold",
-                  marginTop: 130,
-                }}
-              >
-                Accounts + Orders
-              </Typography>
-              <Typography
-                className={link}
-                style={{
-                  fontSize: 16,
-                  fontWeight: "lighter",
-                }}
-                gutterBottom
-              >
-                Your Account
-              </Typography>
-              <Typography
-                className={link}
-                style={{
-                  fontSize: 16,
-                  fontWeight: "lighter",
-                }}
-                gutterBottom
-              >
-                Shopping Details
-              </Typography>
-              <Typography
-                className={link}
-                style={{
-                  fontSize: 16,
-                  fontWeight: "lighter",
-                }}
-                gutterBottom
-              >
-                Subscription
-              </Typography>
-              <Typography
-                className={link}
-                style={{
-                  fontSize: 16,
-                  fontWeight: "lighter",
-                }}
-                gutterBottom
-              >
-                Wholesale
-              </Typography>
-            </Box>
-            <Box
-              style={{
-                marginRight: "auto",
-                marginLeft: 50,
-              }}
-            >
-              <Typography
-                style={{
-                  fontSize: 20,
-                  fontWeight: "bold",
-                  marginTop: 130,
-                }}
-              >
-                Legal
-              </Typography>
-              <Typography
-                className={link}
-                style={{
-                  fontSize: 16,
-                  fontWeight: "lighter",
-                }}
-                gutterBottom
-              >
-                Terms + Conditions
-              </Typography>
-              <Typography
-                className={link}
-                style={{
-                  fontSize: 16,
-                  fontWeight: "lighter",
-                }}
-                gutterBottom
-              >
-                Privacy Policy
-              </Typography>
-              <Typography
-                className={link}
-                style={{
-                  fontSize: 16,
-                  fontWeight: "lighter",
-                }}
-              >
-                PROP 65
-              </Typography>
-              <Typography
-                style={{
-                  fontSize: 16,
-                  fontWeight: "lighter",
-                  marginTop: 22,
-                }}
-              >
-                Get Wired with us
-              </Typography>
-            </Box>
           </div>
-        </Container>
-        <Container className={footerResp}>
-          <div className={footerMenu}>
-            <h2>END OF THE ROAD, JACK.</h2>
-            <Typography
-              style={{
-                width: 140,
-                fontSize: "16px",
-                fontWeight: "lighter",
-                marginTop: 20,
-                marginLeft: "auto",
-                marginRight: "auto",
-                color: "white",
-              }}
-            >
-              Get Wired with us
-            </Typography>
-            <div
-              style={{
-                width: 149,
-                marginLeft: "auto",
-                marginRight: "auto",
-              }}
-            >
-              <Link href="#">
-                <TwitterIcon
-                  style={{
-                    color: "black",
-                    maxHeight: 33,
-                    width: 28,
-                    marginTop: 0,
-                    borderRadius: "50%",
-                    backgroundColor: "white",
-                    padding: 3,
-                  }}
-                />
-              </Link>
-              <Link href="#">
-                <FacebookIcon
-                  style={{
-                    color: "black",
-                    maxHeight: 33,
-                    width: 28,
-                    marginLeft: 12,
-                    marginTop: 0,
-                    borderRadius: "50%",
-                    backgroundColor: "white",
-                    padding: 3,
-                  }}
-                />
-              </Link>
-              <Link href="#">
-                <InstagramIcon
-                  style={{
-                    color: "black",
-                    maxHeight: 33,
-                    width: 28,
-                    marginLeft: 12,
-                    marginTop: 0,
-                    borderRadius: "50%",
-                    backgroundColor: "white",
-                    padding: 3,
-                  }}
-                />
-              </Link>
-              <Link href="#">
-                <YouTubeIcon
-                  style={{
-                    color: "black",
-                    maxHeight: 33,
-                    width: 28,
-                    marginLeft: 12,
-                    marginTop: 0,
-                    borderRadius: "50%",
-                    backgroundColor: "white",
-                    padding: 3,
-                  }}
-                />
-              </Link>
-            </div>
-            <Typography
-              style={{
-                fontSize: 9,
-                fontWeight: "lighter",
-                marginTop: 5,
-                width: "765px",
-                marginLeft: "auto",
-              }}
-              gutterBottom
-            >
-              @ Death Wish Coffee Co 2023 All Rights Reserved.
-            </Typography>
-          </div>
-        </Container>
+        </div>
       </div>
     </div>
   );

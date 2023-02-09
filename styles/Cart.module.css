@@ -1,9 +1,13 @@
 .productModal {
   display: flex;
 }
-/* .modalTriangle::before{
-
-} */
+.modalContainer h1,
+.titleRemove h4,
+.numberQuantity button,
+.modalContainer p,
+.modalContainer h2 {
+  color: white;
+}
 .scroll {
   height: 400px;
   scrollbar-width: thin;
@@ -45,16 +49,6 @@
 .numberQuantity {
   display: block;
   margin-top: 20px;
-  margin-left: 20px;
-}
-
-.numberQuantity button {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-.numberQuantity p {
-  margin-left: 15px;
 }
 
 .btnCheckout {
@@ -73,9 +67,9 @@
 .btnCheckout:hover {
   color: #fff;
 }
-/* 
+
 @media screen and (max-width: 992px) {
-  .modalContainer {
-    
+  .imgModal img {
+    width: 100%;
   }
-} */
+}

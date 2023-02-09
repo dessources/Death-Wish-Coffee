@@ -164,7 +164,7 @@ const Detail = ({ coffee }) => {
                         onClick={() => setSelectedSize(size === selectedSize ? "" : size)}
                       />
                       <label htmlFor={coffee?.uid + size} className={selectedSize === size ? selectedLabel : ""}>
-                        {size.replace("_", " ")}: ${coffee?.sizes[size]}
+                        {size.replace("_", " ")} {"\u2013"} ${coffee?.sizes[size]}
                       </label>
                     </React.Fragment>
                   ))}
@@ -220,7 +220,9 @@ const Detail = ({ coffee }) => {
                     <h4>{`${detail.title} Details`}</h4>
                     <ul>
                       {detail?.content.map((contents, i) => (
-                        <li key={i}>{contents}</li>
+                        <li key={i} style={{ color: "white" }}>
+                          {contents}
+                        </li>
                       ))}
                     </ul>
                   </div>
@@ -237,6 +239,7 @@ const Detail = ({ coffee }) => {
           alignItems: "center",
           display: "flex",
           marginTop: "50px",
+          color: "white",
         }}
       >
         <span
@@ -253,6 +256,7 @@ const Detail = ({ coffee }) => {
           alignItems: "center",
           display: "flex",
           fontWeight: "bold",
+          color: "white",
           fontSize: "30px",
         }}
       >

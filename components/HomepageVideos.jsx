@@ -39,12 +39,12 @@ const HomepageVideos = () => {
         <div className={videoText}>
           <video
             className={sectionVideo}
-            data-src="https://embed-ssl.wistia.com/deliveries/d9a39eb6a2274b30f628820bf7e9bd5871488da6/file.mp4"
+            data-src="https://media.graphassets.com/RNMMrNIuT6OR5hvmMzLz"
             autoPlay={true}
             loop={true}
             muted={true}
             playsInline=""
-            src="https://embed-ssl.wistia.com/deliveries/d9a39eb6a2274b30f628820bf7e9bd5871488da6/file.mp4"
+            src="https://media.graphassets.com/RNMMrNIuT6OR5hvmMzLz"
           ></video>
           <div className={sectionText}>
             <p>Always sourced from the highest-quality beans. Ruining other coffee since 2012.</p>
@@ -58,12 +58,12 @@ const HomepageVideos = () => {
         <div className={videoText}>
           <video
             className={`${sectionVideo} ${reverse}`}
-            data-src="https://embed-ssl.wistia.com/deliveries/42ece833a6917e2cb95dc8c45cb8254e/file.mp4"
+            data-src="https://media.graphassets.com/cvZdL1QzT0ecpUBhclCq"
             autoPlay={true}
             loop={true}
             muted={true}
             playsInline=""
-            src="https://embed-ssl.wistia.com/deliveries/42ece833a6917e2cb95dc8c45cb8254e/file.mp4"
+            src="https://media.graphassets.com/cvZdL1QzT0ecpUBhclCq"
           ></video>
           <div className={`${sectionText} ${reverse}`}>
             <p>Handcrafted mugs, tees, hoodies and more to pair with caffeine-heavy habits.</p>
@@ -84,12 +84,12 @@ const HomepageVideos = () => {
         <div className={videoText}>
           <video
             className={sectionVideo}
-            data-src="https://embed-ssl.wistia.com/deliveries/afddc092f9ffceeb8d79f1136c2d60511f83a26f/file.mp4"
+            data-src="https://media.graphassets.com/h0T2YBYQlSPtSnDCzb0O"
             autoPlay={true}
             loop={true}
             muted={true}
             playsInline=""
-            src="https://embed-ssl.wistia.com/deliveries/afddc092f9ffceeb8d79f1136c2d60511f83a26f/file.mp4"
+            src="https://media.graphassets.com/h0T2YBYQlSPtSnDCzb0O"
           ></video>
 
           <div className={sectionText}>
