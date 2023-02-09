@@ -16,7 +16,7 @@
   color: white;
   font-size: 56px;
   font-weight: 900;
-  font-family: "revansmedium";
+  font-family: "revansmedium" !important;
   margin-top: 100px;
 }
 
@@ -33,7 +33,7 @@
 }
 
 .timelineResp {
-  display: none;
+  display: none !important;
 }
 
 .creation {
@@ -72,7 +72,8 @@ div .historicText {
 div .creationTitle,
 div .goodMorningTitle,
 div .creationTitle,
-div .historicTitle {
+div .historicTitle div .superBowlTitle,
+div .caffeinatedTitle {
   font-family: revansmedium !important;
 }
 
@@ -480,7 +481,7 @@ div .historicTitle {
     font-family: revansmedium !important;
     color: red;
     font-size: 1.6rem !important;
-    margin-top: 12rem;
+    margin-top: 12rem !important;
     font-weight: 900;
     margin-left: 1rem;
 

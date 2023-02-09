@@ -152,6 +152,10 @@
   cursor: pointer;
 }
 
+.addToCartForm label:hover {
+  color: white;
+}
+
 .addToCartForm .selectedLabel {
   border: 1px solid #e12727;
   background: #555858;
@@ -192,7 +196,11 @@
   font-family: "FenomenSans-Book";
   line-height: 1.5;
   appearance: none !important;
-  transition: background-color 0.3s cubic-bezier(0.06, 0.305, 0, 1);
+  /* transition: background-color 0.3s cubic-bezier(0.06, 0.305, 0, 1); */
+}
+
+.addToCartForm input[type="submit"]:hover {
+  color: white;
 }
 
 .name {
