@@ -685,7 +685,7 @@ const Subscription = () => {
           style={{
             color: "white",
             fontSize: 32,
-            fontWeight: "1000",
+            fontWeight: "bold",
             marginTop: 50,
             marginBottom: 50,
             fontFamily: "revansmedium",

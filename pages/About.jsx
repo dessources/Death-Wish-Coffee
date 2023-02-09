@@ -21,21 +21,17 @@ import {
   milestoneImg,
   milestoneTitle,
   mileStoneText,
-  goodMorning,
   goodMorningTitle,
   goodMorningText,
   goodMorningDate,
   gmYear,
-  superBowl,
   superBowlDate,
   superBowlTitle,
   superBowlText,
-  caffeinated,
   caffeinatedTitle,
   caffeinatedText,
   caffeinatedDate,
   caffeinatedYear,
-  historic,
   historicDate,
   historicTitle,
   historicText,
@@ -132,11 +128,11 @@ const About = () => {
         <div className={milestone}>
           <div>
             <span className={milestoneYear}>2012</span>
-            <img className={creationImg} src="images/2012.png" alt="bottle" />
+            <img className={milestoneImg} src="images/2012.png" alt="bottle" />
           </div>
           <div>
-            <Typography className={creationTitle}>THE CREATION</Typography>
-            <Typography className={creationText} variant="body1">
+            <Typography className={milestoneTitle}>THE CREATION</Typography>
+            <Typography className={mileStoneText} variant="body1">
               Mike Brown brings his idea for Death Wish Coffee to life, creating the recipe + roasting process.
             </Typography>
           </div>
@@ -144,8 +140,8 @@ const About = () => {
 
         <div className={milestone}>
           <div>
-            <Typography className={goodMorningTitle}>GOOD MORNING AMERICA</Typography>
-            <Typography className={goodMorningText} variant="body1">
+            <Typography className={milestoneTitle}>GOOD MORNING AMERICA</Typography>
+            <Typography className={mileStoneText} variant="body1">
               "Good Morning America" airs a segment on Death Wish Coffee and introduces us to thousands of people
             </Typography>
           </div>
@@ -158,12 +154,12 @@ const About = () => {
                 marginRight: 20,
               }}
             />
-            <Typography className={gmYear}>2013</Typography>
+            <Typography className={milestoneYear}>2013</Typography>
           </div>
         </div>
 
         <div className={milestone}>
-          <Typography className={superBowlDate}>2016</Typography>
+          <Typography className={milestoneYear}>2016</Typography>
           <img
             src="images/2016.png"
             alt="bean"
@@ -178,8 +174,8 @@ const About = () => {
               marginBottom: 50,
             }}
           >
-            <Typography className={superBowlTitle}>SUPER BOWL 50 AD AIRS</Typography>
-            <Typography className={superBowlText} variant="body1">
+            <Typography className={milestoneTitle}>SUPER BOWL 50 AD AIRS</Typography>
+            <Typography className={mileStoneText} variant="body1">
               We become the smallest company to run a commercial during Super Bowl 50, exposing 167 million
               viewers to Death Wish Coffee.
             </Typography>
@@ -187,12 +183,12 @@ const About = () => {
         </div>
 
         <div className={milestone}>
-          <Typography className={caffeinatedTitle}>CAFFEINATED THE UNIVERSE</Typography>
-          <Typography className={caffeinatedText} variant="body1">
+          <Typography className={milestoneTitle}>CAFFEINATED THE UNIVERSE</Typography>
+          <Typography className={mileStoneText} variant="body1">
             With the help of NASA Food Labs, Death Wish Coffee developed an instant freeze-dried blend of its
             coffee to fuel the astronauts on the International Space Station.
           </Typography>
-          <div className={caffeinatedDate}>
+          <div className={milestoneYear}>
             <img
               src="images/2018.png"
               alt="rocket"
@@ -201,12 +197,12 @@ const About = () => {
                 marginRight: 20,
               }}
             />
-            <Typography className={caffeinatedYear}>2018</Typography>
+            <Typography className={milestoneYear}>2018</Typography>
           </div>
         </div>
 
         <div className={milestone}>
-          <Typography className={historicDate}>2020</Typography>
+          <Typography className={milestoneYear}>2020</Typography>
           <img
             src="images/2020.png"
             alt="house"
@@ -221,8 +217,8 @@ const About = () => {
               marginBottom: 50,
             }}
           >
-            <Typography className={historicTitle}>HISTORIC HOMECOMINGS</Typography>
-            <Typography className={historicText} variant="body1">
+            <Typography className={milestoneTitle}>HISTORIC HOMECOMINGS</Typography>
+            <Typography className={mileStoneText} variant="body1">
               Death Wish Coffee headquarters moves to historic building from 1889 in Saratoga Springs, NY-the
               location of our original coffee shop.
             </Typography>

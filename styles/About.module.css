@@ -12,7 +12,7 @@
   justify-content: center;
 }
 
-.historyTitle {
+.historymileStoneTitle {
   color: white;
   font-size: 56px;
   font-weight: 900;
@@ -35,8 +35,8 @@
 .timelineResp {
   display: none !important;
 }
-
-.creation {
+.mileStone {
+  display: flex;
   height: 198px;
   max-width: 50%;
   display: flex;
@@ -46,7 +46,7 @@
   margin-bottom: 50px;
 }
 
-.creationTitle {
+.mileStoneTitle {
   color: red;
   font-size: 38px;
   font-weight: 900;
@@ -55,36 +55,27 @@
   margin-top: 30px;
 }
 
-.creationText {
+.mileStoneText {
   color: white;
   font-size: 24px;
   font-weight: lighter;
   text-align: left;
 }
-div .creationText,
-div .goodMorningText,
-div .superBowlText,
-div .caffeinatedText,
-div .historicText {
+div .mileStoneText {
   font-family: FenomenSans-Book !important;
 }
 
-div .creationTitle,
-div .goodMorningTitle,
-div .creationTitle,
-div .historicTitle,
-div .superBowlTitle,
-div .caffeinatedTitle {
+div .mileStoneTitle {
   font-family: revansmedium !important;
 }
 
-.creationYear {
+.Year {
   color: red;
   font-size: 40px;
   font-weight: 900;
 }
 
-.creationImg {
+.Img {
   height: 180px;
 }
 
@@ -95,7 +86,7 @@ div .caffeinatedTitle {
   margin-bottom: 50px;
 }
 
-.goodMorningTitle {
+.goodMorningmileStoneTitle {
   color: red;
   font-size: 38px;
   font-weight: 900;
@@ -149,7 +140,7 @@ div .caffeinatedTitle {
   margin-left: 100px;
 }
 
-.superBowlTitle {
+.superBowlmileStoneTitle {
   color: red;
   font-size: 38px;
   font-weight: 900;
@@ -172,7 +163,7 @@ div .caffeinatedTitle {
   margin-bottom: 50px;
 }
 
-.caffeinatedTitle {
+.caffeinatedmileStoneTitle {
   color: red;
   font-size: 38px;
   font-weight: 900;
@@ -222,7 +213,7 @@ div .caffeinatedTitle {
   margin-left: 100px;
 }
 
-.historicTitle {
+.historicmileStoneTitle {
   color: red;
   font-size: 38px;
   font-weight: 900;
@@ -250,7 +241,7 @@ div .caffeinatedTitle {
     padding-left: 10px;
   }
 
-  .rebelsRespTitle {
+  .rebelsRespmileStoneTitle {
     color: red;
     font-size: 56px;
     margin-top: 150px;
@@ -268,7 +259,7 @@ div .caffeinatedTitle {
     padding-right: 40%;
   }
 
-  .historyTitle {
+  .historymileStoneTitle {
     color: white;
     font-size: 56px;
     font-weight: 900;
@@ -302,17 +293,7 @@ div .caffeinatedTitle {
     max-height: 130px;
   }
 
-  .creation {
-    height: 150px;
-    max-width: 50%;
-    display: flex;
-    align-items: center;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 10px;
-  }
-
-  .creationTitle {
+  .mileStoneTitle {
     color: red;
     font-size: 30px;
     font-weight: 900;
@@ -321,7 +302,7 @@ div .caffeinatedTitle {
     margin-top: 30px;
   }
 
-  .creationText {
+  .Text {
     color: white;
     font-size: 20px;
     font-weight: lighter;
@@ -336,7 +317,7 @@ div .caffeinatedTitle {
     margin-bottom: 50px;
   }
 
-  .goodMorningTitle {
+  .goodMorningmileStoneTitle {
     color: red;
     font-size: 30px;
     font-weight: 900;
@@ -379,7 +360,7 @@ div .caffeinatedTitle {
     margin-left: auto;
   }
 
-  .superBowlTitle {
+  .superBowlmileStoneTitle {
     color: red;
     font-size: 30px;
     font-weight: 900;
@@ -405,7 +386,7 @@ div .caffeinatedTitle {
     margin-bottom: 50px;
   }
 
-  .caffeinatedTitle {
+  .caffeinatedmileStoneTitle {
     color: red;
     font-size: 30px;
     font-weight: 900;
@@ -455,7 +436,7 @@ div .caffeinatedTitle {
     margin-left: auto;
   }
 
-  .historicTitle {
+  .historicmileStoneTitle {
     color: red;
     font-size: 30px;
     font-weight: 900;
@@ -478,7 +459,7 @@ div .caffeinatedTitle {
   .rebelsResp {
     height: unset !important;
   }
-  .rebelsRespTitle {
+  .rebelsRespmileStoneTitle {
     font-family: revansmedium !important;
     color: red;
     font-size: 1.6rem !important;
@@ -496,7 +477,7 @@ div .caffeinatedTitle {
     margin-bottom: 1rem;
   }
 
-  .historyTitle {
+  .historymileStoneTitle {
     color: white;
     font-size: 40px !important;
     font-weight: 900;
