@@ -231,7 +231,7 @@ const About = () => {
         <Box
           style={{
             height: 150,
-            display: "flex",
+
             flexDirection: "column",
             marginBottom: 120,
             marginTop: 50,

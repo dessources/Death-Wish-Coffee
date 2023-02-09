@@ -164,7 +164,7 @@ const Detail = ({ coffee }) => {
                         onClick={() => setSelectedSize(size === selectedSize ? "" : size)}
                       />
                       <label htmlFor={coffee?.uid + size} className={selectedSize === size ? selectedLabel : ""}>
-                        {size.replace("_", " ")}: ${coffee?.sizes[size]}
+                        {size.replace("_", " ")} {"\u2013"} ${coffee?.sizes[size]}
                       </label>
                     </React.Fragment>
                   ))}
@@ -195,7 +195,7 @@ const Detail = ({ coffee }) => {
                         className={selectedStyle === style ? selectedLabel : ""}
                       >
                         <span>{labelIcons[style]}</span>
-                        <p style={{ marginLeft: "10px", color: "white" }}>{style}</p>
+                        <p style={{ marginLeft: "10px" }}>{style}</p>
                       </label>
                     </React.Fragment>
                   ))}
