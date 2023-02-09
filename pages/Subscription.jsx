@@ -12,6 +12,7 @@ import { runOut } from "../styles/Subscription.module.css";
 import {
   subscribeHero,
   save,
+  buttons,
   subscribeButton,
   goToLogin,
   saveResp,
@@ -83,46 +84,44 @@ const Subscription = () => {
             take advantage of subscriber-only savings, early access to exclusive products and more.
           </Typography>
 
-          <Link href="/CreateSubscription">
-            <Button
-              variant="contained"
-              style={{
-                fontFamily: "'FenomenSans-Book'",
-                color: "black",
-                width: "210px",
-                height: "60px",
-                fontWeight: "500",
-                marginTop: "50px",
-                marginLeft: "15%",
-                marginRight: 15,
-                cursor: "pointer",
-                display: "inline-block",
-              }}
-              className={subscribeButton}
-            >
-              CHOOSE SUBSCRIPTION
-            </Button>
-          </Link>
-
-          <Button
-            variant="contained"
-            style={{
-              fontFamily: "'FenomenSans-Book'",
-
-              color: "black",
-              width: "160px",
-              height: "60px",
-              fontWeight: "500",
-              marginTop: "50px",
-              marginLeft: 5,
-              marginRight: "auto",
-              cursor: "pointer",
-              display: "inline-block",
-            }}
-            className={goToLogin}
-          >
-            <Link href={"/Login"}>MEMBER LOGIN</Link>
-          </Button>
+          <div className={buttons}>
+            <Link href="/CreateSubscription">
+              <Button
+                variant="contained"
+                style={{
+                  padding: "1rem 1rem",
+                  backgroundColor: "#e12727",
+                  fontFamily: '"FenomenSans-Book"',
+                  color: "black",
+                  fontSize: "17px",
+                  cursor: "pointer",
+                  border: "none",
+                  borderRadius: "0",
+                }}
+                className={subscribeButton}
+              >
+                CHOOSE SUBSCRIPTION
+              </Button>
+            </Link>
+            <Link href={"/Login"}>
+              <Button
+                variant="contained"
+                style={{
+                  padding: "1rem 1rem",
+                  backgroundColor: "#e12727",
+                  fontFamily: '"FenomenSans-Book"',
+                  color: "black",
+                  fontSize: "17px",
+                  cursor: "pointer",
+                  border: "none",
+                  borderRadius: "0",
+                }}
+                className={goToLogin}
+              >
+                MEMBER LOGIN
+              </Button>
+            </Link>
+          </div>
         </Box>
       </Box>
       <Box
@@ -164,45 +163,46 @@ const Subscription = () => {
           Never run out of coffee and save 10% on all coffee subscription orders. Start a subscription today to
           take advantage of subscriber-only savings, early access to exclusive products and more.
         </Typography>
-        <Link href="#">
-          <Button
-            variant="contained"
-            style={{
-              color: "black",
-              width: "210px",
-              height: "60px",
-              fontFamily: "FenomenSans-Book",
-              backgroundColor: "red",
-              fontWeight: "500",
-              marginTop: "25px",
-              marginLeft: "auto",
-              marginRight: "auto",
-              cursor: "pointer",
-              display: "block",
-            }}
-            className={subscribeButtonResp}
-          >
-            CHOOSE SUBSCRIPTION
-          </Button>
-        </Link>
-        <Button
-          variant="contained"
-          sx={{
-            color: "black",
-            width: "160px",
-            height: "60px",
-            fontWeight: "500",
-            marginTop: "30px",
-            marginLeft: "auto",
-            fontFamily: "FenomenSans-Book",
-            marginRight: "auto",
-            cursor: "pointer",
-            display: "block",
-          }}
-          className={goToLoginResp}
-        >
-          <Link href={"/Login"}>MEMBER LOGIN</Link>
-        </Button>
+
+        <div className={buttons}>
+          <Link href="/CreateSubscription">
+            <Button
+              variant="contained"
+              style={{
+                padding: "1rem 1rem",
+                backgroundColor: "#e12727",
+                fontFamily: '"FenomenSans-Book"',
+                color: "black",
+                fontSize: "17px",
+                cursor: "pointer",
+                border: "none",
+                borderRadius: "0",
+              }}
+              className={subscribeButtonResp}
+            >
+              CHOOSE SUBSCRIPTION
+            </Button>
+          </Link>
+          <Link href={"/Login"}>
+            {" "}
+            <Button
+              variant="contained"
+              sx={{
+                padding: "1rem 1rem",
+                backgroundColor: "#e12727",
+                fontFamily: '"FenomenSans-Book"',
+                color: "black",
+                fontSize: "17px",
+                cursor: "pointer",
+                border: "none",
+                borderRadius: "0",
+              }}
+              className={goToLoginResp}
+            >
+              MEMBER LOGIN
+            </Button>
+          </Link>
+        </div>
       </Box>
       <Container className={benefits}>
         <Typography variant="h1" align="center" className={benefitsTitle}>
@@ -217,7 +217,7 @@ const Subscription = () => {
           }}
           className={cards}
         >
-          <Card sx={{ maxWidth: 474 }} style={{ backgroundColor: "black" }} className={truck}>
+          <Card sx={{ maxWidth: 474 }} style={{ backgroundColor: "black" }} data-turc="4" className={truck}>
             <CardMedia component="img" alt="red truck" height="165" image="images/truck.png" />
             <CardContent>
               <Typography
@@ -242,7 +242,7 @@ const Subscription = () => {
                   marginTop: 20,
                 }}
               >
-                Your coffee will always be there for you.
+                Your coffee will always be there for youd.
               </Typography>
             </CardContent>
           </Card>
@@ -258,7 +258,6 @@ const Subscription = () => {
                   fontWeight: "bold",
                   textAlign: "center",
                 }}
-                gutterBottom
               >
                 SAVE EACH MONTH
               </Typography>
@@ -393,13 +392,13 @@ const Subscription = () => {
                   fontWeight: "bold",
                   textAlign: "center",
                 }}
-                gutterBottom
               >
                 SAVE EACH MONTH
               </Typography>
               <Typography
                 variant="body1"
                 style={{
+                  width: "100%",
                   color: "white",
                   fontSize: 20,
                   fontWeight: "lighter",
@@ -496,7 +495,20 @@ const Subscription = () => {
         <Typography variant="body1" className={needHelpText}>
           Take a short quiz to figure out which one of our everyday roasts is best for you.
         </Typography>
-        <Button variant="contained" className={findBrew}>
+        <Button
+          variant="contained"
+          sx={{
+            padding: "1rem 1rem",
+            backgroundColor: "#e12727",
+            fontFamily: '"FenomenSans-Book"',
+            color: "black",
+            fontSize: "17px",
+            cursor: "pointer",
+            border: "none",
+            borderRadius: "0",
+          }}
+          className={findBrew}
+        >
           <Link href="/Quizz">FIND MY BREW</Link>
         </Button>
       </Container>
@@ -744,345 +756,6 @@ const Subscription = () => {
         </Box>
       </Container>
       <Footer id="subscriptionFooter" />
-      {/* <AppBar position="static" sx={{ top: "auto", bottom: 0 }}>
-        <Container
-          style={{ backgroundColor: "black", maxHeight: 423, maxWidth: "100%" }}
-          className={footerBlack}
-        >
-          <div style={{ display: "flex", flexDirection: "row" }}>
-            <Link
-              href={"/"}
-              style={{
-                marginRight: 50,
-                marginLeft: "auto",
-                marginTop: 100,
-              }}
-            >
-              <img
-                src={"https://cdn.shopify.com/s/files/1/0271/7209/files/dwc-logo.png?v=1624458280"}
-                alt=""
-                style={{
-                  height: 230,
-                  widtth: 230,
-                }}
-              />
-            </Link>
-            <Box
-              style={{
-                marginRight: 50,
-                marginLeft: 50,
-                maxWidth: 104,
-              }}
-            >
-              <Typography
-                style={{
-                  fontSize: 20,
-                  fontWeight: "bold",
-                  marginTop: 130,
-                }}
-              >
-                Company
-              </Typography>
-              <Typography
-                style={{
-                  fontSize: 16,
-                  fontWeight: "lighter",
-                }}
-                gutterBottom
-              >
-                Reviews
-              </Typography>
-              <Typography
-                className="link"
-                style={{
-                  fontSize: 16,
-                  fontWeight: "lighter",
-                }}
-                gutterBottom
-              >
-                FAQ + Help
-              </Typography>
-              <Typography
-                style={{
-                  fontSize: 16,
-                  fontWeight: "lighter",
-                }}
-                gutterBottom
-              >
-                Refund Policy
-              </Typography>
-              <div style={{ width: 650, display: "flex" }}>
-                <Typography
-                  style={{
-                    fontSize: 16,
-                    fontWeight: "lighter",
-                    marginTop: 60,
-                  }}
-                  gutterBottom
-                >
-                  @ Death Wish Coffee Co 2023 All Rights Reserved.
-                </Typography>
-
-                <Link href="#">
-                  <TwitterIcon
-                    style={{
-                      color: "black",
-                      maxHeight: 35,
-                      width: 30,
-                      marginLeft: 90,
-                      marginTop: 60,
-                      borderRadius: "50%",
-                      backgroundColor: "white",
-                      padding: 3,
-                    }}
-                  />
-                </Link>
-                <Link href="#">
-                  <FacebookIcon
-                    style={{
-                      color: "black",
-                      maxHeight: 35,
-                      width: 30,
-                      marginLeft: 12,
-                      marginTop: 60,
-                      borderRadius: "50%",
-                      backgroundColor: "white",
-                      padding: 3,
-                    }}
-                  />
-                </Link>
-                <Link href="#">
-                  <InstagramIcon
-                    style={{
-                      color: "black",
-                      maxHeight: 35,
-                      width: 30,
-                      marginLeft: 12,
-                      marginTop: 60,
-                      borderRadius: "50%",
-                      backgroundColor: "white",
-                      padding: 3,
-                    }}
-                  />
-                </Link>
-                <Link href="#">
-                  <YouTubeIcon
-                    style={{
-                      color: "black",
-                      maxHeight: 35,
-                      width: 30,
-                      marginLeft: 12,
-                      marginTop: 60,
-                      borderRadius: "50%",
-                      backgroundColor: "white",
-                      padding: 3,
-                    }}
-                  />
-                </Link>
-              </div>
-            </Box>
-
-            <Box style={{ marginRight: 50, marginLeft: 50 }}>
-              <Typography
-                style={{
-                  fontSize: 20,
-                  fontWeight: "bold",
-                  marginTop: 130,
-                }}
-              >
-                Accounts + Orders
-              </Typography>
-              <Typography
-                className="link"
-                style={{
-                  fontSize: 16,
-                  fontWeight: "lighter",
-                }}
-                gutterBottom
-              >
-                Your Account
-              </Typography>
-              <Typography
-                className="link"
-                style={{
-                  fontSize: 16,
-                  fontWeight: "lighter",
-                }}
-                gutterBottom
-              >
-                Shopping Details
-              </Typography>
-              <Typography
-                className="link"
-                style={{
-                  fontSize: 16,
-                  fontWeight: "lighter",
-                }}
-                gutterBottom
-              >
-                Subscription
-              </Typography>
-              <Typography
-                className="link"
-                style={{
-                  fontSize: 16,
-                  fontWeight: "lighter",
-                }}
-                gutterBottom
-              >
-                Wholesale
-              </Typography>
-            </Box>
-            <Box
-              style={{
-                marginRight: "auto",
-                marginLeft: 50,
-              }}
-            >
-              <Typography
-                style={{
-                  fontSize: 20,
-                  fontWeight: "bold",
-                  marginTop: 130,
-                }}
-              >
-                Legal
-              </Typography>
-              <Typography
-                className="link"
-                style={{
-                  fontSize: 16,
-                  fontWeight: "lighter",
-                }}
-                gutterBottom
-              >
-                Terms + Conditions
-              </Typography>
-              <Typography
-                className="link"
-                style={{
-                  fontSize: 16,
-                  fontWeight: "lighter",
-                }}
-                gutterBottom
-              >
-                Privacy Policy
-              </Typography>
-              <Typography
-                className="link"
-                style={{
-                  fontSize: 16,
-                  fontWeight: "lighter",
-                }}
-              >
-                PROP 65
-              </Typography>
-              <Typography
-                style={{
-                  fontSize: 16,
-                  fontWeight: "lighter",
-                  marginTop: 25,
-                }}
-              >
-                Get Wired with us
-              </Typography>
-            </Box>
-          </div>
-        </Container>
-        <Container className={footerResp}>
-          <div className={footerMenu}>
-            <h2>END OF THE ROAD, JACK.</h2>
-            <Typography
-              style={{
-                width: 140,
-                fontSize: "16px",
-                fontWeight: "lighter",
-                marginTop: 20,
-                marginLeft: "auto",
-                marginRight: "auto",
-                color: "white",
-              }}
-            >
-              Get Wired with us
-            </Typography>
-            <div
-              style={{
-                width: 149,
-                marginLeft: "auto",
-                marginRight: "auto",
-              }}
-            >
-              <Link href="#">
-                <TwitterIcon
-                  style={{
-                    color: "black",
-                    maxHeight: 33,
-                    width: 28,
-                    marginTop: 0,
-                    borderRadius: "50%",
-                    backgroundColor: "white",
-                    padding: 3,
-                  }}
-                />
-              </Link>
-              <Link href="#">
-                <FacebookIcon
-                  style={{
-                    color: "black",
-                    maxHeight: 33,
-                    width: 28,
-                    marginLeft: 12,
-                    marginTop: 0,
-                    borderRadius: "50%",
-                    backgroundColor: "white",
-                    padding: 3,
-                  }}
-                />
-              </Link>
-              <Link href="#">
-                <InstagramIcon
-                  style={{
-                    color: "black",
-                    maxHeight: 33,
-                    width: 28,
-                    marginLeft: 12,
-                    marginTop: 0,
-                    borderRadius: "50%",
-                    backgroundColor: "white",
-                    padding: 3,
-                  }}
-                />
-              </Link>
-              <Link href="#">
-                <YouTubeIcon
-                  style={{
-                    color: "black",
-                    maxHeight: 33,
-                    width: 28,
-                    marginLeft: 12,
-                    marginTop: 0,
-                    borderRadius: "50%",
-                    backgroundColor: "white",
-                    padding: 3,
-                  }}
-                />
-              </Link>
-            </div>
-            <Typography
-              style={{
-                fontSize: 9,
-                fontWeight: "lighter",
-                marginTop: 5,
-                width: "765px",
-                marginLeft: "auto",
-              }}
-              gutterBottom
-            >
-              @ Death Wish Coffee Co 2023 All Rights Reserved.
-            </Typography>
-          </div>
-        </Container>
-      </AppBar> */}
     </>
   );
 };

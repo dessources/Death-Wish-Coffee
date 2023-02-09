@@ -115,6 +115,6 @@
 
   .card .cardImage {
     width: 100%;
-    /* max-width: 16rem; */
+    max-width: 16rem;
   }
 }
