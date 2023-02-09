@@ -8,6 +8,7 @@ import { getSession, useSession, signOut } from "next-auth/react";
 import { useState } from "react";
 import { createTheme, ThemeProvider, useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import axios from 'axios'
 
 import {
   wrapperForm,
@@ -22,8 +23,6 @@ import {
   leftSide,
   btnEditDelete
 } from "../styles/TabsAccount.module.css";
-
-
 function TabPanel(props) {
 
   const { children, value, index, ...other } = props;
@@ -67,13 +66,6 @@ export default function VerticalTabs() {
                                                  
                           } : {minWidth: "240px",
                           width: "300px"}
-/* const useStyles = makeStyles(() => ({
-  root: {
-    flexDirection: isSmallScreen ? 'row' : 'column',
-    justifyContent: isSmallScreen ? 'center' : 'flex-start',
-    display: 'flex',
-  },
-})); */
 
 
   const [value, setValue] = React.useState(0);
@@ -102,8 +94,9 @@ export default function VerticalTabs() {
     setAddress({ ...address, [event.target.name]: event.target.value });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+
     if (mode === "add") {
       setAddresses([...addresses, address]);
     } else {
@@ -119,6 +112,14 @@ export default function VerticalTabs() {
       country: "",
       zip: "",
     });
+
+    try {
+      const response = await axios.post('http://localhost:3000/api/form', address);
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+
   };
 
   const handleEdit = (index) => {

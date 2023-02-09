@@ -5,8 +5,6 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import VerticalTabs from "../components/TabsAccount";
 import { wrapper, TabInfo, container } from "../styles/Account.module.css";
-import Link from "next/link";
-import { useState } from "react";
 
 const Account = () => {
   const { data: session } = useSession();
