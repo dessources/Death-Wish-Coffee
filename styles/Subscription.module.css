@@ -62,7 +62,6 @@
   margin: 50px auto 0 !important;
   background-color: #e12727;
   display: block !important;
-
   cursor: pointer;
   margin-left: 45%;
 }
@@ -76,7 +75,7 @@
   .reviews {
     display: none !important;
   }
-  .revies .truckResp,
+  .truckResp,
   .manageResp,
   .accessResp,
   .savingsResp {
