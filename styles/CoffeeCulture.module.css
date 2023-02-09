@@ -49,7 +49,7 @@
 
 @media screen and (max-width: 768px) {
   .CoffeeCultureSection {
-    margin-top: 3rem;
+    padding-top: 3rem !important;
   }
   .imageCaroussel img {
     height: 400px;

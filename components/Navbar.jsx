@@ -236,7 +236,7 @@ const Navbar = () => {
                   <Link href={"/StoreLocator"}>STORE LOCATOR</Link>
                 </Typography>
                 <hr />
-                <Typography
+                {/* <Typography
                   className={link}
                   variant="h4"
                   component="div"
@@ -248,7 +248,7 @@ const Navbar = () => {
                 >
                   <Link href={"/Blog"}>BLOG & RECIPES</Link>
                 </Typography>
-                <hr />
+                <hr /> */}
                 <Typography
                   className={link}
                   variant="h4"

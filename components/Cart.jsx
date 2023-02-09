@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import { useSelector, useDispatch } from "react-redux";
 import CloseIcon from "@mui/icons-material/Close";
 import { incrementQuantity, decrementQuantity, removeFromCart } from "../redux/cart.slice";
-
+import stripeCheckout from "../lib/stripeCheckout";
 import {
   productModal,
   numberQuantity,
