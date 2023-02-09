@@ -11,22 +11,19 @@
 }
 
 .findBrew {
-  background-color: red;
+  background-color: #e12727;
 }
 
-.footerResp {
-  display: none;
-}
 .save {
   background-color: rgba(0, 0, 0, 0.5);
   width: 550px;
   padding-bottom: 1rem;
   margin-left: 56%;
 }
-
-.footerResp {
-  display: none;
-}
+.truckResp,
+.manageResp,
+.accessResp,
+.savingsResp,
 .saveResp {
   display: none;
 }
