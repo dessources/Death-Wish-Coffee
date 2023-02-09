@@ -83,6 +83,7 @@
   }
   .reviewsResp {
     display: flex;
+    flex-direction: column;
   }
   .saveResp {
     display: block;
@@ -104,6 +105,7 @@
     max-height: unset;
     max-width: 95%;
     margin: auto;
+    padding-top: 4rem;
   }
   .benefits .cards {
     max-height: unset !important;

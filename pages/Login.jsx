@@ -136,7 +136,7 @@ export default function Login() {
 
           <Grid container>
             <Grid item xs>
-              <Link href="#" variant="body2" style={{ color: "white" }}>
+              <Link href={"/ForgetPassword"} variant="body2" style={{ color: "white" }}>
                 Forgot password ?
               </Link>
             </Grid>

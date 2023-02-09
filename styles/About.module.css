@@ -12,7 +12,7 @@
   justify-content: center;
 }
 
-.historymileStoneTitle {
+.historyTitle {
   color: white;
   font-size: 56px;
   font-weight: 900;
@@ -29,205 +29,60 @@
   display: flex;
   flex-flow: row wrap;
   background-color: black;
-  max-width: 1434px;
+  justify-content: center;
+  width: 65%;
 }
 
 .timelineResp {
   display: none !important;
 }
-.mileStone {
-  display: flex;
-  height: 198px;
-  max-width: 50%;
+.milestone {
   display: flex;
   align-items: center;
-  margin-right: 50px;
-  margin-left: auto;
-  margin-bottom: 50px;
+  justify-content: space-between;
+  margin: 2rem auto;
+  column-gap: 2rem;
 }
 
-.mileStoneTitle {
+.milestoneContent {
+  flex: 1 1 50%;
+}
+.milestoneTitle {
   color: red;
   font-size: 38px;
   font-weight: 900;
   text-align: left;
-  font-family: "revansmedium";
+  font-family: "revansmedium" !important;
   margin-top: 30px;
 }
 
-.mileStoneText {
+.milestoneText {
   color: white;
   font-size: 24px;
   font-weight: lighter;
   text-align: left;
-}
-div .mileStoneText {
+  margin: 0;
   font-family: FenomenSans-Book !important;
 }
 
-div .mileStoneTitle {
-  font-family: revansmedium !important;
+.milestoneYear {
+  display: flex;
+  align-items: center;
+  flex: 1 1 50%;
 }
 
-.Year {
-  color: red;
-  font-size: 40px;
-  font-weight: 900;
+.milestoneYear span {
+  font-size: 3.56rem;
+  font-weight: bold;
+  color: #e12827;
+}
+.milestoneYear img {
+  width: 23.5rem;
 }
 
-.Img {
+/* .Img {
   height: 180px;
-}
-
-.goodMorning {
-  max-width: 50%;
-  margin-right: 50px;
-  margin-left: auto;
-  margin-bottom: 50px;
-}
-
-.goodMorningmileStoneTitle {
-  color: red;
-  font-size: 38px;
-  font-weight: 900;
-  text-align: right;
-  font-family: "revansmedium";
-  margin-top: 30px;
-}
-
-.goodMorningText {
-  color: white;
-  font-size: 24px;
-  font-weight: lighter;
-  text-align: right;
-}
-
-.goodMorningDate {
-  height: 198px;
-  max-width: 50%;
-  display: flex;
-  align-items: center;
-  margin-left: 50px;
-  margin-right: auto;
-  margin-bottom: 50px;
-}
-
-.gmYearResp {
-  display: none;
-}
-
-.gmYear {
-  color: red;
-  font-size: 40px;
-  font-weight: 900;
-  margin-right: 100px;
-}
-
-.superBowl {
-  height: 198px;
-  max-width: 50%;
-  display: flex;
-  align-items: center;
-  margin-right: 50px;
-  margin-left: auto;
-  margin-bottom: 50px;
-}
-
-.superBowlDate {
-  color: red;
-  font-size: 40px;
-  font-weight: 900;
-  margin-left: 100px;
-}
-
-.superBowlmileStoneTitle {
-  color: red;
-  font-size: 38px;
-  font-weight: 900;
-  text-align: left;
-  font-family: "revansmedium";
-  margin-top: 30px;
-}
-
-.superBowlText {
-  color: white;
-  font-size: 24px;
-  font-weight: lighter;
-  text-align: left;
-}
-
-.caffeinated {
-  max-width: 50%;
-  margin-right: 50px;
-  margin-left: auto;
-  margin-bottom: 50px;
-}
-
-.caffeinatedmileStoneTitle {
-  color: red;
-  font-size: 38px;
-  font-weight: 900;
-  text-align: right;
-  font-family: "revansmedium";
-  margin-top: 30px;
-}
-
-.caffeinatedText {
-  color: white;
-  font-size: 24px;
-  font-weight: lighter;
-  text-align: right;
-}
-
-.caffeinatedDate {
-  height: 198px;
-  max-width: 50%;
-  display: flex;
-  align-items: center;
-  margin-left: 50px;
-  margin-right: auto;
-  margin-bottom: 50px;
-}
-
-.caffeinatedYear {
-  color: red;
-  font-size: 40px;
-  font-weight: 900;
-  margin-right: 100px;
-}
-
-.historic {
-  height: 198px;
-  max-width: 50%;
-  display: flex;
-  align-items: center;
-  margin-right: 50px;
-  margin-left: auto;
-  margin-bottom: 50px;
-}
-
-.historicDate {
-  color: red;
-  font-size: 40px;
-  font-weight: 900;
-  margin-left: 100px;
-}
-
-.historicmileStoneTitle {
-  color: red;
-  font-size: 38px;
-  font-weight: 900;
-  text-align: left;
-  font-family: "revansmedium";
-  margin-top: 30px;
-}
-
-.historicText {
-  color: white;
-  font-size: 24px;
-  font-weight: lighter;
-  text-align: left;
-}
+} */
 
 @media screen and (max-width: 1024px) {
   .rebels {
@@ -241,7 +96,7 @@ div .mileStoneTitle {
     padding-left: 10px;
   }
 
-  .rebelsRespmileStoneTitle {
+  .rebelsRespmilestoneTitle {
     color: red;
     font-size: 56px;
     margin-top: 150px;
@@ -259,7 +114,7 @@ div .mileStoneTitle {
     padding-right: 40%;
   }
 
-  .historymileStoneTitle {
+  .historyTitle {
     color: white;
     font-size: 56px;
     font-weight: 900;
@@ -293,7 +148,7 @@ div .mileStoneTitle {
     max-height: 130px;
   }
 
-  .mileStoneTitle {
+  .milestoneTitle {
     color: red;
     font-size: 30px;
     font-weight: 900;
@@ -317,7 +172,7 @@ div .mileStoneTitle {
     margin-bottom: 50px;
   }
 
-  .goodMorningmileStoneTitle {
+  .goodMorningmilestoneTitle {
     color: red;
     font-size: 30px;
     font-weight: 900;
@@ -360,7 +215,7 @@ div .mileStoneTitle {
     margin-left: auto;
   }
 
-  .superBowlmileStoneTitle {
+  .superBowlmilestoneTitle {
     color: red;
     font-size: 30px;
     font-weight: 900;
@@ -386,7 +241,7 @@ div .mileStoneTitle {
     margin-bottom: 50px;
   }
 
-  .caffeinatedmileStoneTitle {
+  .caffeinatedmilestoneTitle {
     color: red;
     font-size: 30px;
     font-weight: 900;
@@ -436,7 +291,7 @@ div .mileStoneTitle {
     margin-left: auto;
   }
 
-  .historicmileStoneTitle {
+  .historicmilestoneTitle {
     color: red;
     font-size: 30px;
     font-weight: 900;
@@ -459,7 +314,7 @@ div .mileStoneTitle {
   .rebelsResp {
     height: unset !important;
   }
-  .rebelsRespmileStoneTitle {
+  .rebelsRespTitle {
     font-family: revansmedium !important;
     color: red;
     font-size: 1.6rem !important;
@@ -477,7 +332,13 @@ div .mileStoneTitle {
     margin-bottom: 1rem;
   }
 
-  .historymileStoneTitle {
+  .timelineResp img {
+    height: 200px;
+    width: 200px;
+    margin: auto;
+  }
+
+  .milestoneTitle {
     color: white;
     font-size: 40px !important;
     font-weight: 900;
@@ -511,5 +372,15 @@ div .mileStoneTitle {
     width: 100%;
     justify-content: center;
     align-items: center;
+  }
+}
+@media screen and (max-width: 445px) {
+  .apply h1 {
+    font-size: 2rem !important;
+    margin-bottom: 1rem;
+  }
+
+  .historyTitle {
+    font-size: 2.1rem;
   }
 }
