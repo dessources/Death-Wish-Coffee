@@ -684,7 +684,7 @@ const Subscription = () => {
           align="center"
           style={{
             color: "white",
-            fontSize: 40,
+            fontSize: 32,
             fontWeight: "1000",
             marginTop: 50,
             marginBottom: 50,
