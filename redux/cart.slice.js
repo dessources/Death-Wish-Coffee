@@ -1,15 +1,13 @@
-import React from "react";
 import { createSlice } from "@reduxjs/toolkit";
+const findItem = ({ uid, style, size }) =>
+  uid === action.payload.uid && style === action.payload.style && size === action.payload.size;
 
 const cartSlice = createSlice({
   name: "cart",
   initialState: { open: false, products: [] },
   reducers: {
     addToCart: (state, action) => {
-      const itemExists = state.products.find(
-        ({ uid, style, size }) =>
-          uid === action.payload.uid && style === action.payload.style && size === action.payload.size
-      );
+      const itemExists = state.products.find(findItem);
       if (itemExists) {
         itemExists.quantity++;
       } else {
@@ -17,20 +15,20 @@ const cartSlice = createSlice({
       }
     },
     incrementQuantity: (state, action) => {
-      const item = state.products.find((item) => item.uid === action.payload);
+      const item = state.products.find(findItem);
       item.quantity++;
     },
     decrementQuantity: (state, action) => {
-      const item = state.products.find((item) => item.uid === action.payload);
+      const item = state.products.find(findItem);
       if (item.quantity === 1) {
-        const index = state.products.findIndex((item) => item.uid === action.payload);
+        const index = state.products.findIndex(findItem);
         state.products.splice(index, 1);
       } else {
         item.quantity--;
       }
     },
     removeFromCart: (state, action) => {
-      const index = state.products.findIndex((item) => item.uid === action.payload);
+      const index = state.products.findIndex(findItem);
       state.products.splice(index, 1);
     },
     showCart(state, action) {
