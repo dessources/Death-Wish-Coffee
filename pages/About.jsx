@@ -184,11 +184,8 @@ const About = () => {
       <Container className={timelineResp}>
         <Box
           style={{
-            height: 150,
             display: "flex",
             flexDirection: "column",
-            marginBottom: 120,
-            marginTop: 50,
           }}
         >
           <Typography
@@ -201,15 +198,7 @@ const About = () => {
           >
             2012
           </Typography>
-          <img
-            src="images/2012.png"
-            alt="2012"
-            style={{
-              height: 180,
-
-              marginLeft: 110,
-            }}
-          />
+          <img src="images/2012.png" alt="2012" />
           <Typography
             style={{
               color: "red",
@@ -237,11 +226,8 @@ const About = () => {
         </Box>
         <Box
           style={{
-            height: 150,
             display: "flex",
             flexDirection: "column",
-            marginBottom: 120,
-            marginTop: 50,
           }}
         >
           <Typography
@@ -282,11 +268,8 @@ const About = () => {
         </Box>
         <Box
           style={{
-            height: 150,
             display: "flex",
             flexDirection: "column",
-            marginBottom: 120,
-            marginTop: 50,
           }}
         >
           <Typography
@@ -328,11 +311,8 @@ const About = () => {
         </Box>
         <Box
           style={{
-            height: 150,
             display: "flex",
             flexDirection: "column",
-            marginBottom: 120,
-            marginTop: 50,
           }}
         >
           <Typography
@@ -374,11 +354,8 @@ const About = () => {
         </Box>
         <Box
           style={{
-            height: 150,
             display: "flex",
             flexDirection: "column",
-            marginBottom: 120,
-            marginTop: 50,
           }}
         >
           <Typography
@@ -422,14 +399,11 @@ const About = () => {
       <Container
         className={apply}
         style={{
-          maxWidth: 990,
-          maxHeight: 500,
+          maxWidth: "97%",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          paddingTop: 172,
-          paddingBottom: 172,
         }}
       >
         <Typography

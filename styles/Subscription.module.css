@@ -129,7 +129,7 @@
 
   .needHelpTitle {
     color: white;
-    font-size: 2rem;
+    font-size: 2rem !important;
     font-family: "revansmedium" !important;
   }
 
@@ -137,7 +137,7 @@
     color: white;
     font-size: 14px;
     font-weight: lighter;
-    font-family: "revansmedium";
+    font-family: "FenomenSans-Book" !important;
     text-align: center;
   }
 

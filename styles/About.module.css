@@ -96,7 +96,7 @@
     padding-left: 10px;
   }
 
-  .rebelsRespmilestoneTitle {
+  .rebelsRespTitle {
     color: red;
     font-size: 56px;
     margin-top: 150px;
@@ -331,11 +331,18 @@
     margin-left: 1rem;
     margin-bottom: 1rem;
   }
-
+  .timelineResp {
+    display: flex !important;
+    flex-direction: column;
+    background-color: black;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    row-gap: 2.5rem;
+  }
   .timelineResp img {
-    height: 200px;
-    width: 200px;
-    margin: auto;
+    margin: 1rem auto;
+    width: 200px !important;
   }
 
   .milestoneTitle {
@@ -364,23 +371,17 @@
   .timeline * {
     display: none !important;
   }
-
-  .timelineResp {
-    display: flex !important;
-    flex-direction: column;
-    background-color: black;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-  }
 }
 @media screen and (max-width: 445px) {
+  .apply {
+    padding: 0 0.5rem !important;
+  }
   .apply h1 {
     font-size: 2rem !important;
     margin-bottom: 1rem;
   }
 
   .historyTitle {
-    font-size: 2.1rem;
+    font-size: 2.1rem !important;
   }
 }

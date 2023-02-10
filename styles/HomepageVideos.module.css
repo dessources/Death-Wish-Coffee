@@ -127,6 +127,7 @@
   .sectionTitle {
     top: 25%;
     font-size: 4rem;
+    background-color: transparent !important;
   }
 
   .sectionTitle.reverse {
