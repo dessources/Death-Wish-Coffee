@@ -39,12 +39,12 @@ const HomepageVideos = () => {
         <div className={videoText}>
           <video
             className={sectionVideo}
-            data-src="https://media.graphassets.com/7cCNagaTYScbMB835gLU"
+            data-src="https://media.graphassets.com/fpNxKHSRQqO1ciJS4SFf"
             autoPlay={true}
             loop={true}
             muted={true}
-            playsInline=""
-            src="https://media.graphassets.com/7cCNagaTYScbMB835gLU"
+            playsInline
+            src="https://media.graphassets.com/fpNxKHSRQqO1ciJS4SFf"
           ></video>
           <div className={sectionText}>
             <p>Always sourced from the highest-quality beans. Ruining other coffee since 2012.</p>
