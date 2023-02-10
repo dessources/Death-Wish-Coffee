@@ -282,7 +282,7 @@ const Navbar = () => {
           <Box className={rightIcons}>
             <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
               <Link href={"/Login"}>
-                <LoginIcon />
+                <LoginIcon style={{ color: "white" }} />
               </Link>
             </IconButton>
 
