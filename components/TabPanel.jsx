@@ -8,7 +8,7 @@ export default function TabPanel(props) {
   let renderedChildren;
   // pass the dataFor prop to each div of the cards div
   if (dataFor !== undefined) {
-    renderedChildren = elements.map(({ type, props }) => {
+    renderedChildren = elements.map(({ type, props }, i) => {
       let { className, children, ...other } = props;
       className = className ? className : "";
 
@@ -16,9 +16,9 @@ export default function TabPanel(props) {
         const newChildren = React.Children.map(children, (child) =>
           React.cloneElement(child, { "data-for": dataFor })
         );
-        return React.createElement(type, { children: newChildren, className, ...other });
+        return React.createElement(type, { children: newChildren, className, ...other, key: i });
       } else {
-        return React.createElement(type, props);
+        return React.createElement(type, { ...props, key: i });
       }
     });
   }

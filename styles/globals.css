@@ -1,13 +1,12 @@
 @font-face {
   font-family: "FenomenSans";
-  src: url("../public/fonts/FenomenSans-Bold.eot");
-  src: local("☞Fenomen Sans Bold"), local("FenomenSans-Bold"),
-    url("../public/fonts/FenomenSans-Bold.eot?#iefix") format("embedded-opentype"),
-    url("../public/fonts/FenomenSans-Bold.woff2") format("woff2"),
-    url("../public/fonts/FenomenSans-Bold.woff") format("woff"),
-    url("../public/fonts/FenomenSans-Bold.ttf") format("truetype");
+  src: url("../public/fonts/Fenomen-Sans-Bold.woff2") format("woff2");
+
+  src: url("../public/fonts/Fenomen-Sans-Bold.woff2") format("woff2");
+
   font-style: normal;
 }
+
 @font-face {
   font-family: "FenomenSans-Book";
   src: url("../public/fonts/FenomenSans-Book.eot");
@@ -49,6 +48,7 @@ body {
   margin: 0;
   font-family: FenomenSans-Book, sans-serif;
   background-color: black;
+  padding-right: 0 !important;
 }
 header a {
   font-family: FenomenSans;
@@ -78,11 +78,15 @@ a {
 .text-smallscreen {
   display: none;
 }
-
+#shoppingCartIcon,
+#shoppingCartIcon2 {
+  cursor: pointer;
+  color: white;
+}
 .slick-next {
   font-size: 50px !important;
-  color: red !important;
-  margin: -100px 40px;
+  color: #e63d2f !important;
+  margin: -100px 40px !important;
   width: 50px !important;
   height: auto !important;
   transform: translateY(5rem) !important;
@@ -90,7 +94,7 @@ a {
 
 .slick-prev {
   font-size: 50px !important;
-  color: red !important;
+  color: #e63d2f !important;
   margin: -100px 40px !important;
   width: 50px !important;
   height: auto !important;
@@ -103,6 +107,16 @@ a {
 #featSlickPrev {
   transform: rotateX(0) rotateY(180deg) translate(-15%, 0) !important;
 }
+#coffeeCulture .slick-active {
+  border: 5px solid transparent;
+}
+#coffeeCulture .slick-active:hover {
+  border-color: #e63d2f;
+}
+
+#subscriptionFooter #newsletter {
+  display: none;
+}
 @media screen and (max-width: 425px) {
   svg.slick-next.slick-arrow,
   svg.slick-prev.slick-arrow {
@@ -114,7 +128,7 @@ a {
     color-scheme: dark;
   }
   body {
-    color: white;
+    color: white !important;
     background: black;
   }
 }

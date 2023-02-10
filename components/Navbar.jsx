@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import getRightFunc from "../utils/getRightFunc";
+
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -15,6 +17,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import logo from "../images/logo.webp";
 
 import {
+  appBarClass,
   navbar,
   smallscreen,
   link,
@@ -38,20 +41,13 @@ const Navbar = () => {
     dispatch(showCart(true));
   };
 
+  const linkStyles = { fontFamily: "FenomenSans" };
   return (
     <>
       <nav>
         <div className={navbar}>
           <Box>
-            <AppBar
-              position="fixed"
-              style={{
-                background: "black",
-                left: "50%",
-                transform: "translateX(-50%)",
-                width: "100%",
-              }}
-            >
+            <div className={appBarClass}>
               <Toolbar
                 sx={{ width: "70%", margin: "0 auto", "& > div": { flex: "1 1 0", textAlign: "center" } }}
               >
@@ -66,7 +62,9 @@ const Navbar = () => {
                     textAlign: "right",
                   }}
                 >
-                  <Link href={"/Subscription"}>SUBSCRIPTION</Link>
+                  <Link href={"/Subscription"} style={linkStyles}>
+                    SUBSCRIPTION
+                  </Link>
                 </Typography>
 
                 <Typography
@@ -79,7 +77,9 @@ const Navbar = () => {
                     textAlign: "right",
                   }}
                 >
-                  <Link href={"/Shop"}>SHOP</Link>
+                  <Link href={"/Shop"} style={linkStyles}>
+                    SHOP
+                  </Link>
                 </Typography>
 
                 <div
@@ -100,10 +100,12 @@ const Navbar = () => {
                     fontWeight: "bold",
                   }}
                 >
-                  <Link href={"/StoreLocator"}>STORE LOCATOR</Link>
+                  <Link href={"/StoreLocator"} style={linkStyles}>
+                    STORE LOCATOR
+                  </Link>
                 </Typography>
 
-                <Link href={"/"}>
+                <Link href={"/"} style={linkStyles}>
                   <Image
                     src={logo}
                     alt=""
@@ -138,7 +140,9 @@ const Navbar = () => {
                     fontWeight: "bold",
                   }}
                 >
-                  <Link href={"/About"}>ABOUT</Link>
+                  <Link href={"/About"} style={linkStyles}>
+                    ABOUT
+                  </Link>
                 </Typography>
 
                 <Box sx={{ display: "flex", alignItems: "center" }}>
@@ -155,7 +159,7 @@ const Navbar = () => {
 
                   <span
                     style={{
-                      color: "red",
+                      color: "#e63d2f",
                       fontSize: "16px",
                       fontWeight: "bold",
                       alignSelf: "flex-start",
@@ -165,7 +169,7 @@ const Navbar = () => {
                   </span>
                 </Box>
               </Toolbar>
-            </AppBar>
+            </div>
           </Box>
         </div>
         <div className={smallscreen}>
@@ -182,6 +186,7 @@ const Navbar = () => {
                 onClick={() => setToggleMenu(false)}
                 className={close}
                 style={{
+                  color: "white",
                   fontSize: "50",
                 }}
               />
@@ -231,7 +236,7 @@ const Navbar = () => {
                   <Link href={"/StoreLocator"}>STORE LOCATOR</Link>
                 </Typography>
                 <hr />
-                <Typography
+                {/* <Typography
                   className={link}
                   variant="h4"
                   component="div"
@@ -243,7 +248,7 @@ const Navbar = () => {
                 >
                   <Link href={"/Blog"}>BLOG & RECIPES</Link>
                 </Typography>
-                <hr />
+                <hr /> */}
                 <Typography
                   className={link}
                   variant="h4"
@@ -277,13 +282,10 @@ const Navbar = () => {
           <Box className={rightIcons}>
             <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
               <Link href={"/Login"}>
-                <LoginIcon />
+                <LoginIcon style={{ color: "white" }} />
               </Link>
             </IconButton>
 
-            {/* <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-            <SearchIcon />
-          </IconButton> */}
             <IconButton
               size="large"
               edge="start"

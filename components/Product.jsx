@@ -14,6 +14,7 @@ import {
   productHeader,
   producInfo,
   name,
+  stars,
   reviews,
   addToCartClass,
   price,
@@ -55,7 +56,7 @@ export default function Product({ coffee }) {
         </Link>
         {coffee?.reviews > 0 && (
           <div className={reviews}>
-            <RatingStars rating={coffee?.rating} />
+            <RatingStars className={stars} rating={coffee?.rating} />
             {coffee?.reviews} reviews
           </div>
         )}

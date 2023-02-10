@@ -56,6 +56,7 @@ export default function CreateAccount() {
             fontWeight: "bold",
             textAlign: "center",
             margin: "50px",
+            marginTop: '150px'
           }}
         >
           CREATE ACCOUNT

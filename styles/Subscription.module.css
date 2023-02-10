@@ -1,209 +1,180 @@
-
-.subscribeButton {
-    background-color: red;
+.buttons {
+  display: flex;
+  column-gap: 0.5rem;
+  padding-top: 2.5rem;
+  justify-content: center;
+}
+.buttons button:hover,
+.findBrew:hover {
+  color: white !important;
+  background-color: #e12727;
 }
 
-.goToLogin {
-    background-color: red;
+.save {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 550px;
+  padding-bottom: 1rem;
+  margin-left: 56%;
+}
+.truckResp,
+.manageResp,
+.accessResp,
+.savingsResp,
+.saveResp {
+  display: none;
+}
+
+.benefits {
+  background-color: black;
+  width: 100%;
+  padding-bottom: 1rem;
+}
+
+.benefitsTitle {
+  color: white;
+  font-size: 69px;
+  font-weight: 1000;
+  margin-top: 1.5rem !important;
+  margin-bottom: 100px;
+  font-family: "revansmedium" !important;
+}
+
+.needHelpTitle {
+  color: white;
+  font-size: 69px;
+  font-weight: 1000;
+  font-family: "revansmedium" !important;
+}
+
+.needHelpText {
+  color: white;
+  font-size: 24px;
+  font-weight: lighter;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .findBrew {
-    background-color: red;
-}
-
-.subscribeButton:hover {
-    background-color: #424242;
-}
-
-.goToLogin:hover {
-    background-color: #424242;
-}
-
-.findBrew:hover {
-    background-color: #424242;
-}
-
-.footerResp {
-    display: none;
-}
-
-@media screen and (max-width: 1200px) {
-
-    .save {
-        height: 426px;
-        margin-left: 48%;
-        background-color: rgba(0, 0, 0, 0.5);
-        width: 550px;
-    }
+  color: black;
+  width: 230px;
+  height: 65px;
+  font-weight: 500;
+  margin: 50px auto 0 !important;
+  background-color: #e12727;
+  display: block !important;
+  cursor: pointer;
+  margin-left: 45%;
 }
 
 @media screen and (max-width: 768px) {
+  .truck,
+  .savings,
+  .save,
+  .access,
+  .manage,
+  .reviews {
+    display: none !important;
+  }
+  .truckResp,
+  .manageResp,
+  .accessResp,
+  .savingsResp {
+    display: block;
+  }
+  .reviewsResp {
+    display: flex;
+    flex-direction: column;
+  }
+  .saveResp {
+    display: block;
+    width: 90% !important;
+    margin: 0 auto;
+  }
+  .subscribeHero {
+    width: 100%;
+    height: 45vh !important;
+    margin-top: 7rem;
+  }
 
+  .subscribeButtonResp:hover,
+  .goToLoginResp:hover {
+    background-color: #424242;
+  }
 
-    .subscribeHero {
-        max-width: 768px;
-        max-height: 320px;
-    }
+  .benefits {
+    max-height: unset;
+    max-width: 95%;
+    margin: auto;
+    padding-top: 4rem;
+  }
+  .benefits .cards {
+    max-height: unset !important;
+  }
 
-    .save,
-    .truck,
-    .savings,
-    .access,
-    .manage,
-    .reviews {
-        display: none;
-    }
+  .benefitsTitle {
+    color: white;
+    margin-top: 70px;
+    margin-bottom: 0;
+    font-size: 2rem !important;
+    font-family: "revansmedium" !important;
+  }
 
-    .subscribeButtonResp,
-    .goToLoginResp {
-        background-color: red;
-    }
+  .savings {
+    width: 100%;
+  }
+  .cards {
+    display: flex;
+    flex-flow: row wrap;
+  }
 
-    .subscribeButtonResp:hover,
-    .goToLoginResp:hover {
-        background-color: #424242;
-    }
+  .needHelpTitle {
+    color: white;
+    font-size: 2rem !important;
+    font-family: "revansmedium" !important;
+  }
 
-    .benefits {
-        height: 600px;
-        max-width: 100%;
-    }
+  .needHelpText {
+    color: white;
+    font-size: 14px;
+    font-weight: lighter;
+    font-family: "FenomenSans-Book" !important;
+    text-align: center;
+  }
 
-    .benefitsTitle {
-        color: white;
-        margin-top: 70px;
-        margin-bottom: 0;
-        font-size: 40px;
-        font-family: "revansmedium";
-    }
+  .findBrew {
+    color: black;
+    width: 180px;
+    height: 58px;
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+  }
 
-    .cards {
-        display: flex;
-        flex-flow: row wrap;
-    }
+  .footerBlack {
+    display: none;
+  }
 
-    .needHelpTitle {
-        color: white;
-        font-size: 40px;
-        font-family: "revansmedium";
-    }
+  .footerResp {
+    background-color: black;
+    height: 274px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-    .needHelpText {
-        color: white;
-        font-size: 14px;
-        font-weight: lighter;
-        font-family: "revansmedium";
-        text-align: center;
-    }
+  .footerMenu {
+    max-width: 230px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    .findBrew {
-        color: black;
-        width: 180px;
-        height: 58px;
-        font-size: 14px;
-        font-weight: 500;
-        margin-top: 50px;
-        cursor: pointer;
-        margin-left: 33%;
-    }
-
-    .footerBlack {
-        display: none;
-    }
-
-    .footerResp{
-        background-color: black;
-        height: 274px;
-        max-width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .footerMenu {
-        max-width: 230px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .footerMenu h2 {
-        color: red;
-        text-align: center;
-    }
-
+  .footerMenu h2 {
+    color: red;
+    text-align: center;
+  }
 }
 
-@media screen and (min-width: 1200px) {
-    .save {
-        background-color: rgba(0, 0, 0, 0.5);
-        width: 550px;
-        height: 450px;
-        margin-left: 56%;
-    }
-
-    .footerResp{
-        display: none;
-    }
+@media screen and (max-width: 1200px) {
 }
-
-@media screen and (min-width: 768px) {
-    .saveResp {
-        display: none;
-    }
-
-    .benefits {
-        background-color: black;
-        max-height: 800px;
-        max-width: 100%;
-    }
-
-    .benefitsTitle {
-        color: white;
-        font-size: 69px;
-        font-weight: 1000;
-        margin-top: 100px;
-        margin-bottom: 100px;
-        font-family: "revansmedium";
-    }
-
-    .truckResp,
-    .savingsResp,
-    .accessResp,
-    .manageResp,
-    .reviewsResp {
-        display: none;
-    }
-
-    .needHelpTitle {
-        color: white;
-        font-size: 69px;
-        font-weight: 1000;
-        font-family: "revansmedium";
-    }
-
-    .needHelpText {
-        color: white;
-        font-size: 24px;
-        font-weight: lighter;
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    .findBrew {
-        color: black;
-        width: 230px;
-        height: 65px;
-        font-weight: 500;
-        margin-top: 50px;
-        cursor: pointer;
-        margin-left: 45%;
-    }
-
-    
-   
-
-
-    
-
-}
-

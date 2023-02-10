@@ -1,38 +1,197 @@
-
-@media screen and (min-width: 768px){
-    .footerResp {
-        display: none;
-      }
+.footerSection * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.footerSection {
+  margin-top: 3rem;
 }
 
+.newsLetter {
+  background-color: #e12727;
+  max-width: 100%;
+}
+.newsLetter h5 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+  padding-top: 3.5rem;
+  font-family: FenomenSans;
+  color: #201e1d;
+}
 
+.newsLetter form {
+  padding: 20px;
+  display: flex;
+  margin-bottom: 0 auto 3rem;
+  justify-content: center;
+}
+.newsLetter input[type="email"],
+.newsLetter button {
+  outline: none;
+  border: none;
+}
+
+.newsLetter input[type="email"],
+.newsLetter input[type="email"]::placeholder {
+  font-family: FenomenSans-Book;
+  padding-left: 0.5rem;
+  font-size: 1rem;
+  color: #201e1d;
+}
+.newsLetter input[type="email"] {
+  background-color: white;
+  width: 343px;
+  height: 48px;
+  margin-right: 0.125rem;
+}
+.newsLetter button {
+  background-color: #201e1d;
+  width: 216px;
+  height: 48px;
+  background-color: "black";
+  color: white;
+  margin-left: 0;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: FenomenSans-Book;
+}
+.footerBlackContainer {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.footerBlack {
+  display: flex;
+  width: 60%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoIcon {
+  padding-top: 4rem;
+  justify-self: center;
+  width: 15rem;
+}
+.logoIcon img {
+  vertical-align: sub;
+  width: 100%;
+}
+.companyLinks {
+  padding-top: 5rem;
+  padding-left: 5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto 4rem;
+  column-gap: 4rem;
+}
+.companyLinks h5 {
+  margin-bottom: 0.25rem;
+  font-size: 1.2rem;
+  font-family: FenomenSans;
+}
+.companyLinks .link {
+  margin-bottom: 0.25rem;
+}
+
+.rights {
+  grid-area: 2/1/3/3;
+  align-self: flex-end;
+}
+
+/* .socialIconsRigths {
+ 
+  display: flex;
+
+  justify-content: space-evenly;
+} */
+.socialIcons {
+  grid-area: 2/3;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+.socialIcons > div > * {
+  margin-right: 0.5rem;
+}
+.socialIcons svg {
+  vertical-align: bottom;
+}
+
+.mobileFooterHeading {
+  display: none;
+}
+@media screen and (max-width: 1024px) {
+  .footerBlack {
+    width: 97%;
+  }
+}
 
 @media screen and (max-width: 768px) {
-    .footerRed {
-        display: none;
-    }
+  .footerBlackContainer {
+    margin-top: 2rem;
+  }
+  .footerBlack {
+    flex-direction: column;
+  }
 
-    .footerBlack {
-        display: none;
-    }
+  .logoIcon {
+    width: 8rem;
+    padding-top: 0;
+  }
+  .companyLinks {
+    color: white;
+    padding-left: 0;
+    width: 95%;
+    margin: 0 auto;
+  }
+}
 
-    .footerResp {
-        background-color: black;
-        height: 274px;
-        max-width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
+@media screen and (max-width: 470px) {
+  .rights,
+  .socialIcons {
+    grid-area: unset;
+  }
+  .companyLinks {
+    padding-top: 2rem;
 
-    .footerMenu {
-        max-width: 230px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+    grid-template-rows: auto;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    row-gap: 1.3rem;
+  }
+}
 
-    .footerMenu h2 {
-        color: red;
-        text-align: center;
-    }
+@media screen and (max-width: 425px) {
+  .mobileFooterHeading {
+    font-family: Revans;
+    color: #e12727;
+    font-size: 2rem;
+    display: flex;
+    text-transform: uppercase;
+    justify-content: center;
+    text-align: center;
+  }
+  .newsLetter form {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 0.5rem;
+  }
+  .newsLetter input[type="email"] {
+    width: 100%;
+  }
+  .newsLetter input[type="email"]::placeholder {
+    text-align: center;
+    padding-left: 0;
+  }
+  .logoIcon {
+    display: none;
+  }
+  .companyLinks {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 320px) {
 }

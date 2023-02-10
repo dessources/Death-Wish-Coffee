@@ -1,517 +1,387 @@
 .rebelsResp,
 .flashResp1,
-.flashResp2{
-    display: none;
+.flashResp2 {
+  display: none;
 }
 
-.history{
-    background-color: black;
-    width: 100%;
-    height: 346px;
-    display: flex;
-    justify-content: space-evenly;
+.history {
+  background-color: black;
+  width: 100%;
+  height: 346px;
+  display: flex !important;
+  justify-content: center;
 }
 
-.historyTitle{
-    color: white;
-    font-size: 56px;
-    font-weight: 900;
-    font-family: 'revansmedium';
-    margin-top: 100px;
-     
+.historyTitle {
+  color: white;
+  font-size: 56px;
+  font-weight: 900;
+  font-family: "revansmedium" !important;
+  margin-top: 100px;
 }
 
 .flash1,
-.flash2{
-    height: 300px;
+.flash2 {
+  height: 300px;
 }
 
-.timeline{
+.timeline {
+  display: flex;
+  flex-flow: row wrap;
+  background-color: black;
+  justify-content: center;
+  width: 65%;
+}
+
+.timelineResp {
+  display: none !important;
+}
+.milestone {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2rem auto;
+  column-gap: 2rem;
+}
+
+.milestoneContent {
+  flex: 1 1 50%;
+}
+.milestoneTitle {
+  color: red;
+  font-size: 38px;
+  font-weight: 900;
+  text-align: left;
+  font-family: "revansmedium" !important;
+  margin-top: 30px;
+}
+
+.milestoneText {
+  color: white;
+  font-size: 24px;
+  font-weight: lighter;
+  text-align: left;
+  margin: 0;
+  font-family: FenomenSans-Book !important;
+}
+
+.milestoneYear {
+  display: flex;
+  align-items: center;
+  flex: 1 1 50%;
+}
+
+.milestoneYear span {
+  font-size: 3.56rem;
+  font-weight: bold;
+  color: #e12827;
+}
+.milestoneYear img {
+  width: 23.5rem;
+}
+
+/* .Img {
+  height: 180px;
+} */
+
+@media screen and (max-width: 1024px) {
+  .rebels {
+    display: none;
+  }
+
+  .rebelsResp {
+    display: block;
+    max-width: 100%;
+    margin-right: auto;
+    padding-left: 10px;
+  }
+
+  .rebelsRespTitle {
+    color: red;
+    font-size: 56px;
+    margin-top: 150px;
+    font-weight: 900;
+    font-family: "revansmedium";
+  }
+
+  .history {
+    background-color: black;
+    max-width: 100%;
+    height: 200px;
+    display: flex !important;
+    justify-content: space-evenly;
+    padding-left: 40%;
+    padding-right: 40%;
+  }
+
+  .historyTitle {
+    color: white;
+    font-size: 56px;
+    font-weight: 900;
+    font-family: "revansmedium";
+    margin-top: 40px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .flash1 {
+    margin-left: 20%;
+    height: 200px;
+    width: 250px;
+  }
+
+  .flash2 {
+    margin-right: 20%;
+    height: 200px;
+    width: 250px;
+  }
+
+  .timeline {
     display: flex;
     flex-flow: row wrap;
     background-color: black;
-    max-width: 1434px;
-}
+    max-width: 100%;
+  }
 
-.timelineResp{
-    display: none;
-}
+  .timeline img {
+    max-width: 200px;
+    max-height: 130px;
+  }
 
-.creation{
-    height: 198px;
-    max-width: 50%;
-    display: flex;
-    align-items: center;
-    margin-right: 50px;
-    margin-left: auto;
-    margin-bottom: 50px;
-}
-
-.creationTitle{
+  .milestoneTitle {
     color: red;
-    font-size: 38px;
+    font-size: 30px;
     font-weight: 900;
     text-align: left;
-    font-family: 'revansmedium';
+    font-family: "revansmedium";
     margin-top: 30px;
-}
+  }
 
-.creationText{
+  .Text {
     color: white;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: lighter;
     text-align: left;
-}
+  }
 
-.creationYear{
-    color: red;
-    font-size: 40px;
-    font-weight: 900;
-}
-
-.creationImg{
-    height: 180px;
-}
-
-.goodMorning{
+  .goodMorning {
+    max-height: 150px;
     max-width: 50%;
-    margin-right: 50px;
-    margin-left: auto;
+    margin-right: auto;
+    margin-left: 15px;
     margin-bottom: 50px;
-}
+  }
 
-.goodMorningTitle{
+  .goodMorningmilestoneTitle {
     color: red;
-    font-size: 38px;
+    font-size: 30px;
     font-weight: 900;
-    text-align: right;
-    font-family: 'revansmedium';
-    margin-top: 30px;
-}
+    text-align: left;
+    font-family: "revansmedium";
+    margin-top: 20px;
+  }
 
-.goodMorningText{
+  .goodMorningText {
     color: white;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: lighter;
     text-align: right;
-}
+  }
 
-.goodMorningDate{
-    height: 198px;
+  .goodMorningDate {
+    height: 150px;
     max-width: 50%;
     display: flex;
     align-items: center;
     margin-left: 50px;
     margin-right: auto;
-    margin-bottom: 50px;
-}
+    margin-bottom: 20px;
+  }
 
-.gmYearResp{
-    display: none;
-}
-
-.gmYear{
-    color: red;
-    font-size: 40px;
-    font-weight: 900;
-    margin-right: 100px;
-}
-
-.superBowl{
-    height: 198px;
+  .superBowl {
+    height: 150px;
     max-width: 50%;
     display: flex;
     align-items: center;
-    margin-right: 50px;
+    margin-right: auto;
     margin-left: auto;
-    margin-bottom: 50px;
-}
+    margin-bottom: 10px;
+  }
 
-.superBowlDate{
+  .superBowlDate {
     color: red;
     font-size: 40px;
     font-weight: 900;
-    margin-left: 100px;
-}
-
-.superBowlTitle{
-    color: red;
-    font-size: 38px;
-    font-weight: 900;
-    text-align: left;
-    font-family: 'revansmedium';
-    margin-top: 30px;
-}
-
-.superBowlText{
-    color: white;
-    font-size: 24px;
-    font-weight: lighter;
-    text-align: left;
-}
-
-.caffeinated{
-    max-width: 50%;
-    margin-right: 50px;
     margin-left: auto;
-    margin-bottom: 50px;
-}
+  }
 
-.caffeinatedTitle{
+  .superBowlmilestoneTitle {
     color: red;
-    font-size: 38px;
+    font-size: 30px;
     font-weight: 900;
-    text-align: right;
-    font-family: 'revansmedium';
-    margin-top: 30px;
-}
+    text-align: left;
+    font-family: "revansmedium";
+    margin-top: 20px;
+    margin-left: 60px;
+  }
 
-.caffeinatedText{
+  .superBowlText {
     color: white;
-    font-size: 24px;
+    font-size: 20px;
+    font-weight: lighter;
+    text-align: left;
+    margin-left: 60px;
+  }
+
+  .caffeinated {
+    max-width: 50%;
+    max-height: 150px;
+    margin-right: auto;
+    margin-left: 15px;
+    margin-bottom: 50px;
+  }
+
+  .caffeinatedmilestoneTitle {
+    color: red;
+    font-size: 30px;
+    font-weight: 900;
+    text-align: left;
+    font-family: "revansmedium";
+    margin-top: 20px;
+  }
+
+  .caffeinatedText {
+    color: white;
+    font-size: 20px;
     font-weight: lighter;
     text-align: right;
-}
+  }
 
-.caffeinatedDate{
-    height: 198px;
+  .caffeinatedDate {
+    height: 150px;
     max-width: 50%;
     display: flex;
     align-items: center;
     margin-left: 50px;
     margin-right: auto;
-    margin-bottom: 50px;
-}
+    margin-bottom: 20px;
+  }
 
-.caffeinatedYear{
+  .caffeinatedYear {
     color: red;
     font-size: 40px;
     font-weight: 900;
-    margin-right: 100px;
-}
+    margin-right: 50px;
+  }
 
-.historic{
-    height: 198px;
+  .historic {
+    height: 150px;
     max-width: 50%;
     display: flex;
     align-items: center;
-    margin-right: 50px;
+    margin-right: auto;
     margin-left: auto;
-    margin-bottom: 50px;
-}
+    margin-bottom: 10px;
+  }
 
-.historicDate{
+  .historicDate {
     color: red;
     font-size: 40px;
     font-weight: 900;
-    margin-left: 100px;
-}
+    margin-left: auto;
+  }
 
-.historicTitle{
+  .historicmilestoneTitle {
     color: red;
-    font-size: 38px;
+    font-size: 30px;
     font-weight: 900;
     text-align: left;
-    font-family: 'revansmedium';
+    font-family: "revansmedium";
     margin-top: 30px;
-}
+    margin-left: 60px;
+  }
 
-.historicText{
+  .historicText {
     color: white;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: lighter;
     text-align: left;
+    margin-left: 60px;
+  }
 }
 
-@media screen and (max-width: 1024px){
-    .rebels{
-        display: none;
-    }
+@media screen and (max-width: 768px) {
+  .rebelsResp {
+    height: unset !important;
+  }
+  .rebelsRespTitle {
+    font-family: revansmedium !important;
+    color: red;
+    font-size: 1.6rem !important;
+    margin-top: 12rem !important;
+    font-weight: 900;
+    margin-left: 1rem;
 
-    .rebelsResp{
-        display: block;
-        max-width: 100%;
-        margin-right: auto;
-        padding-left: 10px;
-    }
+    font-family: "revansmedium";
+  }
+  .rebelsRespText {
+    font-family: FenomenSans-Book !important;
+    width: 90%;
+    font-size: 1.2rem !important;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+  }
+  .timelineResp {
+    display: flex !important;
+    flex-direction: column;
+    background-color: black;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    row-gap: 2.5rem;
+  }
+  .timelineResp img {
+    margin: 1rem auto;
+    width: 200px !important;
+  }
 
-    .rebelsRespTitle{
-        color: red;
-        font-size: 56px;
-        margin-top: 150px;
-        font-weight: 900;
-        font-family: 'revansmedium';
-        
-    }
+  .milestoneTitle {
+    color: white;
+    font-size: 40px !important;
+    font-weight: 900;
+    font-family: "revansmedium" !important;
+    margin-top: 40px;
+    padding-left: 0;
+    padding-right: 0;
+  }
 
-    .history{
-        background-color: black;
-        max-width: 100%;
-        height: 200px;
-        display: flex;
-        justify-content: space-evenly;
-        padding-left: 40%;
-        padding-right:40%;
-    }
+  .flash1 {
+    margin-left: 20%;
+    height: 120px;
+    width: 90px;
+  }
 
-    .historyTitle{
-        color: white;
-        font-size: 56px;
-        font-weight: 900;
-        font-family: 'revansmedium';
-        margin-top: 40px;
-        padding-left: 0;
-        padding-right: 0;
-        
-    }
+  .flash2 {
+    margin-right: 20%;
+    height: 120px;
+    width: 90px;
+  }
 
-    
-    .flash1{
-        margin-left: 20%;
-        height: 200px;
-        width: 250px;
-    }
-
-    .flash2{
-        margin-right: 20%;
-        height: 200px;
-        width: 250px;
-    }
-
-    .timeline{
-        display: flex;
-        flex-flow: row wrap;
-        background-color: black;
-        max-width: 100%;
-    }
-
-    .timeline img{
-        max-width: 200px;
-        max-height: 130px;
-        
-    }
-
-    .creation{
-        height: 150px;
-        max-width: 50%;
-        display: flex;
-        align-items: center;
-        margin-right: auto;
-        margin-left: auto;
-        margin-bottom: 10px;
-    }
-
-    .creationTitle{
-        color: red;
-        font-size: 30px;
-        font-weight: 900;
-        text-align: left;
-        font-family: 'revansmedium';
-        margin-top: 30px;
-    }
-
-    .creationText{
-        color: white;
-        font-size: 20px;
-        font-weight: lighter;
-        text-align: left;
-    }
-
-    .goodMorning{
-        max-height: 150px;
-        max-width: 50%;
-        margin-right: auto;
-        margin-left: 15px;
-        margin-bottom: 50px;
-    }
-
-    .goodMorningTitle{
-        color: red;
-        font-size: 30px;
-        font-weight: 900;
-        text-align: left;
-        font-family: 'revansmedium';
-        margin-top: 20px;
-    }
-
-    .goodMorningText{
-        color: white;
-        font-size: 20px;
-        font-weight: lighter;
-        text-align: right;
-    }
-
-    .goodMorningDate{
-        height: 150px;
-        max-width: 50%;
-        display: flex;
-        align-items: center;
-        margin-left: 50px;
-        margin-right: auto;
-        margin-bottom: 20px;
-    }
-
-    .superBowl{
-        height: 150px;
-        max-width: 50%;
-        display: flex;
-        align-items: center;
-        margin-right: auto;
-        margin-left: auto;
-        margin-bottom: 10px;
-    }
-
-    .superBowlDate{
-        color: red;
-        font-size: 40px;
-        font-weight: 900;
-        margin-left: auto;
-    }
-
-    .superBowlTitle{
-        color: red;
-        font-size: 30px;
-        font-weight: 900;
-        text-align: left;
-        font-family: 'revansmedium';
-        margin-top: 20px;
-        margin-left: 60px;
-    }
-
-    .superBowlText{
-        color: white;
-        font-size: 20px;
-        font-weight: lighter;
-        text-align: left;
-        margin-left: 60px;
-        
-    }
-
-    .caffeinated{
-        max-width: 50%;
-        max-height: 150px;
-        margin-right: auto;
-        margin-left: 15px;
-        margin-bottom: 50px;
-    }
-
-    .caffeinatedTitle{
-        color: red;
-        font-size: 30px;
-        font-weight: 900;
-        text-align: left;
-        font-family: 'revansmedium';
-        margin-top: 20px;
-    }
-
-    .caffeinatedText{
-        color: white;
-        font-size: 20px;
-        font-weight: lighter;
-        text-align: right;
-    }
-
-    .caffeinatedDate{
-        height: 150px;
-        max-width: 50%;
-        display: flex;
-        align-items: center;
-        margin-left: 50px;
-        margin-right: auto;
-        margin-bottom: 20px;
-    }
-
-    .caffeinatedYear{
-        color: red;
-        font-size: 40px;
-        font-weight: 900;
-        margin-right: 50px;
-    }
-
-    .historic{
-        height: 150px;
-        max-width: 50%;
-        display: flex;
-        align-items: center;
-        margin-right: auto;
-        margin-left: auto;
-        margin-bottom: 10px;
-    }
-
-    .historicDate{
-        color: red;
-        font-size: 40px;
-        font-weight: 900;
-        margin-left: auto;
-    }
-
-    .historicTitle{
-        color: red;
-        font-size: 30px;
-        font-weight: 900;
-        text-align: left;
-        font-family: 'revansmedium';
-        margin-top: 30px;
-        margin-left: 60px;
-    }
-
-    .historicText{
-        color: white;
-        font-size: 20px;
-        font-weight: lighter;
-        text-align: left;
-        margin-left: 60px;
-    }
-
-
-     
-
+  .timeline,
+  .timeline * {
+    display: none !important;
+  }
 }
+@media screen and (max-width: 445px) {
+  .apply {
+    padding: 0 0.5rem !important;
+  }
+  .apply h1 {
+    font-size: 2rem !important;
+    margin-bottom: 1rem;
+  }
 
-@media screen and (max-width: 768px){
-    .rebelsRespTitle{
-        color: red;
-        font-size: 26px;
-        margin-top: 150px;
-        font-weight: 900;
-        font-family: 'revansmedium'
-    }
-
-    .historyTitle{
-        color: white;
-        font-size: 40px;
-        font-weight: 900;
-        font-family: 'revansmedium';
-        margin-top: 40px;
-        padding-left: 0;
-        padding-right: 0;
-        
-    }
-
-    
-    .flash1{
-        margin-left: 20%;
-        height: 200px;
-        width: 200px;
-    }
-
-    .flash2{
-        margin-right: 20%;
-        height: 200px;
-        width: 200px;
-    }
-
-    .timeline{
-        display: none;
-    }
-
-    .timelineResp{
-        display: flex;
-        flex-direction: column;
-        background-color: black;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-    }
-
+  .historyTitle {
+    font-size: 2.1rem !important;
+  }
 }
