@@ -114,8 +114,8 @@ a {
   border-color: #e63d2f;
 }
 
-#subscriptionFooter #newsletter {
-  display: none;
+#HomeFooter #newsletter {
+  display: block !important;
 }
 @media screen and (max-width: 425px) {
   svg.slick-next.slick-arrow,

@@ -1,62 +1,37 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import Head from "next/head";
+import Script from "next/script";
+import Footer from "../components/Footer";
+import { mainSection, list, mapContainer, mapClass } from "../styles/StoreLocator.module.css";
+import Navbar from "../components/Navbar";
+import useMap from "../hooks/useMap";
 
-const Map = () => {
-  const [map, setMap] = useState(null);
-  const [markers, setMarkers] = useState([]);
-  const [searchInput, setSearchInput] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
-
-  useEffect(() => {
-    const map = new window.google.maps.Map(document.getElementById("map"), {
-      zoom: 10,
-      center: { lat: 37.7749, lng: -122.4194 },
-    });
-    setMap(map);
-  }, []);
-
-  useEffect(() => {
-    if (!map) return;
-
-    // Add markers to the map
-    const newMarkers = [
-      { position: { lat: 37.7749, lng: -122.4194 }, title: "San Francisco" },
-      { position: { lat: 40.7128, lng: -74.006 }, title: "New York" },
-      { position: { lat: 34.0522, lng: -118.2437 }, title: "Los Angeles" },
-    ].map((location) => {
-      return new window.google.maps.Marker({
-        position: location.position,
-        map,
-        title: location.title,
-      });
-    });
-
-    setMarkers(newMarkers);
-  }, [map]);
-
-  const handleSearch = () => {
-    const searchTerm = searchInput.toLowerCase();
-    const results = markers.filter((marker) => {
-      return marker.title.toLowerCase().includes(searchTerm);
-    });
-    setSearchResults(results);
-
-    if (results.length > 0) {
-      // Set the map's center and zoom level based on the search results
-      const bounds = new window.google.maps.LatLngBounds();
-      results.forEach((result) => {
-        bounds.extend(result.getPosition());
-      });
-      map.fitBounds(bounds);
-    }
-  };
+const StoreLocator = () => {
+  const { searchInput, setSearchInput, handleSearch } = useMap();
 
   return (
     <>
-      <input type="text" value={searchInput} onChange={(e) => setSearchInput(e.target.value)} />
-      <button onClick={handleSearch}>Search</button>
-      <div id="map" style={{ height: "400px", width: "100%" }} />
+      <Head>
+        <title>Store Locator - DeathWishCoffeeClone</title>
+      </Head>
+      <Navbar />
+      <main className={mainSection}>
+        <div className={list}></div>
+        <div className={mapContainer}>
+          <input type="text" value={searchInput} onChange={(e) => setSearchInput(e.target.value)} />
+          <button onClick={handleSearch}>Search</button>
+          <div id={"map"} className={mapClass} />
+        </div>
+      </main>
+      <Footer />
+      <Script src="https://polyfill.io/v3/polyfill.min.js?features=default"></Script>
+      <Script
+        strategy="beforeInteractive"
+        src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&v=weekly`}
+        defer
+      ></Script>
     </>
   );
 };
 
-export default Map;
+export default StoreLocator;

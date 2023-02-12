@@ -10,6 +10,7 @@
 .newsLetter {
   background-color: #e12727;
   max-width: 100%;
+  display: none;
 }
 .newsLetter h5 {
   font-size: 1.25rem;
