@@ -13,6 +13,8 @@ import Link from "next/link";
 import Image from "next/image";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import PersonIcon from '@mui/icons-material/Person';
+import { getSession, useSession, signOut } from "next-auth/react";
 import logo from "../images/logo.webp";
 
 import {
@@ -29,6 +31,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { showCart } from "../redux/cart.slice";
 
 const Navbar = () => {
+  const { data: session } = useSession();
   const dispatch = useDispatch();
 
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -145,11 +148,20 @@ const Navbar = () => {
                 </Typography>
 
                 <Box sx={{ display: "flex", alignItems: "center" }}>
-                  <Link href={"/Login"}>
+                  {session ? (
+                    <Link href={"/Login"}>
                     <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                       <LoginIcon />
                     </IconButton>
                   </Link>
+                  ):(
+                    <Link href={"/Account"}>
+                    <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+                      <PersonIcon />
+                    </IconButton>
+                  </Link>
+                  )}
+                  
 
                   {/* <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                     <SearchIcon />
