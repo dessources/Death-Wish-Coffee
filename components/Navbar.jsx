@@ -43,7 +43,7 @@ const Navbar = () => {
   const linkStyles = { fontFamily: "FenomenSans" };
   return (
     <>
-      <nav style={{backgroundColor: 'black'}}>
+      <nav>
         <div className={navbar}>
           <Box>
             <div className={appBarClass}>
