@@ -40,7 +40,7 @@ export default function Login() {
   }
 
   async function handleGoogleSignin() {
-    signIn("google", { callbackUrl: `https://death-wish-coffee.vercel.app/Account` });
+    signIn("google", { callbackUrl: `${process.env.NEXT_AUTH_URL,"/Account"}` });
   }
 
   return (
