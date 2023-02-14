@@ -16,6 +16,10 @@
   display: none;
 }
 
+.link{
+  color: white;
+}
+
 .link:hover {
   text-decoration: underline;
   color: #e63d2f;
