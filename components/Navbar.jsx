@@ -149,15 +149,15 @@ const Navbar = () => {
 
                 <Box sx={{ display: "flex", alignItems: "center" }}>
                   {session ? (
+                   <Link href={"/Account"}>
+                   <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+                     <PersonIcon />
+                   </IconButton>
+                 </Link>
+                  ):(
                     <Link href={"/Login"}>
                     <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                       <LoginIcon />
-                    </IconButton>
-                  </Link>
-                  ):(
-                    <Link href={"/Account"}>
-                    <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-                      <PersonIcon />
                     </IconButton>
                   </Link>
                   )}
