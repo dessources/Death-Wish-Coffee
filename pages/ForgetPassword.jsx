@@ -8,7 +8,7 @@ const ForgetPassword = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
-      const response = await axios.post('/api/forgotPassword/email', { email })
+      const response = await axios.post(`/api/forgotPassword/email`, { email })
       setMessage(response.data.message)
     } catch (error) {
       setMessage(error.response.data.message)
