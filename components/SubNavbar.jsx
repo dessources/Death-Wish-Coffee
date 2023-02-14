@@ -13,12 +13,12 @@ const SubNavbar = () => {
             <span>C</span>
             OLOMBIAN, KICKED UP !
           </h2>
-          <p>
+          <p data-testid="subNavText">
             Roundhouse your bad habits and start the new year fresh with an all-new blend ready to fuel you
             forward. Available in Ground, Whole Bean and Death Cups for a limited time only.
           </p>
 
-          <button>SHOP</button>
+          <button data-testid="subNavButton">SHOP</button>
         </div>
       </div>
 
@@ -34,7 +34,7 @@ const SubNavbar = () => {
       <div className={rebellious}>
         <h5>REBELLIOUS BY NATURE</h5>
 
-        <p>
+        <p data-testid="subNavText2">
           Death Wish Coffee delivers a bold, full-bodied yet smooth and flavorful brew that will awaken your
           taste buds, with an extra kick of caffeine to ignite your attitude. We use the highest quality Fair
           Trade and organic arabica and robusta beans and roast them to never-bitter perfection.
