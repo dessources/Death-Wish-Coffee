@@ -49,7 +49,7 @@ export default function Login() {
   }
 
   return (
-    <form onSubmit={formik.handleSubmit}>
+    <form style={{backgroundColor: 'black'}} onSubmit={formik.handleSubmit}>
       <Navbar />
       <ThemeProvider theme={theme}>
         <Typography

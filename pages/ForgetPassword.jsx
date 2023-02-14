@@ -1,44 +1,36 @@
-import React from 'react'
-//import { fetcher } from "@/lib/fetch";
-import { useCallback, useRef } from "react";
+import React, { useState } from 'react'
+import axios from 'axios'
 
 const ForgetPassword = () => {
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
 
-    const emailRef = useRef();
-
-    const onSubmit = useCallback(async (e) => {
-      e.preventDefault();
-      try {
-        await fetcher("/api/user/password/reset", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            email: emailRef.current.value,
-          }),
-        });
-      } catch (e) {
-        console.error(e.message);
-      }
-    }, []);
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    try {
+      const response = await axios.post('/api/forgotPassword/email', { email })
+      setMessage(response.data.message)
+    } catch (error) {
+      setMessage(error.response.data.message)
+    }
+  }
 
   return (
-    <>
-    
-    <h1>Forget password</h1>
-    <p>
-      Enter the email address associated with your account, and we&apos;ll
-      send you a link to reset your password.
-    </p>
-    <form onSubmit={onSubmit}>
-      <input
-        ref={emailRef}
-        type="email"
-        autoComplete="email"
-        placeholder="Email"
-      />
-      <button type="submit">Submit</button>
-    </form>
-  </>
+    <div>
+      
+      <h1>Mot de passe oublié</h1>
+      
+      <form onSubmit={handleSubmit}>
+        <input
+          type='email'
+          placeholder='Adresse e-mail'
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
+        />
+        <button type='submit'>Envoyer</button>
+      </form>
+      {message && <p>{message}</p>}
+    </div>
   )
 }
 
