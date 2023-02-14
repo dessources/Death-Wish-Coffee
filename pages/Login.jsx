@@ -44,10 +44,6 @@ export default function Login() {
     signIn("google", { callbackUrl: "https://death-wish-coffee.vercel.app/Account" });
   }
 
-  async function handleGithubSignin() {
-    signIn("github", { callbackUrl: "http://localhost:3000/Account" });
-  }
-
   return (
     <form style={{backgroundColor: 'black'}} onSubmit={formik.handleSubmit}>
       <Navbar />
@@ -61,6 +57,7 @@ export default function Login() {
             textAlign: "center",
             marginBottom: "50px",
             marginTop: "150px",
+            fontFamily: 'FenomenSans-Book'
           }}
         >
           LOGIN
@@ -122,16 +119,6 @@ export default function Login() {
             sx={{ mt: 3, mb: 2 }}
           >
             Sign In with Google
-          </Button>
-
-          <Button
-            onClick={handleGithubSignin}
-            type="submit"
-            fullWidth
-            variant="contained"
-            sx={{ mt: 3, mb: 2 }}
-          >
-            Sign In with Github
           </Button>
 
           <Grid container>

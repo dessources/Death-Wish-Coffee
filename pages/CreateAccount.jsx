@@ -56,7 +56,8 @@ export default function CreateAccount() {
             fontWeight: "bold",
             textAlign: "center",
             margin: "50px",
-            marginTop: '150px'
+            marginTop: '150px',
+            fontFamily: "'FenomenSans-Book'"
           }}
         >
           CREATE ACCOUNT
