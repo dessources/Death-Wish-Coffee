@@ -17,12 +17,7 @@ import {
 } from "../styles/HomepageVideos.module.css";
 
 const HomepageVideos = () => {
-  // React.useEffect(() =>
-  //   document.querySelectorAll("video").forEach((video) => {
-  //     video.currentTime = 3;
-  //     video.pause();
-  //   })
-  // );
+  
   return (
     <>
       <div className={fairTrade}>
@@ -38,6 +33,7 @@ const HomepageVideos = () => {
         </div>
         <div className={videoText}>
           <video
+            data-testid="coffeeVideo"
             className={sectionVideo}
             data-src="https://media.graphassets.com/RNMMrNIuT6OR5hvmMzLz"
             autoPlay={true}
@@ -57,6 +53,7 @@ const HomepageVideos = () => {
       <div className={sectionContainer}>
         <div className={videoText}>
           <video
+            data-testid="brewVideo"
             className={`${sectionVideo} ${reverse}`}
             data-src="https://media.graphassets.com/cvZdL1QzT0ecpUBhclCq"
             autoPlay={true}
@@ -83,6 +80,7 @@ const HomepageVideos = () => {
         </div>
         <div className={videoText}>
           <video
+            data-testid="beansVideo"
             className={sectionVideo}
             data-src="https://media.graphassets.com/h0T2YBYQlSPtSnDCzb0O"
             autoPlay={true}
@@ -102,15 +100,7 @@ const HomepageVideos = () => {
             </button>
           </div>
         </div>
-        {/* <div>
-          <p className={sectionTextResp}>
-            Prefer the hands-on experience over online shopping? Find Death Wish Coffee in a grocery store near
-            you.
-          </p>
-          <p className={sectionButtonResp}>
-            <Link href="/StoreLocator">Find Store</Link>
-          </p>
-        </div> */}
+        
       </div>
     </>
   );
