@@ -6,7 +6,7 @@ import {hash} from 'bcryptjs';
 export default async function handler(req,res){
     connectMongo().catch(error=>res.json({error:"Connection Fail...!"}))
 
-    //if(req.method === 'POST'){
+    if(req.method === 'POST'){
 
         if(!req.body) return res.status(404).json({error:"Don't have form data ..."});
         const {firstName, lastName, email, password, address1, address2, city, country, zip} = req.body;
@@ -20,8 +20,8 @@ export default async function handler(req,res){
             res.status(201).json({status:true,user, address: newAddress})
         })
 
-   // }else{
-     //  res.status(500).json({message:"HTTP method not valide only POST accepted"})
-    //}
+    }else{
+       res.status(500).json({message:"HTTP method not valide only POST accepted"})
+    }
     
 }
