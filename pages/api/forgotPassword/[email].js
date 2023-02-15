@@ -27,7 +27,7 @@ export default async function handler(req,res){
             to: email,
             from: process.env.EMAIL,
             subject: 'Password Reset Request',
-            text: `Please use the following link to reset your password: ${process.env.NEXT_AUTH_URL}/resset-password?token=${passwordResetToken}&email=${email}`
+            text: `Please use the following link to reset your password: ${process.env.NEXT_AUTH_URL}/resset-password/?token=${passwordResetToken}&email=${email}`
         };
 
         sgMail.send(msg)
