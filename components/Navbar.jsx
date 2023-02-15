@@ -100,6 +100,7 @@ const Navbar = () => {
                   component="div"
                   style={{
                     fontWeight: "bold",
+                    
                   }}
                 >
                   <Link href={"/StoreLocator"} style={linkStyles}>
