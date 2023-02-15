@@ -40,7 +40,7 @@ describe('HomepageVideos', () => {
     test('coffeeVideo should have the correct src', () => {
         render(<HomepageVideos/>)
         const videoElement = screen.getByTestId('coffeeVideo')
-        expect(videoElement.getAttribute('src')).toBe('https://media.graphassets.com/RNMMrNIuT6OR5hvmMzLz')
+        expect(videoElement.getAttribute('src')).toBe('https://media.graphassets.com/fpNxKHSRQqO1ciJS4SFf')
     })
 
     test('should render video with data-testid brewVideo', () => {
