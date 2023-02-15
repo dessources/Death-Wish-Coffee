@@ -16,7 +16,7 @@ const SubNavbar = () => {
             Roundhouse your bad habits and start the new year fresh with an all-new blend ready to fuel you
             forward. Available in Ground, Whole Bean and Death Cups for a limited time only.
           </p>
-          <Link href="/Shop">
+          <Link href={"/Shop"}>
             <button data-testid="subNavButton">SHOP</button>
           </Link>
         </div>
