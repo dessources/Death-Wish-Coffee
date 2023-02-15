@@ -64,6 +64,7 @@
   z-index: 0;
   top: 4rem;
   left: -11.3rem;
+  /* border: 2px solid white; */
 }
 .sectionVideo.reverse {
   left: 0rem;
@@ -127,6 +128,7 @@
   .sectionTitle {
     top: 25%;
     font-size: 4rem;
+    background-color: transparent !important;
   }
 
   .sectionTitle.reverse {

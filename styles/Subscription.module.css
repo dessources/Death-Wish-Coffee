@@ -10,47 +10,41 @@
   background-color: #e12727;
 }
 
-.findBrew {
-  background-color: red;
-}
-
-.footerResp {
-  display: none;
-}
 .save {
   background-color: rgba(0, 0, 0, 0.5);
   width: 550px;
   padding-bottom: 1rem;
   margin-left: 56%;
 }
-
-.footerResp {
-  display: none;
-}
-.saveResp {
+.truckResp,
+.manageResp,
+.accessResp,
+.savingsResp,
+.saveResp,
+.reviewsResp {
   display: none;
 }
 
 .benefits {
   background-color: black;
-  max-height: 800px;
-  max-width: 100%;
+  width: 100%;
+  padding-bottom: 1rem;
 }
 
 .benefitsTitle {
   color: white;
   font-size: 69px;
   font-weight: 1000;
-  margin-top: 100px;
+  margin-top: 1.5rem !important;
   margin-bottom: 100px;
-  font-family: "revansmedium";
+  font-family: "revansmedium" !important;
 }
 
 .needHelpTitle {
   color: white;
   font-size: 69px;
   font-weight: 1000;
-  font-family: "revansmedium";
+  font-family: "revansmedium" !important;
 }
 
 .needHelpText {
@@ -66,7 +60,9 @@
   width: 230px;
   height: 65px;
   font-weight: 500;
-  margin-top: 50px;
+  margin: 50px auto 0 !important;
+  background-color: #e12727;
+  display: block !important;
   cursor: pointer;
   margin-left: 45%;
 }
@@ -78,7 +74,17 @@
   .access,
   .manage,
   .reviews {
-    display: none;
+    display: none !important;
+  }
+  .truckResp,
+  .manageResp,
+  .accessResp,
+  .savingsResp {
+    display: block;
+  }
+  .reviewsResp {
+    display: flex;
+    flex-direction: column;
   }
   .saveResp {
     display: block;
@@ -98,7 +104,9 @@
 
   .benefits {
     max-height: unset;
-    max-width: 100%;
+    max-width: 95%;
+    margin: auto;
+    padding-top: 4rem;
   }
   .benefits .cards {
     max-height: unset !important;
@@ -108,8 +116,8 @@
     color: white;
     margin-top: 70px;
     margin-bottom: 0;
-    font-size: 40px;
-    font-family: "revansmedium";
+    font-size: 2rem !important;
+    font-family: "revansmedium" !important;
   }
 
   .savings {
@@ -122,15 +130,15 @@
 
   .needHelpTitle {
     color: white;
-    font-size: 40px;
-    font-family: "revansmedium";
+    font-size: 2rem !important;
+    font-family: "revansmedium" !important;
   }
 
   .needHelpText {
     color: white;
     font-size: 14px;
     font-weight: lighter;
-    font-family: "revansmedium";
+    font-family: "FenomenSans-Book" !important;
     text-align: center;
   }
 
@@ -138,11 +146,10 @@
     color: black;
     width: 180px;
     height: 58px;
+    display: block;
     font-size: 14px;
     font-weight: 500;
-    margin-top: 50px;
     cursor: pointer;
-    margin-left: 33%;
   }
 
   .footerBlack {

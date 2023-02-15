@@ -16,7 +16,6 @@ export default function ProductFilters({ onFilterChange, filtersVisible, filters
 
   const [expanded, setExpanded] = React.useState({});
   const handleChange = (panel) => {
-    console.log(expanded);
     if (expanded[panel]) {
       setExpanded({ ...expanded, [panel]: false });
     } else {

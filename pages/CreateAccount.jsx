@@ -36,15 +36,15 @@ export default function CreateAccount() {
       headers: {'Content-Type':'application/json'},
       body:JSON.stringify(values)
     }
-    await fetch('http://localhost:3000/api/auth/signup',options)
+    await fetch(`${process.env.NEXT_AUTH_URL,"/api/auth/signup"}`,options)
       .then(res=>res.json())
       .then((data)=> {
-        if(data)router.push('http://localhost:3000/Login')
+        if(data)router.push(`${process.env.NEXT_AUTH_URL,"/Login"}`)
       })
   }
 
   return (
-    <form onSubmit={formik.handleSubmit}>
+    <form style={{backgroundColor: 'black'}} onSubmit={formik.handleSubmit}>
       <Navbar />
 
       <ThemeProvider theme={theme}>
@@ -56,6 +56,8 @@ export default function CreateAccount() {
             fontWeight: "bold",
             textAlign: "center",
             margin: "50px",
+            marginTop: '150px',
+            fontFamily: "'FenomenSans-Book'"
           }}
         >
           CREATE ACCOUNT

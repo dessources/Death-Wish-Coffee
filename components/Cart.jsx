@@ -93,7 +93,7 @@ export default function Cart() {
                         </div>
                         <div className={numberQuantity}>
                           <button
-                            onClick={() => dispatch(incrementQuantity(item?.uid))}
+                            onClick={() => dispatch(incrementQuantity(item))}
                             style={{
                               height: "25px",
                               backgroundColor: "#201e1d",
@@ -106,7 +106,7 @@ export default function Cart() {
                           </button>
                           {item.quantity}
                           <button
-                            onClick={() => dispatch(decrementQuantity(item?.uid))}
+                            onClick={() => dispatch(decrementQuantity(item))}
                             style={{
                               height: "25px",
                               backgroundColor: "#201e1d",

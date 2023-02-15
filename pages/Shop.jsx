@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import ProductFilters from "../components/ProductFilters";
 import ProductSort from "../components/ProductSort";
 import Products from "../components/Products";
@@ -25,6 +26,7 @@ const Shop = () => {
         <ProductFilters onFilterChange={setFilters} filtersVisible={filtersVisible} filters={filters} />
         <Products data={data} />
       </main>
+      <Footer />
     </>
   );
 };

@@ -34,9 +34,6 @@ import {
   findBrew,
   reviews,
   reviewsResp,
-  footerBlack,
-  footerResp,
-  footerMenu,
 } from "../styles/Subscription.module.css";
 
 const Subscription = () => {
@@ -204,14 +201,14 @@ const Subscription = () => {
           </Link>
         </div>
       </Box>
-      <Container className={benefits}>
+      <div className={benefits}>
         <Typography variant="h1" align="center" className={benefitsTitle}>
           SUBSCRIPTION BENEFITS
         </Typography>
         <Box
           style={{
             maxWidth: "100%",
-            maxHeight: 320,
+
             backgroundColor: "black",
             display: "flex",
           }}
@@ -479,12 +476,12 @@ const Subscription = () => {
             </CardContent>
           </Card>
         </Box>
-      </Container>
+      </div>
       <Container
         style={{
           backgroundColor: "#201E1D",
           maxWidth: "100%",
-          maxHeight: "445px",
+
           paddingTop: 60,
           paddingBottom: 100,
         }}
@@ -687,8 +684,8 @@ const Subscription = () => {
           align="center"
           style={{
             color: "white",
-            fontSize: 40,
-            fontWeight: "1000",
+            fontSize: 32,
+            fontWeight: "bold",
             marginTop: 50,
             marginBottom: 50,
             fontFamily: "revansmedium",
@@ -755,7 +752,7 @@ const Subscription = () => {
           </Card>
         </Box>
       </Container>
-      <Footer id="subscriptionFooter" />
+      <Footer />
     </>
   );
 };

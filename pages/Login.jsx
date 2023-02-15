@@ -15,7 +15,6 @@ import { useRouter } from 'next/router';
 
 const theme = createTheme();
 
-
 export default function Login() {
 
   const router = useRouter()
@@ -41,15 +40,11 @@ export default function Login() {
   }
 
   async function handleGoogleSignin() {
-    signIn("google", { callbackUrl: "http://localhost:3000/Account" });
-  }
-
-  async function handleGithubSignin() {
-    signIn("github", { callbackUrl: "http://localhost:3000/Account" });
+    signIn("google", { callbackUrl: `${process.env.NEXT_AUTH_URL,"/Account"}` });
   }
 
   return (
-    <form onSubmit={formik.handleSubmit}>
+    <form style={{backgroundColor: 'black'}} onSubmit={formik.handleSubmit}>
       <Navbar />
       <ThemeProvider theme={theme}>
         <Typography
@@ -61,6 +56,7 @@ export default function Login() {
             textAlign: "center",
             marginBottom: "50px",
             marginTop: "150px",
+            fontFamily: 'FenomenSans-Book'
           }}
         >
           LOGIN
@@ -124,19 +120,9 @@ export default function Login() {
             Sign In with Google
           </Button>
 
-          <Button
-            onClick={handleGithubSignin}
-            type="submit"
-            fullWidth
-            variant="contained"
-            sx={{ mt: 3, mb: 2 }}
-          >
-            Sign In with Github
-          </Button>
-
           <Grid container>
             <Grid item xs>
-              <Link href="#" variant="body2" style={{ color: "white" }}>
+              <Link href={"/ForgetPassword"} variant="body2" style={{ color: "white" }}>
                 Forgot password ?
               </Link>
             </Grid>

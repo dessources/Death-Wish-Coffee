@@ -34,7 +34,7 @@ import { getCoffeesUid, getOneCoffee } from "../../utils/queries.js";
 
 export const getStaticPaths = async () => {
   const data = await getCoffeesUid();
-  console.log(data);
+
   const paths = data?.coffees?.map((coffee) => {
     return {
       params: { uid: coffee.uid },
@@ -117,8 +117,8 @@ const Detail = ({ coffee }) => {
         <div className={imagesDetailsProduct}>
           <Slider {...settings}>
             <img src={coffee?.mediumImage} alt="" />
-            {coffee?.images?.map((image) => (
-              <img src={image} alt="" />
+            {coffee?.images?.map((image, i) => (
+              <img src={image} alt="" key={i} />
             ))}
           </Slider>
         </div>
@@ -164,7 +164,7 @@ const Detail = ({ coffee }) => {
                         onClick={() => setSelectedSize(size === selectedSize ? "" : size)}
                       />
                       <label htmlFor={coffee?.uid + size} className={selectedSize === size ? selectedLabel : ""}>
-                        {size.replace("_", " ")}: ${coffee?.sizes[size]}
+                        {size.replace("_", " ")} {"\u2013"} ${coffee?.sizes[size]}
                       </label>
                     </React.Fragment>
                   ))}
@@ -195,7 +195,7 @@ const Detail = ({ coffee }) => {
                         className={selectedStyle === style ? selectedLabel : ""}
                       >
                         <span>{labelIcons[style]}</span>
-                        <p style={{ marginLeft: "10px", color: "white" }}>{style}</p>
+                        <p style={{ marginLeft: "10px" }}>{style}</p>
                       </label>
                     </React.Fragment>
                   ))}

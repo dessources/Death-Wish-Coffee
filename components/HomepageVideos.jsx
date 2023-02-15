@@ -35,12 +35,12 @@ const HomepageVideos = () => {
           <video
             data-testid="coffeeVideo"
             className={sectionVideo}
-            data-src="https://media.graphassets.com/RNMMrNIuT6OR5hvmMzLz"
+            data-src="https://media.graphassets.com/fpNxKHSRQqO1ciJS4SFf"
             autoPlay={true}
             loop={true}
             muted={true}
-            playsInline=""
-            src="https://media.graphassets.com/RNMMrNIuT6OR5hvmMzLz"
+            playsInline
+            src="https://media.graphassets.com/fpNxKHSRQqO1ciJS4SFf"
           ></video>
           <div className={sectionText}>
             <p>Always sourced from the highest-quality beans. Ruining other coffee since 2012.</p>
@@ -95,9 +95,9 @@ const HomepageVideos = () => {
               Prefer the hands-on experience over online shopping? Find Death Wish Coffee in a grocery store near
               you.
             </p>
-            <button className={sectionButton}>
-              <Link href="/StoreLocator">Find Store</Link>
-            </button>
+            <Link href="/StoreLocator">
+              <button className={sectionButton}>Find Store</button>
+            </Link>
           </div>
         </div>
         

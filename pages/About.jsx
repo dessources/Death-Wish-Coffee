@@ -16,30 +16,14 @@ import {
   flash2,
   historyTitle,
   timeline,
-  creation,
-  creationYear,
-  creationImg,
-  creationTitle,
-  creationText,
-  goodMorning,
-  goodMorningTitle,
-  goodMorningText,
-  goodMorningDate,
-  gmYear,
-  superBowl,
-  superBowlDate,
-  superBowlTitle,
-  superBowlText,
-  caffeinated,
-  caffeinatedTitle,
-  caffeinatedText,
-  caffeinatedDate,
-  caffeinatedYear,
-  historic,
-  historicDate,
-  historicTitle,
-  historicText,
+  milestone,
+  milestoneYear,
+  milestoneImg,
+  milestoneContent,
+  milestoneTitle,
+  milestoneText,
   timelineResp,
+  apply,
 } from "../styles/About.module.css";
 
 const About = () => {
@@ -129,112 +113,79 @@ const About = () => {
         <img src="images/flash2.png" alt="red flash" className={flash2} />
       </Container>
       <Container className={timeline}>
-        <Box className={creation}>
-          <Typography className={creationYear}>2012</Typography>
-          <img className={creationImg} src="images/2012.png" alt="bottle" />
-        </Box>
-        <Box
-          style={{
-            maxWidth: "50%",
-            marginRight: 25,
-            marginBottom: 50,
-          }}
-        >
-          <Typography className={creationTitle}>THE CREATION</Typography>
-          <Typography className={creationText} variant="body1">
-            Mike Brown brings his idea for Death Wish Coffee to life, creating the recipe + roasting process.
-          </Typography>
-        </Box>
-        <Box className={goodMorning}>
-          <Typography className={goodMorningTitle}>GOOD MORNING AMERICA</Typography>
-          <Typography className={goodMorningText} variant="body1">
-            "Good Morning America" airs a segment on Death Wish Coffee and introduces us to thousands of people
-          </Typography>
-        </Box>
-        <Box className={goodMorningDate}>
-          <img
-            src="images/2013.png"
-            alt="GMA"
-            style={{
-              height: 180,
-              marginRight: 20,
-            }}
-          />
-          <Typography className={gmYear}>2013</Typography>
-        </Box>
-        <Box className={superBowl}>
-          <Typography className={superBowlDate}>2016</Typography>
-          <img
-            src="images/2016.png"
-            alt="bean"
-            style={{
-              height: 180,
-            }}
-          />
-        </Box>
-        <Box
-          style={{
-            maxWidth: "50%",
-            marginRight: "auto",
-            marginBottom: 50,
-          }}
-        >
-          <Typography className={superBowlTitle}>SUPER BOWL 50 AD AIRS</Typography>
-          <Typography className={superBowlText} variant="body1">
-            We become the smallest company to run a commercial during Super Bowl 50, exposing 167 million viewers
-            to Death Wish Coffee.
-          </Typography>
-        </Box>
-        <Box className={caffeinated}>
-          <Typography className={caffeinatedTitle}>CAFFEINATED THE UNIVERSE</Typography>
-          <Typography className={caffeinatedText} variant="body1">
-            With the help of NASA Food Labs, Death Wish Coffee developed an instant freeze-dried blend of its
-            coffee to fuel the astronauts on the International Space Station.
-          </Typography>
-        </Box>
-        <Box className={caffeinatedDate}>
-          <img
-            src="images/2018.png"
-            alt="rocket"
-            style={{
-              height: 180,
-              marginRight: 20,
-            }}
-          />
-          <Typography className={caffeinatedYear}>2018</Typography>
-        </Box>
-        <Box className={historic}>
-          <Typography className={historicDate}>2020</Typography>
-          <img
-            src="images/2020.png"
-            alt="house"
-            style={{
-              height: 180,
-            }}
-          />
-        </Box>
-        <Box
-          style={{
-            maxWidth: "50%",
-            marginRight: "auto",
-            marginBottom: 50,
-          }}
-        >
-          <Typography className={historicTitle}>HISTORIC HOMECOMINGS</Typography>
-          <Typography className={historicText} variant="body1">
-            Death Wish Coffee headquarters moves to historic building from 1889 in Saratoga Springs, NY-the
-            location of our original coffee shop.
-          </Typography>
-        </Box>
+        <div className={milestone}>
+          <div className={milestoneYear}>
+            <span>2012</span>
+            <img className={milestoneImg} src="images/2012.png" alt="bottle" />
+          </div>
+          <div className={milestoneContent}>
+            <Typography className={milestoneTitle}>THE CREATION</Typography>
+            <p className={milestoneText}>
+              Mike Brown brings his idea for Death Wish Coffee to life, creating the recipe + roasting process.
+            </p>
+          </div>
+        </div>
+
+        <div className={milestone}>
+          <div className={milestoneContent}>
+            <Typography className={milestoneTitle}>GOOD MORNING AMERICA</Typography>
+            <p className={milestoneText} variant="body1">
+              "Good Morning America" airs a segment on Death Wish Coffee and introduces us to thousands of people
+            </p>
+          </div>
+          <div className={milestoneYear}>
+            <img src="images/2013.png" alt="GMA" />
+            <span>2013</span>
+          </div>
+        </div>
+
+        <div className={milestone}>
+          <div className={milestoneYear}>
+            <span>2016</span>
+            <img src="images/2016.png" alt="bean" />
+          </div>
+          <div className={milestoneContent}>
+            <Typography className={milestoneTitle}>SUPER BOWL 50 AD AIRS</Typography>
+            <p className={milestoneText}>
+              We become the smallest company to run a commercial during Super Bowl 50, exposing 167 million
+              viewers to Death Wish Coffee.
+            </p>
+          </div>
+        </div>
+
+        <div className={milestone}>
+          <div className={milestoneContent}>
+            <Typography className={milestoneTitle}>CAFFEINATED THE UNIVERSE</Typography>
+            <p className={milestoneText}>
+              With the help of NASA Food Labs, Death Wish Coffee developed an instant freeze-dried blend of its
+              coffee to fuel the astronauts on the International Space Station.
+            </p>
+          </div>
+          <div className={milestoneYear}>
+            <img src="images/2018.png" alt="rocket" />
+            <span>2018</span>
+          </div>
+        </div>
+
+        <div className={milestone}>
+          <div className={milestoneYear}>
+            <span> 2020</span>
+            <img src="images/2020.png" alt="house" />
+          </div>
+          <div className={milestoneContent}>
+            <Typography className={milestoneTitle}>HISTORIC HOMECOMINGS</Typography>
+            <p className={milestoneText}>
+              Death Wish Coffee headquarters moves to historic building from 1889 in Saratoga Springs, NY-the
+              location of our original coffee shop.
+            </p>
+          </div>
+        </div>
       </Container>
       <Container className={timelineResp}>
         <Box
           style={{
-            height: 150,
             display: "flex",
             flexDirection: "column",
-            marginBottom: 120,
-            marginTop: 50,
           }}
         >
           <Typography
@@ -247,15 +198,7 @@ const About = () => {
           >
             2012
           </Typography>
-          <img
-            src="images/2012.png"
-            alt="2012"
-            style={{
-              height: 136,
-              width: 200,
-              marginLeft: 110,
-            }}
-          />
+          <img src="images/2012.png" alt="2012" />
           <Typography
             style={{
               color: "red",
@@ -272,7 +215,7 @@ const About = () => {
             variant="body1"
             style={{
               color: "white",
-              fontSize: 14,
+              fontSize: 16,
               fontWeight: "lighter",
               fontFamily: "FenomenSans-Book",
             }}
@@ -283,11 +226,8 @@ const About = () => {
         </Box>
         <Box
           style={{
-            height: 150,
             display: "flex",
             flexDirection: "column",
-            marginBottom: 120,
-            marginTop: 50,
           }}
         >
           <Typography
@@ -300,15 +240,7 @@ const About = () => {
           >
             2013
           </Typography>
-          <img
-            src="images/2013.png"
-            alt="GMA"
-            style={{
-              height: 136,
-              width: 200,
-              marginLeft: 60,
-            }}
-          />
+          <img src="images/2013.png" alt="GMA" />
           <Typography
             style={{
               color: "red",
@@ -325,7 +257,7 @@ const About = () => {
             variant="body1"
             style={{
               color: "white",
-              fontSize: 14,
+              fontSize: 16,
               fontWeight: "lighter",
               fontFamily: "FenomenSans-Book",
             }}
@@ -336,11 +268,8 @@ const About = () => {
         </Box>
         <Box
           style={{
-            height: 150,
             display: "flex",
             flexDirection: "column",
-            marginBottom: 120,
-            marginTop: 50,
           }}
         >
           <Typography
@@ -353,15 +282,7 @@ const About = () => {
           >
             2016
           </Typography>
-          <img
-            src="images/2016.png"
-            alt="bean"
-            style={{
-              height: 136,
-              width: 200,
-              marginLeft: 110,
-            }}
-          />
+          <img src="images/2016.png" alt="bean" />
           <Typography
             style={{
               color: "red",
@@ -378,7 +299,7 @@ const About = () => {
             variant="body1"
             style={{
               color: "white",
-              fontSize: 14,
+              fontSize: 16,
               fontWeight: "lighter",
               fontFamily: "FenomenSans-Book",
             }}
@@ -390,11 +311,8 @@ const About = () => {
         </Box>
         <Box
           style={{
-            height: 150,
             display: "flex",
             flexDirection: "column",
-            marginBottom: 120,
-            marginTop: 50,
           }}
         >
           <Typography
@@ -407,15 +325,7 @@ const About = () => {
           >
             2018
           </Typography>
-          <img
-            src="images/2018.png"
-            alt="rocket"
-            style={{
-              height: 136,
-              width: 200,
-              marginLeft: 60,
-            }}
-          />
+          <img src="images/2018.png" alt="rocket" />
           <Typography
             style={{
               color: "red",
@@ -432,7 +342,7 @@ const About = () => {
             variant="body1"
             style={{
               color: "white",
-              fontSize: 14,
+              fontSize: 16,
               fontWeight: "lighter",
               fontFamily: "FenomenSans-Book",
             }}
@@ -444,11 +354,8 @@ const About = () => {
         </Box>
         <Box
           style={{
-            height: 150,
             display: "flex",
             flexDirection: "column",
-            marginBottom: 120,
-            marginTop: 50,
           }}
         >
           <Typography
@@ -461,15 +368,7 @@ const About = () => {
           >
             2020
           </Typography>
-          <img
-            src="images/2020.png"
-            alt="GMA"
-            style={{
-              height: 136,
-              width: 200,
-              marginLeft: 120,
-            }}
-          />
+          <img src="images/2020.png" alt="GMA" />
           <Typography
             style={{
               color: "red",
@@ -486,7 +385,7 @@ const About = () => {
             variant="body1"
             style={{
               color: "white",
-              fontSize: 14,
+              fontSize: 16,
               fontWeight: "lighter",
               fontFamily: "FenomenSans-Book",
             }}
@@ -498,16 +397,13 @@ const About = () => {
         </Box>
       </Container>
       <Container
-        className="apply"
+        className={apply}
         style={{
-          maxWidth: 990,
-          maxHeight: 500,
+          maxWidth: "97%",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          paddingTop: 172,
-          paddingBottom: 172,
         }}
       >
         <Typography

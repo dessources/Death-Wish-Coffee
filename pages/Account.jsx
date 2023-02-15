@@ -5,8 +5,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import VerticalTabs from "../components/TabsAccount";
 import { wrapper, TabInfo, container } from "../styles/Account.module.css";
-import Link from "next/link";
-import { useState } from "react";
+import CreateAccount from '../pages/CreateAccount';
 
 const Account = () => {
   const { data: session } = useSession();
@@ -36,7 +35,7 @@ function User({ session, handleSignOut }) {
             marginTop: "175px",
           }}
         >
-          HEY, {session.user.name}
+           Hey, {session.user.name ? `${session.user.name}` : `Coffee Lover`}
         </Typography>
         <div className={TabInfo}>
           <VerticalTabs />

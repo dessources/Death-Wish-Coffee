@@ -1,7 +1,6 @@
 import React from "react";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
+
+import Link from "next/link";
 import { home, textSubnavbar, textSmallscreen, rebellious } from "../styles/SubNavbar.module.css";
 import Link from "next/link";
 
@@ -30,7 +29,9 @@ const SubNavbar = () => {
           Roundhouse your bad habits and start the new year fresh with an all-new blend ready to fuel you
           forward. Available in Ground, Whole Bean and Death Cups for a limited time only.
         </p>
-        <button>SHOP</button>
+        <button>
+          <Link href="/Shop">SHOP</Link>
+        </button>
       </div>
 
       <div className={rebellious}>

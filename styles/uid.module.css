@@ -68,6 +68,7 @@
   font-weight: bold;
   font-size: 22px;
   font-family: "FenomenSans";
+  color: white !important;
 }
 
 .desciptionTitleDetailsProduct {
@@ -90,6 +91,7 @@
 }
 .descriptions {
   width: 80%;
+  color: white !important;
 }
 .stylesDetailsProduct {
   margin-top: 10px;
@@ -120,6 +122,11 @@
   margin-right: 10px;
 }
 
+.size label:hover,
+.style label:hover {
+  color: white;
+}
+
 .btnStyles:focus {
   background-color: rgb(52, 52, 52);
   color: white;
@@ -144,6 +151,7 @@
 .reviews {
   line-height: 24px;
   cursor: pointer;
+  color: white !important;
 }
 
 .reviews span {
@@ -232,6 +240,7 @@
   .titleSize {
     text-align: start;
     margin: 25px;
+    color: white;
   }
 }
 
