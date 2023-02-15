@@ -1,8 +1,7 @@
 import React from "react";
-
 import Link from "next/link";
 import { home, textSubnavbar, textSmallscreen, rebellious } from "../styles/SubNavbar.module.css";
-import Link from "next/link";
+
 
 const SubNavbar = () => {
   return (
