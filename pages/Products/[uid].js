@@ -34,7 +34,7 @@ import { getCoffeesUid, getOneCoffee } from "../../utils/queries.js";
 
 export const getStaticPaths = async () => {
   const data = await getCoffeesUid();
-  console.log(data);
+
   const paths = data?.coffees?.map((coffee) => {
     return {
       params: { uid: coffee.uid },
@@ -117,8 +117,8 @@ const Detail = ({ coffee }) => {
         <div className={imagesDetailsProduct}>
           <Slider {...settings}>
             <img src={coffee?.mediumImage} alt="" />
-            {coffee?.images?.map((image) => (
-              <img src={image} alt="" />
+            {coffee?.images?.map((image, i) => (
+              <img src={image} alt="" key={i} />
             ))}
           </Slider>
         </div>
