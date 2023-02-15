@@ -96,11 +96,29 @@ export const getSpecificCoffees = (filters) =>
   );
 
 export const getSubscriptionImages = () =>
-  connectHygraph().request(gql`
+  hygraph.request(gql`
     {
       assets(where: { fileName_contains: "_", fileName_not_contains: "-" }, first: 50) {
         fileName
         url
+      }
+    }
+  `);
+
+export const getAllLocations = () =>
+  hygraph.request(gql`
+    {
+      storeLocations(first: 99) {
+        address
+        city
+        coordinates {
+          latitude
+          longitude
+        }
+        name
+        phoneNumber
+        zipCode
+        id
       }
     }
   `);

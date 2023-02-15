@@ -20,7 +20,8 @@
 .manageResp,
 .accessResp,
 .savingsResp,
-.saveResp {
+.saveResp,
+.reviewsResp {
   display: none;
 }
 

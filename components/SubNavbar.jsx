@@ -1,7 +1,5 @@
 import React from "react";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
+
 import Link from "next/link";
 import { home, textSubnavbar, textSmallscreen, rebellious } from "../styles/SubNavbar.module.css";
 
@@ -19,7 +17,9 @@ const SubNavbar = () => {
             forward. Available in Ground, Whole Bean and Death Cups for a limited time only.
           </p>
 
-          <button>SHOP</button>
+          <Link href={"/Shop"}>
+            <button>SHOP</button>
+          </Link>
         </div>
       </div>
 

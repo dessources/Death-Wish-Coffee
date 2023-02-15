@@ -752,7 +752,7 @@ const Subscription = () => {
           </Card>
         </Box>
       </Container>
-      <Footer id="subscriptionFooter" />
+      <Footer />
     </>
   );
 };

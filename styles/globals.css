@@ -35,6 +35,13 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "Revansregular";
+  src: url("../public/fonts/Revans-Regular.woff2") format("woff2");
+
+  font-style: normal;
+  font-display: swap;
+}
 * {
   box-sizing: border-box;
 }
@@ -114,8 +121,12 @@ a {
   border-color: #e63d2f;
 }
 
-#subscriptionFooter #newsletter {
+#newsletter {
   display: none;
+}
+
+#HomeFooter #newsletter {
+  display: block !important;
 }
 @media screen and (max-width: 425px) {
   svg.slick-next.slick-arrow,
