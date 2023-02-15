@@ -9,6 +9,12 @@ First, install the required dependencies:
 npm install
 ```
 
+or:
+
+```
+yarn install
+```
+
 Then start the app with:
 
 ```

@@ -8,7 +8,9 @@ const userSchema = new Schema({
     address: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Address'
-    }
+    },
+    passwordResetToken: String, // champ pour stocker le token de réinitialisation du mot de passe
+    passwordResetExpires: Date, // champ pour stocker l'expiration du token de réinitialisation du mot de passe
 });
 
 const addressSchema = new Schema({
