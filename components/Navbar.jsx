@@ -148,7 +148,7 @@ const Navbar = () => {
                   </Link>
                 </Typography>
 
-                <Box sx={{ display: "flex", alignItems: "center" }}>
+                <Box sx={{ display: "flex", alignItems: "center", color: "white" }}>
                   {session ? (
                    <Link href={"/Account"}>
                    <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>

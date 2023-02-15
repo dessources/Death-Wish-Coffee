@@ -82,8 +82,10 @@
   }
   .rightIcons {
     text-align: center;
+    
   }
   .rightIcons button {
     margin: 0;
+    
   }
 }
