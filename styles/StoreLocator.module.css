@@ -1,16 +1,61 @@
 .mainSection {
   margin-top: 12rem;
-  display: flex;
-  width: 100%;
-  height: 55vh;
+}
+.mainSection > h2 {
+  text-align: center;
+  font-family: "Revansregular";
+  font-size: 2.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.mainSection > h2 strong {
+  font-family: Revans;
 }
 
+.storeLocatorWidget {
+  grid-template-rows: auto 65vh;
+  grid-template-columns: 30% 70%;
+  display: grid;
+  width: 100%;
+  height: 65vh;
+  min-height: 55vh;
+}
+
+.searchForm {
+  margin: 1rem auto;
+  text-align: center;
+  grid-area: 1/1/1/3;
+  justify-self: center;
+}
+
+.searchForm button {
+  background-color: #fff;
+  color: #000;
+  font-family: FenomenSans;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.8rem;
+  border: none;
+  padding: 0 0.9rem;
+  height: 3.125rem;
+  cursor: pointer;
+}
+.searchForm input {
+  height: 3.125rem;
+  padding: 0 0.9rem;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  font-family: FenomenSans-Book;
+  font-size: 1rem;
+  outline: none;
+}
 .list {
-  flex: 1 1 50%;
+  grid-area: 2/1;
 }
 
 .mapContainer {
-  flex: 1 1 50%;
+  grid-area: 2/2;
   height: 100%;
 }
 

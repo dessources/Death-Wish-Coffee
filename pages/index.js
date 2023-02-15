@@ -14,7 +14,7 @@ const index = () => {
       <FeaturedProducts />
       <HomepageVideos />
       <CoffeeCulture />
-      <Footer id="HommeFooter" />
+      <Footer id="HomeFooter" />
     </>
   );
 };

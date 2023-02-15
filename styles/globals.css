@@ -35,6 +35,13 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "Revansregular";
+  src: url("../public/fonts/Revans-Regular.woff2") format("woff2");
+
+  font-style: normal;
+  font-display: swap;
+}
 * {
   box-sizing: border-box;
 }
@@ -112,6 +119,10 @@ a {
 }
 #coffeeCulture .slick-active:hover {
   border-color: #e63d2f;
+}
+
+#newsletter {
+  display: none;
 }
 
 #HomeFooter #newsletter {
