@@ -97,9 +97,9 @@ const HomepageVideos = () => {
               Prefer the hands-on experience over online shopping? Find Death Wish Coffee in a grocery store near
               you.
             </p>
-            <button className={sectionButton}>
-              <Link href="/StoreLocator">Find Store</Link>
-            </button>
+            <Link href="/StoreLocator">
+              <button className={sectionButton}>Find Store</button>
+            </Link>
           </div>
         </div>
         {/* <div>

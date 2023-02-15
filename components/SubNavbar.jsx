@@ -17,7 +17,9 @@ const SubNavbar = () => {
             forward. Available in Ground, Whole Bean and Death Cups for a limited time only.
           </p>
 
-          <button>SHOP</button>
+          <Link href={"/Shop"}>
+            <button>SHOP</button>
+          </Link>
         </div>
       </div>
 
