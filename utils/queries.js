@@ -104,3 +104,21 @@ export const getSubscriptionImages = () =>
       }
     }
   `);
+
+export const getAllLocations = () =>
+  connectHygraph().request(gql`
+    {
+      storeLocations(first: 99) {
+        address
+        city
+        coordinates {
+          latitude
+          longitude
+        }
+        name
+        phoneNumber
+        zipCode
+        id
+      }
+    }
+  `);
