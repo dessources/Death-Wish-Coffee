@@ -96,7 +96,7 @@ export const getSpecificCoffees = (filters) =>
   );
 
 export const getSubscriptionImages = () =>
-  connectHygraph().request(gql`
+  hygraph.request(gql`
     {
       assets(where: { fileName_contains: "_", fileName_not_contains: "-" }, first: 50) {
         fileName
@@ -106,7 +106,7 @@ export const getSubscriptionImages = () =>
   `);
 
 export const getAllLocations = () =>
-  connectHygraph().request(gql`
+  hygraph.request(gql`
     {
       storeLocations(first: 99) {
         address
