@@ -58,7 +58,6 @@ export default function Login() {
 
   return (
     <div>
-    <form style={{backgroundColor: 'black'}} onSubmit={formik.handleSubmit}>
       <Navbar />
       <ThemeProvider theme={theme}>
         <Typography
@@ -77,6 +76,7 @@ export default function Login() {
           LOGIN
         </Typography>
         <Container component="main" maxWidth="xs">
+        <form style={{backgroundColor: 'black'}} onSubmit={formik.handleSubmit}>
           <CssBaseline />
 
           <TextField
@@ -155,10 +155,10 @@ export default function Login() {
               </Link>
             </Grid>
           </Grid>
+          </form>
         </Container>
       </ThemeProvider>
       <Footer/>
-    </form>
     </div>
   );
 }

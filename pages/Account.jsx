@@ -5,7 +5,6 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import VerticalTabs from "../components/TabsAccount";
 import { wrapper, TabInfo, container } from "../styles/Account.module.css";
-import CreateAccount from '../pages/CreateAccount';
 
 const Account = () => {
   const { data: session } = useSession();
@@ -33,6 +32,7 @@ function User({ session, handleSignOut }) {
             fontWeight: "bold",
             textAlign: "center",
             marginTop: "175px",
+            fontFamily: 'Revans,sans-serif',
           }}
         >
            Hey, {session.user.name ? `${session.user.name}` : `Coffee Lover`}
