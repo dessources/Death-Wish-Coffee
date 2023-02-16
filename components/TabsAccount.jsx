@@ -154,7 +154,7 @@ export default function VerticalTabs() {
             color: "black",
             fontWeight: "bold",
             backgroundColor: "#dedbd9",
-            textTransform: 'capitalize'
+            textTransform: 'capitalize',
           }}
         />
         <Tab
