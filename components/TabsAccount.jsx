@@ -58,6 +58,16 @@ const theme = createTheme();
 
 export default function VerticalTabs() {
 
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down('sm'));
+  const style = matches ? {flexDirection: 'row',
+                          display: 'flex',
+                          justifyContent: 'center',
+                                                 
+                          } : {minWidth: "240px",
+                          width: "300px"}
+
+
   const [value, setValue] = React.useState(0);
 
   const handleChangeTabs = (event, newValue) => {
@@ -104,7 +114,7 @@ export default function VerticalTabs() {
     });
 
     try {
-      const response = await axios.post(`${process.env.NEXT_AUTH_URL}/api/form`)
+      const response = await axios.post(`${process.env.NEXT_AUTH_URL/api/form}`)
       console.log(response.data);
     } catch (error) {
       console.error(error);
@@ -136,6 +146,8 @@ export default function VerticalTabs() {
       }}
     >
       <Tabs
+        orientation={matches ? 'horizontal' : 'vertical'}
+        style={style}
         variant="fullWidth"
         value={value}
         onChange={handleChangeTabs}
@@ -154,7 +166,7 @@ export default function VerticalTabs() {
             color: "black",
             fontWeight: "bold",
             backgroundColor: "#dedbd9",
-            textTransform: 'capitalize',
+            textTransform: 'capitalize'
           }}
         />
         <Tab
