@@ -25,12 +25,13 @@ export default async function handler(req,res){
         // send password reset email with the token
         const msg = {
             to: email,
-            from: "albandev12@gmail.com",
+            from: process.env.EMAIL,
             subject: 'Password Reset Request',
-            text: `Please use the following link to reset your password: http://localhost:3000/email-password?token=${passwordResetToken}`
+            text: `Please use the following link to reset your password: ${process.env.NEXT_AUTH_URL}/reset-password/?token=${passwordResetToken}&email=${email}`
         };
 
         sgMail.send(msg)
+        
             .then(() => {
                 console.log('Password reset email sent');
                 return res.status(200).json({message: "Password reset email sent"})

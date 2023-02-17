@@ -12,10 +12,26 @@ import Checkbox from "@mui/material/Checkbox";
 import { useFormik } from "formik";
 import { registerValidate } from "../lib/validate.js";
 import {useRouter} from 'next/router';
+import Footer from "../components/Footer";
+import { useMediaQuery } from "@mui/material";
 
 const theme = createTheme();
 
 export default function CreateAccount() {
+
+  const onMobile = useMediaQuery("(max-width:768px)");
+
+  const BtnCreate = {
+    background: '#898e8e',
+    color: 'black',
+    fontWeight: 'bold',
+    height: '50px',
+    marginTop: '20px',
+    marginBottom: '15px',
+    "&:hover": {
+      backgroundColor: '#e12727',
+    }
+  }
 
   const router = useRouter()
 
@@ -44,7 +60,8 @@ export default function CreateAccount() {
   }
 
   return (
-    <form style={{backgroundColor: 'black'}} onSubmit={formik.handleSubmit}>
+    <div>
+    
       <Navbar />
 
       <ThemeProvider theme={theme}>
@@ -55,19 +72,26 @@ export default function CreateAccount() {
             color: "red",
             fontWeight: "bold",
             textAlign: "center",
-            margin: "50px",
-            marginTop: '150px',
-            fontFamily: "'FenomenSans-Book'"
+            marginBottom: '20px',
+            marginTop: '200px',
+            fontFamily: 'Revans,sans-serif',
+            fontSize: onMobile ? "50px" : "90px",
           }}
         >
           CREATE ACCOUNT
         </Typography>
         <Container component="main" maxWidth="xs">
+        <form style={{
+          backgroundColor: 'black',
+          justifyContent: 'center',
+          textAlign: 'center'
+          }} onSubmit={formik.handleSubmit}>
           <CssBaseline />
 
           <TextField
             style={{
               backgroundColor: "white",
+              border: '2px solid #898e8e',
             }}
             margin="normal"
             required
@@ -87,6 +111,7 @@ export default function CreateAccount() {
           <TextField
             style={{
               backgroundColor: "white",
+              border: '2px solid #898e8e',
             }}
             margin="normal"
             required
@@ -143,6 +168,10 @@ export default function CreateAccount() {
             <></>
           )}
           <FormControlLabel
+          style={{
+            textAlign: 'center',
+            fontSize: '5px'
+          }}
             control={
               <Checkbox
                 style={{
@@ -158,7 +187,7 @@ export default function CreateAccount() {
             type="submit"
             fullWidth
             variant="contained"
-            sx={{ mt: 3, mb: 2 }}
+            sx={BtnCreate}
           >
             CREATE
           </Button>
@@ -167,13 +196,17 @@ export default function CreateAccount() {
             variant="body1"
             style={{
               color: "white",
-              paddingLeft: "20px",
+              fontSize: onMobile ? "14px" : "17px",
+              justifyContent: 'center'
             }}
           >
             Already have an account ? Click here to log in.
           </Link>
+          </form>
         </Container>
       </ThemeProvider>
-    </form>
+      <Footer/>
+    
+    </div>
   );
 }

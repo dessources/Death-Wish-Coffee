@@ -12,10 +12,23 @@ import { signIn } from "next-auth/react";
 import { useFormik } from "formik";
 import login_validate from "../lib/validate.js";
 import { useRouter } from 'next/router';
+import Footer from "../components/Footer";
 
 const theme = createTheme();
 
 export default function Login() {
+
+  const BtnConnexion = {
+    background: '#898e8e',
+    color: 'black',
+    fontWeight: 'bold',
+    height: '50px',
+    marginTop: '20px',
+    marginBottom: '15px',
+    "&:hover": {
+      backgroundColor: '#e12727',
+    }
+  }
 
   const router = useRouter()
 
@@ -44,7 +57,7 @@ export default function Login() {
   }
 
   return (
-    <form style={{backgroundColor: 'black'}} onSubmit={formik.handleSubmit}>
+    <div>
       <Navbar />
       <ThemeProvider theme={theme}>
         <Typography
@@ -54,19 +67,22 @@ export default function Login() {
             color: "red",
             fontWeight: "bold",
             textAlign: "center",
-            marginBottom: "50px",
-            marginTop: "150px",
-            fontFamily: 'FenomenSans-Book'
+            marginBottom: "15px",
+            marginTop: "200px",
+            fontFamily: 'Revans,sans-serif',
+            fontSize: '90px',
           }}
         >
           LOGIN
         </Typography>
         <Container component="main" maxWidth="xs">
+        <form style={{backgroundColor: 'black'}} onSubmit={formik.handleSubmit}>
           <CssBaseline />
 
           <TextField
             style={{
               backgroundColor: "white",
+              border: '2px solid #898e8e',
             }}
             margin="normal"
             required
@@ -85,7 +101,10 @@ export default function Login() {
             <></>
           )}
           <TextField
-            style={{ backgroundColor: "white" }}
+            style={{ 
+              backgroundColor: "white",
+              border: '2px solid #898e8e',
+            }}
             margin="normal"
             required
             fullWidth
@@ -105,7 +124,7 @@ export default function Login() {
             type="submit"
             fullWidth
             variant="contained"
-            sx={{ mt: 3, mb: 2 }}
+            sx={BtnConnexion}
           >
             Login
           </Button>
@@ -115,7 +134,7 @@ export default function Login() {
             type="submit"
             fullWidth
             variant="contained"
-            sx={{ mt: 3, mb: 2 }}
+            sx={BtnConnexion}
           >
             Sign In with Google
           </Button>
@@ -136,8 +155,10 @@ export default function Login() {
               </Link>
             </Grid>
           </Grid>
+          </form>
         </Container>
       </ThemeProvider>
-    </form>
+      <Footer/>
+    </div>
   );
 }
