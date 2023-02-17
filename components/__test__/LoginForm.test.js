@@ -2,7 +2,7 @@ import React from "react";
 import LoginForm from "../LoginForm"
 import {render, screen, fireEvent} from '@testing-library/react'
 import '@testing-library/jest-dom';
-// import { useRouter } from "next/router";
+//import { useRouter } from "next/router";
 
 
 //jest.mock('next/router')
@@ -46,7 +46,7 @@ describe('LoginForm', () => {
     })
 
     test('should render a login button', () => {
-        //useRouter.mockReturnValueOnce({ query: {} });
+        //wuseRouter.mockReturnValueOnce({ query: {} });
         render(<LoginForm />)
         const buttonElement = screen.getByTestId('loginButton')
         expect(buttonElement).toBeInTheDocument()

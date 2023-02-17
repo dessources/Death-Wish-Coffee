@@ -30,7 +30,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { showCart } from "../redux/cart.slice";
 
-const Navbar = (props) => {
+const Navbar = () => {
   const { data: session } = useSession();
   const dispatch = useDispatch();
 
@@ -64,7 +64,7 @@ const Navbar = (props) => {
                     textAlign: "right",
                   }}
                 >
-                  <Link href={"/Subscription"} style={linkStyles} data-testid="subscription">
+                  <Link href={"/Subscription"} style={linkStyles} >
                     SUBSCRIPTION
                   </Link>
                 </Typography>
@@ -100,7 +100,7 @@ const Navbar = (props) => {
                   component="div"
                   style={{
                     fontWeight: "bold",
-                    
+
                   }}
                 >
                   <Link href={"/StoreLocator"} style={linkStyles}>
@@ -111,7 +111,7 @@ const Navbar = (props) => {
                 <Link href={"/"} style={linkStyles}>
                   <Image
                     src={logo}
-                    alt=""
+                    alt="logo"
                     style={{
                       height: "130px",
                       width: "130px",
@@ -150,24 +150,24 @@ const Navbar = (props) => {
 
                 <Box sx={{ display: "flex", alignItems: "center", color: "white" }}>
                   {session ? (
-                   <Link href={"/Account"}>
-                   <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-                     <PersonIcon />
-                   </IconButton>
-                 </Link>
-                  ):(
+                    <Link href={"/Account"}>
+                      <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+                        <PersonIcon />
+                      </IconButton>
+                    </Link>
+                  ) : (
                     <Link href={"/Login"}>
-                    <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-                      <LoginIcon />
-                    </IconButton>
-                  </Link>
+                      <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+                        <LoginIcon />
+                      </IconButton>
+                    </Link>
                   )}
-                  
+
 
                   {/* <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                     <SearchIcon />
                   </IconButton> */}
-                  <ShoppingCartIcon id="shoppingCartIcon" onClick={handleOpen} />
+                  <ShoppingCartIcon data-testid="shoppingCart" id="shoppingCartIcon" onClick={handleOpen} />
 
                   <span
                     style={{
@@ -320,7 +320,10 @@ const Navbar = (props) => {
           </Box>
         </div>
       </nav>
-      <Cart />
+      <div data-testid="cart">
+        <Cart />
+      </div>
+
     </>
   );
 };
