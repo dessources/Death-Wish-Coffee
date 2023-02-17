@@ -30,7 +30,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { showCart } from "../redux/cart.slice";
 
-const Navbar = () => {
+const Navbar = (props) => {
   const { data: session } = useSession();
   const dispatch = useDispatch();
 
@@ -64,7 +64,7 @@ const Navbar = () => {
                     textAlign: "right",
                   }}
                 >
-                  <Link href={"/Subscription"} style={linkStyles}>
+                  <Link href={"/Subscription"} style={linkStyles} data-testid="subscription">
                     SUBSCRIPTION
                   </Link>
                 </Typography>

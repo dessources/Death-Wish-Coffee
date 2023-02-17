@@ -1,6 +1,12 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import SubNavbar from '../SubNavbar';
+import { useRouter } from 'next/router';
+
+/* jest.mock('next/router', () => ({
+    useRouter: jest.fn(),
+  })) */
+
 
 
 describe("SubNavbar", () => {
@@ -21,6 +27,15 @@ describe("SubNavbar", () => {
         const buttonElement = screen.getByTestId('subNavButton')
         expect(buttonElement).toBeInTheDocument()
     })
+
+    /* test('redirects to /Shop when clicked', () => {
+        const mockRouter = { push: jest.fn() }
+        useRouter.mockReturnValue(mockRouter)
+         render(<SubNavbar />)
+        const buttonElement = screen.getByTestId('subNavButton')
+        fireEvent.click(buttonElement)
+        expect(mockRouter.push).toHaveBeenCalledWith('/Shop')
+      }) */
 
     test('should render an h5 title', () => {
         render(<SubNavbar />);
