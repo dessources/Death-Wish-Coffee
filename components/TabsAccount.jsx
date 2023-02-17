@@ -114,7 +114,7 @@ export default function VerticalTabs() {
     });
 
     try {
-      const response = await axios.post('http://localhost:3000/api/form', address);
+      const response = await axios.post(`${process.env.NEXT_AUTH_URL/api/form}`)
       console.log(response.data);
     } catch (error) {
       console.error(error);
