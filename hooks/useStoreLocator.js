@@ -89,7 +89,7 @@ const useStoreLocator = (mapApiReady) => {
     });
     setSearchResults(results);
   };
-  return { searchInput, setSearchInput, handleSearch, searchResults, showMap };
+  return { searchInput, setSearchInput, handleSearch, searchResults, locations, showMap };
 };
 
 export default useStoreLocator;

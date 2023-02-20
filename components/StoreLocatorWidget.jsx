@@ -8,7 +8,8 @@ import { storeLocatorWidget, mapContainer, mapClass, searchForm, list } from "..
 export default function StoreLocatorWidget() {
   const [mapApiReady, setMapApiReady] = React.useState("");
 
-  const { searchInput, setSearchInput, handleSearch, searchResults, showMap } = useStoreLocator(mapApiReady);
+  const { searchInput, setSearchInput, handleSearch, searchResults, locations, showMap } =
+    useStoreLocator(mapApiReady);
   const mapRef = React.useRef(null);
   return (
     <div className={storeLocatorWidget}>
@@ -19,7 +20,7 @@ export default function StoreLocatorWidget() {
         <input type="text" value={searchInput} onChange={(e) => setSearchInput(e.target.value)} />
         <button onClick={handleSearch}>Search</button>
       </form>
-      <StoreInfo searchResults={searchResults} className={showMap ? list : "that"} />
+      <StoreInfo locations={locations} className={showMap ? list : "that"} />
 
       <div className={mapContainer}>
         <div id={"map"} className={showMap ? mapClass : "no"} ref={mapRef} />
