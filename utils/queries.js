@@ -125,3 +125,24 @@ export const getLocationsIn = (area) =>
     `,
     { area }
   );
+
+export const searchLocationsNear = (search) =>
+  hygraph.request(
+    gql`
+      query getLocations($search: String!) {
+        storeLocations(first: 25, where: { _search: $search }) {
+          address
+          city
+          coordinates {
+            latitude
+            longitude
+          }
+          name
+          phoneNumber
+          zipCode
+          id
+        }
+      }
+    `,
+    { search }
+  );
