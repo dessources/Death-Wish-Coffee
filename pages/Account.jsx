@@ -6,6 +6,7 @@ import Box from "@mui/material/Box";
 import VerticalTabs from "../components/TabsAccount";
 import { wrapper, TabInfo, container } from "../styles/Account.module.css";
 import useMediaQuery from '@mui/material/useMediaQuery';
+import Footer from './../components/Footer';
 
 const Account = () => {
   const { data: session } = useSession();
@@ -14,6 +15,7 @@ const Account = () => {
     <>
       <Navbar />
       {session ? User({ session, handleSignOut }) : Guest()}
+      <Footer/>
     </>
   );
 };
