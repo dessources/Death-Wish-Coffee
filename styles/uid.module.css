@@ -235,7 +235,8 @@
 
   .btnAddCart {
     display: block;
-    margin: 25px auto;
+    margin-left: 25px;
+    
   }
   .titleSize {
     text-align: start;

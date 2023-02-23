@@ -5,6 +5,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import VerticalTabs from "../components/TabsAccount";
 import { wrapper, TabInfo, container } from "../styles/Account.module.css";
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 const Account = () => {
   const { data: session } = useSession();
@@ -22,11 +23,12 @@ function Guest() {
 }
 
 function User({ session, handleSignOut }) {
+  const gigaSmallScreen = useMediaQuery("(min-width:350px)");
   return (
     <div className={wrapper}>
       <div className={container}>
         <Typography
-          variant="h1"
+          variant={gigaSmallScreen ? "h1" : "h4"}
           style={{
             color: "red",
             fontWeight: "bold",

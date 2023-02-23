@@ -53,6 +53,7 @@ export default function Login() {
   }
 
   async function handleGoogleSignin() {
+    //signIn("google", { callbackUrl: "http://localhost:3000/Account" });
     signIn("google", { callbackUrl: `${process.env.NEXT_AUTH_URL,"/Account"}` });
   }
 
