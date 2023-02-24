@@ -31,7 +31,7 @@ export default function StoreLocatorWidget() {
           Search <SearchIcon />
         </button>
       </form>
-      <StoreInfo locations={locations} setCenter={setCenter} className={showMap ? list : "that"} />
+      <StoreInfo locations={locations} setCenter={setCenter} className={list} />
 
       <div className={mapContainer}>
         <div id={"map"} className={showMap ? mapClass : "no"} ref={mapRef} />

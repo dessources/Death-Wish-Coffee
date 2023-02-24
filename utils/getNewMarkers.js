@@ -1,5 +1,5 @@
 export default function getNewMarkers(locations, map) {
-  return locations?.map(({ coordinates, name }) => {
+  return locations?.slice(0, 8).map(({ coordinates, name }) => {
     return new window.google.maps.Marker({
       position: {
         lat: coordinates.latitude,

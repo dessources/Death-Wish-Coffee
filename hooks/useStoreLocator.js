@@ -13,13 +13,13 @@ const useStoreLocator = (mapApiReady) => {
   const [center, setCenter] = React.useState(null);
   const [search, setSearch] = React.useState(false);
   const [searchInput, setSearchInput] = React.useState("");
-  const [searchResults, setSearchResults] = React.useState([]);
+  // const [searchResults, setSearchResults] = React.useState([]);
   const showMap = useMediaQuery("(min-width:770px)");
 
   React.useEffect(() => {
     if (!showMap) {
       setMap(null);
-    } else if (mapApiReady && !map) {
+    } else if (mapApiReady) {
       if (navigator.geolocation) {
         if (!center) {
           //if userLocation is not defined
@@ -43,7 +43,6 @@ const useStoreLocator = (mapApiReady) => {
 
   React.useEffect(() => {
     if (map && center) {
-      console.log(center);
       map.setCenter(center);
     }
   }, [center]);
@@ -52,7 +51,9 @@ const useStoreLocator = (mapApiReady) => {
     if (!map || !center) return;
     if (locations?.length === 0) {
       getClosestLocations(center).then((data) => {
-        setLocations(data.storeLocations);
+        console.log("🚀 ~ file: useStoreLocator.js:54 ~ getClosestLocations ~ data:", data);
+
+        setLocations(data);
         setSearch(false);
       });
     }
@@ -60,7 +61,6 @@ const useStoreLocator = (mapApiReady) => {
 
   React.useEffect(() => {
     if (markers?.length > 0) {
-      console.log("we eff");
       // Set the map's center and zoom level based on the search results
       const bounds = new window.google.maps.LatLngBounds();
       markers.forEach((marker) => {
@@ -80,7 +80,7 @@ const useStoreLocator = (mapApiReady) => {
     }
     const newMarkers = getNewMarkers(locations, map);
     setMarkers(newMarkers);
-  }, [locations]);
+  }, [locations, showMap]);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -97,6 +97,9 @@ const useStoreLocator = (mapApiReady) => {
     e.preventDefault();
     if (navigator.geolocation) {
       setLocations([]);
+      //setting the center of the map will automatically trigger
+      // an effect that will get the neighboring store locations
+      // so no need to call setLocations()
       getUserLocationCenterMap(setCenter);
     } else {
       alert(

@@ -9,7 +9,7 @@ function StoreInfo({ locations, className, setCenter }) {
 
   return (
     <div className={className}>
-      {locations.length > 0 ? (
+      {locations?.length > 0 ? (
         <>
           <div className={locationsListHeader}>
             <h4>
