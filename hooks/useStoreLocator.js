@@ -17,16 +17,15 @@ const useStoreLocator = (mapApiReady) => {
   const showMap = useMediaQuery("(min-width:770px)");
 
   React.useEffect(() => {
+    if (!center) {
+      //if userLocation is not defined
+      //we are going to define it and center the map on it
+      getUserLocationCenterMap(setCenter);
+    }
     if (!showMap) {
       setMap(null);
     } else if (mapApiReady) {
       if (navigator.geolocation) {
-        if (!center) {
-          //if userLocation is not defined
-          //we are going to define it and center the map on it
-          getUserLocationCenterMap(setCenter);
-        }
-
         const newMap = initMap({
           zoom: 2,
         });
@@ -48,11 +47,9 @@ const useStoreLocator = (mapApiReady) => {
   }, [center]);
 
   React.useEffect(() => {
-    if (!map || !center) return;
+    if (!map && !center) return;
     if (locations?.length === 0) {
       getClosestLocations(center).then((data) => {
-        console.log("🚀 ~ file: useStoreLocator.js:54 ~ getClosestLocations ~ data:", data);
-
         setLocations(data);
         setSearch(false);
       });
@@ -97,9 +94,6 @@ const useStoreLocator = (mapApiReady) => {
     e.preventDefault();
     if (navigator.geolocation) {
       setLocations([]);
-      //setting the center of the map will automatically trigger
-      // an effect that will get the neighboring store locations
-      // so no need to call setLocations()
       getUserLocationCenterMap(setCenter);
     } else {
       alert(
