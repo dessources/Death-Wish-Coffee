@@ -54,19 +54,11 @@ function a11yProps(index) {
   };
 }
 
-const theme = createTheme();
+
 
 export default function VerticalTabs() {
 
   const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.down('sm'));
-  const style = matches ? {flexDirection: 'row',
-                          display: 'flex',
-                          justifyContent: 'center',
-                                                 
-                          } : {minWidth: "240px",
-                          width: "300px"}
-
 
   const [value, setValue] = React.useState(0);
 
@@ -135,27 +127,34 @@ export default function VerticalTabs() {
     setAddresses(newAddresses);
   };
 
+  const smallScreen = useMediaQuery("(min-width:1050px)");
+
   return (
     <ThemeProvider theme={theme}>
     <Box
       sx={{
         flexGrow: 1,
         bgcolor: "#201e1d",
-        display: "flex",
         color: "white",
+        display: smallScreen ? "flex" : "block",
+        flexDirection: smallScreen ? "row" : "column",
       }}
     >
       <Tabs
-        orientation={matches ? 'horizontal' : 'vertical'}
-        style={style}
-        variant="fullWidth"
+        orientation={smallScreen ? 'vertical' : 'horizontal'}
+        variant="scrollable"
         value={value}
         onChange={handleChangeTabs}
         aria-label="Vertical tabs example"
+        scrollButtons={smallScreen ? 'on' : 'auto'}
         sx={{
         borderRight: 8, borderColor: "divider",
         "& button:focus": {backgroundColor: 'gray!important'},
         "& button:hover": {filter: 'brightness(50%)'},
+        minWidth: smallScreen ? '200px' : '0',
+        marginTop: smallScreen ? '0px' : '50px',
+        marginBottom: smallScreen ? '0' : '25px',
+        marginLeft: smallScreen ? "0" : "20px"
         }}
       >
         <Tab
@@ -166,7 +165,8 @@ export default function VerticalTabs() {
             color: "black",
             fontWeight: "bold",
             backgroundColor: "#dedbd9",
-            textTransform: 'capitalize'
+            textTransform: 'capitalize',
+            width: smallScreen ? 'auto' : '50%',
           }}
         />
         <Tab
@@ -177,7 +177,9 @@ export default function VerticalTabs() {
             color: "black",
             fontWeight: "bold",
             backgroundColor: "#dedbd9",
-            textTransform: 'capitalize'
+            textTransform: 'capitalize',
+            width: smallScreen ? 'auto' : '50%',
+            
           }}
         />
         <Tab
@@ -188,7 +190,8 @@ export default function VerticalTabs() {
             color: "black",
             fontWeight: "bold",
             backgroundColor: "#dedbd9",
-            textTransform: 'capitalize'
+            textTransform: 'capitalize',
+            width: smallScreen ? 'auto' : '50%',
           }}
         />
         <Tab
@@ -200,7 +203,8 @@ export default function VerticalTabs() {
             color: "black",
             fontWeight: "bold",
             backgroundColor: "#dedbd9",
-            textTransform: 'capitalize'
+            textTransform: 'capitalize',
+            width: smallScreen ? 'auto' : '50%',
           }}
         />
         
@@ -645,7 +649,7 @@ export default function VerticalTabs() {
           shortly.
         </p>
         <h3>Have you updated your payment information?</h3>
-        <p>
+        <p>   
           Click the button below and we will send an email your way. You will be
           prompted to update your credit card information.
         </p>
