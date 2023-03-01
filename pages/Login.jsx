@@ -1,3 +1,22 @@
+<<<<<<< HEAD
+import React from "react";
+import Navbar from "../components/Navbar";
+import LoginForm from "../components/LoginForm";
+import Footer from "../components/Footer";
+
+
+
+export default function Login() {
+
+  return (
+    <div>
+      <Navbar />
+      <LoginForm/>
+      <Footer/>
+    </div>
+  );
+}
+=======
 import React from "react";
 import Navbar from "../components/Navbar";
 import Button from "@mui/material/Button";
@@ -163,3 +182,4 @@ export default function Login() {
     </div>
   );
 }
+>>>>>>> d580e6597f0a0afdb26d03ada565f2129be73b70
