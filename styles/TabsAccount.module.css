@@ -129,10 +129,31 @@
 }
 
 @media screen and (max-width: 1200px) {
+    .wrapperForm{
+        background-color: #201e1d;
+    }
     .info{
         display: block;
     }
     .leftSide{
         margin-bottom: 25px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .wrapperForm{
+        width: 330px;
+    }
+}
+
+@media screen and (max-width: 350px){
+    .wrapperForm{
+        width: 200px;
+    }
+    .formFieldButtons{
+        display: block;
+    }
+    .btnSave{
+        margin-bottom: 15px;
     }
 }

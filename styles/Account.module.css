@@ -13,3 +13,31 @@
     width: 100%;
     
 }
+
+@media screen and (max-width: 850px){
+    .wrapper{
+        padding: 0;
+    }
+    .container{
+        margin: 0;
+        width: 100%;
+    }
+    .TabInfo{
+        padding-right: 80px;
+        padding-left: 80px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .wrapper{
+        padding: 0;
+        
+    }
+    .container{
+        margin: 0;
+        width: 100%;
+    }
+    .TabInfo{
+        padding: 15px;
+    }
+}
