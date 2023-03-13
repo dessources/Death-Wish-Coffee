@@ -6,7 +6,7 @@ import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import Footer from "../components/Footer";
-import { runOut } from "../styles/Subscription.module.css";
+
 
 //styles
 import {

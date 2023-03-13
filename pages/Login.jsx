@@ -48,12 +48,12 @@ export default function Login() {
       password:values.password,
       callbackUrl:"/Account"
     })
-    console.log(status)
+  
     if(status.ok)router.push(status.url)
   }
 
   async function handleGoogleSignin() {
-    //signIn("google", { callbackUrl: "http://localhost:3000/Account" });
+    
     signIn("google", { callbackUrl: `${process.env.NEXT_AUTH_URL,"/Account"}` });
   }
 
