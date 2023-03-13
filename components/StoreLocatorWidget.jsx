@@ -4,22 +4,34 @@ import Script from "next/script";
 import StoreInfo from "./StoreInfo";
 import useStoreLocator from "../hooks/useStoreLocator";
 import { storeLocatorWidget, mapContainer, mapClass, searchForm, list } from "../styles/StoreLocator.module.css";
-
+import SearchIcon from "@mui/icons-material/Search";
+import PlaceIcon from "@mui/icons-material/Place";
 export default function StoreLocatorWidget() {
   const [mapApiReady, setMapApiReady] = React.useState("");
 
-  const { searchInput, setSearchInput, handleSearch, searchResults, showMap } = useStoreLocator(mapApiReady);
+  const { searchInput, setSearchInput, handleSearch, searchNearby, locations, showMap, setCenter } =
+    useStoreLocator(mapApiReady);
   const mapRef = React.useRef(null);
   return (
     <div className={storeLocatorWidget}>
       <form className={searchForm} onSubmit={handleSearch}>
         {/*since THe form only has one input, pressing enter will trigger the 
         OnSubmit event */}
-        <button>search nearby</button>
-        <input type="text" value={searchInput} onChange={(e) => setSearchInput(e.target.value)} />
-        <button onClick={handleSearch}>Search</button>
+        <button type={"button"} onClick={searchNearby}>
+          <PlaceIcon />
+          search nearby
+        </button>
+        <input
+          type="text"
+          value={searchInput}
+          placeholder="Enter city/zip code"
+          onChange={(e) => setSearchInput(e.target.value)}
+        />
+        <button onClick={handleSearch}>
+          Search <SearchIcon />
+        </button>
       </form>
-      <StoreInfo searchResults={searchResults} className={showMap ? list : "that"} />
+      <StoreInfo locations={locations} setCenter={setCenter} className={list} />
 
       <div className={mapContainer}>
         <div id={"map"} className={showMap ? mapClass : "no"} ref={mapRef} />

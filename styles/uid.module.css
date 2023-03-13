@@ -18,9 +18,8 @@
 
 .productsDetails .selectedLabel {
   border: 1px solid #e12727;
-  background: #555858;
+  background: #464442;
   color: #dedbd9;
-  fill: #dedbd9;
 }
 
 .productsDetails label {
@@ -33,7 +32,7 @@
   height: 4rem;
   color: black;
   width: 208px;
-  background-color: #898e8e !important;
+  background-color: #898e8e;
   border-right: 1px solid #201e1d;
   border-top: 1px solid #201e1d;
   cursor: pointer;
@@ -236,7 +235,6 @@
   .btnAddCart {
     display: block;
     margin-left: 25px;
-    
   }
   .titleSize {
     text-align: start;

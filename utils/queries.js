@@ -105,20 +105,44 @@ export const getSubscriptionImages = () =>
     }
   `);
 
-export const getAllLocations = () =>
-  hygraph.request(gql`
-    {
-      storeLocations(first: 99) {
-        address
-        city
-        coordinates {
-          latitude
-          longitude
+export const getLocationsIn = (area) =>
+  hygraph.request(
+    gql`
+      query getLocations($area: String!) {
+        storeLocations(first: 25, where: { area: $area }) {
+          address
+          city
+          coordinates {
+            latitude
+            longitude
+          }
+          name
+          phoneNumber
+          zipCode
+          id
         }
-        name
-        phoneNumber
-        zipCode
-        id
       }
-    }
-  `);
+    `,
+    { area }
+  );
+
+export const searchLocationsNear = (search) =>
+  hygraph.request(
+    gql`
+      query getLocations($search: String!) {
+        storeLocations(first: 25, where: { _search: $search }) {
+          address
+          city
+          coordinates {
+            latitude
+            longitude
+          }
+          name
+          phoneNumber
+          zipCode
+          id
+        }
+      }
+    `,
+    { search }
+  );
