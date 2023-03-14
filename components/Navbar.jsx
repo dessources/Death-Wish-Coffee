@@ -64,7 +64,7 @@ const Navbar = () => {
                     textAlign: "right",
                   }}
                 >
-                  <Link href={"/Subscription"} style={linkStyles}>
+                  <Link href={"/Subscription"} style={linkStyles} >
                     SUBSCRIPTION
                   </Link>
                 </Typography>
@@ -100,6 +100,7 @@ const Navbar = () => {
                   component="div"
                   style={{
                     fontWeight: "bold",
+
                   }}
                 >
                   <Link href={"/StoreLocator"} style={linkStyles}>
@@ -110,7 +111,7 @@ const Navbar = () => {
                 <Link href={"/"} style={linkStyles}>
                   <Image
                     src={logo}
-                    alt=""
+                    alt="logo"
                     style={{
                       height: "130px",
                       width: "130px",
@@ -149,24 +150,24 @@ const Navbar = () => {
 
                 <Box sx={{ display: "flex", alignItems: "center", color: "white" }}>
                   {session ? (
-                   <Link href={"/Account"}>
-                   <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-                     <PersonIcon />
-                   </IconButton>
-                 </Link>
-                  ):(
+                    <Link href={"/Account"}>
+                      <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+                        <PersonIcon />
+                      </IconButton>
+                    </Link>
+                  ) : (
                     <Link href={"/Login"}>
-                    <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-                      <LoginIcon />
-                    </IconButton>
-                  </Link>
+                      <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+                        <LoginIcon />
+                      </IconButton>
+                    </Link>
                   )}
-                  
+
 
                   {/* <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                     <SearchIcon />
                   </IconButton> */}
-                  <ShoppingCartIcon id="shoppingCartIcon" onClick={handleOpen} />
+                  <ShoppingCartIcon data-testid="shoppingCart" id="shoppingCartIcon" onClick={handleOpen} />
 
                   <span
                     style={{
@@ -319,7 +320,10 @@ const Navbar = () => {
           </Box>
         </div>
       </nav>
-      <Cart />
+      <div data-testid="cart">
+        <Cart />
+      </div>
+
     </>
   );
 };

@@ -35,9 +35,9 @@ const Footer = ({ id }) => {
           <h5 className={mobileFooterHeading}>End of the road, Jack</h5>
           <div className={footerBlack}>
             <Link className={logoIcon} href={"/"}>
-              <img src={logo.src} alt="" />
+              <img  data-testid="logo" src={logo.src} alt="" />
             </Link>
-            <div className={companyLinks}>
+            <div data-testid="companyLinks" className={companyLinks}>
               <div>
                 <h5>Company</h5>
                 <p className={link}>Reviews</p>
@@ -67,17 +67,17 @@ const Footer = ({ id }) => {
               <div className={socialIcons}>
                 <p>Get Wired with us</p>
                 <div>
-                  <Link href="#">
-                    <TwitterIcon />
+                  <Link href="#" >
+                    <TwitterIcon data-testid="twitter"/>
                   </Link>
                   <Link href="#">
-                    <FacebookIcon />
+                    <FacebookIcon data-testid="fb"/>
                   </Link>
                   <Link href="#">
-                    <InstagramIcon />
+                    <InstagramIcon data-testid="insta"/>
                   </Link>
                   <Link href="#">
-                    <YouTubeIcon />
+                    <YouTubeIcon data-testid="youtube"/>
                   </Link>
                 </div>
               </div>
