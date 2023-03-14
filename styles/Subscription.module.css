@@ -22,7 +22,7 @@
 .savingsResp,
 .saveResp,
 .reviewsResp {
-  display: none;
+  display: none !important;
 }
 
 .benefits {
@@ -84,7 +84,7 @@
   }
   .reviewsResp {
     display: flex;
-    flex-direction: column;
+    flex-direction: column !important;
   }
   .saveResp {
     display: block;
