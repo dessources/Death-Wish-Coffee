@@ -31,7 +31,6 @@
     "next-images": "^1.8.5",
     "next-link": "^2.0.0",
     "node-openssl-cert": "^0.1.44",
-    "nodemailer": "^7.0.6",
     "prop-types": "^15.8.1",
     "react": "19.1.1",
     "react-dom": "19.1.1",
