@@ -13,7 +13,11 @@ const filterSummary = {
   "& div": {
     margin: "0px !important",
   },
-  "& div:nth-child(2)": { fontSize: "22px", transform: "none !important", color: "white" },
+  "& span:nth-child(2)": {
+    fontSize: "22px",
+    transform: "none !important",
+    color: "white",
+  },
   "& p": {
     fontSize: "1.4rem",
     fontFamily: "FenomenSans",
