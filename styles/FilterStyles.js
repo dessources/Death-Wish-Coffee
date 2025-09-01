@@ -11,12 +11,12 @@ const filterSummary = {
   paddingLeft: 0,
   borderBottom: "1px solid #dedbd9",
   "& div": {
-    margin: "0px !important",
+    margin: "0px  !important",
   },
   "& span:nth-child(2)": {
     fontSize: "22px",
     transform: "none !important",
-    color: "white",
+    color: "white !important",
   },
   "& p": {
     fontSize: "1.4rem",
